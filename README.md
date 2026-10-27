@@ -230,7 +230,7 @@ Vision, height-scan, terrain and quadruped task adaptations.
 
 ## Manipulation and dexterous hands
 
-Arm, hand and object-interaction tasks, with dexterous manipulation grouped here.
+Arm, hand and object-interaction tasks, with dexterous manipulation grouped here. The exploratory Ref2Dex contact-control project is listed under [Inspired experiments](#inspired-experiments).
 
 ### Dex SuperMimic
 
