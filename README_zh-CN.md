@@ -73,6 +73,7 @@ SuperMimic 从仿真状态转移中学习一个共享的可微世界模型，再
 
 按用途收录 **33 个社区项目**。已有条目于 **2026-10-26** 对照上游文档及部分源码核查，ScaleBFM_Plus、SuperMimic Mjlab、SuperMimic for Robot Manipulation 与 Muscle SuperMimic 于 **2026-10-27** 核查，每项附有对应版本的来源链接。成绩和演示均为上游报告，本清单未独立重跑实验。
 
+- 🚀 **[真机部署与 Sim2Real](#真机部署与-sim2real)** — **2 个项目** · 查看真机运行栈与 Sim2Real 迁移路径。
 - 🔬 **[独立复现](#独立复现)** — **4 个项目** · 复现与评估原始方法。
 - 🧩 **[方法改动与形态适配](#方法改动与形态适配)** — **4 个项目** · 查看算法改动、多本体形态适配和专项控制研究。
 - 👁️ **[感知、地形与四足任务](#感知地形与四足任务)** — **3 个项目** · 查看视觉、高度扫描、地形和四足任务适配。
@@ -80,8 +81,35 @@ SuperMimic 从仿真状态转移中学习一个共享的可微世界模型，再
 - 💪 **[肌肉驱动、交互与诊断](#肌肉驱动交互与诊断)** — **3 个项目** · 查看肌肉驱动本体、物理交互和接触诊断。
 - 🛠️ **[框架与训练栈](#框架与训练栈)** — **6 个项目** · 查看可复用训练、评估流程及与既有框架的集成。
 - 🤖 **[机器人移植与重定向](#机器人移植与重定向)** — **5 个项目** · 查看机器人、仿真器和硬件平台适配及动作重定向工具。
-- 🚀 **[真机部署与 Sim2Real](#真机部署与-sim2real)** — **2 个项目** · 查看真机运行栈与 Sim2Real 迁移路径。
 - 💡 **[方法借鉴与探索](#方法借鉴与探索)** — **3 个项目** · 将相关思路迁移到其他控制问题。
+
+## 真机部署与 Sim2Real
+
+真机运行栈与 Sim2Real 迁移路径。
+
+### SuperMimic-Repro-Sim2Real
+
+[仓库](https://github.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real) · [快速开始](https://github.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real/blob/99d310d5460333aabe853337b1d55ee27940a3fe/README.md#快速开始) · [G1 部署](https://github.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real/blob/99d310d5460333aabe853337b1d55ee27940a3fe/docs/DEPLOY_G1.md)
+
+- **团队：NJU R&amp;L Group Embodied Lab。** 在 CuboiLeo 的 mjlab 复现上增加自定义舞蹈、视频动作工具、ONNX 导出，以及原生 MuJoCo 和 Unitree SDK 的 G1 部署流程。
+- **上游报告：** 公开一段由四个动作片段组成、约 **46 秒的 G1 真机舞蹈**，并提供预训练模型与原始视频。
+- **选择时注意：** README 区分按论文观测训练与增加锚点观测的训练；后者依赖该真机部署配置无法提供的全局相对信息。 [核查版本](https://github.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real/blob/99d310d5460333aabe853337b1d55ee27940a3fe/README.md)。
+
+<a href="https://github.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real/releases/download/v1.0/shanshenbu_real_robot_v3.mp4"><img src="https://raw.githubusercontent.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real/99d310d5460333aabe853337b1d55ee27940a3fe/docs/assets/shanshenbu_demo.gif" width="480" alt="G1 真机 · 舞蹈与人类参考"></a><br><sub>G1 真机 · 舞蹈与人类参考</sub>
+
+<br>
+
+### SuperMimic G1 Deployment
+
+[仓库](https://github.com/KyrieYoung926/supermimic_deploy) · [MuJoCo 使用](https://github.com/KyrieYoung926/supermimic_deploy/blob/7e63e3bbd5150d55afbdece28278781800f3ed21/README.md#3-run-in-mujoco) · [真机使用](https://github.com/KyrieYoung926/supermimic_deploy/blob/7e63e3bbd5150d55afbdece28278781800f3ed21/README.md#4-run-on-the-real-g1)
+
+- **作者：KyrieYoung926。** 面向 29 自由度 G1 部署 SuperMimic-Reproduced 策略，采用 ONNX Runtime、MuJoCo 和 Unitree SDK2。
+- **提供内容：** 提供仿真与 G1 真机演示，并分别说明如何准备部署资产、在仿真和真机上运行策略。
+- **选择时注意：** 仓库重点是部署，不是新的训练基准；动作数据、模型权重和机器人资产保留各自条款，不由代码许可证统一覆盖。 [核查版本](https://github.com/KyrieYoung926/supermimic_deploy/blob/7e63e3bbd5150d55afbdece28278781800f3ed21/README.md)。
+
+<a href="https://github.com/KyrieYoung926/supermimic_deploy"><img src="https://raw.githubusercontent.com/KyrieYoung926/supermimic_deploy/7e63e3bbd5150d55afbdece28278781800f3ed21/media/deploy_real.gif" width="480" alt="G1 真机 · 上游部署演示"></a><br><sub>G1 真机 · 上游部署演示</sub>
+
+<br>
 
 ## 独立复现
 
@@ -447,34 +475,6 @@ SuperMimic 从仿真状态转移中学习一个共享的可微世界模型，再
 <a href="https://github.com/panhainan2020/SuperMimic-MuJoCo/blob/db045afa9c52458f213e2c66037387e9c109a03a/README.md"><img src="assets/community/mujoco-evaluation.png" width="720" alt="报告截图 · LAFAN 训练动作与未见 100STYLE 动作"></a><br><sub>报告截图 · LAFAN 训练动作与未见 100STYLE 动作</sub>
 
 [完整视频展示](https://supermimic-mujoco-results.zippyaspen7.chatgpt.site)
-
-<br>
-
-## 真机部署与 Sim2Real
-
-真机运行栈与 Sim2Real 迁移路径。
-
-### SuperMimic-Repro-Sim2Real
-
-[仓库](https://github.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real) · [快速开始](https://github.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real/blob/99d310d5460333aabe853337b1d55ee27940a3fe/README.md#快速开始) · [G1 部署](https://github.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real/blob/99d310d5460333aabe853337b1d55ee27940a3fe/docs/DEPLOY_G1.md)
-
-- **团队：NJU R&amp;L Group Embodied Lab。** 在 CuboiLeo 的 mjlab 复现上增加自定义舞蹈、视频动作工具、ONNX 导出，以及原生 MuJoCo 和 Unitree SDK 的 G1 部署流程。
-- **上游报告：** 公开一段由四个动作片段组成、约 **46 秒的 G1 真机舞蹈**，并提供预训练模型与原始视频。
-- **选择时注意：** README 区分按论文观测训练与增加锚点观测的训练；后者依赖该真机部署配置无法提供的全局相对信息。 [核查版本](https://github.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real/blob/99d310d5460333aabe853337b1d55ee27940a3fe/README.md)。
-
-<a href="https://github.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real/releases/download/v1.0/shanshenbu_real_robot_v3.mp4"><img src="https://raw.githubusercontent.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real/99d310d5460333aabe853337b1d55ee27940a3fe/docs/assets/shanshenbu_demo.gif" width="480" alt="G1 真机 · 舞蹈与人类参考"></a><br><sub>G1 真机 · 舞蹈与人类参考</sub>
-
-<br>
-
-### SuperMimic G1 Deployment
-
-[仓库](https://github.com/KyrieYoung926/supermimic_deploy) · [MuJoCo 使用](https://github.com/KyrieYoung926/supermimic_deploy/blob/7e63e3bbd5150d55afbdece28278781800f3ed21/README.md#3-run-in-mujoco) · [真机使用](https://github.com/KyrieYoung926/supermimic_deploy/blob/7e63e3bbd5150d55afbdece28278781800f3ed21/README.md#4-run-on-the-real-g1)
-
-- **作者：KyrieYoung926。** 面向 29 自由度 G1 部署 SuperMimic-Reproduced 策略，采用 ONNX Runtime、MuJoCo 和 Unitree SDK2。
-- **提供内容：** 提供仿真与 G1 真机演示，并分别说明如何准备部署资产、在仿真和真机上运行策略。
-- **选择时注意：** 仓库重点是部署，不是新的训练基准；动作数据、模型权重和机器人资产保留各自条款，不由代码许可证统一覆盖。 [核查版本](https://github.com/KyrieYoung926/supermimic_deploy/blob/7e63e3bbd5150d55afbdece28278781800f3ed21/README.md)。
-
-<a href="https://github.com/KyrieYoung926/supermimic_deploy"><img src="https://raw.githubusercontent.com/KyrieYoung926/supermimic_deploy/7e63e3bbd5150d55afbdece28278781800f3ed21/media/deploy_real.gif" width="480" alt="G1 真机 · 上游部署演示"></a><br><sub>G1 真机 · 上游部署演示</sub>
 
 <br>
 
