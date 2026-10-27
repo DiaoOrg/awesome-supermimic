@@ -74,8 +74,13 @@ The authors report surpassing SONIC's released-checkpoint return after **3 hours
 **33 community projects**, grouped by purpose. Existing descriptions were checked against upstream documentation and selected source files on **2026-10-26**; ScaleBFM_Plus, SuperMimic Mjlab, SuperMimic for Robot Manipulation and Muscle SuperMimic were checked on **2026-10-27**. Each entry links to the reviewed source revision. Results and demos are upstream reports; this list has not independently rerun the experiments.
 
 - 🔬 **[Independent reproductions](#independent-reproductions)** — **4 projects** · Reproduce and evaluate the original method.
-- 🧩 **[Methods and task extensions](#methods-and-task-extensions)** — **13 projects** · Explore new methods, tasks and control settings.
-- 🛠️ **[Frameworks, robot ports and deployment](#frameworks-robot-ports-and-deployment)** — **13 projects** · Find a stack, robot port or deployment path.
+- 🧩 **[Method and morphology variants](#method-and-morphology-variants)** — **4 projects** · Explore algorithm changes, robot-morphology adaptations and focused control studies.
+- 👁️ **[Perception, terrain and quadrupeds](#perception-terrain-and-quadrupeds)** — **3 projects** · Find vision, height-scan, terrain and quadruped task adaptations.
+- 🦾 **[Manipulation and dexterous hands](#manipulation-and-dexterous-hands)** — **3 projects** · Find arm, hand and object-interaction tasks.
+- 💪 **[Muscle, interaction and diagnostics](#muscle-interaction-and-diagnostics)** — **3 projects** · Explore muscle-actuated bodies, physical interaction and contact-focused studies.
+- 🛠️ **[Frameworks and training stacks](#frameworks-and-training-stacks)** — **6 projects** · Find integrations and reusable training or evaluation stacks.
+- 🤖 **[Robot porting and retargeting](#robot-porting-and-retargeting)** — **5 projects** · Find robot-, simulator- or hardware-specific ports and retargeting tools.
+- 🚀 **[Real-robot deployment and Sim2Real](#real-robot-deployment-and-sim2real)** — **2 projects** · Follow real-robot runtimes and sim-to-real transfer paths.
 - 💡 **[Inspired experiments](#inspired-experiments)** — **3 projects** · Transfer ideas to other control problems.
 
 ## Independent reproductions
@@ -130,9 +135,9 @@ Reimplementations of the original method, with training, evaluation and reproduc
 
 <br>
 
-## Methods and task extensions
+## Method and morphology variants
 
-Changes to the method, new tasks and focused experiments in perception, morphology and interaction.
+Algorithm changes, multi-robot morphology adaptations and focused control studies.
 
 ### MorphMimic
 
@@ -183,6 +188,10 @@ Changes to the method, new tasks and focused experiments in perception, morpholo
 
 <br>
 
+## Perception, terrain and quadrupeds
+
+Vision, height-scan, terrain and quadruped task adaptations.
+
 ### InstinctMJ · SuperMimic
 
 [Repository](https://github.com/project-instinct/InstinctMJ/tree/supermimic) · [Method and results](https://github.com/project-instinct/InstinctMJ/blob/7ca851e002980011f24a1664011305d0ba94aefc/src/instinct_mj/rl/supermimic/README.md#results) · [Releases](https://github.com/project-instinct/InstinctMJ/releases)
@@ -218,6 +227,10 @@ Changes to the method, new tasks and focused experiments in perception, morpholo
 <a href="https://github.com/Zhengtianjin/go2-supermimic"><img src="https://raw.githubusercontent.com/Zhengtianjin/go2-supermimic/054a13c13285a1c94b2e69dc8ac7331f9a8c71cf/resources/terrain.gif" width="480" alt="Simulation · Go2 terrain chase and dodge"></a><br><sub>Simulation · Go2 terrain chase and dodge</sub>
 
 <br>
+
+## Manipulation and dexterous hands
+
+Arm, hand and object-interaction tasks, with dexterous manipulation grouped here.
 
 ### Dex SuperMimic
 
@@ -255,6 +268,10 @@ Changes to the method, new tasks and focused experiments in perception, morpholo
 
 <br>
 
+## Muscle, interaction and diagnostics
+
+Muscle-actuated bodies, physical interaction and contact-focused diagnostics.
+
 ### Muscle SuperMimic
 
 [Repository](https://github.com/kaibohex/muscle-supermimic) · [Setup](https://github.com/kaibohex/muscle-supermimic/blob/b7c7cdd83e82399e057cb9d3f1b76f23ca022c7b/README.md#install) · [Status](https://github.com/kaibohex/muscle-supermimic/blob/b7c7cdd83e82399e057cb9d3f1b76f23ca022c7b/README.md#status)
@@ -291,9 +308,9 @@ Changes to the method, new tasks and focused experiments in perception, morpholo
 
 <br>
 
-## Frameworks, robot ports and deployment
+## Frameworks and training stacks
 
-Choose a simulator or robot platform, then find training, retargeting, export and deployment tools.
+Integrations and reusable training or evaluation stacks.
 
 ### ScaleBFM_Plus · SuperMimic
 
@@ -367,6 +384,10 @@ Choose a simulator or robot platform, then find training, retargeting, export an
 
 <br>
 
+## Robot porting and retargeting
+
+Robot-, simulator- and hardware-specific ports, together with motion-retargeting tools.
+
 ### SuperMimic Retargeted
 
 [Repository](https://github.com/tianshuwu/supermimic-retargeted) · [Quickstart](https://github.com/tianshuwu/supermimic-retargeted/blob/ff69a0e5305126eb5b80b323bcd815805bc3df4e/README.md#快速开始) · [Data guide](https://github.com/tianshuwu/supermimic-retargeted/blob/ff69a0e5305126eb5b80b323bcd815805bc3df4e/docs/DATA.md)
@@ -428,6 +449,10 @@ Choose a simulator or robot platform, then find training, retargeting, export an
 [Full video gallery](https://supermimic-mujoco-results.zippyaspen7.chatgpt.site)
 
 <br>
+
+## Real-robot deployment and Sim2Real
+
+Real-robot runtimes and sim-to-real transfer paths.
 
 ### SuperMimic-Repro-Sim2Real
 

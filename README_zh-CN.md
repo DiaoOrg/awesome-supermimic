@@ -74,8 +74,13 @@ SuperMimic 从仿真状态转移中学习一个共享的可微世界模型，再
 按用途收录 **33 个社区项目**。已有条目于 **2026-10-26** 对照上游文档及部分源码核查，ScaleBFM_Plus、SuperMimic Mjlab、SuperMimic for Robot Manipulation 与 Muscle SuperMimic 于 **2026-10-27** 核查，每项附有对应版本的来源链接。成绩和演示均为上游报告，本清单未独立重跑实验。
 
 - 🔬 **[独立复现](#独立复现)** — **4 个项目** · 复现与评估原始方法。
-- 🧩 **[方法与任务扩展](#方法与任务扩展)** — **13 个项目** · 探索算法改动、新任务和控制场景。
-- 🛠️ **[框架、本体适配与部署](#框架本体适配与部署)** — **13 个项目** · 按框架、本体和部署需求选实现。
+- 🧩 **[方法改动与形态适配](#方法改动与形态适配)** — **4 个项目** · 查看算法改动、多本体形态适配和专项控制研究。
+- 👁️ **[感知、地形与四足任务](#感知地形与四足任务)** — **3 个项目** · 查看视觉、高度扫描、地形和四足任务适配。
+- 🦾 **[操作与灵巧手](#操作与灵巧手)** — **3 个项目** · 查看机械臂、手部与物体交互任务。
+- 💪 **[肌肉驱动、交互与诊断](#肌肉驱动交互与诊断)** — **3 个项目** · 查看肌肉驱动本体、物理交互和接触诊断。
+- 🛠️ **[框架与训练栈](#框架与训练栈)** — **6 个项目** · 查看可复用训练、评估流程及与既有框架的集成。
+- 🤖 **[机器人移植与重定向](#机器人移植与重定向)** — **5 个项目** · 查看机器人、仿真器和硬件平台适配及动作重定向工具。
+- 🚀 **[真机部署与 Sim2Real](#真机部署与-sim2real)** — **2 个项目** · 查看真机运行栈与 Sim2Real 迁移路径。
 - 💡 **[方法借鉴与探索](#方法借鉴与探索)** — **3 个项目** · 将相关思路迁移到其他控制问题。
 
 ## 独立复现
@@ -130,9 +135,9 @@ SuperMimic 从仿真状态转移中学习一个共享的可微世界模型，再
 
 <br>
 
-## 方法与任务扩展
+## 方法改动与形态适配
 
-关注算法改动、新任务，以及感知、形态和交互方面的实验。
+关注算法改动、多本体形态适配和专项控制研究。
 
 ### MorphMimic
 
@@ -183,6 +188,10 @@ SuperMimic 从仿真状态转移中学习一个共享的可微世界模型，再
 
 <br>
 
+## 感知、地形与四足任务
+
+视觉、高度扫描、地形与四足任务适配。
+
 ### InstinctMJ · SuperMimic
 
 [仓库](https://github.com/project-instinct/InstinctMJ/tree/supermimic) · [方法与结果](https://github.com/project-instinct/InstinctMJ/blob/7ca851e002980011f24a1664011305d0ba94aefc/src/instinct_mj/rl/supermimic/README.md#results) · [发布资源](https://github.com/project-instinct/InstinctMJ/releases)
@@ -218,6 +227,10 @@ SuperMimic 从仿真状态转移中学习一个共享的可微世界模型，再
 <a href="https://github.com/Zhengtianjin/go2-supermimic"><img src="https://raw.githubusercontent.com/Zhengtianjin/go2-supermimic/054a13c13285a1c94b2e69dc8ac7331f9a8c71cf/resources/terrain.gif" width="480" alt="仿真 · Go2 地形追逐与闪避"></a><br><sub>仿真 · Go2 地形追逐与闪避</sub>
 
 <br>
+
+## 操作与灵巧手
+
+机械臂、手部与物体交互任务，灵巧手项目集中在此。
 
 ### Dex SuperMimic
 
@@ -255,6 +268,10 @@ SuperMimic 从仿真状态转移中学习一个共享的可微世界模型，再
 
 <br>
 
+## 肌肉驱动、交互与诊断
+
+肌肉驱动本体、物理交互与接触诊断。
+
 ### Muscle SuperMimic
 
 [仓库](https://github.com/kaibohex/muscle-supermimic) · [安装](https://github.com/kaibohex/muscle-supermimic/blob/b7c7cdd83e82399e057cb9d3f1b76f23ca022c7b/README.md#install) · [当前状态](https://github.com/kaibohex/muscle-supermimic/blob/b7c7cdd83e82399e057cb9d3f1b76f23ca022c7b/README.md#status)
@@ -291,9 +308,9 @@ SuperMimic 从仿真状态转移中学习一个共享的可微世界模型，再
 
 <br>
 
-## 框架、本体适配与部署
+## 框架与训练栈
 
-按仿真框架和机器人本体选择训练、重定向、模型导出与部署工具。
+可复用的训练、评估流程及与既有框架的集成。
 
 ### ScaleBFM_Plus · SuperMimic
 
@@ -367,6 +384,10 @@ SuperMimic 从仿真状态转移中学习一个共享的可微世界模型，再
 
 <br>
 
+## 机器人移植与重定向
+
+面向机器人本体、仿真器或硬件平台的移植，以及动作重定向工具。
+
 ### SuperMimic Retargeted
 
 [仓库](https://github.com/tianshuwu/supermimic-retargeted) · [快速开始](https://github.com/tianshuwu/supermimic-retargeted/blob/ff69a0e5305126eb5b80b323bcd815805bc3df4e/README.md#快速开始) · [数据说明](https://github.com/tianshuwu/supermimic-retargeted/blob/ff69a0e5305126eb5b80b323bcd815805bc3df4e/docs/DATA.md)
@@ -428,6 +449,10 @@ SuperMimic 从仿真状态转移中学习一个共享的可微世界模型，再
 [完整视频展示](https://supermimic-mujoco-results.zippyaspen7.chatgpt.site)
 
 <br>
+
+## 真机部署与 Sim2Real
+
+真机运行栈与 Sim2Real 迁移路径。
 
 ### SuperMimic-Repro-Sim2Real
 
