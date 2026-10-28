@@ -67,16 +67,16 @@ SuperMimic 从仿真状态转移中学习一个共享的可微世界模型，再
 
 作者报告：**单张 H100 训练 3 小时**超过 SONIC 已发布 checkpoint 的回报，**129,514 个动作中失败 25 个**；两张 H100 训练 9.8 小时后失败数为 0。这是训练动作覆盖结果，且两者训练硬件与数据规模不同。[原始结果与计算量口径](https://supermimic.github.io/#compute)。
 
-**官方代码状态（2026-10-26 核查）：**官方主页提供论文、视频和浏览器演示，尚未链接训练代码仓库。下列条目均为社区实现或扩展。
+**官方代码状态（2026-10-28 核查）：**官方主页提供论文、视频和浏览器演示，尚未链接训练代码仓库。下列条目均为社区实现或扩展。
 
 ## 社区项目
 
-按用途收录 **33 个社区项目**。已有条目于 **2026-10-26** 对照上游文档及部分源码核查，ScaleBFM_Plus、SuperMimic Mjlab、SuperMimic for Robot Manipulation 与 Muscle SuperMimic 于 **2026-10-27** 核查，每项附有对应版本的来源链接。成绩和演示均为上游报告，本清单未独立重跑实验。
+按用途收录 **36 个社区项目**。简介和演示于 **2026-10-28** 对照上游文档及部分源码核查，每项附有对应版本的来源链接。成绩和演示均为上游报告，本清单未独立重跑实验。
 
 - 🚀 **[真机部署与 Sim2Real](#真机部署与-sim2real)** — **2 个项目** · 查看真机运行栈与 Sim2Real 迁移路径。
-- 🔬 **[独立复现](#独立复现)** — **4 个项目** · 复现与评估原始方法。
-- 🧩 **[方法改动与形态适配](#方法改动与形态适配)** — **4 个项目** · 查看算法改动、多本体形态适配和专项控制研究。
-- 👁️ **[感知、地形与四足任务](#感知地形与四足任务)** — **3 个项目** · 查看视觉、高度扫描、地形和四足任务适配。
+- 🔬 **[独立复现](#独立复现)** — **5 个项目** · 复现与评估原始方法。
+- 🧩 **[方法改动与形态适配](#方法改动与形态适配)** — **5 个项目** · 查看算法改动、多本体形态适配和专项控制研究。
+- 👁️ **[感知、地形与四足任务](#感知地形与四足任务)** — **4 个项目** · 查看视觉、高度扫描、地形和四足任务适配。
 - 🦾 **[操作与灵巧手](#操作与灵巧手)** — **3 个项目** · 查看机械臂、手部与物体交互任务。
 - 💪 **[肌肉驱动、交互与诊断](#肌肉驱动交互与诊断)** — **3 个项目** · 查看肌肉驱动本体、物理交互和接触诊断。
 - 🛠️ **[框架与训练栈](#框架与训练栈)** — **6 个项目** · 查看可复用训练、评估流程及与既有框架的集成。
@@ -89,13 +89,13 @@ SuperMimic 从仿真状态转移中学习一个共享的可微世界模型，再
 
 ### SuperMimic-Repro-Sim2Real
 
-[仓库](https://github.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real) · [快速开始](https://github.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real/blob/99d310d5460333aabe853337b1d55ee27940a3fe/README.md#快速开始) · [G1 部署](https://github.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real/blob/99d310d5460333aabe853337b1d55ee27940a3fe/docs/DEPLOY_G1.md)
+[仓库](https://github.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real) · [快速开始](https://github.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real/blob/f8f60d7bbdba68468c050ef100af02d752ca238e/README.md#快速开始) · [v1.1 真机记录](https://github.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real/blob/f8f60d7bbdba68468c050ef100af02d752ca238e/docs/REAL_ROBOT_LEAN35KFS.md) · [G1 部署](https://github.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real/blob/f8f60d7bbdba68468c050ef100af02d752ca238e/docs/DEPLOY_G1.md)
 
-- **团队：NJU R&amp;L Group Embodied Lab。** 在 CuboiLeo 的 mjlab 复现上增加自定义舞蹈、视频动作工具、ONNX 导出，以及原生 MuJoCo 和 Unitree SDK 的 G1 部署流程。
-- **上游报告：** 公开一段由四个动作片段组成、约 **46 秒的 G1 真机舞蹈**，并提供预训练模型与原始视频。
-- **选择时注意：** README 区分按论文观测训练与增加锚点观测的训练；后者依赖该真机部署配置无法提供的全局相对信息。 [核查版本](https://github.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real/blob/99d310d5460333aabe853337b1d55ee27940a3fe/README.md)。
+- **团队：NJU R&amp;L Group Embodied Lab。** 在 CuboiLeo 的 mjlab 复现上增加自定义舞蹈、视频动作工具、单段动作微调、ONNX 导出，以及原生 MuJoCo 和 Unitree SDK 的 G1 部署流程。
+- **上游报告：** v1.0 公开一段由四个动作片段组成、约 **46 秒的 G1 真机舞蹈**。v1.1 的单段策略 `e24_0355000` 在真机上**连续两次完成约 22 秒舞蹈**，包含两次快速转体和一次单脚落地的跳跃；此前 9 个模型都未能完成该动作。两次运行均挂着松弛的保护绳，同一模型重复运行不构成消融实验。
+- **选择时注意：** v1.1 检查点只针对这一段舞蹈微调，不是通用动作跟踪模型；按论文观测训练与增加锚点观测仍是不同配置。 [核查版本](https://github.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real/blob/f8f60d7bbdba68468c050ef100af02d752ca238e/README.md)。
 
-<a href="https://github.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real/releases/download/v1.0/shanshenbu_real_robot_v3.mp4"><img src="https://raw.githubusercontent.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real/99d310d5460333aabe853337b1d55ee27940a3fe/docs/assets/shanshenbu_demo.gif" width="480" alt="G1 真机 · 舞蹈与人类参考"></a><br><sub>G1 真机 · 舞蹈与人类参考</sub>
+<a href="https://github.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real/releases/download/v1.1/shanshenbu_pro_real_robot.mp4"><img src="https://raw.githubusercontent.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real/f8f60d7bbdba68468c050ef100af02d752ca238e/docs/assets/shanshenbu_pro_demo.gif" width="480" alt="G1 真机 · v1.1 快速转体与单脚落地跳跃"></a><br><sub>G1 真机 · v1.1 单段舞蹈；左为人类参考，右为机器人</sub>
 
 <br>
 
@@ -129,13 +129,13 @@ SuperMimic 从仿真状态转移中学习一个共享的可微世界模型，再
 
 ### SuperMimic-Reproduced
 
-[仓库](https://github.com/CuboiLeo/SuperMimic-Reproduced) · [环境与安装](https://github.com/CuboiLeo/SuperMimic-Reproduced/blob/d9be385b3eeb13a638fb33fb200d3bfd9be9839f/README.md#环境) · [实验日志](https://github.com/CuboiLeo/SuperMimic-Reproduced/blob/d9be385b3eeb13a638fb33fb200d3bfd9be9839f/docs/EXPERIMENTS.md)
+[仓库](https://github.com/CuboiLeo/SuperMimic-Reproduced) · [环境与安装](https://github.com/CuboiLeo/SuperMimic-Reproduced/blob/ba6105349069bf040f1fdad60873d13138d505a2/README.md#setup) · [实验日志](https://github.com/CuboiLeo/SuperMimic-Reproduced/blob/ba6105349069bf040f1fdad60873d13138d505a2/docs/EXPERIMENTS.md) · [检查点](https://github.com/CuboiLeo/SuperMimic-Reproduced/releases/tag/e8-boneseed-100k)
 
-- **作者：CuboiLeo。** 基于 mjlab 从零实现 G1 跟踪，提供中文复现记录、LAFAN1/BONES-SEED 数据处理、多卡训练和交互回放。
-- **上游报告：** 加入锚点相对观测后，单张 RTX 5090 训练 **1.66 小时**达到 LAFAN1 回报 **0.824、5 / 40 失败**；**3.3 小时**时为 **0.904、3 / 40 失败**。
-- **选择时注意：** 按论文观测训练 1.8 小时的结果为 **0.56、9 / 40 失败**，两种观测设置不能混为同一结果；BONES-SEED 成绩使用 2,000 条动作评估子集。 [核查版本](https://github.com/CuboiLeo/SuperMimic-Reproduced/blob/d9be385b3eeb13a638fb33fb200d3bfd9be9839f/README.md)。
+- **作者：CuboiLeo。** 基于 mjlab 从零实现 G1 跟踪，提供中文复现记录、LAFAN1/BONES-SEED 数据处理、多卡训练、交互回放和全量数据检查点。
+- **上游报告：** 按论文观测在 BONES-SEED 全量上训练，4 张 RTX 5090 运行 **7.1 小时（约 28 GPU·h）**，归一化回报 **0.930**，**145 / 129,491 失败（0.11%）**。在 LAFAN1 上，锚点相对观测达到 **0.904、3 / 40 失败**；三次论文观测运行则为 **0.56–0.59、3–9 / 40 失败**。
+- **选择时注意：** BONES-SEED 片段较短（中位 5.8 秒），而论文观测策略在 100–300 秒的 LAFAN1 整段动作上会漂移；两种观测口径不能直接比较。 [核查版本](https://github.com/CuboiLeo/SuperMimic-Reproduced/blob/ba6105349069bf040f1fdad60873d13138d505a2/README.md)。
 
-<a href="https://github.com/CuboiLeo/SuperMimic-Reproduced/blob/d9be385b3eeb13a638fb33fb200d3bfd9be9839f/README.md"><img src="assets/community/reproduced-results.png" width="720" alt="报告截图 · 论文观测与锚点相对观测的结果"></a><br><sub>报告截图 · 论文观测与锚点相对观测的结果</sub>
+<a href="https://github.com/CuboiLeo/SuperMimic-Reproduced/releases/tag/e8-boneseed-100k"><img src="https://raw.githubusercontent.com/CuboiLeo/SuperMimic-Reproduced/ba6105349069bf040f1fdad60873d13138d505a2/media/g1_boneseed_highlights.gif" width="480" alt="仿真 · 同一个 BONES-SEED 全量策略完成跳跃、转体、单脚跳和起身"></a><br><sub>仿真 · 同一个 BONES-SEED 全量策略完成六段高难度动作</sub>
 
 <br>
 
@@ -153,13 +153,25 @@ SuperMimic 从仿真状态转移中学习一个共享的可微世界模型，再
 
 ### SuperMimic Mjlab
 
-[仓库](https://github.com/Breezewrf/supermimic_mjlab) · [安装](https://github.com/Breezewrf/supermimic_mjlab/blob/23c76cad5bf41110709c7f929b54c1da1be6b248/doc/setup_en.md) · [消融实验与检查点](https://github.com/Breezewrf/supermimic_mjlab/blob/23c76cad5bf41110709c7f929b54c1da1be6b248/README.md#ablation-results-and-released-checkpoint)
+[仓库](https://github.com/Breezewrf/supermimic_mjlab) · [安装](https://github.com/Breezewrf/supermimic_mjlab/blob/77183062eb92026bfbee2daf276f87cad36fd957/doc/setup_en.md) · [消融实验与检查点](https://github.com/Breezewrf/supermimic_mjlab/blob/77183062eb92026bfbee2daf276f87cad36fd957/README.md#ablation-results-and-released-checkpoint)
 
-- **作者：Breezewrf。** 基于 mjlab 为 Unitree G1 独立复现 SuperMimic，提供完整的性能提升消融实验、多动作训练、完整动作评估，以及已发布的策略与世界模型检查点。
+- **作者：Breezewrf。** 基于 mjlab 为 Unitree G1 独立复现 SuperMimic，提供完整的性能提升消融实验、多动作与速度训练、OOD 回放、video2motion、完整动作评估，以及已发布的策略与世界模型检查点。
 - **上游报告：** 所选检查点在全部 40 条 LAFAN 动作的固定起点、完整片段确定性评估中，达到 **40 / 40 成功、平均完成率 100%、归一化回报 0.8528**。使用 **单张 RTX A6000 48 GB**、4,096 个环境和 FP32 网络，训练 **15,000 次迭代约需 4 小时**。
-- **性能提升消融：** 完整记录从 Actor/Critic 输入归一化，依次加入躯干坐标系下的动作朝向锚点、世界模型归一化及修正余弦学习率调度的提升过程：在全部 40 条动作、15,000 次迭代的评估中，归一化回报均值为 **0.6016 → 0.8130 → 0.8504 → 0.8526**。最终重复运行均值与上述所选检查点分数分别报告。 [核查版本](https://github.com/Breezewrf/supermimic_mjlab/blob/23c76cad5bf41110709c7f929b54c1da1be6b248/README.md)。
+- **性能提升消融：** 完整记录从 Actor/Critic 输入归一化，依次加入躯干坐标系下的动作朝向锚点、世界模型归一化及修正余弦学习率调度的提升过程：在全部 40 条动作、15,000 次迭代的评估中，归一化回报均值为 **0.6016 → 0.8130 → 0.8504 → 0.8526**。最终重复运行均值与上述所选检查点分数分别报告。 [核查版本](https://github.com/Breezewrf/supermimic_mjlab/blob/77183062eb92026bfbee2daf276f87cad36fd957/README.md)。
 
-<a href="https://github.com/Breezewrf/supermimic_mjlab/blob/23c76cad5bf41110709c7f929b54c1da1be6b248/doc/assets/evaluation.png"><img src="https://raw.githubusercontent.com/Breezewrf/supermimic_mjlab/23c76cad5bf41110709c7f929b54c1da1be6b248/doc/assets/evaluation.png" width="720" alt="评估面板 · SuperMimic Mjlab 回报、成功率与逐动作完成率"></a><br><sub>上游评估面板 · 回报、成功率与逐动作完成率 · 各配置消融对比见上方链接</sub>
+<a href="https://github.com/Breezewrf/supermimic_mjlab/blob/77183062eb92026bfbee2daf276f87cad36fd957/doc/assets/demo_v0.gif"><img src="assets/community/mjlab-demo.gif" width="480" alt="仿真 · SuperMimic Mjlab OOD 动作回放的 12 秒截取"></a><br><sub>仿真 · 60.8 秒 OOD 回放中的 12 秒片段；点击查看上游完整 GIF</sub>
+
+<br>
+
+### SuperMimic on RTX 5080
+
+[仓库](https://github.com/rzc156/supermimic-rtx5080) · [复现分析](https://github.com/rzc156/supermimic-rtx5080/blob/df967c61c29a2ed9ba6b188e1607ba59225fe8a7/REPRODUCTION_ANALYSIS.md) · [评测视频](https://github.com/rzc156/supermimic-rtx5080/blob/df967c61c29a2ed9ba6b188e1607ba59225fe8a7/results/lafan1_anchor/videos/index.html)
+
+- **作者：rzc156。** 基于 CuboiLeo 的独立 mjlab 复现，面向单张 **16 GB RTX 5080**，使用 2,048 个训练环境和额外锚点相对观测。
+- **上游报告：** **40k** 检查点训练 **2.7 小时**后达到 **0.8515 平均回报 / 0.8608 步加权回报**，**2 / 40 失败**；48k 检查点训练 **3.3 小时**，三次评测均值为 **0.8375**，**4–6 / 40 失败**。
+- **选择时注意：** 只有单个训练 seed，且额外锚点观测使其不等价于论文观测口径。作者以 40k 为重点检查点，但 40k/44k/48k 的差异仍需多 seed 验证。 [核查版本](https://github.com/rzc156/supermimic-rtx5080/blob/df967c61c29a2ed9ba6b188e1607ba59225fe8a7/README.md)。
+
+<a href="https://github.com/rzc156/supermimic-rtx5080/blob/df967c61c29a2ed9ba6b188e1607ba59225fe8a7/results/lafan1_anchor/videos/index.html"><img src="https://raw.githubusercontent.com/rzc156/supermimic-rtx5080/df967c61c29a2ed9ba6b188e1607ba59225fe8a7/results/lafan1_anchor/gifs/walk1.gif" width="480" alt="仿真 · RTX 5080 复现策略执行 G1 行走"></a><br><sub>仿真 · 40k 检查点在 15 秒 LAFAN1 行走片段上的回放；点击查看全部七段视频</sub>
 
 <br>
 
@@ -169,11 +181,11 @@ SuperMimic 从仿真状态转移中学习一个共享的可微世界模型，再
 
 ### MorphMimic
 
-[仓库](https://github.com/lzyang2000/morphmimic) · [安装](https://github.com/lzyang2000/morphmimic/blob/2e35049e9519e511889ef987e4acde55d4f5b017/README.md#setup) · [方法差异](https://github.com/lzyang2000/morphmimic/blob/2e35049e9519e511889ef987e4acde55d4f5b017/README.md#differences-from-supermimic)
+[仓库](https://github.com/lzyang2000/morphmimic) · [安装](https://github.com/lzyang2000/morphmimic/blob/aa40fe46a7fa995ba7a7354ad065a2c8ad64a302/README.md#setup) · [方法差异](https://github.com/lzyang2000/morphmimic/blob/aa40fe46a7fa995ba7a7354ad065a2c8ad64a302/README.md#differences-from-supermimic)
 
-- **作者：Lizhi Yang 等。** 在 mjlab 中扩展 SuperMimic，用形态参数条件化网络，让 G1、X2 Ultra 和 T2 共享世界模型、策略或两者。
+- **作者：Lizhi Yang 等。** 在 mjlab 中扩展 SuperMimic，用形态参数条件化网络，让 G1、X2 Ultra 和 T2 共享世界模型、策略或两者。新增 `--goal-anchor robot` 模式，把动作目标改为相对机器人自身锚点表示，以修正漂移。
 - **提供内容：** 提供完整动作跟踪和骨盆、双手腕、双脚踝的稀疏五点目标接口，附浏览器演示及遥操作、部署说明。
-- **选择时注意：** 不同机器人先映射到统一的 29 关节布局；README 列出了终止模型、归一化、预热和执行器延迟随机化等实现改动。 [核查版本](https://github.com/lzyang2000/morphmimic/blob/2e35049e9519e511889ef987e4acde55d4f5b017/README.md)。
+- **选择时注意：** robot-anchor 模式部署时需由动捕或状态估计提供机器人世界位置与朝向。不同机器人先映射到统一的 29 关节布局；README 还列出终止模型、归一化、预热和执行器延迟随机化等实现改动。 [核查版本](https://github.com/lzyang2000/morphmimic/blob/aa40fe46a7fa995ba7a7354ad065a2c8ad64a302/README.md)。
 
 <a href="https://lzyang2000.github.io/morphmimic/static/videos/dance_hiphop_shuffle_sequence_v_001_R_003__A306.mp4"><img src="assets/community/morphmimic.gif" width="480" alt="仿真 · G1 / X2 Ultra / T2 共享策略"></a><br><sub>仿真 · G1 / X2 Ultra / T2 共享策略</sub>
 
@@ -195,30 +207,54 @@ SuperMimic 从仿真状态转移中学习一个共享的可微世界模型，再
 
 ### SuperMimic on LocoMuJoCo
 
-[仓库](https://github.com/Alchedata/supermimic-locomujoco) · [安装](https://github.com/Alchedata/supermimic-locomujoco/blob/cc1375d48a38bde062d088ffd132122e0cd7b7da/README.md#setup) · [结果](https://github.com/Alchedata/supermimic-locomujoco/blob/cc1375d48a38bde062d088ffd132122e0cd7b7da/README.md#results-at-5k)
+[仓库](https://github.com/Alchedata/supermimic-locomujoco) · [安装](https://github.com/Alchedata/supermimic-locomujoco/blob/de9f39191b9e8b87ff1afd2b0129dd93d4795e8c/README.md#setup) · [结果](https://github.com/Alchedata/supermimic-locomujoco/blob/de9f39191b9e8b87ff1afd2b0129dd93d4795e8c/README.md#results)
 
-- **团队：Alchedata。** 用 JAX 与 LocoMuJoCo 将方法移植到 H1，对比 MLP 基线、残差专家、动作敏感度和可信度相关的世界模型变体。
-- **上游报告：** 公开固定 5,000 次迭代检查点的 160 回合评测，既保留表现较好的种子，也记录了残差专家因动作输出饱和而停滞的运行。
-- **选择时注意：** 指标是 LocoMuJoCo 回合回报，与 G1 归一化跟踪分数不同；恢复干预与继续训练的对照分别记录。 [核查版本](https://github.com/Alchedata/supermimic-locomujoco/blob/cc1375d48a38bde062d088ffd132122e0cd7b7da/README.md)。
+- **团队：Alchedata。** 用 JAX 与 LocoMuJoCo 将方法移植到 H1，在 MLP、残差专家、动作敏感度和可信度相关的世界模型变体之外，新增**全状态 ODE 世界模型**和**抗饱和正则化**。
+- **上游报告：** 固定 5,000 次迭代检查点、160 个初始状态时，Euler ODE 加抗饱和正则化在三个 seed 上把总失败数从 **15 / 480 降到 1 / 480**。种子 43 从 **878.71 / 15 次失败**提升到 **935.38 / 0 次**，种子 42 则略有变差，因此并非所有 seed 都提高分数。
+- **选择时注意：** 指标是 LocoMuJoCo 回合回报，与 G1 归一化跟踪分数不同；中点 ODE 加速实验仍在进行，未作为已完成结果计入。 [核查版本](https://github.com/Alchedata/supermimic-locomujoco/blob/de9f39191b9e8b87ff1afd2b0129dd93d4795e8c/README.md)。
 
-<a href="https://github.com/Alchedata/supermimic-locomujoco/blob/cc1375d48a38bde062d088ffd132122e0cd7b7da/README.md"><img src="assets/community/locomujoco-results.png" width="720" alt="报告截图 · 固定 5k 检查点，160 个评估回合"></a><br><sub>报告截图 · 固定 5k 检查点，160 个评估回合</sub>
+<a href="https://github.com/Alchedata/supermimic-locomujoco/blob/de9f39191b9e8b87ff1afd2b0129dd93d4795e8c/docs/figures/return_vs_step.png"><img src="assets/community/locomujoco-results.png" width="720" alt="训练曲线 · ODE 与抗饱和变体的回报随训练步数变化"></a><br><sub>上游训练曲线 · ODE 与抗饱和变体，固定 5k 评估检查点</sub>
 
 <br>
 
 ### Rethinking SuperMimic
 
-[仓库](https://github.com/btx0424/rethinking-supermimic) · [安装](https://github.com/btx0424/rethinking-supermimic/blob/ecdaeb6a916a16cf7eb69b19226c17be31a6bc27/README.md#installation) · [实现对照](https://github.com/btx0424/rethinking-supermimic/blob/ecdaeb6a916a16cf7eb69b19226c17be31a6bc27/README.md#ours-the-paper-and-supermimic_vibed)
+[仓库](https://github.com/btx0424/rethinking-supermimic) · [安装](https://github.com/btx0424/rethinking-supermimic/blob/aa77b71054a850075431248f1534bb77ca62b4d8/README.md#installation) · [实现对照](https://github.com/btx0424/rethinking-supermimic/blob/aa77b71054a850075431248f1534bb77ca62b4d8/README.md#ours-the-paper-and-supermimic_vibed)
 
-- **作者：btx0424。** 在 mjlab 的 G1 跟踪任务中研究目标条件化：比较目标与本体观测直接拼接，以及用 FiLM 调制策略各层。
-- **选择时注意：** 提供可配置观测、锚点选择及 Viser 回放；实现对照表解释了与论文、supermimic_vibed 在自碰撞、观测输入等方面的差异。 [核查版本](https://github.com/btx0424/rethinking-supermimic/blob/ecdaeb6a916a16cf7eb69b19226c17be31a6bc27/README.md)。
+- **作者：btx0424。** 在 mjlab 的 G1 跟踪任务中研究目标条件化：比较目标与本体观测直接拼接，以及用 FiLM 调制策略各层。最新版本加入 HL-Gauss critic、梯度检查，以及可选朝向坐标系或骨盆坐标系的世界模型坐标。
+- **选择时注意：** 提供可配置观测、锚点选择及 Viser 回放；实现对照表解释了与论文、supermimic_vibed 在自碰撞、观测输入等方面的差异。 [核查版本](https://github.com/btx0424/rethinking-supermimic/blob/aa77b71054a850075431248f1534bb77ca62b4d8/README.md)。
 
-<a href="https://github.com/btx0424/rethinking-supermimic/blob/ecdaeb6a916a16cf7eb69b19226c17be31a6bc27/README.md"><img src="assets/community/rethinking-comparison.png" width="720" alt="实现对照表节选 · 前三项设计选择，点击查看完整对照"></a><br><sub>实现对照表节选 · 前三项设计选择，点击查看完整对照</sub>
+<a href="https://github.com/btx0424/rethinking-supermimic/blob/aa77b71054a850075431248f1534bb77ca62b4d8/README.md"><img src="assets/community/rethinking-comparison.png" width="720" alt="实现对照表节选 · 前三项设计选择，点击查看完整对照"></a><br><sub>实现对照表节选 · 前三项设计选择，点击查看完整对照</sub>
+
+<br>
+
+### Standing MBRL vs PPO
+
+[仓库](https://github.com/JackMin7/supermimic_whole_body_tracking) · [实验说明](https://github.com/JackMin7/supermimic_whole_body_tracking/blob/553a7d32dc5fc00cbe6de5ee46479af2fcceeda8/docs/EXPERIMENTS.md) · [复现说明](https://github.com/JackMin7/supermimic_whole_body_tracking/blob/553a7d32dc5fc00cbe6de5ee46479af2fcceeda8/docs/REPRODUCIBILITY.md)
+
+- **作者：JackMin7。** 将 SuperMimic 的可微世界模型训练回路用于 G1 静态站立任务，并与基于 BeyondMimic 的 RSL-RL PPO 基线比较。
+- **上游报告：** 在相同 29 自由度 G1、任务、奖励，以及约 1 小时、256 个环境的训练下，MBRL 在 **20 秒和 60 秒**测试中均 **32 / 32** 成功；PPO 分别为 **12 / 32** 和 **16 / 32**。20 秒平均关节 RMSE 为 **0.144 vs 0.415 rad**。
+- **选择时注意：** 只有单个训练 seed，且共用 GPU、没有扰动；32 次 rollout 是同一策略的副本，不是独立 seed。作者未声称训练速度或真机收益。 [核查版本](https://github.com/JackMin7/supermimic_whole_body_tracking/blob/553a7d32dc5fc00cbe6de5ee46479af2fcceeda8/README.md)。
+
+<a href="https://github.com/JackMin7/supermimic_whole_body_tracking/blob/553a7d32dc5fc00cbe6de5ee46479af2fcceeda8/media/ppo_vs_mbrl_60s.mp4"><img src="https://raw.githubusercontent.com/JackMin7/supermimic_whole_body_tracking/553a7d32dc5fc00cbe6de5ee46479af2fcceeda8/media/PPO%E4%B8%8EMBRL%E7%AB%99%E7%AB%8B%E5%AF%B9%E7%85%A7_60%E7%A7%92%E5%8A%A8%E5%9B%BE.gif" width="640" alt="仿真 · PPO 与 MBRL 的 G1 站立任务 60 秒对照"></a><br><sub>仿真 · 60 秒 PPO / MBRL 原速对照；PPO 终止后画面冻结</sub>
 
 <br>
 
 ## 感知、地形与四足任务
 
 视觉、高度扫描、地形与四足任务适配。
+
+### SuperMimic Parkour
+
+[仓库](https://github.com/yhx1203/supermimic_parkour) · [数据配置](https://github.com/yhx1203/supermimic_parkour/blob/f398519453a25b3f10722626b7356266d8b7f875/README.md#motion-data) · [检查点](https://github.com/yhx1203/supermimic_parkour/blob/f398519453a25b3f10722626b7356266d8b7f875/logs/php_five_skills/last.pt)
+
+- **作者：yhx1203。** 基于 mjlab 和 PHP Parkour 动作匹配数据，用共享可微世界模型与 BPTT 策略学习实现五项技能的 G1 跑酷适配。
+- **上游报告：** 在单张 GPU 上训练 **4 小时出头**，策略可跨越 **130 cm 障碍**；项目发布对应检查点并提供浏览器回放。
+- **选择时注意：** PHP 动作包未随仓库分发，需要另行提供。这是上游单项演示与训练耗时报告，不是与 PPO 或 SuperMimic 的独立基准比较。 [核查版本](https://github.com/yhx1203/supermimic_parkour/blob/f398519453a25b3f10722626b7356266d8b7f875/README.md)。
+
+<a href="https://github.com/yhx1203/supermimic_parkour/blob/f398519453a25b3f10722626b7356266d8b7f875/doc/%E5%BD%95%E5%B1%8F%202026%E5%B9%B410%E6%9C%8826%E6%97%A5%2016%E6%97%B641%E5%88%8626%E7%A7%92.gif"><img src="https://raw.githubusercontent.com/yhx1203/supermimic_parkour/f398519453a25b3f10722626b7356266d8b7f875/doc/%E5%BD%95%E5%B1%8F%202026%E5%B9%B410%E6%9C%8826%E6%97%A5%2016%E6%97%B641%E5%88%8626%E7%A7%92.gif" width="720" alt="仿真 · G1 跨越 130 cm 跑酷障碍"></a><br><sub>仿真 · 五项技能 PHP 跑酷策略，11.5 秒上游演示</sub>
+
+<br>
 
 ### InstinctMJ · SuperMimic
 
@@ -262,13 +298,18 @@ SuperMimic 从仿真状态转移中学习一个共享的可微世界模型，再
 
 ### Dex SuperMimic
 
-[仓库](https://github.com/CumulusAlpha/Dex-Supermimic) · [安装](https://github.com/CumulusAlpha/Dex-Supermimic/blob/5ca57628af3666a9b2878c00f461f43d6edb5b61/README.md#download-and-installation) · [检查点](https://github.com/CumulusAlpha/Dex-Supermimic/releases/tag/pretrained-wuji-v1)
+[仓库](https://github.com/CumulusAlpha/Dex-Supermimic) · [安装](https://github.com/CumulusAlpha/Dex-Supermimic/blob/3a7c1a33fd8e5c6cc047e381ea9309da96553c27/README.md#installation) · [演示](https://github.com/CumulusAlpha/Dex-Supermimic/blob/3a7c1a33fd8e5c6cc047e381ea9309da96553c27/README.md#demos) · [检查点](https://github.com/CumulusAlpha/Dex-Supermimic/releases/tag/pretrained-wuji-v2)
 
-- **作者：CumulusAlpha。** 将世界模型策略训练用于 Wuji Hand 2 手内方块重定向，采用 mjlab / MuJoCo Warp 和 InstinctMJ 任务框架。
-- **提供内容：** 提供 model_8000.pt 检查点与 Viser 回放；手部资产随包提供，预训练检查点需从 Releases 单独下载。
-- **选择时注意：** 这是灵巧操作任务的适配，任务和奖励与人形动作跟踪不同。 [核查版本](https://github.com/CumulusAlpha/Dex-Supermimic/blob/5ca57628af3666a9b2878c00f461f43d6edb5b61/README.md)。
+- **作者：CumulusAlpha。** 将基于世界模型的策略训练用于 Wuji Hand 1/Hand 2 手内方块重定向，以及 Wuji Hand 2 旋转笔，采用 mjlab / MuJoCo Warp 和 InstinctMJ 任务框架。
+- **提供内容：** 三套任务配置、随包的手部与方块资产、Viser 回放，以及 `pretrained-wuji-v2` Release 中的三个 8,000 次迭代检查点。
+- **选择时注意：** 这是灵巧操作任务的适配，任务和奖励与人形动作跟踪不同。 [核查版本](https://github.com/CumulusAlpha/Dex-Supermimic/blob/3a7c1a33fd8e5c6cc047e381ea9309da96553c27/README.md)。
 
-<a href="https://github.com/CumulusAlpha/Dex-Supermimic/blob/5ca57628af3666a9b2878c00f461f43d6edb5b61/teaser.jpg"><img src="https://raw.githubusercontent.com/CumulusAlpha/Dex-Supermimic/5ca57628af3666a9b2878c00f461f43d6edb5b61/teaser.jpg" width="480" alt="仿真截图 · Wuji Hand 2 手内方块重定向"></a><br><sub>仿真截图 · Wuji Hand 2 手内方块重定向</sub>
+<table>
+  <tr>
+    <td width="50%" align="center"><a href="https://github.com/CumulusAlpha/Dex-Supermimic/blob/3a7c1a33fd8e5c6cc047e381ea9309da96553c27/docs/demos/hand1_reorient.gif"><img src="https://raw.githubusercontent.com/CumulusAlpha/Dex-Supermimic/3a7c1a33fd8e5c6cc047e381ea9309da96553c27/docs/demos/hand1_reorient.gif" width="100%" alt="仿真 · Wuji Hand 1 手内方块重定向"></a><br><sub>Wuji Hand 1 · 手内方块重定向</sub></td>
+    <td width="50%" align="center"><a href="https://github.com/CumulusAlpha/Dex-Supermimic/blob/3a7c1a33fd8e5c6cc047e381ea9309da96553c27/docs/demos/hand2_pen_spin.gif"><img src="https://raw.githubusercontent.com/CumulusAlpha/Dex-Supermimic/3a7c1a33fd8e5c6cc047e381ea9309da96553c27/docs/demos/hand2_pen_spin.gif" width="100%" alt="仿真 · Wuji Hand 2 旋转笔"></a><br><sub>Wuji Hand 2 · 旋转笔</sub></td>
+  </tr>
+</table>
 
 <br>
 
@@ -378,13 +419,13 @@ SuperMimic 从仿真状态转移中学习一个共享的可微世界模型，再
 
 ### UniSuperMimic
 
-[仓库](https://github.com/Motphys/Uni-SuperMimic) · [安装](https://github.com/Motphys/Uni-SuperMimic/blob/faf7818e8abac3ec6abb8f00e6e904d3577f800b/README.md#installation) · [结果](https://github.com/Motphys/Uni-SuperMimic/blob/faf7818e8abac3ec6abb8f00e6e904d3577f800b/README.md#results)
+[仓库](https://github.com/Motphys/Uni-SuperMimic) · [安装](https://github.com/Motphys/Uni-SuperMimic/blob/9bdcbde1f191d88b489309182624a9877e7b6c30/README.md#installation) · [结果](https://github.com/Motphys/Uni-SuperMimic/blob/9bdcbde1f191d88b489309182624a9877e7b6c30/README.md#results)
 
-- **团队：Motphys。** 将 supermimic_vibed 移植到 UniLab 的 Manager-Based G1 任务，提供资产准备、仿真后端选择、确定性完整动作评估和视频导出。
-- **上游报告：** 采用 UniLab 1.5.0、mjwarp 和 4,096 个训练环境，第 **12,000** 次迭代的逐动作平均归一化回报为 **0.827227**，**0 / 40 条 LAFAN1/G1 动作失败**。
-- **选择时注意：** 已报告跟踪成绩使用 mjwarp；MuJoCo 和 Motrix 的运行入口不代表已经取得相同训练成绩。 [核查版本](https://github.com/Motphys/Uni-SuperMimic/blob/faf7818e8abac3ec6abb8f00e6e904d3577f800b/README.md)。
+- **团队：Motphys。** 将 supermimic_vibed 移植到 UniLab 的 Manager-Based G1 任务，提供 LAFAN1 与 BONES-SEED 数据流程、可选仿真后端、确定性完整动作评估和视频导出。
+- **上游报告：** 第 **12,000** 次迭代的 LAFAN1 检查点报告 **0.827227**、**0 / 40 失败**。为新的 BONES-SEED 对照在同机重跑 LAFAN1 得到 **0.8336、0 / 40**；在 **129,487 条 BONES-SEED 动作**上，单张 RTX 5090 训练 **2.55 小时**，在随机抽取的 **10,000 条**上评分为 **0.9262**，**30 / 10,000 失败（0.3%）**。
+- **选择时注意：** BONES-SEED 是抽样评估，不是全量动作库；已发布的跟踪成绩均使用 mjwarp，MuJoCo 和 Motrix 的运行入口不代表已经取得相同训练成绩。 [核查版本](https://github.com/Motphys/Uni-SuperMimic/blob/9bdcbde1f191d88b489309182624a9877e7b6c30/README.md)。
 
-<a href="https://github.com/Motphys/Uni-SuperMimic/blob/faf7818e8abac3ec6abb8f00e6e904d3577f800b/docs/assets/supermimic_comparison.mp4"><img src="https://raw.githubusercontent.com/Motphys/Uni-SuperMimic/faf7818e8abac3ec6abb8f00e6e904d3577f800b/docs/assets/supermimic_comparison.gif" width="480" alt="仿真 · G1 跳跃跟踪"></a><br><sub>仿真 · G1 跳跃跟踪</sub>
+<a href="https://github.com/Motphys/Uni-SuperMimic/blob/9bdcbde1f191d88b489309182624a9877e7b6c30/docs/assets/supermimic_comparison.mp4"><img src="https://raw.githubusercontent.com/Motphys/Uni-SuperMimic/9bdcbde1f191d88b489309182624a9877e7b6c30/docs/assets/supermimic_comparison.gif" width="480" alt="仿真 · G1 跳跃跟踪"></a><br><sub>仿真 · G1 跳跃跟踪</sub>
 
 <br>
 
@@ -507,13 +548,13 @@ SuperMimic 从仿真状态转移中学习一个共享的可微世界模型，再
 
 ### FlatWorld · SuperMimic-2D
 
-[仓库](https://github.com/swaggyliu/FlatWorld) · [快速开始](https://github.com/swaggyliu/FlatWorld/blob/207e9e9c61ef21b8f145c3e0c4d8b121a03bf45a/supermimic2d/README.md#quick-start) · [参考动作](https://github.com/swaggyliu/FlatWorld/blob/207e9e9c61ef21b8f145c3e0c4d8b121a03bf45a/supermimic2d/README.md#reference-motions-lafan-like-2d)
+[仓库](https://github.com/swaggyliu/FlatWorld) · [快速开始](https://github.com/swaggyliu/FlatWorld/blob/886dad634c44ed652eea951be62370478f367d8b/supermimic2d/README.md#quick-start) · [参考动作](https://github.com/swaggyliu/FlatWorld/blob/886dad634c44ed652eea951be62370478f367d8b/supermimic2d/README.md#reference-motions-lafan-like-2d)
 
 - **作者：swaggyliu。** 用八关节二维人形角色，在 FlatWorld 中实现共享世界模型与想象策略学习的动作跟踪流程。
-- **提供内容：** 提供训练、参考动作物理处理、逐技能渲染与多技能展示，包含行走、跑步、跳跃、舞蹈等动作。
-- **选择时注意：** 参考动作是程序生成的 LAFAN 风格二维动作，并非 LAFAN1 数据集；角色还使用轻度根部辅助，因此适合作为方法示例，不是 G1 基准复现。 [核查版本](https://github.com/swaggyliu/FlatWorld/blob/207e9e9c61ef21b8f145c3e0c4d8b121a03bf45a/supermimic2d/README.md)。
+- **提供内容：** 提供训练、参考动作物理处理、逐技能渲染和一段 **33.3 秒多技能宣传片**，覆盖行走、跑步、跳跃、舞蹈、格斗、蹲伏及跌倒后起身。
+- **选择时注意：** 参考动作是程序生成的 LAFAN 风格二维动作，并非 LAFAN1 数据集；角色还使用轻度根部辅助，因此适合作为方法示例，不是 G1 基准复现。 [核查版本](https://github.com/swaggyliu/FlatWorld/blob/886dad634c44ed652eea951be62370478f367d8b/supermimic2d/README.md)。
 
-<a href="https://github.com/swaggyliu/FlatWorld/blob/207e9e9c61ef21b8f145c3e0c4d8b121a03bf45a/supermimic2d/runs/lafan2d/showcase_30s.mp4"><img src="assets/community/flatworld.gif" width="480" alt="二维仿真 · 动作跟踪集锦"></a><br><sub>二维仿真 · 动作跟踪集锦</sub>
+<a href="https://github.com/swaggyliu/FlatWorld/blob/886dad634c44ed652eea951be62370478f367d8b/docs/media/promo_supermimic.mp4"><img src="assets/community/flatworld.gif" width="480" alt="二维仿真 · 33 秒多技能动作跟踪宣传片"></a><br><sub>二维仿真 · 完整 33.3 秒多技能宣传片</sub>
 
 ## 相关方法与基线
 
