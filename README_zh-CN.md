@@ -43,6 +43,7 @@
 - [参与贡献](#参与贡献)
 - [论文引用](#论文引用)
 - [致谢与许可](#致谢与许可)
+- [Star History](#star-history)
 
 ## 原始 SuperMimic
 
@@ -623,3 +624,16 @@ SuperMimic 从仿真状态转移中学习一个共享的可微世界模型，再
 感谢 SuperMimic 原作者和社区维护者。清单的组织和展示参考了 [Awesome Nano Banana Images](https://github.com/PicoTrex/Awesome-Nano-Banana-images) 与 [Awesome World Models](https://github.com/knightnemo/Awesome-World-Models)。
 
 本清单原创整理文字采用 [CC0 1.0](LICENSE)。第三方代码、论文、数据及媒体保留各自的权利与使用条款，包括存放在本仓库中的[原论文框架图与官方视频预览](assets/official/README.md)；这些素材不属于本清单的 CC0 授权范围。[社区媒体预览与来源](assets/community/README.md)同样保留原作者权利。
+
+## Star History
+
+<p align="center"><b>如果这份清单对你有帮助，欢迎<a href="https://github.com/miao-org/awesome-supermimic">点个 Star</a>，让更多人发现它。</b></p>
+
+<p align="center">
+  <a href="https://star-history.com/#miao-org/awesome-supermimic&Date">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=miao-org/awesome-supermimic&type=Date&theme=dark">
+      <img src="https://api.star-history.com/svg?repos=miao-org/awesome-supermimic&type=Date" alt="Star history chart for miao-org/awesome-supermimic" width="100%">
+    </picture>
+  </a>
+</p>
