@@ -20,6 +20,16 @@ Checked on **2026-10-27**, source revision **`65e4d524bd31fdc4284ba8c6e624fb0b01
 
 Rights in the original footage remain with its authors; it is excluded from this collection's CC0 dedication.
 
+## In-Hand Rotation mjlab animated preview
+
+Checked on **2026-10-28**, source revision **`0ab03eb2244b4a1a020d94ef38a4823bb9e15ba0`**.
+
+- **Source / maintainer:** [Msornerrrr / in-hand-rotation-mjlab](https://github.com/Msornerrrr/in-hand-rotation-mjlab).
+- **Original preview:** [assets/sim_fingertip.gif](https://github.com/Msornerrrr/in-hand-rotation-mjlab/blob/0ab03eb2244b4a1a020d94ef38a4823bb9e15ba0/assets/sim_fingertip.gif). Embedded directly from the pinned source at a display width of 480 pixels, preserving aspect ratio; no copy, excerpt, screenshot preparation or re-encoding.
+- **Context:** A simulated rollout of the repository's joints-only world-model policy turning four of its 22 objects (sphere, cube, cylinder, cuboid) palm down at pad friction 0.35; each panel shows a view from below and one up the palm normal. This is an upstream simulation demonstration, not an independent evaluation or a real-robot result.
+
+Rights in the original footage remain with its authors; it is excluded from this collection's CC0 dedication.
+
 ## Video previews
 
 These GIFs show demonstrations published by the linked projects. They are converted from the original videos; this collection did not run the experiments.
