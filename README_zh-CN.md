@@ -71,7 +71,7 @@ SuperMimic 从仿真状态转移中学习一个共享的可微世界模型，再
 
 ## 社区项目
 
-按用途收录 **34 个社区项目**。已有条目于 **2026-10-26** 对照上游文档及部分源码核查，ScaleBFM_Plus、SuperMimic Mjlab、SuperMimic for Robot Manipulation 与 Muscle SuperMimic 于 **2026-10-27** 核查，In-Hand Rotation mjlab 于 **2026-10-28** 核查，每项附有对应版本的来源链接。成绩和演示均为上游报告，本清单未独立重跑实验。
+按用途收录 **35 个社区项目**。已有条目于 **2026-10-26** 对照上游文档及部分源码核查，ScaleBFM_Plus、SuperMimic Mjlab、SuperMimic for Robot Manipulation 与 Muscle SuperMimic 于 **2026-10-27** 核查，In-Hand Rotation mjlab 于 **2026-10-28** 核查，每项附有对应版本的来源链接。成绩和演示均为上游报告，本清单未独立重跑实验。
 
 - 🚀 **[真机部署与 Sim2Real](#真机部署与-sim2real)** — **2 个项目** · 查看真机运行栈与 Sim2Real 迁移路径。
 - 🔬 **[独立复现](#独立复现)** — **4 个项目** · 复现与评估原始方法。
@@ -80,7 +80,7 @@ SuperMimic 从仿真状态转移中学习一个共享的可微世界模型，再
 - 🦾 **[操作与灵巧手](#操作与灵巧手)** — **4 个项目** · 查看机械臂、手部与物体交互任务。
 - 💪 **[肌肉驱动、交互与诊断](#肌肉驱动交互与诊断)** — **3 个项目** · 查看肌肉驱动本体、物理交互和接触诊断。
 - 🛠️ **[框架与训练栈](#框架与训练栈)** — **6 个项目** · 查看可复用训练、评估流程及与既有框架的集成。
-- 🤖 **[机器人移植与重定向](#机器人移植与重定向)** — **5 个项目** · 查看机器人、仿真器和硬件平台适配及动作重定向工具。
+- 🤖 **[机器人移植与重定向](#机器人移植与重定向)** — **6 个项目** · 查看机器人、仿真器和硬件平台适配及动作重定向工具。
 - 💡 **[方法借鉴与探索](#方法借鉴与探索)** — **3 个项目** · 将相关思路迁移到其他控制问题。
 
 ## 真机部署与 Sim2Real
@@ -487,6 +487,18 @@ SuperMimic 从仿真状态转移中学习一个共享的可微世界模型，再
 <a href="https://github.com/panhainan2020/SuperMimic-MuJoCo/blob/db045afa9c52458f213e2c66037387e9c109a03a/README.md"><img src="assets/community/mujoco-evaluation.png" width="720" alt="报告截图 · LAFAN 训练动作与未见 100STYLE 动作"></a><br><sub>报告截图 · LAFAN 训练动作与未见 100STYLE 动作</sub>
 
 [完整视频展示](https://supermimic-mujoco-results.zippyaspen7.chatgpt.site)
+
+<br>
+
+### SuperMimic 轮腿版（wheelbipe）
+
+[仓库](https://github.com/RadiantForever/supermimic_wheelbipe) · [安装](https://github.com/RadiantForever/supermimic_wheelbipe/blob/0bf3456299a9f754289da58dce6c97c46afd3f03/README.md#setup) · [结果](https://github.com/RadiantForever/supermimic_wheelbipe/blob/0bf3456299a9f754289da58dce6c97c46afd3f03/README.md#results)
+
+- **作者：RadiantForever。** 将 SuperMimic 下游移植到 wheelbipe V14_2 轮腿机器人。人形动作库换成速度指令库；6 维动作（4 个腿目标 + 2 个轮速）在可微世界模型里优化，PhysX / Isaac Lab 只提供数据，训练过程不跑 PPO。
+- **上游报告：** 16 条指令网格中统一检查点 **0 / 16 摔倒**、归一化回报 **0.983**；高速专项检查点跟踪 **1.40 m/s、误差 0.01**，偏航到 **10.21 rad/s（1.62 圈/秒）**，变腿行程 **0.20-0.28 m**。单卡 RTX 4090，4096 个并行环境，多段续训累计 3.72 小时；单次运行，未做多随机种子。
+- **选择时注意：** 同一台机器人的预训练 PPO 策略只在世界模型前 800 轮混入 buffer，且未做「完全不给老师」的对照，因此这些数字不能全部归因于方法本身。移植需要上游仓库的机器人 USD 资产，没有 URDF。 [核查版本](https://github.com/RadiantForever/supermimic_wheelbipe/blob/0bf3456299a9f754289da58dce6c97c46afd3f03/README.md)。
+
+<a href="https://www.bilibili.com/video/BV1haxM6CEGm/"><img src="assets/community/wheelbipe-grid.gif" width="480" alt="仿真 · 四种指令工况"></a><br><sub>仿真 · 四种指令工况：10 rad/s 偏航（左上）、0.20-0.28 m 变腿（右上）、1.5 m/s 前进并变腿（左下）、偏航并变腿（右下）</sub>
 
 <br>
 

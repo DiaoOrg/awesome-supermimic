@@ -39,12 +39,14 @@ These GIFs show demonstrations published by the linked projects. They are conver
 | [morphmimic.gif](morphmimic.gif) | [Lizhi Yang and the MorphMimic authors](https://github.com/lzyang2000/morphmimic) | [MP4](https://lzyang2000.github.io/morphmimic/static/videos/dance_hiphop_shuffle_sequence_v_001_R_003__A306.mp4) | 20.02 s |
 | [backflip.gif](backflip.gif) | [liudi159](https://github.com/liudi159/supermimic-backflip-5090) | [MP4](https://raw.githubusercontent.com/liudi159/supermimic-backflip-5090/5b313d75e804cdd2ff1ce9bdcfa899a98eca856b/media/v14_blue_checker.mp4) | 11.44 s |
 | [flatworld.gif](flatworld.gif) | [swaggyliu](https://github.com/swaggyliu/FlatWorld) | [MP4](https://raw.githubusercontent.com/swaggyliu/FlatWorld/207e9e9c61ef21b8f145c3e0c4d8b121a03bf45a/supermimic2d/runs/lafan2d/showcase_30s.mp4) | 31.60 s |
+| [wheelbipe-grid.gif](wheelbipe-grid.gif) | [RadiantForever](https://github.com/RadiantForever/supermimic_wheelbipe) | [Bilibili](https://www.bilibili.com/video/BV1haxM6CEGm/) | 1.60 s (excerpt, 4 panels) |
 
 Retrieved on 2026-10-26. Each preview preserves the complete selected clip, its framing, frame order and original playback speed. They are scaled to 480 × 270, sampled at 12 fps and quantized to 128 colors, with no added borders, motion interpolation or generated content. GIF timing is rounded to centiseconds.
 
 - **MorphMimic:** the project website’s street-shuffle demonstration of G1, X2 Ultra and T2 using one shared policy; this is the complete 20.02-second clip, not the longer project film.
 - **Backflip:** the final V14 policy rollout. The project reports a failed strict evaluation due to non-foot contact; the GIF is not evidence of passing that evaluation.
 - **FlatWorld:** the complete upstream 2D motion-tracking showcase.
+- **SuperMimic Wheel-Legged:** an excerpt rather than a complete clip. The sources are four separate 1920×1080 / 60 fps four-panel recordings; from each one the right-bottom panel is kept (10 rad/s yaw, 0.20-0.28 m leg cycle, 1.5 m/s forward with leg cycle, and yaw with leg cycle), trimmed to 0.5-2.1 s, resampled to 18 fps, and tiled 2×2 at 480 px total width. Frame order and playback speed are unchanged. Checked on 2026-10-28 against revision `0bf3456299a9f754289da58dce6c97c46afd3f03`.
 
 All rights in the source footage remain with the original authors. These third-party previews are excluded from this collection’s CC0 dedication. Refer to the linked projects for their terms; this collection does not grant new rights to the footage.
 

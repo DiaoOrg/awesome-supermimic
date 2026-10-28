@@ -71,7 +71,7 @@ The authors report surpassing SONIC's released-checkpoint return after **3 hours
 
 ## Community projects
 
-**34 community projects**, grouped by purpose. Existing descriptions were checked against upstream documentation and selected source files on **2026-10-26**; ScaleBFM_Plus, SuperMimic Mjlab, SuperMimic for Robot Manipulation and Muscle SuperMimic were checked on **2026-10-27**; In-Hand Rotation mjlab on **2026-10-28**. Each entry links to the reviewed source revision. Results and demos are upstream reports; this list has not independently rerun the experiments.
+**35 community projects**, grouped by purpose. Existing descriptions were checked against upstream documentation and selected source files on **2026-10-26**; ScaleBFM_Plus, SuperMimic Mjlab, SuperMimic for Robot Manipulation and Muscle SuperMimic were checked on **2026-10-27**; In-Hand Rotation mjlab on **2026-10-28**. Each entry links to the reviewed source revision. Results and demos are upstream reports; this list has not independently rerun the experiments.
 
 - 🚀 **[Real-robot deployment and Sim2Real](#real-robot-deployment-and-sim2real)** — **2 projects** · Follow real-robot runtimes and sim-to-real transfer paths.
 - 🔬 **[Independent reproductions](#independent-reproductions)** — **4 projects** · Reproduce and evaluate the original method.
@@ -80,7 +80,7 @@ The authors report surpassing SONIC's released-checkpoint return after **3 hours
 - 🦾 **[Manipulation and dexterous hands](#manipulation-and-dexterous-hands)** — **4 projects** · Find arm, hand and object-interaction tasks.
 - 💪 **[Muscle, interaction and diagnostics](#muscle-interaction-and-diagnostics)** — **3 projects** · Explore muscle-actuated bodies, physical interaction and contact-focused studies.
 - 🛠️ **[Frameworks and training stacks](#frameworks-and-training-stacks)** — **6 projects** · Find integrations and reusable training or evaluation stacks.
-- 🤖 **[Robot porting and retargeting](#robot-porting-and-retargeting)** — **5 projects** · Find robot-, simulator- or hardware-specific ports and retargeting tools.
+- 🤖 **[Robot porting and retargeting](#robot-porting-and-retargeting)** — **6 projects** · Find robot-, simulator- or hardware-specific ports and retargeting tools.
 - 💡 **[Inspired experiments](#inspired-experiments)** — **3 projects** · Transfer ideas to other control problems.
 
 ## Real-robot deployment and Sim2Real
@@ -487,6 +487,18 @@ Robot-, simulator- and hardware-specific ports, together with motion-retargeting
 <a href="https://github.com/panhainan2020/SuperMimic-MuJoCo/blob/db045afa9c52458f213e2c66037387e9c109a03a/README.md"><img src="assets/community/mujoco-evaluation.png" width="720" alt="Report screenshot · LAFAN training motions and unseen 100STYLE clips"></a><br><sub>Report screenshot · LAFAN training motions and unseen 100STYLE clips</sub>
 
 [Full video gallery](https://supermimic-mujoco-results.zippyaspen7.chatgpt.site)
+
+<br>
+
+### SuperMimic Wheel-Legged (wheelbipe)
+
+[Repository](https://github.com/RadiantForever/supermimic_wheelbipe) · [Setup](https://github.com/RadiantForever/supermimic_wheelbipe/blob/0bf3456299a9f754289da58dce6c97c46afd3f03/README.md#setup) · [Results](https://github.com/RadiantForever/supermimic_wheelbipe/blob/0bf3456299a9f754289da58dce6c97c46afd3f03/README.md#results)
+
+- **By RadiantForever.** Downstream port of SuperMimic to the wheeled-legged wheelbipe V14_2. The humanoid motion library is replaced by a velocity-command library; a 6-DoF action policy (four leg targets plus two wheel speeds) is optimised inside the differentiable world model, with PhysX / Isaac Lab as the data source and no PPO in the loop.
+- **Upstream report:** On a 16-command grid the unified checkpoint reaches **0 / 16 falls** and normalized return **0.983**; a speed-focused checkpoint tracks **1.40 m/s at 0.01 error**, and yaw reaches **10.21 rad/s (1.62 rev/s)** with a **0.20-0.28 m** leg cycle. Single RTX 4090, 4096 environments, 3.72 h cumulative over resumed runs; one run, no seed sweep.
+- **Useful context:** A pretrained PPO policy for the same robot is mixed into the world-model buffer for the first 800 iterations only, and no teacher-free ablation was run, so these numbers are not attributable to the method alone. The port requires the robot USD asset from the upstream repository; there is no URDF. [Source snapshot](https://github.com/RadiantForever/supermimic_wheelbipe/blob/0bf3456299a9f754289da58dce6c97c46afd3f03/README.md).
+
+<a href="https://www.bilibili.com/video/BV1haxM6CEGm/"><img src="assets/community/wheelbipe-grid.gif" width="480" alt="Simulation · four commanded conditions"></a><br><sub>Simulation · four commanded conditions: 10 rad/s yaw (top-left), 0.20-0.28 m leg cycle (top-right), 1.5 m/s forward with leg cycle (bottom-left), yaw with leg cycle (bottom-right)</sub>
 
 <br>
 
