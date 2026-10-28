@@ -43,6 +43,7 @@ Start with the original work below, then choose an implementation by framework a
 - [Contributing](#contributing)
 - [Citation](#citation)
 - [Acknowledgements and license](#acknowledgements-and-license)
+- [Star History](#star-history)
 
 ## Original SuperMimic
 
@@ -623,3 +624,14 @@ When building on the method, cite the **original SuperMimic paper** and credit t
 Thanks to the original SuperMimic authors and all community maintainers. The presentation of this list is inspired by [Awesome Nano Banana Images](https://github.com/PicoTrex/Awesome-Nano-Banana-images) and [Awesome World Models](https://github.com/knightnemo/Awesome-World-Models).
 
 The original curation text in this collection is released under [CC0 1.0](LICENSE). Third-party code, papers, datasets, and media retain their respective rights and terms. This includes the [original paper figure and official video previews](assets/official/README.md) stored in this repository; they are not covered by this collection's CC0 dedication. [Community media previews and credits](assets/community/README.md) follow the same attribution rule.
+
+## Star History
+
+<p align="center">
+  <a href="https://star-history.com/#miao-org/awesome-supermimic&Date">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=miao-org/awesome-supermimic&type=Date&theme=dark">
+      <img src="https://api.star-history.com/svg?repos=miao-org/awesome-supermimic&type=Date" alt="Star history chart for miao-org/awesome-supermimic" width="100%">
+    </picture>
+  </a>
+</p>
