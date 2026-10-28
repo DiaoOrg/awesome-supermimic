@@ -71,13 +71,13 @@ SuperMimic 从仿真状态转移中学习一个共享的可微世界模型，再
 
 ## 社区项目
 
-按用途收录 **36 个社区项目**。简介和演示于 **2026-10-28** 对照上游文档及部分源码核查，每项附有对应版本的来源链接。成绩和演示均为上游报告，本清单未独立重跑实验。
+按用途收录 **37 个社区项目**。本次于 **2026-10-28** 对照上游文档及部分源码新增或更新 12 个项目条目，In-Hand Rotation mjlab 也于当日加入；其余条目保留此前的来源版本。每项附有对应版本的来源链接。成绩和演示均为上游报告，本清单未独立重跑实验。
 
 - 🚀 **[真机部署与 Sim2Real](#真机部署与-sim2real)** — **2 个项目** · 查看真机运行栈与 Sim2Real 迁移路径。
 - 🔬 **[独立复现](#独立复现)** — **5 个项目** · 复现与评估原始方法。
 - 🧩 **[方法改动与形态适配](#方法改动与形态适配)** — **5 个项目** · 查看算法改动、多本体形态适配和专项控制研究。
 - 👁️ **[感知、地形与四足任务](#感知地形与四足任务)** — **4 个项目** · 查看视觉、高度扫描、地形和四足任务适配。
-- 🦾 **[操作与灵巧手](#操作与灵巧手)** — **3 个项目** · 查看机械臂、手部与物体交互任务。
+- 🦾 **[操作与灵巧手](#操作与灵巧手)** — **4 个项目** · 查看机械臂、手部与物体交互任务。
 - 💪 **[肌肉驱动、交互与诊断](#肌肉驱动交互与诊断)** — **3 个项目** · 查看肌肉驱动本体、物理交互和接触诊断。
 - 🛠️ **[框架与训练栈](#框架与训练栈)** — **6 个项目** · 查看可复用训练、评估流程及与既有框架的集成。
 - 🤖 **[机器人移植与重定向](#机器人移植与重定向)** — **5 个项目** · 查看机器人、仿真器和硬件平台适配及动作重定向工具。
@@ -132,8 +132,8 @@ SuperMimic 从仿真状态转移中学习一个共享的可微世界模型，再
 [仓库](https://github.com/CuboiLeo/SuperMimic-Reproduced) · [环境与安装](https://github.com/CuboiLeo/SuperMimic-Reproduced/blob/ba6105349069bf040f1fdad60873d13138d505a2/README.md#setup) · [实验日志](https://github.com/CuboiLeo/SuperMimic-Reproduced/blob/ba6105349069bf040f1fdad60873d13138d505a2/docs/EXPERIMENTS.md) · [检查点](https://github.com/CuboiLeo/SuperMimic-Reproduced/releases/tag/e8-boneseed-100k)
 
 - **作者：CuboiLeo。** 基于 mjlab 从零实现 G1 跟踪，提供中文复现记录、LAFAN1/BONES-SEED 数据处理、多卡训练、交互回放和全量数据检查点。
-- **上游报告：** 按论文观测在 BONES-SEED 全量上训练，4 张 RTX 5090 运行 **7.1 小时（约 28 GPU·h）**，归一化回报 **0.930**，**145 / 129,491 失败（0.11%）**。在 LAFAN1 上，锚点相对观测达到 **0.904、3 / 40 失败**；三次论文观测运行则为 **0.56–0.59、3–9 / 40 失败**。
-- **选择时注意：** BONES-SEED 片段较短（中位 5.8 秒），而论文观测策略在 100–300 秒的 LAFAN1 整段动作上会漂移；两种观测口径不能直接比较。 [核查版本](https://github.com/CuboiLeo/SuperMimic-Reproduced/blob/ba6105349069bf040f1fdad60873d13138d505a2/README.md)。
+- **上游报告：** 按论文观测在 **129,943 条 BONES-SEED 动作**上训练，4 张 RTX 5090 运行 **7.1 小时（约 28 GPU·h）**。实验日志报告该动作库上**回报 0.930、495 / 129,943 失败**；按名称排除 452 条后，过滤评测集上为**回报 0.932、145 / 129,491 失败（0.11%）**。在 LAFAN1 上，锚点相对观测达到 **0.904、3 / 40 失败**；三次论文观测运行则为 **0.56–0.59、3–9 / 40 失败**。
+- **选择时注意：** BONES-SEED 片段较短（中位 5.8 秒），而论文观测策略在 100–300 秒的 LAFAN1 整段动作上会漂移；两种观测口径不能直接比较。上游 README 将 0.930 与过滤后的失败数并列；上述分集合数据采用[实验日志](https://github.com/CuboiLeo/SuperMimic-Reproduced/blob/ba6105349069bf040f1fdad60873d13138d505a2/docs/EXPERIMENTS.md)。 [核查版本](https://github.com/CuboiLeo/SuperMimic-Reproduced/blob/ba6105349069bf040f1fdad60873d13138d505a2/README.md)。
 
 <a href="https://github.com/CuboiLeo/SuperMimic-Reproduced/releases/tag/e8-boneseed-100k"><img src="https://raw.githubusercontent.com/CuboiLeo/SuperMimic-Reproduced/ba6105349069bf040f1fdad60873d13138d505a2/media/g1_boneseed_highlights.gif" width="480" alt="仿真 · 同一个 BONES-SEED 全量策略完成跳跃、转体、单脚跳和起身"></a><br><sub>仿真 · 同一个 BONES-SEED 全量策略完成六段高难度动作</sub>
 
@@ -155,11 +155,11 @@ SuperMimic 从仿真状态转移中学习一个共享的可微世界模型，再
 
 [仓库](https://github.com/Breezewrf/supermimic_mjlab) · [安装](https://github.com/Breezewrf/supermimic_mjlab/blob/77183062eb92026bfbee2daf276f87cad36fd957/doc/setup_en.md) · [消融实验与检查点](https://github.com/Breezewrf/supermimic_mjlab/blob/77183062eb92026bfbee2daf276f87cad36fd957/README.md#ablation-results-and-released-checkpoint)
 
-- **作者：Breezewrf。** 基于 mjlab 为 Unitree G1 独立复现 SuperMimic，提供完整的性能提升消融实验、多动作与速度训练、OOD 回放、video2motion、完整动作评估，以及已发布的策略与世界模型检查点。
+- **作者：Breezewrf。** 基于 mjlab 为 Unitree G1 独立复现 SuperMimic，提供完整的性能提升消融实验、多动作与速度训练、OOD 动作回放、video2motion、完整动作评估，以及已发布的策略与世界模型检查点。
 - **上游报告：** 所选检查点在全部 40 条 LAFAN 动作的固定起点、完整片段确定性评估中，达到 **40 / 40 成功、平均完成率 100%、归一化回报 0.8528**。使用 **单张 RTX A6000 48 GB**、4,096 个环境和 FP32 网络，训练 **15,000 次迭代约需 4 小时**。
 - **性能提升消融：** 完整记录从 Actor/Critic 输入归一化，依次加入躯干坐标系下的动作朝向锚点、世界模型归一化及修正余弦学习率调度的提升过程：在全部 40 条动作、15,000 次迭代的评估中，归一化回报均值为 **0.6016 → 0.8130 → 0.8504 → 0.8526**。最终重复运行均值与上述所选检查点分数分别报告。 [核查版本](https://github.com/Breezewrf/supermimic_mjlab/blob/77183062eb92026bfbee2daf276f87cad36fd957/README.md)。
 
-<a href="https://github.com/Breezewrf/supermimic_mjlab/blob/77183062eb92026bfbee2daf276f87cad36fd957/doc/assets/demo_v0.gif"><img src="assets/community/mjlab-demo.gif" width="480" alt="仿真 · SuperMimic Mjlab OOD 动作回放的 12 秒截取"></a><br><sub>仿真 · 60.8 秒 OOD 回放中的 12 秒片段；点击查看上游完整 GIF</sub>
+<a href="https://github.com/Breezewrf/supermimic_mjlab/blob/77183062eb92026bfbee2daf276f87cad36fd957/doc/assets/demo_v0.gif"><img src="assets/community/mjlab-demo.gif" width="480" alt="仿真 · SuperMimic Mjlab 动作回放的 12 秒截取"></a><br><sub>仿真 · 60.8 秒动作回放中的 12 秒片段；点击查看上游完整 GIF</sub>
 
 <br>
 
@@ -210,7 +210,7 @@ SuperMimic 从仿真状态转移中学习一个共享的可微世界模型，再
 [仓库](https://github.com/Alchedata/supermimic-locomujoco) · [安装](https://github.com/Alchedata/supermimic-locomujoco/blob/de9f39191b9e8b87ff1afd2b0129dd93d4795e8c/README.md#setup) · [结果](https://github.com/Alchedata/supermimic-locomujoco/blob/de9f39191b9e8b87ff1afd2b0129dd93d4795e8c/README.md#results)
 
 - **团队：Alchedata。** 用 JAX 与 LocoMuJoCo 将方法移植到 H1，在 MLP、残差专家、动作敏感度和可信度相关的世界模型变体之外，新增**全状态 ODE 世界模型**和**抗饱和正则化**。
-- **上游报告：** 固定 5,000 次迭代检查点、160 个初始状态时，Euler ODE 加抗饱和正则化在三个 seed 上把总失败数从 **15 / 480 降到 1 / 480**。种子 43 从 **878.71 / 15 次失败**提升到 **935.38 / 0 次**，种子 42 则略有变差，因此并非所有 seed 都提高分数。
+- **上游报告：** 固定 5,000 次迭代检查点、160 个初始状态时，在 Euler ODE 模型上增加抗饱和正则化，在三个 seed 上把总失败数从 **15 / 480 降到 1 / 480**。种子 43 从 **878.71 / 15 次失败**提升到 **935.38 / 0 次**，种子 42 则略有变差，因此并非所有 seed 都提高分数。
 - **选择时注意：** 指标是 LocoMuJoCo 回合回报，与 G1 归一化跟踪分数不同；中点 ODE 加速实验仍在进行，未作为已完成结果计入。 [核查版本](https://github.com/Alchedata/supermimic-locomujoco/blob/de9f39191b9e8b87ff1afd2b0129dd93d4795e8c/README.md)。
 
 <a href="https://github.com/Alchedata/supermimic-locomujoco/blob/de9f39191b9e8b87ff1afd2b0129dd93d4795e8c/docs/figures/return_vs_step.png"><img src="assets/community/locomujoco-results.png" width="720" alt="训练曲线 · ODE 与抗饱和变体的回报随训练步数变化"></a><br><sub>上游训练曲线 · ODE 与抗饱和变体，固定 5k 评估检查点</sub>
@@ -224,7 +224,7 @@ SuperMimic 从仿真状态转移中学习一个共享的可微世界模型，再
 - **作者：btx0424。** 在 mjlab 的 G1 跟踪任务中研究目标条件化：比较目标与本体观测直接拼接，以及用 FiLM 调制策略各层。最新版本加入 HL-Gauss critic、梯度检查，以及可选朝向坐标系或骨盆坐标系的世界模型坐标。
 - **选择时注意：** 提供可配置观测、锚点选择及 Viser 回放；实现对照表解释了与论文、supermimic_vibed 在自碰撞、观测输入等方面的差异。 [核查版本](https://github.com/btx0424/rethinking-supermimic/blob/aa77b71054a850075431248f1534bb77ca62b4d8/README.md)。
 
-<a href="https://github.com/btx0424/rethinking-supermimic/blob/aa77b71054a850075431248f1534bb77ca62b4d8/README.md"><img src="assets/community/rethinking-comparison.png" width="720" alt="实现对照表节选 · 前三项设计选择，点击查看完整对照"></a><br><sub>实现对照表节选 · 前三项设计选择，点击查看完整对照</sub>
+<a href="https://github.com/btx0424/rethinking-supermimic/blob/ecdaeb6a916a16cf7eb69b19226c17be31a6bc27/README.md"><img src="assets/community/rethinking-comparison.png" width="720" alt="历史实现对照表节选 · 2026-10-26 快照；当前对照见上方链接"></a><br><sub>历史实现对照表节选 · 2026-10-26 快照；当前对照见上方链接</sub>
 
 <br>
 
@@ -334,6 +334,18 @@ SuperMimic 从仿真状态转移中学习一个共享的可微世界模型，再
 - **选择时注意：** 上述 SuperMimic 分数使用无噪声观测；新版评估已加入观测噪声，公开检查点尚未按这一设置重评。 [核查版本](https://github.com/shuayyy/humanoid-amp-ppo/blob/4889389118e0c88d3945dff54d2cd3f992ed815e/README.md)。
 
 <a href="https://github.com/shuayyy/humanoid-amp-ppo/blob/4889389118e0c88d3945dff54d2cd3f992ed815e/assets/supermimic_vs_ppo_lift.mp4"><img src="https://raw.githubusercontent.com/shuayyy/humanoid-amp-ppo/4889389118e0c88d3945dff54d2cd3f992ed815e/assets/supermimic_vs_ppo_lift.gif" width="480" alt="搬箱 · SuperMimic 12k / PPO-Sim 6k 次迭代"></a><br><sub>搬箱 · SuperMimic 12k / PPO-Sim 6k 次迭代</sub>
+
+<br>
+
+### In-Hand Rotation mjlab
+
+[仓库](https://github.com/Msornerrrr/in-hand-rotation-mjlab) · [安装](https://github.com/Msornerrrr/in-hand-rotation-mjlab/blob/0ab03eb2244b4a1a020d94ef38a4823bb9e15ba0/README.md#install) · [结果](https://github.com/Msornerrrr/in-hand-rotation-mjlab/blob/0ab03eb2244b4a1a020d94ef38a4823bb9e15ba0/README.md#results) · [检查点](https://github.com/Msornerrrr/in-hand-rotation-mjlab/blob/0ab03eb2244b4a1a020d94ef38a4823bb9e15ba0/README.md#quick-start-the-released-policies)
+
+- **作者：Msornerrrr。** 在 mjlab / MuJoCo Warp 中将 SuperMimic 式世界模型策略学习（在线重拟合的 MLP 世界模型、通过想象轨迹反向传播、TD(λ) 评论家与权重平均）用于 LEAP 灵巧手，并在相同环境上提供 PPO 基线：掌心向上的方块偏航旋转、SO(3) 方块重定向（仅 PPO）和掌心向下用指尖旋转 22 种物体；使用在真实手上辨识的舵机模型。两种方法的检查点均已发布。
+- **上游报告：** 方块偏航任务中，世界模型策略在 **25 分钟、1,800 万环境步**时达到 PPO 的水平（每秒奖励约 0.26），PPO 需 6.5 小时、2.62 亿步，最终为 **0.292 对 0.261**。掌心向下指尖旋转任务中（每个物体 64 回合、每回合 60 秒，指垫摩擦随机化 0.25–1.2），仅用关节信息的世界模型策略计分偏航达到 **933°**、掉落 **4.0%**，而由教师蒸馏并已部署的 PPO 学生为 **675° / 10.4%**，特权 PPO 教师为 **944° / 2.1%**。
+- **选择时注意：** 世界模型结果均在仿真中；真实机器人视频（偏航与 SO(3)）展示的是 PPO 策略。指尖任务数值采用仓库自带评测（旋转奖励速度上限 0.3 rad/s，物体偏移 30 mm 记为掉落）。每种配置单次运行；训练时间基于单张 RTX 4090。 [核查版本](https://github.com/Msornerrrr/in-hand-rotation-mjlab/blob/0ab03eb2244b4a1a020d94ef38a4823bb9e15ba0/README.md)。
+
+<a href="https://github.com/Msornerrrr/in-hand-rotation-mjlab"><img src="https://raw.githubusercontent.com/Msornerrrr/in-hand-rotation-mjlab/0ab03eb2244b4a1a020d94ef38a4823bb9e15ba0/assets/sim_fingertip.gif" width="480" alt="仿真 · 仅用关节信息的世界模型策略在掌心向下时用指尖旋转球体、方块、圆柱和长方体"></a><br><sub>仿真 · 掌心向下指尖旋转，仅用关节信息的世界模型策略</sub>
 
 <br>
 

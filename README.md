@@ -71,13 +71,13 @@ The authors report surpassing SONIC's released-checkpoint return after **3 hours
 
 ## Community projects
 
-**36 community projects**, grouped by purpose. Descriptions and demos were checked against upstream documentation and selected source files on **2026-10-28**. Each entry links to the reviewed source revision. Results and demos are upstream reports; this list has not independently rerun the experiments.
+**37 community projects**, grouped by purpose. Twelve project entries were added or refreshed against upstream documentation and selected source files on **2026-10-28**; the In-Hand Rotation mjlab entry was also added on that date. Other entries retain their earlier source snapshots. Each entry links to the reviewed source revision. Results and demos are upstream reports; this list has not independently rerun the experiments.
 
 - 🚀 **[Real-robot deployment and Sim2Real](#real-robot-deployment-and-sim2real)** — **2 projects** · Follow real-robot runtimes and sim-to-real transfer paths.
 - 🔬 **[Independent reproductions](#independent-reproductions)** — **5 projects** · Reproduce and evaluate the original method.
 - 🧩 **[Method and morphology variants](#method-and-morphology-variants)** — **5 projects** · Explore algorithm changes, robot-morphology adaptations and focused control studies.
 - 👁️ **[Perception, terrain and quadrupeds](#perception-terrain-and-quadrupeds)** — **4 projects** · Find vision, height-scan, terrain and quadruped task adaptations.
-- 🦾 **[Manipulation and dexterous hands](#manipulation-and-dexterous-hands)** — **3 projects** · Find arm, hand and object-interaction tasks.
+- 🦾 **[Manipulation and dexterous hands](#manipulation-and-dexterous-hands)** — **4 projects** · Find arm, hand and object-interaction tasks.
 - 💪 **[Muscle, interaction and diagnostics](#muscle-interaction-and-diagnostics)** — **3 projects** · Explore muscle-actuated bodies, physical interaction and contact-focused studies.
 - 🛠️ **[Frameworks and training stacks](#frameworks-and-training-stacks)** — **6 projects** · Find integrations and reusable training or evaluation stacks.
 - 🤖 **[Robot porting and retargeting](#robot-porting-and-retargeting)** — **5 projects** · Find robot-, simulator- or hardware-specific ports and retargeting tools.
@@ -132,8 +132,8 @@ Reimplementations of the original method, with training, evaluation and reproduc
 [Repository](https://github.com/CuboiLeo/SuperMimic-Reproduced) · [Setup](https://github.com/CuboiLeo/SuperMimic-Reproduced/blob/ba6105349069bf040f1fdad60873d13138d505a2/README.md#setup) · [Experiment log](https://github.com/CuboiLeo/SuperMimic-Reproduced/blob/ba6105349069bf040f1fdad60873d13138d505a2/docs/EXPERIMENTS.md) · [Checkpoint](https://github.com/CuboiLeo/SuperMimic-Reproduced/releases/tag/e8-boneseed-100k)
 
 - **By CuboiLeo.** A from-scratch mjlab implementation for G1, with Chinese reproduction notes, LAFAN1/BONES-SEED processing, multi-GPU training, an interactive replay viewer and a released full-data checkpoint.
-- **Upstream report:** On the full BONES-SEED set with paper observations, four RTX 5090s train for **7.1 hours (about 28 GPU·h)** and reach **0.930** normalized return with **145 / 129,491 failures (0.11%)**. On LAFAN1, anchor-relative observations reach **0.904, 3 / 40 failures**, while paper observations reach **0.56–0.59, 3–9 / 40** across three runs.
-- **Useful context:** BONES-SEED clips are short (median 5.8 seconds), whereas paper-observation policies drift on 100–300-second LAFAN1 clips. The two observation settings are not directly comparable. [Source snapshot](https://github.com/CuboiLeo/SuperMimic-Reproduced/blob/ba6105349069bf040f1fdad60873d13138d505a2/README.md).
+- **Upstream report:** With paper observations, four RTX 5090s train on **129,943 BONES-SEED clips** for **7.1 hours (about 28 GPU·h)**. The experiment log reports **0.930 return, 495 / 129,943 failures** on that library; after excluding 452 clips by name, it reports **0.932 return, 145 / 129,491 failures (0.11%)** on the filtered evaluation set. On LAFAN1, anchor-relative observations reach **0.904, 3 / 40 failures**, while paper observations reach **0.56–0.59, 3–9 / 40** across three runs.
+- **Useful context:** BONES-SEED clips are short (median 5.8 seconds), whereas paper-observation policies drift on 100–300-second LAFAN1 clips. The two observation settings are not directly comparable. The upstream README pairs 0.930 with the filtered failure count; the set-specific figures above follow the [experiment log](https://github.com/CuboiLeo/SuperMimic-Reproduced/blob/ba6105349069bf040f1fdad60873d13138d505a2/docs/EXPERIMENTS.md). [Source snapshot](https://github.com/CuboiLeo/SuperMimic-Reproduced/blob/ba6105349069bf040f1fdad60873d13138d505a2/README.md).
 
 <a href="https://github.com/CuboiLeo/SuperMimic-Reproduced/releases/tag/e8-boneseed-100k"><img src="https://raw.githubusercontent.com/CuboiLeo/SuperMimic-Reproduced/ba6105349069bf040f1fdad60873d13138d505a2/media/g1_boneseed_highlights.gif" width="480" alt="Simulation · one full BONES-SEED policy across jumps, spins, hops and get-ups"></a><br><sub>Simulation · one full-BONES-SEED policy across six challenging motion clips</sub>
 
@@ -159,7 +159,7 @@ Reimplementations of the original method, with training, evaluation and reproduc
 - **Upstream report:** On all 40 LAFAN motions, the selected checkpoint achieves **40 / 40 successful motions**, **100% mean completion** and **0.8528 normalized return** in fixed-start, full-clip deterministic evaluation. Training for **15,000 iterations takes approximately 4 hours on one RTX A6000 48 GB**, with 4,096 environments and FP32 networks.
 - **Useful context:** Documents the full progression from Actor/Critic input normalization through a torso-frame motion orientation anchor, world-model normalization and a corrected cosine learning-rate schedule: mean normalized return **0.6016 → 0.8130 → 0.8504 → 0.8526** at 15,000 iterations over all 40 motions. The final rerun mean is distinct from the selected checkpoint score above. [Source snapshot](https://github.com/Breezewrf/supermimic_mjlab/blob/77183062eb92026bfbee2daf276f87cad36fd957/README.md).
 
-<a href="https://github.com/Breezewrf/supermimic_mjlab/blob/77183062eb92026bfbee2daf276f87cad36fd957/doc/assets/demo_v0.gif"><img src="assets/community/mjlab-demo.gif" width="480" alt="Simulation · 12-second excerpt from the SuperMimic Mjlab OOD motion playback demo"></a><br><sub>Simulation · 12-second excerpt from the 60.8-second OOD playback demo; click for the full upstream GIF</sub>
+<a href="https://github.com/Breezewrf/supermimic_mjlab/blob/77183062eb92026bfbee2daf276f87cad36fd957/doc/assets/demo_v0.gif"><img src="assets/community/mjlab-demo.gif" width="480" alt="Simulation · 12-second excerpt from the SuperMimic Mjlab motion playback demo"></a><br><sub>Simulation · 12-second excerpt from the 60.8-second playback demo; click for the full upstream GIF</sub>
 
 <br>
 
@@ -210,7 +210,7 @@ Algorithm changes, multi-robot morphology adaptations and focused control studie
 [Repository](https://github.com/Alchedata/supermimic-locomujoco) · [Setup](https://github.com/Alchedata/supermimic-locomujoco/blob/de9f39191b9e8b87ff1afd2b0129dd93d4795e8c/README.md#setup) · [Results](https://github.com/Alchedata/supermimic-locomujoco/blob/de9f39191b9e8b87ff1afd2b0129dd93d4795e8c/README.md#results)
 
 - **By Alchedata.** Ports the method to H1 with JAX and LocoMuJoCo, adding a **full-state ODE world model** and **anti-saturation regularization** alongside the MLP, residual-expert, action-sensitivity and trust-aware variants.
-- **Upstream report:** With fixed 5,000-iteration checkpoints and 160 initial states, Euler ODE plus anti-saturation reduces aggregate failures from **15 / 480 to 1 / 480** over three seeds. Seed 43 improves from **878.71 / 15 failures to 935.38 / 0 failures**, while seed 42 becomes slightly worse, so this is not a uniform score increase.
+- **Upstream report:** With fixed 5,000-iteration checkpoints and 160 initial states, adding anti-saturation to the Euler ODE model reduces aggregate failures from **15 / 480 to 1 / 480** over three seeds. Seed 43 improves from **878.71 / 15 failures to 935.38 / 0 failures**, while seed 42 becomes slightly worse, so this is not a uniform score increase.
 - **Useful context:** The reward is LocoMuJoCo episode return, not the G1 normalized tracking score. Midpoint ODE acceleration runs are still in progress and are not included as completed results. [Source snapshot](https://github.com/Alchedata/supermimic-locomujoco/blob/de9f39191b9e8b87ff1afd2b0129dd93d4795e8c/README.md).
 
 <a href="https://github.com/Alchedata/supermimic-locomujoco/blob/de9f39191b9e8b87ff1afd2b0129dd93d4795e8c/docs/figures/return_vs_step.png"><img src="assets/community/locomujoco-results.png" width="720" alt="Training curves · return versus training step for ODE and anti-saturation variants"></a><br><sub>Upstream training curves · ODE and anti-saturation variants at fixed 5k evaluation checkpoints</sub>
@@ -224,7 +224,7 @@ Algorithm changes, multi-robot morphology adaptations and focused control studie
 - **By btx0424.** Studies goal conditioning for G1 in mjlab: concatenating the goal with proprioception versus using FiLM to modulate the policy layers. The latest revision adds an HL-Gauss critic, gradient checks and selectable heading- or pelvis-frame world-model coordinates.
 - **Useful context:** Provides configurable observations, anchor choices and Viser playback. Its implementation table explains differences from the paper and supermimic_vibed, including self-collisions and observation inputs. [Source snapshot](https://github.com/btx0424/rethinking-supermimic/blob/aa77b71054a850075431248f1534bb77ca62b4d8/README.md).
 
-<a href="https://github.com/btx0424/rethinking-supermimic/blob/aa77b71054a850075431248f1534bb77ca62b4d8/README.md"><img src="assets/community/rethinking-comparison.png" width="720" alt="Implementation table excerpt · first three design choices; click for the full comparison"></a><br><sub>Implementation table excerpt · first three design choices; click for the full comparison</sub>
+<a href="https://github.com/btx0424/rethinking-supermimic/blob/ecdaeb6a916a16cf7eb69b19226c17be31a6bc27/README.md"><img src="assets/community/rethinking-comparison.png" width="720" alt="Historical implementation table excerpt · 2026-10-26 snapshot; current comparison linked above"></a><br><sub>Historical implementation table excerpt · 2026-10-26 snapshot; current comparison linked above</sub>
 
 <br>
 
@@ -334,6 +334,18 @@ Arm, hand and object-interaction tasks, with dexterous manipulation grouped here
 - **Useful context:** Those SuperMimic scores used clean observations. The newer evaluation adds observation noise, and the published checkpoints have not been re-evaluated under that setting. [Source snapshot](https://github.com/shuayyy/humanoid-amp-ppo/blob/4889389118e0c88d3945dff54d2cd3f992ed815e/README.md).
 
 <a href="https://github.com/shuayyy/humanoid-amp-ppo/blob/4889389118e0c88d3945dff54d2cd3f992ed815e/assets/supermimic_vs_ppo_lift.mp4"><img src="https://raw.githubusercontent.com/shuayyy/humanoid-amp-ppo/4889389118e0c88d3945dff54d2cd3f992ed815e/assets/supermimic_vs_ppo_lift.gif" width="480" alt="Box lift · SuperMimic 12k / PPO-Sim 6k iterations"></a><br><sub>Box lift · SuperMimic 12k / PPO-Sim 6k iterations</sub>
+
+<br>
+
+### In-Hand Rotation mjlab
+
+[Repository](https://github.com/Msornerrrr/in-hand-rotation-mjlab) · [Install](https://github.com/Msornerrrr/in-hand-rotation-mjlab/blob/0ab03eb2244b4a1a020d94ef38a4823bb9e15ba0/README.md#install) · [Results](https://github.com/Msornerrrr/in-hand-rotation-mjlab/blob/0ab03eb2244b4a1a020d94ef38a4823bb9e15ba0/README.md#results) · [Checkpoints](https://github.com/Msornerrrr/in-hand-rotation-mjlab/blob/0ab03eb2244b4a1a020d94ef38a4823bb9e15ba0/README.md#quick-start-the-released-policies)
+
+- **By Msornerrrr.** Applies SuperMimic-style world-model policy learning (an MLP world model refit online, backpropagation through imagined rollouts, a TD(λ) critic and weight averaging) to the LEAP Hand in mjlab / MuJoCo Warp, next to PPO baselines on the same environments: palm-up cube yaw, SO(3) cube reorientation (PPO only) and palm-down fingertip rotation of 22 objects, on a servo model identified on the real hand. Checkpoints for both methods are released.
+- **Upstream report:** On cube yaw, the world-model policy reaches PPO's level (≈0.26 reward/s) after **25 minutes and 18M env steps**, where PPO needs 6.5 hours and 262M, and ends at **0.292 vs 0.261**. On palm-down fingertip rotation (64 rollouts per object, 60 s, randomized pad friction 0.25–1.2), a joints-only world-model policy reaches **933°** rewarded yaw with **4.0%** drops, against **675° / 10.4%** for the deployed PPO student distilled from a teacher, and **944° / 2.1%** for the privileged PPO teacher.
+- **Useful context:** World-model results are in simulation; the real-robot videos (yaw and SO(3)) show PPO policies. Fingertip numbers use the repository's own evaluation (rotation reward capped at 0.3 rad/s; a drop is 30 mm of drift). Single runs per configuration; wall-clock times are on one RTX 4090. [Source snapshot](https://github.com/Msornerrrr/in-hand-rotation-mjlab/blob/0ab03eb2244b4a1a020d94ef38a4823bb9e15ba0/README.md).
+
+<a href="https://github.com/Msornerrrr/in-hand-rotation-mjlab"><img src="https://raw.githubusercontent.com/Msornerrrr/in-hand-rotation-mjlab/0ab03eb2244b4a1a020d94ef38a4823bb9e15ba0/assets/sim_fingertip.gif" width="480" alt="Simulation · palm-down fingertip rotation of a sphere, cube, cylinder and cuboid by a joints-only world-model policy"></a><br><sub>Simulation · palm-down fingertip rotation, joints-only world-model policy</sub>
 
 <br>
 

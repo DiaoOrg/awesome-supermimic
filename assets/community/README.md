@@ -5,9 +5,9 @@
 Checked on **2026-10-28**, source revision **`77183062eb92026bfbee2daf276f87cad36fd957`**.
 
 - **Source / maintainer:** [Breezewrf / supermimic_mjlab](https://github.com/Breezewrf/supermimic_mjlab).
-- **Original preview:** [doc/assets/demo_v0.gif](https://github.com/Breezewrf/supermimic_mjlab/blob/77183062eb92026bfbee2daf276f87cad36fd957/doc/assets/demo_v0.gif), a 60.8-second out-of-distribution motion playback demo.
+- **Original preview:** [doc/assets/demo_v0.gif](https://github.com/Breezewrf/supermimic_mjlab/blob/77183062eb92026bfbee2daf276f87cad36fd957/doc/assets/demo_v0.gif), a 60.8-second motion playback demo.
 - **Local excerpt:** [mjlab-demo.gif](mjlab-demo.gif) preserves seconds 36–48 of the upstream GIF at its 400 × 260 resolution and 8 fps. It contains 96 frames over 12.01 seconds and is quantized to at most 48 colors; no frames were interpolated or generated. The README links to the complete upstream GIF.
-- **Context:** The demo shows the released policy replaying motion outside its training set. The separate configuration ablation table in the source README reports the progression from input normalization through the orientation anchor, world-model normalization and corrected learning-rate schedule. These are upstream demonstrations and reports, not independent measurements by this collection.
+- **Context:** The upstream README labels this file as a general SuperMimic demo; its separate OOD section uses different GIFs. This preview therefore does not establish out-of-distribution performance. The separate configuration ablation table in the source README reports the progression from input normalization through the orientation anchor, world-model normalization and corrected learning-rate schedule. These are upstream demonstrations and reports, not independent measurements by this collection.
 
 Rights in the original footage remain with its authors; it is excluded from this collection's CC0 dedication.
 
@@ -18,6 +18,16 @@ Checked on **2026-10-27**, source revision **`65e4d524bd31fdc4284ba8c6e624fb0b01
 - **Source / maintainer:** [Hxxxz0 / ScaleBFM_Plus](https://github.com/Hxxxz0/ScaleBFM_Plus), a community extension of [ScaleBFM](https://github.com/zengweishuai/ScaleBFM).
 - **Original preview:** [ScaleTrack/assets/demos/supermimic_vs_official.gif](https://github.com/Hxxxz0/ScaleBFM_Plus/blob/65e4d524bd31fdc4284ba8c6e624fb0b0127da03/ScaleTrack/assets/demos/supermimic_vs_official.gif). Embedded directly through GitHub's LFS media endpoint at a display width of 480 pixels, preserving aspect ratio; no copy, excerpt, screenshot preparation, or re-encoding.
 - **Context:** The [source README](https://github.com/Hxxxz0/ScaleBFM_Plus/blob/65e4d524bd31fdc4284ba8c6e624fb0b0127da03/ScaleTrack/README.md#fast-training-with-a-learned-world-model-supermimic) identifies the left policy as official ScaleBFM-M and the right as SuperMimic, tracking an unseen LAFAN dance with the same simulator, motion, seed and camera. This is an upstream simulation demonstration, not an independent evaluation or a real-robot result.
+
+Rights in the original footage remain with its authors; it is excluded from this collection's CC0 dedication.
+
+## In-Hand Rotation mjlab animated preview
+
+Checked on **2026-10-28**, source revision **`0ab03eb2244b4a1a020d94ef38a4823bb9e15ba0`**.
+
+- **Source / maintainer:** [Msornerrrr / in-hand-rotation-mjlab](https://github.com/Msornerrrr/in-hand-rotation-mjlab).
+- **Original preview:** [assets/sim_fingertip.gif](https://github.com/Msornerrrr/in-hand-rotation-mjlab/blob/0ab03eb2244b4a1a020d94ef38a4823bb9e15ba0/assets/sim_fingertip.gif). Embedded directly from the pinned source at a display width of 480 pixels, preserving aspect ratio; no copy, excerpt, screenshot preparation or re-encoding.
+- **Context:** A simulated rollout of the repository's joints-only world-model policy turning four of its 22 objects (sphere, cube, cylinder, cuboid) palm down at pad friction 0.35; each panel shows a view from below and one up the palm normal. This is an upstream simulation demonstration, not an independent evaluation or a real-robot result.
 
 Rights in the original footage remain with its authors; it is excluded from this collection's CC0 dedication.
 
@@ -63,7 +73,7 @@ All rights in the source footage remain with the original authors. These third-p
 
 ## Static previews
 
-The following previews were checked on 2026-10-28. Each links to a pinned source revision. They show the authors' figures or documented results; this collection did not run the experiments.
+The static previews retain their earlier source snapshots unless an update is explicitly dated below. Each links to a pinned source revision. They show the authors' figures or documented results; this collection did not run the experiments.
 
 ### Original project images
 
@@ -76,7 +86,7 @@ These images are embedded directly from their source repositories, without editi
 
 ### Local result figure copy
 
-[locomujoco-results.png](locomujoco-results.png) is a copy of [SuperMimic on LocoMuJoCo's return_vs_step.png](https://github.com/Alchedata/supermimic-locomujoco/blob/de9f39191b9e8b87ff1afd2b0129dd93d4795e8c/docs/figures/return_vs_step.png), pinned at source revision `de9f39191b9e8b87ff1afd2b0129dd93d4795e8c`. The plot compares return against training step for the ODE and anti-saturation variants. It is an upstream result figure, not a new measurement by this collection.
+Updated on 2026-10-28: [locomujoco-results.png](locomujoco-results.png) is a copy of [SuperMimic on LocoMuJoCo's return_vs_step.png](https://github.com/Alchedata/supermimic-locomujoco/blob/de9f39191b9e8b87ff1afd2b0129dd93d4795e8c/docs/figures/return_vs_step.png), pinned at source revision `de9f39191b9e8b87ff1afd2b0129dd93d4795e8c`. The plot compares return against training step for the ODE and anti-saturation variants. It is an upstream result figure, not a new measurement by this collection.
 
 ### Source-table screenshots
 
