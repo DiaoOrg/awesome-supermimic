@@ -24,7 +24,7 @@ Keep descriptions concise. This collection organizes resources; it does not rank
 - **Useful context:** Explain any branch requirement, implementation difference or limitation that affects interpretation or use. [Source snapshot](https://github.com/OWNER/REPO/blob/COMMIT/README.md).
 ```
 
-Add the entry to the appropriate topic. Topics use level-two headings with a short scope description; projects use plain level-three headings, followed by a compact row of relevant links and two or three bullets. Update the topic count in the navigation when adding a project. Credit the verified author or team in the first bullet, together with what they built. Prefer the organization's public display name; use the repository owner's account name when no separate author name is documented.
+Add the entry to the appropriate topic. Topics use level-two headings with a short scope description; projects use level-three headings, followed by a compact row of relevant links and two or three bullets. Update the topic count in the navigation when adding a project. Credit the verified author or team in the first bullet, together with what they built. Prefer the organization's public display name; use the repository owner's account name when no separate author name is documented.
 
 Include only links and bullets supported by the source. Omit the result bullet when no relevant result is published; a useful description of released tools or current progress can take its place. Do not fill missing results with inherited baseline scores, imply that demonstrations establish general performance, or force every entry into the same number of bullets. Link to the reviewed source revision for factual claims.
 
@@ -35,3 +35,7 @@ When a project publishes an accessible video without an animated preview, conver
 Separate adjacent projects with a single `<br>` after the description or demo caption, with blank lines on both sides. Reserve heading underlines for topic boundaries; do not repeat horizontal rules between projects.
 
 By contributing original text or artwork, you agree to release that contribution under this collection's [CC0 1.0 license](LICENSE). Third-party material retains its own terms.
+
+## Suggested starting points
+
+The community-project guide highlights distinct strengths by use case, not a performance ranking. Do not impose a one-project-per-category quota: include complementary approaches (for example, arm manipulation, dexterous-hand tasks and controlled method comparisons) when each has a documented reason to read it. Pair each linked project with its own short reason in the guide. Put these entries first within their category and prefix their headings with ⭐; retain the previous heading anchor with an explicit HTML anchor so existing links keep working. Keep the guide, category counts and selections aligned in both languages, and summarize only evidence already linked in the entry.
