@@ -1,0 +1,196 @@
+{
+  "snapshot_at": "2026-10-29T16:57:08+00:00",
+  "repositories": {
+    "NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real": {
+      "id": 1433556794,
+      "full_name": "NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real",
+      "stars": 36
+    },
+    "KyrieYoung926/supermimic_deploy": {
+      "id": 1430946541,
+      "full_name": "KyrieYoung926/supermimic_deploy",
+      "stars": 8
+    },
+    "zita-ch/supermimic_vibed": {
+      "id": 1428714029,
+      "full_name": "zita-ch/supermimic_vibed",
+      "stars": 724
+    },
+    "CuboiLeo/SuperMimic-Reproduced": {
+      "id": 1429037845,
+      "full_name": "CuboiLeo/SuperMimic-Reproduced",
+      "stars": 315
+    },
+    "Breezewrf/supermimic_mjlab": {
+      "id": 1429560578,
+      "full_name": "Breezewrf/supermimic_mjlab",
+      "stars": 8
+    },
+    "dhmbb2/supermimic_vibe": {
+      "id": 1429888171,
+      "full_name": "dhmbb2/supermimic_vibe",
+      "stars": 5
+    },
+    "rzc156/supermimic-rtx5080": {
+      "id": 1434000857,
+      "full_name": "rzc156/supermimic-rtx5080",
+      "stars": 2
+    },
+    "Huy-Quang-Dao/instantTrack": {
+      "id": 1438037302,
+      "full_name": "Huy-Quang-Dao/instantTrack",
+      "stars": 52
+    },
+    "lzyang2000/morphmimic": {
+      "id": 1430789167,
+      "full_name": "lzyang2000/morphmimic",
+      "stars": 152
+    },
+    "Shimingyi/allmimic": {
+      "id": 1431958748,
+      "full_name": "Shimingyi/allmimic",
+      "stars": 31
+    },
+    "Alchedata/supermimic-locomujoco": {
+      "id": 1432664861,
+      "full_name": "Alchedata/supermimic-locomujoco",
+      "stars": 5
+    },
+    "btx0424/rethinking-supermimic": {
+      "id": 1429359559,
+      "full_name": "btx0424/rethinking-supermimic",
+      "stars": 27
+    },
+    "JackMin7/supermimic_whole_body_tracking": {
+      "id": 1429495052,
+      "full_name": "JackMin7/supermimic_whole_body_tracking",
+      "stars": 20
+    },
+    "project-instinct/InstinctMJ": {
+      "id": 1176761185,
+      "full_name": "project-instinct/InstinctMJ",
+      "stars": 301
+    },
+    "Zhengtianjin/go2-supermimic": {
+      "id": 1431486582,
+      "full_name": "Zhengtianjin/go2-supermimic",
+      "stars": 69
+    },
+    "yhx1203/supermimic_parkour": {
+      "id": 1430513100,
+      "full_name": "yhx1203/supermimic_parkour",
+      "stars": 12
+    },
+    "mode1223345/SuperMimic-perceptive": {
+      "id": 1432125557,
+      "full_name": "mode1223345/SuperMimic-perceptive",
+      "stars": 6
+    },
+    "emoPointer/supermimic_manipulation": {
+      "id": 1433554854,
+      "full_name": "emoPointer/supermimic_manipulation",
+      "stars": 39
+    },
+    "CumulusAlpha/Dex-Supermimic": {
+      "id": 1433804344,
+      "full_name": "CumulusAlpha/Dex-Supermimic",
+      "stars": 74
+    },
+    "Msornerrrr/in-hand-rotation-mjlab": {
+      "id": 1162247047,
+      "full_name": "Msornerrrr/in-hand-rotation-mjlab",
+      "stars": 34
+    },
+    "shuayyy/humanoid-amp-ppo": {
+      "id": 1285577591,
+      "full_name": "shuayyy/humanoid-amp-ppo",
+      "stars": 8
+    },
+    "kaibohex/muscle-supermimic": {
+      "id": 1434932501,
+      "full_name": "kaibohex/muscle-supermimic",
+      "stars": 33
+    },
+    "shangchaohu718/supermimic-pera": {
+      "id": 1430576677,
+      "full_name": "shangchaohu718/supermimic-pera",
+      "stars": 0
+    },
+    "liudi159/supermimic-backflip-5090": {
+      "id": 1432819468,
+      "full_name": "liudi159/supermimic-backflip-5090",
+      "stars": 2
+    },
+    "Motphys/Uni-SuperMimic": {
+      "id": 1429498465,
+      "full_name": "Motphys/Uni-SuperMimic",
+      "stars": 205
+    },
+    "Hxxxz0/ScaleBFM_Plus": {
+      "id": 1431877986,
+      "full_name": "Hxxxz0/ScaleBFM_Plus",
+      "stars": 19
+    },
+    "HorizonRobotics/HoloMotion": {
+      "id": 1028843437,
+      "full_name": "HorizonRobotics/HoloMotion",
+      "stars": 750
+    },
+    "Renforce-Dynamics/trackerlab-supermimic": {
+      "id": 1430222310,
+      "full_name": "Renforce-Dynamics/trackerlab-supermimic",
+      "stars": 13
+    },
+    "chu-fa/isaaclab-supermimic": {
+      "id": 1431327517,
+      "full_name": "chu-fa/isaaclab-supermimic",
+      "stars": 2
+    },
+    "OMEGA-i/SuperMimicKit": {
+      "id": 1431562951,
+      "full_name": "OMEGA-i/SuperMimicKit",
+      "stars": 4
+    },
+    "tianshuwu/supermimic-retargeted": {
+      "id": 1430469940,
+      "full_name": "tianshuwu/supermimic-retargeted",
+      "stars": 9
+    },
+    "wenconggan/SuperMimic_e1": {
+      "id": 1430480272,
+      "full_name": "wenconggan/SuperMimic_e1",
+      "stars": 5
+    },
+    "liuskywalkerjskd/supermimic_oli": {
+      "id": 1431102076,
+      "full_name": "liuskywalkerjskd/supermimic_oli",
+      "stars": 3
+    },
+    "WXyuany/supermimic-m5": {
+      "id": 1430927278,
+      "full_name": "WXyuany/supermimic-m5",
+      "stars": 1
+    },
+    "panhainan2020/SuperMimic-MuJoCo": {
+      "id": 1430957174,
+      "full_name": "panhainan2020/SuperMimic-MuJoCo",
+      "stars": 15
+    },
+    "RadiantForever/supermimic_wheelbipe": {
+      "id": 1437090261,
+      "full_name": "RadiantForever/supermimic_wheelbipe",
+      "stars": 7
+    },
+    "swaggyliu/FlatWorld": {
+      "id": 1284715083,
+      "full_name": "swaggyliu/FlatWorld",
+      "stars": 43
+    },
+    "azizkhadraoui/g05": {
+      "id": 1425368329,
+      "full_name": "azizkhadraoui/g05",
+      "stars": 0
+    }
+  },
+  "failures": {}
+}
