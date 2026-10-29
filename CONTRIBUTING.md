@@ -19,7 +19,7 @@ python3 scripts/update_stars.py --check
 git diff --check
 ```
 
-For a text-only edit to an existing project, `python3 scripts/update_stars.py --offline` regenerates from the saved real snapshot. New projects require a successful API fetch. See [update policy and failure handling](docs/star-rankings.md). Include the catalog, affected detail pages, snapshot, generated badges in `assets/stars/` and both generated READMEs in your PR as applicable. Check rendered tables, relative links, old anchors and media on GitHub.
+For a text-only edit to an existing project, `python3 scripts/update_stars.py --offline` regenerates from the saved real snapshot. New projects require a successful API fetch. See [update policy and failure handling](docs/star-rankings.md). Include the catalog, affected detail pages, snapshot and both generated READMEs in your PR as applicable. Star badges use the live Shields GitHub Stars endpoint; do not replace them with saved counts or local images. Check rendered tables, relative links, old anchors and media on GitHub.
 
 A repository returning 404 is not proof that it was never open source: it may be private, deleted or renamed. Keep the previous valid Stars on an automatic refresh. Archive/remove an unavailable entry only in an explicit editorial change, retain the record and reason in [`docs/archived-projects.md`](docs/archived-projects.md), and preserve its old README anchor with a link to the archive.
 

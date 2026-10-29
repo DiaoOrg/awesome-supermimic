@@ -28,50 +28,50 @@
 
 ### Most Starred Projects · Stars 排行榜
 
-GitHub API 数值快照：**2026-10-29 17:33:46 UTC** · 每日检查 · Stars 降序，同分按 `owner/repo` 忽略大小写升序。Stars 计入整个仓库（含更大框架），反映关注度，不代表基准成绩。
+排序依据 GitHub API 快照：**2026-10-29 17:41:58 UTC** · 每日按 Stars 降序更新，同分按 `owner/repo` 忽略大小写升序。徽章通过实时 Stars 接口更新（有服务缓存），可能暂时与排序快照不同。Stars 计入整个仓库（含更大框架），反映关注度，不代表基准成绩。
 
-数据状态：完整有效快照。 [Update policy](docs/star-rankings.md).
+排序数据状态：完整有效快照。 [Update policy](docs/star-rankings.md).
 
 | 排名 | 项目 | GitHub&nbsp;Stars | 分类 | 一句话亮点 |
 | ---: | --- | --- | --- | --- |
-| 1 | [HoloMotion · SuperMimic](https://github.com/HorizonRobotics/HoloMotion) | [![750 stars](assets/stars/1028843437.svg)](https://github.com/HorizonRobotics/HoloMotion/stargazers) | [框架与训练栈](#框架与训练栈) | 在 MuJoCo Warp / Isaac PhysX 上为 PPO 与 SuperMimic 共享 G1 任务。 |
-| 2 | [supermimic_vibed](https://github.com/zita-ch/supermimic_vibed) | [![724 stars](assets/stars/1428714029.svg)](https://github.com/zita-ch/supermimic_vibed/stargazers) | [独立复现](#独立复现) | 免 Kit 的 Isaac Lab G1 基线，含完整动作评测与地面资产缓存。 |
-| 3 | [SuperMimic-Reproduced](https://github.com/CuboiLeo/SuperMimic-Reproduced) | [![315 stars](assets/stars/1429037845.svg)](https://github.com/CuboiLeo/SuperMimic-Reproduced/stargazers) | [独立复现](#独立复现) | 全量 BONES-SEED 权重与论文观测／锚点观测对照实验。 |
-| 4 | [InstinctMJ · SuperMimic](https://github.com/project-instinct/InstinctMJ/tree/supermimic) | [![301 stars](assets/stars/1176761185.svg)](https://github.com/project-instinct/InstinctMJ/stargazers) | [感知与地形](#感知地形与四足任务) | 在想象轨迹中可微渲染深度图的 G1 地形跟踪；使用 supermimic 分支。 |
-| 5 | [UniSuperMimic](https://github.com/Motphys/Uni-SuperMimic) | [![205 stars](assets/stars/1429498465.svg)](https://github.com/Motphys/Uni-SuperMimic/stargazers) | [框架与训练栈](#框架与训练栈) | G1 三后端训练，含 12.9 万段 BONES-SEED 数据流程与全库评测。 |
-| 6 | [MorphMimic](https://github.com/lzyang2000/morphmimic) | [![152 stars](assets/stars/1430789167.svg)](https://github.com/lzyang2000/morphmimic/stargazers) | [方法改动](#方法改动与形态适配) | G1 / X2 / T2 形态条件化共享，支持完整动作与五点目标。 |
-| 7 | [Dex SuperMimic](https://github.com/CumulusAlpha/Dex-Supermimic) | [![75 stars](assets/stars/1433804344.svg)](https://github.com/CumulusAlpha/Dex-Supermimic/stargazers) | [操作与灵巧手](#操作与灵巧手) | Wuji Hand 1 / 2 方块重定向、Hand 2 转笔与公开权重。 |
-| 8 | [Go2-SuperMimic](https://github.com/Zhengtianjin/go2-supermimic) | [![69 stars](assets/stars/1431486582.svg)](https://github.com/Zhengtianjin/go2-supermimic/stargazers) | [感知与地形](#感知地形与四足任务) | Go2 平地与地形追逐／闪避仿真，附公开策略。 |
-| 9 | [InstantTrack](https://github.com/Huy-Quang-Dao/instantTrack) | [![52 stars](assets/stars/1438037302.svg)](https://github.com/Huy-Quang-Dao/instantTrack/stargazers) | [方法改动](#方法改动与形态适配) | EMA、融合 GPU 更新与接触奖励，附三个种子的 LAFAN1 对照。 |
-| 10 | [FlatWorld · SuperMimic-2D](https://github.com/swaggyliu/FlatWorld) | [![43 stars](assets/stars/1284715083.svg)](https://github.com/swaggyliu/FlatWorld/stargazers) | [学习示例](#方法借鉴与探索) | 用二维多技能人形跟踪探索共享世界模型学习。 |
-| 11 | [SuperMimic for Robot Manipulation](https://github.com/emoPointer/supermimic_manipulation) | [![39 stars](assets/stars/1433554854.svg)](https://github.com/emoPointer/supermimic_manipulation/stargazers) | [操作与灵巧手](#操作与灵巧手) | ARX5 柠檬／箱体／杯子操作，含留出重置状态库与公开策略。 |
-| 12 | [SuperMimic-Repro-Sim2Real](https://github.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real) | [![36 stars](assets/stars/1433556794.svg)](https://github.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real/stargazers) | [真机部署](#真机部署与-sim2real) | G1 单舞蹈策略、视频转动作工具与 ONNX 真机部署。 |
-| 13 | [In-Hand Rotation mjlab](https://github.com/Msornerrrr/in-hand-rotation-mjlab) | [![34 stars](assets/stars/1162247047.svg)](https://github.com/Msornerrrr/in-hand-rotation-mjlab/stargazers) | [操作与灵巧手](#操作与灵巧手) | LEAP 偏航与 22 物体指尖旋转的世界模型／PPO 对照；真机演示为 PPO。 |
-| 14 | [Muscle SuperMimic](https://github.com/kaibohex/muscle-supermimic) | [![33 stars](assets/stars/1434932501.svg)](https://github.com/kaibohex/muscle-supermimic/stargazers) | [肌肉与交互](#肌肉驱动交互与诊断) | 700 / 354 肌肉本体跟踪，含可微肌肉模型与 KIT 留出集评测。 |
-| 15 | [allmimic](https://github.com/Shimingyi/allmimic) | [![31 stars](assets/stars/1431958748.svg)](https://github.com/Shimingyi/allmimic/stargazers) | [方法改动](#方法改动与形态适配) | 残差动作与均衡采样，含困难动作和 BONES-SEED 留出集报告。 |
-| 16 | [Rethinking SuperMimic](https://github.com/btx0424/rethinking-supermimic) | [![27 stars](assets/stars/1429359559.svg)](https://github.com/btx0424/rethinking-supermimic/stargazers) | [方法改动](#方法改动与形态适配) | FiLM 目标条件化、SAC 基线、策略 EMA 与梯度诊断。 |
-| 17 | [Standing MBRL vs PPO](https://github.com/JackMin7/supermimic_whole_body_tracking) | [![20 stars](assets/stars/1429495052.svg)](https://github.com/JackMin7/supermimic_whole_body_tracking/stargazers) | [方法改动](#方法改动与形态适配) | 统一 G1 站立任务输入与训练预算的 MBRL / PPO 对照。 |
-| 18 | [ScaleBFM_Plus · SuperMimic](https://github.com/Hxxxz0/ScaleBFM_Plus) | [![19 stars](assets/stars/1431877986.svg)](https://github.com/Hxxxz0/ScaleBFM_Plus/stargazers) | [框架与训练栈](#框架与训练栈) | 将 SuperMimic 更新接入 ScaleTrack 人形 Transformer，附留出动作报告。 |
-| 19 | [SuperMimic-MuJoCo](https://github.com/panhainan2020/SuperMimic-MuJoCo) | [![15 stars](assets/stars/1430957174.svg)](https://github.com/panhainan2020/SuperMimic-MuJoCo/stargazers) | [本体移植](#机器人移植与重定向) | G1 mjlab / CPU MuJoCo 移植，含 3,573 条留出 100STYLE 动作评测与权重。 |
-| 20 | [TrackerLab SuperMimic](https://github.com/Renforce-Dynamics/trackerlab-supermimic) | [![13 stars](assets/stars/1430222310.svg)](https://github.com/Renforce-Dynamics/trackerlab-supermimic/stargazers) | [框架与训练栈](#框架与训练栈) | 多本体 PhysX 训练栈，新增可选 G1 Warp 训练；CUDA 运行验收待完成。 |
-| 21 | [SuperMimic Parkour](https://github.com/yhx1203/supermimic_parkour) | [![12 stars](assets/stars/1430513100.svg)](https://github.com/yhx1203/supermimic_parkour/stargazers) | [感知与地形](#感知地形与四足任务) | 基于 PHP 动作包的 G1 五技能跑酷，附公开检查点。 |
-| 22 | [SuperMimic Retargeted](https://github.com/tianshuwu/supermimic-retargeted) | [![9 stars](assets/stars/1430469940.svg)](https://github.com/tianshuwu/supermimic-retargeted/stargazers) | [本体移植](#机器人移植与重定向) | G1 / A3 / X2 Ultra 移植，含 SOMA 重定向与各本体实验记录。 |
-| 23 | [SuperMimic Mjlab](https://github.com/Breezewrf/supermimic_mjlab) | [![8 stars](assets/stars/1429560578.svg)](https://github.com/Breezewrf/supermimic_mjlab/stargazers) | [独立复现](#独立复现) | G1 的 40 动作跟踪、速度训练，以及归一化与学习率消融。 |
-| 24 | [SuperMimic G1 Deployment](https://github.com/KyrieYoung926/supermimic_deploy) | [![8 stars](assets/stars/1430946541.svg)](https://github.com/KyrieYoung926/supermimic_deploy/stargazers) | [真机部署](#真机部署与-sim2real) | 29 自由度 G1 的 ONNX 策略回放，覆盖 MuJoCo 与真机。 |
-| 25 | [Humanoid Mimic · SuperMimic](https://github.com/shuayyy/humanoid-amp-ppo) | [![8 stars](assets/stars/1285577591.svg)](https://github.com/shuayyy/humanoid-amp-ppo/stargazers) | [操作与灵巧手](#操作与灵巧手) | G1 行走／下蹲／抬箱对照；SuperMimic 成绩采用无噪声观测。 |
-| 26 | [SuperMimic Wheel-Legged (wheelbipe)](https://github.com/RadiantForever/supermimic_wheelbipe) | [![7 stars](assets/stars/1437090261.svg)](https://github.com/RadiantForever/supermimic_wheelbipe/stargazers) | [本体移植](#机器人移植与重定向) | 通过世界模型 rollout 学习 wheelbipe 前进、偏航与腿高控制。 |
-| 27 | [SuperMimic-perceptive](https://github.com/mode1223345/SuperMimic-perceptive) | [![6 stars](assets/stars/1432125557.svg)](https://github.com/mode1223345/SuperMimic-perceptive/stargazers) | [感知与地形](#感知地形与四足任务) | Actor、critic 与世界模型共享冻结高程图 AE；控制对照仍在进行。 |
-| 28 | [SuperMimic on LocoMuJoCo](https://github.com/Alchedata/supermimic-locomujoco) | [![5 stars](assets/stars/1432664861.svg)](https://github.com/Alchedata/supermimic-locomujoco/stargazers) | [方法改动](#方法改动与形态适配) | H1 全状态 ODE 动力学与三个种子的抗饱和对照。 |
-| 29 | [supermimic_vibe](https://github.com/dhmbb2/supermimic_vibe) | [![5 stars](assets/stars/1429888171.svg)](https://github.com/dhmbb2/supermimic_vibe/stargazers) | [独立复现](#独立复现) | BONES-SEED 全量评测、SONIC / PPO 对照与训练崩溃消融。 |
-| 30 | [SuperMimic E1](https://github.com/wenconggan/SuperMimic_e1) | [![5 stars](assets/stars/1430480272.svg)](https://github.com/wenconggan/SuperMimic_e1/stargazers) | [本体移植](#机器人移植与重定向) | 21 自由度 E1 跟踪、原生 MuJoCo 回放与单列的完整动作评测。 |
-| 31 | [SuperMimicKit](https://github.com/OMEGA-i/SuperMimicKit) | [![4 stars](assets/stars/1431562951.svg)](https://github.com/OMEGA-i/SuperMimicKit/stargazers) | [框架与训练栈](#框架与训练栈) | G1 / H2 的 train40 / val37 指标与 G1 / H2 / A3 浏览器预览。 |
-| 32 | [SuperMimic Oli](https://github.com/liuskywalkerjskd/supermimic_oli) | [![3 stars](assets/stars/1431102076.svg)](https://github.com/liuskywalkerjskd/supermimic_oli/stargazers) | [本体移植](#机器人移植与重定向) | 31 自由度 Oli 适配，附 40 动作指标与完整动作视频。 |
-| 33 | [SuperMimic Lab](https://github.com/chu-fa/isaaclab-supermimic) | [![2 stars](assets/stars/1431327517.svg)](https://github.com/chu-fa/isaaclab-supermimic/stargazers) | [框架与训练栈](#框架与训练栈) | Isaac Lab 学习器与任务接口约定，附可独立安装的 A3 示例。 |
-| 34 | [SuperMimic Backflip Diagnostics](https://github.com/liudi159/supermimic-backflip-5090) | [![2 stars](assets/stars/1432819468.svg)](https://github.com/liudi159/supermimic-backflip-5090/stargazers) | [肌肉与交互](#肌肉驱动交互与诊断) | G1 后空翻对称性与落地诊断；严格接触验收仍未通过。 |
-| 35 | [SuperMimic on RTX 5080](https://github.com/rzc156/supermimic-rtx5080) | [![2 stars](assets/stars/1434000857.svg)](https://github.com/rzc156/supermimic-rtx5080/stargazers) | [独立复现](#独立复现) | 16 GB RTX 5080 适配，采用锚点观测并提供完整 LAFAN1 评测。 |
-| 36 | [SuperMimic on Apple M5](https://github.com/WXyuany/supermimic-m5) | [![1 stars](assets/stars/1430927278.svg)](https://github.com/WXyuany/supermimic-m5/stargazers) | [本体移植](#机器人移植与重定向) | Apple M5：MPS 学习、CPU MuJoCo 物理仿真与公开 G1 权重。 |
-| 37 | [G0.5 · SuperMimic-style Steering](https://github.com/azizkhadraoui/g05) | [![0 stars](assets/stars/1425368329.svg)](https://github.com/azizkhadraoui/g05/stargazers) | [学习示例](#方法借鉴与探索) | LIBERO 上的 SuperMimic 式 VLA 引导与直接策略微调失败记录。 |
-| 38 | [SuperMimic-PERA](https://github.com/shangchaohu718/supermimic-pera) | [![0 stars](assets/stars/1430576677.svg)](https://github.com/shangchaohu718/supermimic-pera/stargazers) | [肌肉与交互](#肌肉驱动交互与诊断) | 冻结 G1 跟踪器，另有独立滑板仿真策略。 |
+| 1 | [HoloMotion · SuperMimic](https://github.com/HorizonRobotics/HoloMotion) | [![GitHub Stars: HorizonRobotics/HoloMotion](https://img.shields.io/github/stars/HorizonRobotics/HoloMotion?style=social)](https://github.com/HorizonRobotics/HoloMotion/stargazers) | [框架与训练栈](#框架与训练栈) | 在 MuJoCo Warp / Isaac PhysX 上为 PPO 与 SuperMimic 共享 G1 任务。 |
+| 2 | [supermimic_vibed](https://github.com/zita-ch/supermimic_vibed) | [![GitHub Stars: zita-ch/supermimic_vibed](https://img.shields.io/github/stars/zita-ch/supermimic_vibed?style=social)](https://github.com/zita-ch/supermimic_vibed/stargazers) | [独立复现](#独立复现) | 免 Kit 的 Isaac Lab G1 基线，含完整动作评测与地面资产缓存。 |
+| 3 | [SuperMimic-Reproduced](https://github.com/CuboiLeo/SuperMimic-Reproduced) | [![GitHub Stars: CuboiLeo/SuperMimic-Reproduced](https://img.shields.io/github/stars/CuboiLeo/SuperMimic-Reproduced?style=social)](https://github.com/CuboiLeo/SuperMimic-Reproduced/stargazers) | [独立复现](#独立复现) | 全量 BONES-SEED 权重与论文观测／锚点观测对照实验。 |
+| 4 | [InstinctMJ · SuperMimic](https://github.com/project-instinct/InstinctMJ/tree/supermimic) | [![GitHub Stars: project-instinct/InstinctMJ](https://img.shields.io/github/stars/project-instinct/InstinctMJ?style=social)](https://github.com/project-instinct/InstinctMJ/stargazers) | [感知与地形](#感知地形与四足任务) | 在想象轨迹中可微渲染深度图的 G1 地形跟踪；使用 supermimic 分支。 |
+| 5 | [UniSuperMimic](https://github.com/Motphys/Uni-SuperMimic) | [![GitHub Stars: Motphys/Uni-SuperMimic](https://img.shields.io/github/stars/Motphys/Uni-SuperMimic?style=social)](https://github.com/Motphys/Uni-SuperMimic/stargazers) | [框架与训练栈](#框架与训练栈) | G1 三后端训练，含 12.9 万段 BONES-SEED 数据流程与全库评测。 |
+| 6 | [MorphMimic](https://github.com/lzyang2000/morphmimic) | [![GitHub Stars: lzyang2000/morphmimic](https://img.shields.io/github/stars/lzyang2000/morphmimic?style=social)](https://github.com/lzyang2000/morphmimic/stargazers) | [方法改动](#方法改动与形态适配) | G1 / X2 / T2 形态条件化共享，支持完整动作与五点目标。 |
+| 7 | [Dex SuperMimic](https://github.com/CumulusAlpha/Dex-Supermimic) | [![GitHub Stars: CumulusAlpha/Dex-Supermimic](https://img.shields.io/github/stars/CumulusAlpha/Dex-Supermimic?style=social)](https://github.com/CumulusAlpha/Dex-Supermimic/stargazers) | [操作与灵巧手](#操作与灵巧手) | Wuji Hand 1 / 2 方块重定向、Hand 2 转笔与公开权重。 |
+| 8 | [Go2-SuperMimic](https://github.com/Zhengtianjin/go2-supermimic) | [![GitHub Stars: Zhengtianjin/go2-supermimic](https://img.shields.io/github/stars/Zhengtianjin/go2-supermimic?style=social)](https://github.com/Zhengtianjin/go2-supermimic/stargazers) | [感知与地形](#感知地形与四足任务) | Go2 平地与地形追逐／闪避仿真，附公开策略。 |
+| 9 | [InstantTrack](https://github.com/Huy-Quang-Dao/instantTrack) | [![GitHub Stars: Huy-Quang-Dao/instantTrack](https://img.shields.io/github/stars/Huy-Quang-Dao/instantTrack?style=social)](https://github.com/Huy-Quang-Dao/instantTrack/stargazers) | [方法改动](#方法改动与形态适配) | EMA、融合 GPU 更新与接触奖励，附三个种子的 LAFAN1 对照。 |
+| 10 | [FlatWorld · SuperMimic-2D](https://github.com/swaggyliu/FlatWorld) | [![GitHub Stars: swaggyliu/FlatWorld](https://img.shields.io/github/stars/swaggyliu/FlatWorld?style=social)](https://github.com/swaggyliu/FlatWorld/stargazers) | [学习示例](#方法借鉴与探索) | 用二维多技能人形跟踪探索共享世界模型学习。 |
+| 11 | [SuperMimic for Robot Manipulation](https://github.com/emoPointer/supermimic_manipulation) | [![GitHub Stars: emoPointer/supermimic_manipulation](https://img.shields.io/github/stars/emoPointer/supermimic_manipulation?style=social)](https://github.com/emoPointer/supermimic_manipulation/stargazers) | [操作与灵巧手](#操作与灵巧手) | ARX5 柠檬／箱体／杯子操作，含留出重置状态库与公开策略。 |
+| 12 | [SuperMimic-Repro-Sim2Real](https://github.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real) | [![GitHub Stars: NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real](https://img.shields.io/github/stars/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real?style=social)](https://github.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real/stargazers) | [真机部署](#真机部署与-sim2real) | G1 单舞蹈策略、视频转动作工具与 ONNX 真机部署。 |
+| 13 | [Muscle SuperMimic](https://github.com/kaibohex/muscle-supermimic) | [![GitHub Stars: kaibohex/muscle-supermimic](https://img.shields.io/github/stars/kaibohex/muscle-supermimic?style=social)](https://github.com/kaibohex/muscle-supermimic/stargazers) | [肌肉与交互](#肌肉驱动交互与诊断) | 700 / 354 肌肉本体跟踪，含可微肌肉模型与 KIT 留出集评测。 |
+| 14 | [In-Hand Rotation mjlab](https://github.com/Msornerrrr/in-hand-rotation-mjlab) | [![GitHub Stars: Msornerrrr/in-hand-rotation-mjlab](https://img.shields.io/github/stars/Msornerrrr/in-hand-rotation-mjlab?style=social)](https://github.com/Msornerrrr/in-hand-rotation-mjlab/stargazers) | [操作与灵巧手](#操作与灵巧手) | LEAP 偏航与 22 物体指尖旋转的世界模型／PPO 对照；真机演示为 PPO。 |
+| 15 | [allmimic](https://github.com/Shimingyi/allmimic) | [![GitHub Stars: Shimingyi/allmimic](https://img.shields.io/github/stars/Shimingyi/allmimic?style=social)](https://github.com/Shimingyi/allmimic/stargazers) | [方法改动](#方法改动与形态适配) | 残差动作与均衡采样，含困难动作和 BONES-SEED 留出集报告。 |
+| 16 | [Rethinking SuperMimic](https://github.com/btx0424/rethinking-supermimic) | [![GitHub Stars: btx0424/rethinking-supermimic](https://img.shields.io/github/stars/btx0424/rethinking-supermimic?style=social)](https://github.com/btx0424/rethinking-supermimic/stargazers) | [方法改动](#方法改动与形态适配) | FiLM 目标条件化、SAC 基线、策略 EMA 与梯度诊断。 |
+| 17 | [Standing MBRL vs PPO](https://github.com/JackMin7/supermimic_whole_body_tracking) | [![GitHub Stars: JackMin7/supermimic_whole_body_tracking](https://img.shields.io/github/stars/JackMin7/supermimic_whole_body_tracking?style=social)](https://github.com/JackMin7/supermimic_whole_body_tracking/stargazers) | [方法改动](#方法改动与形态适配) | 统一 G1 站立任务输入与训练预算的 MBRL / PPO 对照。 |
+| 18 | [ScaleBFM_Plus · SuperMimic](https://github.com/Hxxxz0/ScaleBFM_Plus) | [![GitHub Stars: Hxxxz0/ScaleBFM_Plus](https://img.shields.io/github/stars/Hxxxz0/ScaleBFM_Plus?style=social)](https://github.com/Hxxxz0/ScaleBFM_Plus/stargazers) | [框架与训练栈](#框架与训练栈) | 将 SuperMimic 更新接入 ScaleTrack 人形 Transformer，附留出动作报告。 |
+| 19 | [SuperMimic-MuJoCo](https://github.com/panhainan2020/SuperMimic-MuJoCo) | [![GitHub Stars: panhainan2020/SuperMimic-MuJoCo](https://img.shields.io/github/stars/panhainan2020/SuperMimic-MuJoCo?style=social)](https://github.com/panhainan2020/SuperMimic-MuJoCo/stargazers) | [本体移植](#机器人移植与重定向) | G1 mjlab / CPU MuJoCo 移植，含 3,573 条留出 100STYLE 动作评测与权重。 |
+| 20 | [TrackerLab SuperMimic](https://github.com/Renforce-Dynamics/trackerlab-supermimic) | [![GitHub Stars: Renforce-Dynamics/trackerlab-supermimic](https://img.shields.io/github/stars/Renforce-Dynamics/trackerlab-supermimic?style=social)](https://github.com/Renforce-Dynamics/trackerlab-supermimic/stargazers) | [框架与训练栈](#框架与训练栈) | 多本体 PhysX 训练栈，新增可选 G1 Warp 训练；CUDA 运行验收待完成。 |
+| 21 | [SuperMimic Parkour](https://github.com/yhx1203/supermimic_parkour) | [![GitHub Stars: yhx1203/supermimic_parkour](https://img.shields.io/github/stars/yhx1203/supermimic_parkour?style=social)](https://github.com/yhx1203/supermimic_parkour/stargazers) | [感知与地形](#感知地形与四足任务) | 基于 PHP 动作包的 G1 五技能跑酷，附公开检查点。 |
+| 22 | [SuperMimic Retargeted](https://github.com/tianshuwu/supermimic-retargeted) | [![GitHub Stars: tianshuwu/supermimic-retargeted](https://img.shields.io/github/stars/tianshuwu/supermimic-retargeted?style=social)](https://github.com/tianshuwu/supermimic-retargeted/stargazers) | [本体移植](#机器人移植与重定向) | G1 / A3 / X2 Ultra 移植，含 SOMA 重定向与各本体实验记录。 |
+| 23 | [SuperMimic Mjlab](https://github.com/Breezewrf/supermimic_mjlab) | [![GitHub Stars: Breezewrf/supermimic_mjlab](https://img.shields.io/github/stars/Breezewrf/supermimic_mjlab?style=social)](https://github.com/Breezewrf/supermimic_mjlab/stargazers) | [独立复现](#独立复现) | G1 的 40 动作跟踪、速度训练，以及归一化与学习率消融。 |
+| 24 | [SuperMimic G1 Deployment](https://github.com/KyrieYoung926/supermimic_deploy) | [![GitHub Stars: KyrieYoung926/supermimic_deploy](https://img.shields.io/github/stars/KyrieYoung926/supermimic_deploy?style=social)](https://github.com/KyrieYoung926/supermimic_deploy/stargazers) | [真机部署](#真机部署与-sim2real) | 29 自由度 G1 的 ONNX 策略回放，覆盖 MuJoCo 与真机。 |
+| 25 | [Humanoid Mimic · SuperMimic](https://github.com/shuayyy/humanoid-amp-ppo) | [![GitHub Stars: shuayyy/humanoid-amp-ppo](https://img.shields.io/github/stars/shuayyy/humanoid-amp-ppo?style=social)](https://github.com/shuayyy/humanoid-amp-ppo/stargazers) | [操作与灵巧手](#操作与灵巧手) | G1 行走／下蹲／抬箱对照；SuperMimic 成绩采用无噪声观测。 |
+| 26 | [SuperMimic Wheel-Legged (wheelbipe)](https://github.com/RadiantForever/supermimic_wheelbipe) | [![GitHub Stars: RadiantForever/supermimic_wheelbipe](https://img.shields.io/github/stars/RadiantForever/supermimic_wheelbipe?style=social)](https://github.com/RadiantForever/supermimic_wheelbipe/stargazers) | [本体移植](#机器人移植与重定向) | 通过世界模型 rollout 学习 wheelbipe 前进、偏航与腿高控制。 |
+| 27 | [SuperMimic-perceptive](https://github.com/mode1223345/SuperMimic-perceptive) | [![GitHub Stars: mode1223345/SuperMimic-perceptive](https://img.shields.io/github/stars/mode1223345/SuperMimic-perceptive?style=social)](https://github.com/mode1223345/SuperMimic-perceptive/stargazers) | [感知与地形](#感知地形与四足任务) | Actor、critic 与世界模型共享冻结高程图 AE；控制对照仍在进行。 |
+| 28 | [SuperMimic on LocoMuJoCo](https://github.com/Alchedata/supermimic-locomujoco) | [![GitHub Stars: Alchedata/supermimic-locomujoco](https://img.shields.io/github/stars/Alchedata/supermimic-locomujoco?style=social)](https://github.com/Alchedata/supermimic-locomujoco/stargazers) | [方法改动](#方法改动与形态适配) | H1 全状态 ODE 动力学与三个种子的抗饱和对照。 |
+| 29 | [supermimic_vibe](https://github.com/dhmbb2/supermimic_vibe) | [![GitHub Stars: dhmbb2/supermimic_vibe](https://img.shields.io/github/stars/dhmbb2/supermimic_vibe?style=social)](https://github.com/dhmbb2/supermimic_vibe/stargazers) | [独立复现](#独立复现) | BONES-SEED 全量评测、SONIC / PPO 对照与训练崩溃消融。 |
+| 30 | [SuperMimic E1](https://github.com/wenconggan/SuperMimic_e1) | [![GitHub Stars: wenconggan/SuperMimic_e1](https://img.shields.io/github/stars/wenconggan/SuperMimic_e1?style=social)](https://github.com/wenconggan/SuperMimic_e1/stargazers) | [本体移植](#机器人移植与重定向) | 21 自由度 E1 跟踪、原生 MuJoCo 回放与单列的完整动作评测。 |
+| 31 | [SuperMimicKit](https://github.com/OMEGA-i/SuperMimicKit) | [![GitHub Stars: OMEGA-i/SuperMimicKit](https://img.shields.io/github/stars/OMEGA-i/SuperMimicKit?style=social)](https://github.com/OMEGA-i/SuperMimicKit/stargazers) | [框架与训练栈](#框架与训练栈) | G1 / H2 的 train40 / val37 指标与 G1 / H2 / A3 浏览器预览。 |
+| 32 | [SuperMimic Oli](https://github.com/liuskywalkerjskd/supermimic_oli) | [![GitHub Stars: liuskywalkerjskd/supermimic_oli](https://img.shields.io/github/stars/liuskywalkerjskd/supermimic_oli?style=social)](https://github.com/liuskywalkerjskd/supermimic_oli/stargazers) | [本体移植](#机器人移植与重定向) | 31 自由度 Oli 适配，附 40 动作指标与完整动作视频。 |
+| 33 | [SuperMimic Lab](https://github.com/chu-fa/isaaclab-supermimic) | [![GitHub Stars: chu-fa/isaaclab-supermimic](https://img.shields.io/github/stars/chu-fa/isaaclab-supermimic?style=social)](https://github.com/chu-fa/isaaclab-supermimic/stargazers) | [框架与训练栈](#框架与训练栈) | Isaac Lab 学习器与任务接口约定，附可独立安装的 A3 示例。 |
+| 34 | [SuperMimic Backflip Diagnostics](https://github.com/liudi159/supermimic-backflip-5090) | [![GitHub Stars: liudi159/supermimic-backflip-5090](https://img.shields.io/github/stars/liudi159/supermimic-backflip-5090?style=social)](https://github.com/liudi159/supermimic-backflip-5090/stargazers) | [肌肉与交互](#肌肉驱动交互与诊断) | G1 后空翻对称性与落地诊断；严格接触验收仍未通过。 |
+| 35 | [SuperMimic on RTX 5080](https://github.com/rzc156/supermimic-rtx5080) | [![GitHub Stars: rzc156/supermimic-rtx5080](https://img.shields.io/github/stars/rzc156/supermimic-rtx5080?style=social)](https://github.com/rzc156/supermimic-rtx5080/stargazers) | [独立复现](#独立复现) | 16 GB RTX 5080 适配，采用锚点观测并提供完整 LAFAN1 评测。 |
+| 36 | [SuperMimic on Apple M5](https://github.com/WXyuany/supermimic-m5) | [![GitHub Stars: WXyuany/supermimic-m5](https://img.shields.io/github/stars/WXyuany/supermimic-m5?style=social)](https://github.com/WXyuany/supermimic-m5/stargazers) | [本体移植](#机器人移植与重定向) | Apple M5：MPS 学习、CPU MuJoCo 物理仿真与公开 G1 权重。 |
+| 37 | [G0.5 · SuperMimic-style Steering](https://github.com/azizkhadraoui/g05) | [![GitHub Stars: azizkhadraoui/g05](https://img.shields.io/github/stars/azizkhadraoui/g05?style=social)](https://github.com/azizkhadraoui/g05/stargazers) | [学习示例](#方法借鉴与探索) | LIBERO 上的 SuperMimic 式 VLA 引导与直接策略微调失败记录。 |
+| 38 | [SuperMimic-PERA](https://github.com/shangchaohu718/supermimic-pera) | [![GitHub Stars: shangchaohu718/supermimic-pera](https://img.shields.io/github/stars/shangchaohu718/supermimic-pera?style=social)](https://github.com/shangchaohu718/supermimic-pera/stargazers) | [肌肉与交互](#肌肉驱动交互与诊断) | 冻结 G1 跟踪器，另有独立滑板仿真策略。 |
 
 <a id="browse-by-category"></a>
 
@@ -127,7 +127,7 @@ GitHub API 数值快照：**2026-10-29 17:33:46 UTC** · 每日检查 · Stars �
 <a id="supermimic-repro-sim2real"></a>
 <a id="-supermimic-repro-sim2real"></a>
 
-**[SuperMimic-Repro-Sim2Real](https://github.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real)** · [![36 stars](assets/stars/1433556794.svg)](https://github.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real/stargazers) · ⭐ 维护者精选
+**[SuperMimic-Repro-Sim2Real](https://github.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real)** · [![GitHub Stars: NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real](https://img.shields.io/github/stars/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real?style=social)](https://github.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real/stargazers) · ⭐ 维护者精选
 
 **技术栈:** mjlab / MuJoCo / Unitree SDK · **作者:** NJU R&amp;L Group Embodied Lab<br>
 G1 单舞蹈策略、视频转动作工具与 ONNX 真机部署。
@@ -136,7 +136,7 @@ G1 单舞蹈策略、视频转动作工具与 ONNX 真机部署。
 
 <a id="supermimic-g1-deployment"></a>
 
-**[SuperMimic G1 Deployment](https://github.com/KyrieYoung926/supermimic_deploy)** · [![8 stars](assets/stars/1430946541.svg)](https://github.com/KyrieYoung926/supermimic_deploy/stargazers)
+**[SuperMimic G1 Deployment](https://github.com/KyrieYoung926/supermimic_deploy)** · [![GitHub Stars: KyrieYoung926/supermimic_deploy](https://img.shields.io/github/stars/KyrieYoung926/supermimic_deploy?style=social)](https://github.com/KyrieYoung926/supermimic_deploy/stargazers)
 
 **技术栈:** ONNX Runtime / MuJoCo / Unitree SDK2 · **作者:** KyrieYoung926<br>
 29 自由度 G1 的 ONNX 策略回放，覆盖 MuJoCo 与真机。
@@ -151,7 +151,7 @@ G1 单舞蹈策略、视频转动作工具与 ONNX 真机部署。
 <a id="supermimic_vibed"></a>
 <a id="-supermimic_vibed"></a>
 
-**[supermimic_vibed](https://github.com/zita-ch/supermimic_vibed)** · [![724 stars](assets/stars/1428714029.svg)](https://github.com/zita-ch/supermimic_vibed/stargazers) · ⭐ 维护者精选
+**[supermimic_vibed](https://github.com/zita-ch/supermimic_vibed)** · [![GitHub Stars: zita-ch/supermimic_vibed](https://img.shields.io/github/stars/zita-ch/supermimic_vibed?style=social)](https://github.com/zita-ch/supermimic_vibed/stargazers) · ⭐ 维护者精选
 
 **技术栈:** Isaac Lab 3 · **作者:** Chong Zhang<br>
 免 Kit 的 Isaac Lab G1 基线，含完整动作评测与地面资产缓存。
@@ -161,7 +161,7 @@ G1 单舞蹈策略、视频转动作工具与 ONNX 真机部署。
 <a id="supermimic-reproduced"></a>
 <a id="-supermimic-reproduced"></a>
 
-**[SuperMimic-Reproduced](https://github.com/CuboiLeo/SuperMimic-Reproduced)** · [![315 stars](assets/stars/1429037845.svg)](https://github.com/CuboiLeo/SuperMimic-Reproduced/stargazers) · ⭐ 维护者精选
+**[SuperMimic-Reproduced](https://github.com/CuboiLeo/SuperMimic-Reproduced)** · [![GitHub Stars: CuboiLeo/SuperMimic-Reproduced](https://img.shields.io/github/stars/CuboiLeo/SuperMimic-Reproduced?style=social)](https://github.com/CuboiLeo/SuperMimic-Reproduced/stargazers) · ⭐ 维护者精选
 
 **技术栈:** mjlab · **作者:** CuboiLeo<br>
 全量 BONES-SEED 权重与论文观测／锚点观测对照实验。
@@ -171,7 +171,7 @@ G1 单舞蹈策略、视频转动作工具与 ONNX 真机部署。
 <a id="supermimic-mjlab"></a>
 <a id="-supermimic-mjlab"></a>
 
-**[SuperMimic Mjlab](https://github.com/Breezewrf/supermimic_mjlab)** · [![8 stars](assets/stars/1429560578.svg)](https://github.com/Breezewrf/supermimic_mjlab/stargazers) · ⭐ 维护者精选
+**[SuperMimic Mjlab](https://github.com/Breezewrf/supermimic_mjlab)** · [![GitHub Stars: Breezewrf/supermimic_mjlab](https://img.shields.io/github/stars/Breezewrf/supermimic_mjlab?style=social)](https://github.com/Breezewrf/supermimic_mjlab/stargazers) · ⭐ 维护者精选
 
 **技术栈:** mjlab · **作者:** Breezewrf<br>
 G1 的 40 动作跟踪、速度训练，以及归一化与学习率消融。
@@ -180,7 +180,7 @@ G1 的 40 动作跟踪、速度训练，以及归一化与学习率消融。
 
 <a id="supermimic_vibe"></a>
 
-**[supermimic_vibe](https://github.com/dhmbb2/supermimic_vibe)** · [![5 stars](assets/stars/1429888171.svg)](https://github.com/dhmbb2/supermimic_vibe/stargazers)
+**[supermimic_vibe](https://github.com/dhmbb2/supermimic_vibe)** · [![GitHub Stars: dhmbb2/supermimic_vibe](https://img.shields.io/github/stars/dhmbb2/supermimic_vibe?style=social)](https://github.com/dhmbb2/supermimic_vibe/stargazers)
 
 **技术栈:** mjlab · **作者:** dhmbb2<br>
 BONES-SEED 全量评测、SONIC / PPO 对照与训练崩溃消融。
@@ -189,7 +189,7 @@ BONES-SEED 全量评测、SONIC / PPO 对照与训练崩溃消融。
 
 <a id="supermimic-on-rtx-5080"></a>
 
-**[SuperMimic on RTX 5080](https://github.com/rzc156/supermimic-rtx5080)** · [![2 stars](assets/stars/1434000857.svg)](https://github.com/rzc156/supermimic-rtx5080/stargazers)
+**[SuperMimic on RTX 5080](https://github.com/rzc156/supermimic-rtx5080)** · [![GitHub Stars: rzc156/supermimic-rtx5080](https://img.shields.io/github/stars/rzc156/supermimic-rtx5080?style=social)](https://github.com/rzc156/supermimic-rtx5080/stargazers)
 
 **技术栈:** mjlab · **作者:** rzc156<br>
 16 GB RTX 5080 适配，采用锚点观测并提供完整 LAFAN1 评测。
@@ -204,7 +204,7 @@ BONES-SEED 全量评测、SONIC / PPO 对照与训练崩溃消融。
 <a id="morphmimic"></a>
 <a id="-morphmimic"></a>
 
-**[MorphMimic](https://github.com/lzyang2000/morphmimic)** · [![152 stars](assets/stars/1430789167.svg)](https://github.com/lzyang2000/morphmimic/stargazers) · ⭐ 维护者精选
+**[MorphMimic](https://github.com/lzyang2000/morphmimic)** · [![GitHub Stars: lzyang2000/morphmimic](https://img.shields.io/github/stars/lzyang2000/morphmimic?style=social)](https://github.com/lzyang2000/morphmimic/stargazers) · ⭐ 维护者精选
 
 **技术栈:** mjlab · **作者:** Lizhi Yang et al<br>
 G1 / X2 / T2 形态条件化共享，支持完整动作与五点目标。
@@ -214,7 +214,7 @@ G1 / X2 / T2 形态条件化共享，支持完整动作与五点目标。
 <a id="instanttrack"></a>
 <a id="-instanttrack"></a>
 
-**[InstantTrack](https://github.com/Huy-Quang-Dao/instantTrack)** · [![52 stars](assets/stars/1438037302.svg)](https://github.com/Huy-Quang-Dao/instantTrack/stargazers) · ⭐ 维护者精选
+**[InstantTrack](https://github.com/Huy-Quang-Dao/instantTrack)** · [![GitHub Stars: Huy-Quang-Dao/instantTrack](https://img.shields.io/github/stars/Huy-Quang-Dao/instantTrack?style=social)](https://github.com/Huy-Quang-Dao/instantTrack/stargazers) · ⭐ 维护者精选
 
 **技术栈:** mjlab · **作者:** Huy-Quang-Dao<br>
 EMA、融合 GPU 更新与接触奖励，附三个种子的 LAFAN1 对照。
@@ -223,7 +223,7 @@ EMA、融合 GPU 更新与接触奖励，附三个种子的 LAFAN1 对照。
 
 <a id="allmimic"></a>
 
-**[allmimic](https://github.com/Shimingyi/allmimic)** · [![31 stars](assets/stars/1431958748.svg)](https://github.com/Shimingyi/allmimic/stargazers)
+**[allmimic](https://github.com/Shimingyi/allmimic)** · [![GitHub Stars: Shimingyi/allmimic](https://img.shields.io/github/stars/Shimingyi/allmimic?style=social)](https://github.com/Shimingyi/allmimic/stargazers)
 
 **技术栈:** mjlab · **作者:** Shimingyi<br>
 残差动作与均衡采样，含困难动作和 BONES-SEED 留出集报告。
@@ -232,7 +232,7 @@ EMA、融合 GPU 更新与接触奖励，附三个种子的 LAFAN1 对照。
 
 <a id="rethinking-supermimic"></a>
 
-**[Rethinking SuperMimic](https://github.com/btx0424/rethinking-supermimic)** · [![27 stars](assets/stars/1429359559.svg)](https://github.com/btx0424/rethinking-supermimic/stargazers)
+**[Rethinking SuperMimic](https://github.com/btx0424/rethinking-supermimic)** · [![GitHub Stars: btx0424/rethinking-supermimic](https://img.shields.io/github/stars/btx0424/rethinking-supermimic?style=social)](https://github.com/btx0424/rethinking-supermimic/stargazers)
 
 **技术栈:** mjlab · **作者:** btx0424<br>
 FiLM 目标条件化、SAC 基线、策略 EMA 与梯度诊断。
@@ -241,7 +241,7 @@ FiLM 目标条件化、SAC 基线、策略 EMA 与梯度诊断。
 
 <a id="standing-mbrl-vs-ppo"></a>
 
-**[Standing MBRL vs PPO](https://github.com/JackMin7/supermimic_whole_body_tracking)** · [![20 stars](assets/stars/1429495052.svg)](https://github.com/JackMin7/supermimic_whole_body_tracking/stargazers)
+**[Standing MBRL vs PPO](https://github.com/JackMin7/supermimic_whole_body_tracking)** · [![GitHub Stars: JackMin7/supermimic_whole_body_tracking](https://img.shields.io/github/stars/JackMin7/supermimic_whole_body_tracking?style=social)](https://github.com/JackMin7/supermimic_whole_body_tracking/stargazers)
 
 **技术栈:** RSL-RL / G1 · **作者:** JackMin7<br>
 统一 G1 站立任务输入与训练预算的 MBRL / PPO 对照。
@@ -250,7 +250,7 @@ FiLM 目标条件化、SAC 基线、策略 EMA 与梯度诊断。
 
 <a id="supermimic-on-locomujoco"></a>
 
-**[SuperMimic on LocoMuJoCo](https://github.com/Alchedata/supermimic-locomujoco)** · [![5 stars](assets/stars/1432664861.svg)](https://github.com/Alchedata/supermimic-locomujoco/stargazers)
+**[SuperMimic on LocoMuJoCo](https://github.com/Alchedata/supermimic-locomujoco)** · [![GitHub Stars: Alchedata/supermimic-locomujoco](https://img.shields.io/github/stars/Alchedata/supermimic-locomujoco?style=social)](https://github.com/Alchedata/supermimic-locomujoco/stargazers)
 
 **技术栈:** JAX / LocoMuJoCo · **作者:** Alchedata<br>
 H1 全状态 ODE 动力学与三个种子的抗饱和对照。
@@ -265,7 +265,7 @@ H1 全状态 ODE 动力学与三个种子的抗饱和对照。
 <a id="instinctmj--supermimic"></a>
 <a id="-instinctmj--supermimic"></a>
 
-**[InstinctMJ · SuperMimic](https://github.com/project-instinct/InstinctMJ/tree/supermimic)** · [![301 stars](assets/stars/1176761185.svg)](https://github.com/project-instinct/InstinctMJ/stargazers) · ⭐ 维护者精选
+**[InstinctMJ · SuperMimic](https://github.com/project-instinct/InstinctMJ/tree/supermimic)** · [![GitHub Stars: project-instinct/InstinctMJ](https://img.shields.io/github/stars/project-instinct/InstinctMJ?style=social)](https://github.com/project-instinct/InstinctMJ/stargazers) · ⭐ 维护者精选
 
 **技术栈:** mjlab / instinct_rl · **作者:** Project Instinct<br>
 在想象轨迹中可微渲染深度图的 G1 地形跟踪；使用 supermimic 分支。
@@ -275,7 +275,7 @@ H1 全状态 ODE 动力学与三个种子的抗饱和对照。
 <a id="go2-supermimic"></a>
 <a id="-go2-supermimic"></a>
 
-**[Go2-SuperMimic](https://github.com/Zhengtianjin/go2-supermimic)** · [![69 stars](assets/stars/1431486582.svg)](https://github.com/Zhengtianjin/go2-supermimic/stargazers) · ⭐ 维护者精选
+**[Go2-SuperMimic](https://github.com/Zhengtianjin/go2-supermimic)** · [![GitHub Stars: Zhengtianjin/go2-supermimic](https://img.shields.io/github/stars/Zhengtianjin/go2-supermimic?style=social)](https://github.com/Zhengtianjin/go2-supermimic/stargazers) · ⭐ 维护者精选
 
 **技术栈:** mjlab · **作者:** Zhengtianjin<br>
 Go2 平地与地形追逐／闪避仿真，附公开策略。
@@ -284,7 +284,7 @@ Go2 平地与地形追逐／闪避仿真，附公开策略。
 
 <a id="supermimic-parkour"></a>
 
-**[SuperMimic Parkour](https://github.com/yhx1203/supermimic_parkour)** · [![12 stars](assets/stars/1430513100.svg)](https://github.com/yhx1203/supermimic_parkour/stargazers)
+**[SuperMimic Parkour](https://github.com/yhx1203/supermimic_parkour)** · [![GitHub Stars: yhx1203/supermimic_parkour](https://img.shields.io/github/stars/yhx1203/supermimic_parkour?style=social)](https://github.com/yhx1203/supermimic_parkour/stargazers)
 
 **技术栈:** mjlab / PHP Parkour · **作者:** yhx1203<br>
 基于 PHP 动作包的 G1 五技能跑酷，附公开检查点。
@@ -293,7 +293,7 @@ Go2 平地与地形追逐／闪避仿真，附公开策略。
 
 <a id="supermimic-perceptive"></a>
 
-**[SuperMimic-perceptive](https://github.com/mode1223345/SuperMimic-perceptive)** · [![6 stars](assets/stars/1432125557.svg)](https://github.com/mode1223345/SuperMimic-perceptive/stargazers)
+**[SuperMimic-perceptive](https://github.com/mode1223345/SuperMimic-perceptive)** · [![GitHub Stars: mode1223345/SuperMimic-perceptive](https://img.shields.io/github/stars/mode1223345/SuperMimic-perceptive?style=social)](https://github.com/mode1223345/SuperMimic-perceptive/stargazers)
 
 **技术栈:** Isaac Lab 3 · **作者:** mode1223345<br>
 Actor、critic 与世界模型共享冻结高程图 AE；控制对照仍在进行。
@@ -308,7 +308,7 @@ Actor、critic 与世界模型共享冻结高程图 AE；控制对照仍在进�
 <a id="dex-supermimic"></a>
 <a id="-dex-supermimic"></a>
 
-**[Dex SuperMimic](https://github.com/CumulusAlpha/Dex-Supermimic)** · [![75 stars](assets/stars/1433804344.svg)](https://github.com/CumulusAlpha/Dex-Supermimic/stargazers) · ⭐ 维护者精选
+**[Dex SuperMimic](https://github.com/CumulusAlpha/Dex-Supermimic)** · [![GitHub Stars: CumulusAlpha/Dex-Supermimic](https://img.shields.io/github/stars/CumulusAlpha/Dex-Supermimic?style=social)](https://github.com/CumulusAlpha/Dex-Supermimic/stargazers) · ⭐ 维护者精选
 
 **技术栈:** mjlab / MuJoCo Warp / InstinctMJ · **作者:** CumulusAlpha<br>
 Wuji Hand 1 / 2 方块重定向、Hand 2 转笔与公开权重。
@@ -318,7 +318,7 @@ Wuji Hand 1 / 2 方块重定向、Hand 2 转笔与公开权重。
 <a id="supermimic-for-robot-manipulation"></a>
 <a id="-supermimic-for-robot-manipulation"></a>
 
-**[SuperMimic for Robot Manipulation](https://github.com/emoPointer/supermimic_manipulation)** · [![39 stars](assets/stars/1433554854.svg)](https://github.com/emoPointer/supermimic_manipulation/stargazers) · ⭐ 维护者精选
+**[SuperMimic for Robot Manipulation](https://github.com/emoPointer/supermimic_manipulation)** · [![GitHub Stars: emoPointer/supermimic_manipulation](https://img.shields.io/github/stars/emoPointer/supermimic_manipulation?style=social)](https://github.com/emoPointer/supermimic_manipulation/stargazers) · ⭐ 维护者精选
 
 **技术栈:** mjlab / MuJoCo Warp · **作者:** Zhiqiang Zhou (emoPointer)<br>
 ARX5 柠檬／箱体／杯子操作，含留出重置状态库与公开策略。
@@ -328,7 +328,7 @@ ARX5 柠檬／箱体／杯子操作，含留出重置状态库与公开策略。
 <a id="in-hand-rotation-mjlab"></a>
 <a id="-in-hand-rotation-mjlab"></a>
 
-**[In-Hand Rotation mjlab](https://github.com/Msornerrrr/in-hand-rotation-mjlab)** · [![34 stars](assets/stars/1162247047.svg)](https://github.com/Msornerrrr/in-hand-rotation-mjlab/stargazers) · ⭐ 维护者精选
+**[In-Hand Rotation mjlab](https://github.com/Msornerrrr/in-hand-rotation-mjlab)** · [![GitHub Stars: Msornerrrr/in-hand-rotation-mjlab](https://img.shields.io/github/stars/Msornerrrr/in-hand-rotation-mjlab?style=social)](https://github.com/Msornerrrr/in-hand-rotation-mjlab/stargazers) · ⭐ 维护者精选
 
 **技术栈:** mjlab / MuJoCo Warp · **作者:** Msornerrrr<br>
 LEAP 偏航与 22 物体指尖旋转的世界模型／PPO 对照；真机演示为 PPO。
@@ -337,7 +337,7 @@ LEAP 偏航与 22 物体指尖旋转的世界模型／PPO 对照；真机演示�
 
 <a id="humanoid-mimic--supermimic"></a>
 
-**[Humanoid Mimic · SuperMimic](https://github.com/shuayyy/humanoid-amp-ppo)** · [![8 stars](assets/stars/1285577591.svg)](https://github.com/shuayyy/humanoid-amp-ppo/stargazers)
+**[Humanoid Mimic · SuperMimic](https://github.com/shuayyy/humanoid-amp-ppo)** · [![GitHub Stars: shuayyy/humanoid-amp-ppo](https://img.shields.io/github/stars/shuayyy/humanoid-amp-ppo?style=social)](https://github.com/shuayyy/humanoid-amp-ppo/stargazers)
 
 **技术栈:** mjlab · **作者:** shuayyy<br>
 G1 行走／下蹲／抬箱对照；SuperMimic 成绩采用无噪声观测。
@@ -352,7 +352,7 @@ G1 行走／下蹲／抬箱对照；SuperMimic 成绩采用无噪声观测。
 <a id="muscle-supermimic"></a>
 <a id="-muscle-supermimic"></a>
 
-**[Muscle SuperMimic](https://github.com/kaibohex/muscle-supermimic)** · [![33 stars](assets/stars/1434932501.svg)](https://github.com/kaibohex/muscle-supermimic/stargazers) · ⭐ 维护者精选
+**[Muscle SuperMimic](https://github.com/kaibohex/muscle-supermimic)** · [![GitHub Stars: kaibohex/muscle-supermimic](https://img.shields.io/github/stars/kaibohex/muscle-supermimic?style=social)](https://github.com/kaibohex/muscle-supermimic/stargazers) · ⭐ 维护者精选
 
 **技术栈:** mjlab / MuJoCo Warp · **作者:** Kaibo He (kaibohex)<br>
 700 / 354 肌肉本体跟踪，含可微肌肉模型与 KIT 留出集评测。
@@ -361,7 +361,7 @@ G1 行走／下蹲／抬箱对照；SuperMimic 成绩采用无噪声观测。
 
 <a id="supermimic-backflip-diagnostics"></a>
 
-**[SuperMimic Backflip Diagnostics](https://github.com/liudi159/supermimic-backflip-5090)** · [![2 stars](assets/stars/1432819468.svg)](https://github.com/liudi159/supermimic-backflip-5090/stargazers)
+**[SuperMimic Backflip Diagnostics](https://github.com/liudi159/supermimic-backflip-5090)** · [![GitHub Stars: liudi159/supermimic-backflip-5090](https://img.shields.io/github/stars/liudi159/supermimic-backflip-5090?style=social)](https://github.com/liudi159/supermimic-backflip-5090/stargazers)
 
 **技术栈:** Isaac Lab 3 · **作者:** liudi159<br>
 G1 后空翻对称性与落地诊断；严格接触验收仍未通过。
@@ -370,7 +370,7 @@ G1 后空翻对称性与落地诊断；严格接触验收仍未通过。
 
 <a id="supermimic-pera"></a>
 
-**[SuperMimic-PERA](https://github.com/shangchaohu718/supermimic-pera)** · [![0 stars](assets/stars/1430576677.svg)](https://github.com/shangchaohu718/supermimic-pera/stargazers)
+**[SuperMimic-PERA](https://github.com/shangchaohu718/supermimic-pera)** · [![GitHub Stars: shangchaohu718/supermimic-pera](https://img.shields.io/github/stars/shangchaohu718/supermimic-pera?style=social)](https://github.com/shangchaohu718/supermimic-pera/stargazers)
 
 **技术栈:** UniLab / MuJoCo · **作者:** shangchaohu718<br>
 冻结 G1 跟踪器，另有独立滑板仿真策略。
@@ -384,7 +384,7 @@ G1 后空翻对称性与落地诊断；严格接触验收仍未通过。
 
 <a id="holomotion--supermimic"></a>
 
-**[HoloMotion · SuperMimic](https://github.com/HorizonRobotics/HoloMotion)** · [![750 stars](assets/stars/1028843437.svg)](https://github.com/HorizonRobotics/HoloMotion/stargazers)
+**[HoloMotion · SuperMimic](https://github.com/HorizonRobotics/HoloMotion)** · [![GitHub Stars: HorizonRobotics/HoloMotion](https://img.shields.io/github/stars/HorizonRobotics/HoloMotion?style=social)](https://github.com/HorizonRobotics/HoloMotion/stargazers)
 
 **技术栈:** MuJoCo Warp / Isaac PhysX / Hydra · **作者:** Horizon Robotics<br>
 在 MuJoCo Warp / Isaac PhysX 上为 PPO 与 SuperMimic 共享 G1 任务。
@@ -394,7 +394,7 @@ G1 后空翻对称性与落地诊断；严格接触验收仍未通过。
 <a id="unisupermimic"></a>
 <a id="-unisupermimic"></a>
 
-**[UniSuperMimic](https://github.com/Motphys/Uni-SuperMimic)** · [![205 stars](assets/stars/1429498465.svg)](https://github.com/Motphys/Uni-SuperMimic/stargazers) · ⭐ 维护者精选
+**[UniSuperMimic](https://github.com/Motphys/Uni-SuperMimic)** · [![GitHub Stars: Motphys/Uni-SuperMimic](https://img.shields.io/github/stars/Motphys/Uni-SuperMimic?style=social)](https://github.com/Motphys/Uni-SuperMimic/stargazers) · ⭐ 维护者精选
 
 **技术栈:** UniLab / mjwarp / MuJoCo / Motrix · **作者:** Motphys<br>
 G1 三后端训练，含 12.9 万段 BONES-SEED 数据流程与全库评测。
@@ -404,7 +404,7 @@ G1 三后端训练，含 12.9 万段 BONES-SEED 数据流程与全库评测。
 <a id="scalebfm_plus--supermimic"></a>
 <a id="-scalebfm_plus--supermimic"></a>
 
-**[ScaleBFM_Plus · SuperMimic](https://github.com/Hxxxz0/ScaleBFM_Plus)** · [![19 stars](assets/stars/1431877986.svg)](https://github.com/Hxxxz0/ScaleBFM_Plus/stargazers) · ⭐ 维护者精选
+**[ScaleBFM_Plus · SuperMimic](https://github.com/Hxxxz0/ScaleBFM_Plus)** · [![GitHub Stars: Hxxxz0/ScaleBFM_Plus](https://img.shields.io/github/stars/Hxxxz0/ScaleBFM_Plus?style=social)](https://github.com/Hxxxz0/ScaleBFM_Plus/stargazers) · ⭐ 维护者精选
 
 **技术栈:** Isaac Lab / RSL-RL · **作者:** Hxxxz0, building on ScaleBFM<br>
 将 SuperMimic 更新接入 ScaleTrack 人形 Transformer，附留出动作报告。
@@ -413,7 +413,7 @@ G1 三后端训练，含 12.9 万段 BONES-SEED 数据流程与全库评测。
 
 <a id="trackerlab-supermimic"></a>
 
-**[TrackerLab SuperMimic](https://github.com/Renforce-Dynamics/trackerlab-supermimic)** · [![13 stars](assets/stars/1430222310.svg)](https://github.com/Renforce-Dynamics/trackerlab-supermimic/stargazers)
+**[TrackerLab SuperMimic](https://github.com/Renforce-Dynamics/trackerlab-supermimic)** · [![GitHub Stars: Renforce-Dynamics/trackerlab-supermimic](https://img.shields.io/github/stars/Renforce-Dynamics/trackerlab-supermimic?style=social)](https://github.com/Renforce-Dynamics/trackerlab-supermimic/stargazers)
 
 **技术栈:** Isaac Lab / PhysX; optional MuJoCo Warp · **作者:** Renforce Dynamics<br>
 多本体 PhysX 训练栈，新增可选 G1 Warp 训练；CUDA 运行验收待完成。
@@ -422,7 +422,7 @@ G1 三后端训练，含 12.9 万段 BONES-SEED 数据流程与全库评测。
 
 <a id="supermimickit"></a>
 
-**[SuperMimicKit](https://github.com/OMEGA-i/SuperMimicKit)** · [![4 stars](assets/stars/1431562951.svg)](https://github.com/OMEGA-i/SuperMimicKit/stargazers)
+**[SuperMimicKit](https://github.com/OMEGA-i/SuperMimicKit)** · [![GitHub Stars: OMEGA-i/SuperMimicKit](https://img.shields.io/github/stars/OMEGA-i/SuperMimicKit?style=social)](https://github.com/OMEGA-i/SuperMimicKit/stargazers)
 
 **技术栈:** MuJoCo Warp / ONNX / WebGPU · **作者:** OMEGA-i<br>
 G1 / H2 的 train40 / val37 指标与 G1 / H2 / A3 浏览器预览。
@@ -431,7 +431,7 @@ G1 / H2 的 train40 / val37 指标与 G1 / H2 / A3 浏览器预览。
 
 <a id="supermimic-lab"></a>
 
-**[SuperMimic Lab](https://github.com/chu-fa/isaaclab-supermimic)** · [![2 stars](assets/stars/1431327517.svg)](https://github.com/chu-fa/isaaclab-supermimic/stargazers)
+**[SuperMimic Lab](https://github.com/chu-fa/isaaclab-supermimic)** · [![GitHub Stars: chu-fa/isaaclab-supermimic](https://img.shields.io/github/stars/chu-fa/isaaclab-supermimic?style=social)](https://github.com/chu-fa/isaaclab-supermimic/stargazers)
 
 **技术栈:** Isaac Lab · **作者:** chu-fa<br>
 Isaac Lab 学习器与任务接口约定，附可独立安装的 A3 示例。
@@ -445,7 +445,7 @@ Isaac Lab 学习器与任务接口约定，附可独立安装的 A3 示例。
 
 <a id="supermimic-mujoco"></a>
 
-**[SuperMimic-MuJoCo](https://github.com/panhainan2020/SuperMimic-MuJoCo)** · [![15 stars](assets/stars/1430957174.svg)](https://github.com/panhainan2020/SuperMimic-MuJoCo/stargazers)
+**[SuperMimic-MuJoCo](https://github.com/panhainan2020/SuperMimic-MuJoCo)** · [![GitHub Stars: panhainan2020/SuperMimic-MuJoCo](https://img.shields.io/github/stars/panhainan2020/SuperMimic-MuJoCo?style=social)](https://github.com/panhainan2020/SuperMimic-MuJoCo/stargazers)
 
 **技术栈:** mjlab / CPU MuJoCo · **作者:** panhainan2020<br>
 G1 mjlab / CPU MuJoCo 移植，含 3,573 条留出 100STYLE 动作评测与权重。
@@ -455,7 +455,7 @@ G1 mjlab / CPU MuJoCo 移植，含 3,573 条留出 100STYLE 动作评测与权�
 <a id="supermimic-retargeted"></a>
 <a id="-supermimic-retargeted"></a>
 
-**[SuperMimic Retargeted](https://github.com/tianshuwu/supermimic-retargeted)** · [![9 stars](assets/stars/1430469940.svg)](https://github.com/tianshuwu/supermimic-retargeted/stargazers) · ⭐ 维护者精选
+**[SuperMimic Retargeted](https://github.com/tianshuwu/supermimic-retargeted)** · [![GitHub Stars: tianshuwu/supermimic-retargeted](https://img.shields.io/github/stars/tianshuwu/supermimic-retargeted?style=social)](https://github.com/tianshuwu/supermimic-retargeted/stargazers) · ⭐ 维护者精选
 
 **技术栈:** mjlab / SOMA · **作者:** tianshuwu<br>
 G1 / A3 / X2 Ultra 移植，含 SOMA 重定向与各本体实验记录。
@@ -465,7 +465,7 @@ G1 / A3 / X2 Ultra 移植，含 SOMA 重定向与各本体实验记录。
 <a id="supermimic-wheel-legged-wheelbipe"></a>
 <a id="supermimic-轮腿版wheelbipe"></a>
 
-**[SuperMimic Wheel-Legged (wheelbipe)](https://github.com/RadiantForever/supermimic_wheelbipe)** · [![7 stars](assets/stars/1437090261.svg)](https://github.com/RadiantForever/supermimic_wheelbipe/stargazers)
+**[SuperMimic Wheel-Legged (wheelbipe)](https://github.com/RadiantForever/supermimic_wheelbipe)** · [![GitHub Stars: RadiantForever/supermimic_wheelbipe](https://img.shields.io/github/stars/RadiantForever/supermimic_wheelbipe?style=social)](https://github.com/RadiantForever/supermimic_wheelbipe/stargazers)
 
 **技术栈:** Isaac Lab / PhysX · **作者:** RadiantForever<br>
 通过世界模型 rollout 学习 wheelbipe 前进、偏航与腿高控制。
@@ -474,7 +474,7 @@ G1 / A3 / X2 Ultra 移植，含 SOMA 重定向与各本体实验记录。
 
 <a id="supermimic-e1"></a>
 
-**[SuperMimic E1](https://github.com/wenconggan/SuperMimic_e1)** · [![5 stars](assets/stars/1430480272.svg)](https://github.com/wenconggan/SuperMimic_e1/stargazers)
+**[SuperMimic E1](https://github.com/wenconggan/SuperMimic_e1)** · [![GitHub Stars: wenconggan/SuperMimic_e1](https://img.shields.io/github/stars/wenconggan/SuperMimic_e1?style=social)](https://github.com/wenconggan/SuperMimic_e1/stargazers)
 
 **技术栈:** Isaac Lab 3 / MuJoCo · **作者:** wenconggan<br>
 21 自由度 E1 跟踪、原生 MuJoCo 回放与单列的完整动作评测。
@@ -483,7 +483,7 @@ G1 / A3 / X2 Ultra 移植，含 SOMA 重定向与各本体实验记录。
 
 <a id="supermimic-oli"></a>
 
-**[SuperMimic Oli](https://github.com/liuskywalkerjskd/supermimic_oli)** · [![3 stars](assets/stars/1431102076.svg)](https://github.com/liuskywalkerjskd/supermimic_oli/stargazers)
+**[SuperMimic Oli](https://github.com/liuskywalkerjskd/supermimic_oli)** · [![GitHub Stars: liuskywalkerjskd/supermimic_oli](https://img.shields.io/github/stars/liuskywalkerjskd/supermimic_oli?style=social)](https://github.com/liuskywalkerjskd/supermimic_oli/stargazers)
 
 **技术栈:** Isaac Lab 3 · **作者:** liuskywalkerjskd<br>
 31 自由度 Oli 适配，附 40 动作指标与完整动作视频。
@@ -492,7 +492,7 @@ G1 / A3 / X2 Ultra 移植，含 SOMA 重定向与各本体实验记录。
 
 <a id="supermimic-on-apple-m5"></a>
 
-**[SuperMimic on Apple M5](https://github.com/WXyuany/supermimic-m5)** · [![1 stars](assets/stars/1430927278.svg)](https://github.com/WXyuany/supermimic-m5/stargazers)
+**[SuperMimic on Apple M5](https://github.com/WXyuany/supermimic-m5)** · [![GitHub Stars: WXyuany/supermimic-m5](https://img.shields.io/github/stars/WXyuany/supermimic-m5?style=social)](https://github.com/WXyuany/supermimic-m5/stargazers)
 
 **技术栈:** MuJoCo / PyTorch MPS · **作者:** WXyuany<br>
 Apple M5：MPS 学习、CPU MuJoCo 物理仿真与公开 G1 权重。
@@ -507,7 +507,7 @@ Apple M5：MPS 学习、CPU MuJoCo 物理仿真与公开 G1 权重。
 <a id="flatworld--supermimic-2d"></a>
 <a id="-flatworld--supermimic-2d"></a>
 
-**[FlatWorld · SuperMimic-2D](https://github.com/swaggyliu/FlatWorld)** · [![43 stars](assets/stars/1284715083.svg)](https://github.com/swaggyliu/FlatWorld/stargazers) · ⭐ 维护者精选
+**[FlatWorld · SuperMimic-2D](https://github.com/swaggyliu/FlatWorld)** · [![GitHub Stars: swaggyliu/FlatWorld](https://img.shields.io/github/stars/swaggyliu/FlatWorld?style=social)](https://github.com/swaggyliu/FlatWorld/stargazers) · ⭐ 维护者精选
 
 **技术栈:** FlatWorld / 2D · **作者:** swaggyliu<br>
 用二维多技能人形跟踪探索共享世界模型学习。
@@ -516,7 +516,7 @@ Apple M5：MPS 学习、CPU MuJoCo 物理仿真与公开 G1 权重。
 
 <a id="g05--supermimic-style-steering"></a>
 
-**[G0.5 · SuperMimic-style Steering](https://github.com/azizkhadraoui/g05)** · [![0 stars](assets/stars/1425368329.svg)](https://github.com/azizkhadraoui/g05/stargazers)
+**[G0.5 · SuperMimic-style Steering](https://github.com/azizkhadraoui/g05)** · [![GitHub Stars: azizkhadraoui/g05](https://img.shields.io/github/stars/azizkhadraoui/g05?style=social)](https://github.com/azizkhadraoui/g05/stargazers)
 
 **技术栈:** G0.5 / LIBERO · **作者:** azizkhadraoui<br>
 LIBERO 上的 SuperMimic 式 VLA 引导与直接策略微调失败记录。

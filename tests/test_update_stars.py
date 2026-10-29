@@ -6,7 +6,6 @@ import re
 import shutil
 import tempfile
 import unittest
-import xml.etree.ElementTree as ET
 from io import BytesIO
 from pathlib import Path
 from unittest.mock import patch
@@ -317,7 +316,7 @@ class CatalogTests(unittest.TestCase):
             for p in ordered:
                 record = self.snapshot["repositories"][p["repo"]]
                 self.assertIn(
-                    f"assets/stars/{record['id']}.svg",
+                    f"https://img.shields.io/github/stars/{record['full_name']}?style=social",
                     stars.badge(p, self.snapshot),
                 )
                 self.assertIn(
@@ -333,22 +332,31 @@ class CatalogTests(unittest.TestCase):
                 self.assertEqual(positions, sorted(positions))
                 self.assertIn(f"({len(members)})", section.splitlines()[0])
 
-    def test_badges_contain_exact_snapshot_values_and_identity(self):
-        for record in self.snapshot["repositories"].values():
-            xml = stars.badge_svg(record)
-            svg = ET.fromstring(xml)
-            self.assertEqual(
-                svg.attrib["aria-label"],
-                f"{record['full_name']}: {record['stars']} stars",
+    def test_live_badges_do_not_embed_snapshot_counts(self):
+        for project in self.catalog["projects"]:
+            before = stars.badge(project, self.snapshot)
+            self.snapshot["repositories"][project["repo"]]["stars"] += 1000
+            self.assertEqual(stars.badge(project, self.snapshot), before)
+        for lang in stars.LANGUAGES:
+            text = stars.render_catalog(self.catalog, self.snapshot, lang)
+            badges = re.findall(r"!\[[^\]]+\]\(([^)]+)\)", text)
+            self.assertEqual(len(badges), 2 * len(self.catalog["projects"]))
+            self.assertTrue(
+                all(
+                    url.startswith("https://img.shields.io/github/stars/")
+                    for url in badges
+                )
             )
-            texts = [
-                element.text
-                for element in svg.findall(".//{http://www.w3.org/2000/svg}text")
-            ]
-            self.assertEqual(texts, ["stars", str(record["stars"])])
-            self.assertEqual(
-                xml, (stars.ROOT / "assets/stars" / f"{record['id']}.svg").read_text()
-            )
+
+    def test_live_badges_follow_canonical_repository_after_rename(self):
+        project = self.catalog["projects"][0]
+        self.snapshot["repositories"][project["repo"]]["full_name"] = "new/renamed"
+        badge = stars.badge(project, self.snapshot)
+        self.assertIn(
+            "https://img.shields.io/github/stars/new/renamed?style=social", badge
+        )
+        self.assertIn("https://github.com/new/renamed/stargazers", badge)
+        self.assertNotIn(project["repo"], badge)
 
     def test_rename_preserves_branch_link(self):
         project = next(
@@ -397,11 +405,11 @@ class CatalogTests(unittest.TestCase):
                 "README_zh-CN.md",
             ]:
                 shutil.copy(stars.ROOT / filename, root / filename)
-            shutil.copytree(stars.ROOT / "assets/stars", root / "assets/stars")
             before = {p: p.read_bytes() for p in root.rglob("*") if p.is_file()}
             self.assertFalse(stars.update(root, offline=True))
             self.assertFalse(stars.update(root, offline=True))
             self.assertFalse(stars.update(root, check=True))
+            self.assertFalse((root / "assets").exists())
             self.assertEqual(before, {p: p.read_bytes() for p in before})
 
     def test_invalid_readme_does_not_partially_write_snapshot(self):

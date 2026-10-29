@@ -1,5 +1,5 @@
 {
-  "snapshot_at": "2026-10-29T17:33:46+00:00",
+  "snapshot_at": "2026-10-29T17:41:58+00:00",
   "repositories": {
     "NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real": {
       "id": 1433556794,
@@ -39,7 +39,7 @@
     "Huy-Quang-Dao/instantTrack": {
       "id": 1438037302,
       "full_name": "Huy-Quang-Dao/instantTrack",
-      "stars": 52
+      "stars": 53
     },
     "lzyang2000/morphmimic": {
       "id": 1430789167,
@@ -94,7 +94,7 @@
     "CumulusAlpha/Dex-Supermimic": {
       "id": 1433804344,
       "full_name": "CumulusAlpha/Dex-Supermimic",
-      "stars": 75
+      "stars": 76
     },
     "Msornerrrr/in-hand-rotation-mjlab": {
       "id": 1162247047,
@@ -109,7 +109,7 @@
     "kaibohex/muscle-supermimic": {
       "id": 1434932501,
       "full_name": "kaibohex/muscle-supermimic",
-      "stars": 33
+      "stars": 34
     },
     "shangchaohu718/supermimic-pera": {
       "id": 1430576677,

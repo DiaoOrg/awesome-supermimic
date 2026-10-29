@@ -269,35 +269,12 @@ def cell(text: str) -> str:
 
 
 def badge(project: dict, snapshot: dict) -> str:
-    record = snapshot["repositories"][project["repo"]]
-    repo, count = record["full_name"], record["stars"]
+    repo = snapshot["repositories"][project["repo"]]["full_name"]
     return (
-        f"[![{count} stars](assets/stars/{record['id']}.svg)]"
+        f"[![GitHub Stars: {repo}]"
+        f"(https://img.shields.io/github/stars/{repo}?style=social)]"
         f"(https://github.com/{repo}/stargazers)"
     )
-
-
-def badge_svg(record: dict) -> str:
-    """Self-contained, deterministic badge; no third-party image request needed."""
-    count = record["stars"]
-    right_width = max(26, len(str(count)) * 7 + 14)
-    width = 56 + right_width
-    center = 56 + right_width / 2
-    label = html.escape(f"{record['full_name']}: {count} stars", quote=True)
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="20" role="img" aria-label="{label}">
-  <title>{label}</title>
-  <clipPath id="rounded"><rect width="{width}" height="20" rx="3"/></clipPath>
-  <g clip-path="url(#rounded)">
-    <rect width="56" height="20" fill="#555"/>
-    <rect x="56" width="{right_width}" height="20" fill="#007ec6"/>
-  </g>
-  <path fill="#f4cf58" d="M10 3.5 12 7.6 16.5 8.2 13.2 11.4 14 15.9 10 13.8 6 15.9 6.8 11.4 3.5 8.2 8 7.6Z"/>
-  <g fill="#fff" text-anchor="middle" font-family="Verdana,DejaVu Sans,sans-serif" font-size="11">
-    <text x="35" y="14">stars</text>
-    <text x="{center:g}" y="14">{count}</text>
-  </g>
-</svg>
-'''
 
 
 def repository_url(project: dict, snapshot: dict) -> str:
@@ -329,20 +306,20 @@ def render_catalog(catalog: dict, snapshot: dict, lang: str) -> str:
     date = snapshot["snapshot_at"].replace("T", " ").replace("+00:00", " UTC")
     if zh:
         lines += [
-            f"GitHub API 数值快照：**{date}** · 每日检查 · Stars 降序，同分按 `owner/repo` 忽略大小写升序。Stars 计入整个仓库（含更大框架），反映关注度，不代表基准成绩。"
+            f"排序依据 GitHub API 快照：**{date}** · 每日按 Stars 降序更新，同分按 `owner/repo` 忽略大小写升序。徽章通过实时 Stars 接口更新（有服务缓存），可能暂时与排序快照不同。Stars 计入整个仓库（含更大框架），反映关注度，不代表基准成绩。"
         ]
     else:
         lines += [
-            f"GitHub API snapshot: **{date}** · Checked daily · Stars descending, ties by case-insensitive `owner/repo`. Stars cover the whole repository, including broader frameworks; they measure attention, not benchmark quality."
+            f"Ranked by GitHub API snapshot: **{date}** · Order refreshed daily, Stars descending, ties by case-insensitive `owner/repo`. Badges query live Stars through a cached service and may temporarily differ from the ranking snapshot. Stars cover the whole repository, including broader frameworks; they measure attention, not benchmark quality."
         ]
     if snapshot["failures"]:
         lines += [
             "",
             "> ⚠️ "
             + (
-                "更新未完成；整份榜单保留上次有效快照，未混入部分新数据。失败状态："
+                "排序更新未完成；整份排序保留上次有效快照，徽章由实时接口独立更新。失败状态："
                 if zh
-                else "Refresh incomplete; the entire last valid snapshot is retained, without mixing partial new data. Failure status: "
+                else "Ranking refresh incomplete; the entire last valid ranking snapshot is retained. Live badges update independently. Failure status: "
             ),
             "> "
             + "; ".join(
@@ -353,9 +330,9 @@ def render_catalog(catalog: dict, snapshot: dict, lang: str) -> str:
         lines += [
             "",
             (
-                "数据状态：完整有效快照。"
+                "排序数据状态：完整有效快照。"
                 if zh
-                else "Data status: complete valid snapshot."
+                else "Ranking data status: complete valid snapshot."
             )
             + " [Update policy](docs/star-rankings.md).",
         ]
@@ -512,9 +489,6 @@ def update(root: Path, *, offline: bool = False, check: bool = False) -> bool:
         )
     validate_snapshot(snapshot, catalog["projects"])
     outputs = {cache_path: json.dumps(snapshot, ensure_ascii=False, indent=2) + "\n"}
-    for project in catalog["projects"]:
-        record = snapshot["repositories"][project["repo"]]
-        outputs[root / "assets" / "stars" / f"{record['id']}.svg"] = badge_svg(record)
     for lang, filename in LANGUAGES.items():
         path = root / filename
         outputs[path] = replace_generated(
