@@ -72,19 +72,19 @@ The authors report surpassing SONIC's released-checkpoint return after **3 hours
 
 ## Community projects
 
-**39 projects · choose by goal.** ⭐ marks suggested starting points for their documented results, reusable tools or clear learning examples; they appear first in each category. Results and demos are upstream reports, not independently rerun here. Each entry links to its reviewed source revision.
+**39 projects · choose by strengths.** ⭐ highlights documented results, reusable tools or clear learning examples. Categories can have several complementary picks, placed first below. Results and demos are upstream reports, not independently rerun here; each entry links to its reviewed revision.
 
-| Explore | Start with | What stands out |
-| --- | --- | --- |
-| 🚀 [Real robots (2)](#real-robot-deployment-and-sim2real) | [SuperMimic-Repro-Sim2Real](#supermimic-repro-sim2real) | G1 hardware demos and deployment notes |
-| 🔬 [Reproductions (5)](#independent-reproductions) | [supermimic_vibed](#supermimic_vibed)<br>[SuperMimic-Reproduced](#supermimic-reproduced) | LAFAN1 baseline; BONES-SEED logs and weights |
-| 🧩 [Method variants (6)](#method-and-morphology-variants) | [InstantTrack](#instanttrack) | 15-minute LAFAN1 target on one RTX 5090, three seeds |
-| 👁️ [Perception & terrain (4)](#perception-terrain-and-quadrupeds) | [InstinctMJ](#instinctmj--supermimic) | Depth-aware world model and terrain tracking |
-| 🦾 [Manipulation & hands (4)](#manipulation-and-dexterous-hands) | [supermimic_manipulation](#supermimic-for-robot-manipulation) | Three ARX5 tasks with weights and reset banks |
-| 💪 [Muscles & interaction (3)](#muscle-interaction-and-diagnostics) | [muscle-supermimic](#muscle-supermimic) | Two muscle-driven bodies, held-out KIT evaluation |
-| 🛠️ [Training stacks (6)](#frameworks-and-training-stacks) | [UniSuperMimic](#unisupermimic) | UniLab integration and both motion-data pipelines |
-| 🤖 [Robot ports (6)](#robot-porting-and-retargeting) | [SuperMimic Retargeted](#supermimic-retargeted) | G1 / A3 / X2 Ultra retargeting and coordinate checks |
-| 💡 [Learning examples (3)](#inspired-experiments) | [FlatWorld](#flatworld--supermimic-2d) | See the learning loop in a 2D multi-skill demo |
+| Explore | Recommended projects and strengths |
+| --- | --- |
+| 🚀 [Real robots (2)](#real-robot-deployment-and-sim2real) | **[SuperMimic-Repro-Sim2Real](#supermimic-repro-sim2real)** — G1 hardware demos and deployment notes |
+| 🔬 [Reproductions (5)](#independent-reproductions) | **[supermimic_vibed](#supermimic_vibed)** — LAFAN1 training baseline<br>**[SuperMimic-Reproduced](#supermimic-reproduced)** — BONES-SEED experiment logs and weights<br>**[SuperMimic Mjlab](#supermimic-mjlab)** — step-by-step ablations and released checkpoints |
+| 🧩 [Method variants (6)](#method-and-morphology-variants) | **[InstantTrack](#instanttrack)** — 15-minute LAFAN1 target on one RTX 5090, three seeds<br>**[MorphMimic](#morphmimic)** — world-model / policy sharing across G1, X2 Ultra and T2 |
+| 👁️ [Perception & terrain (4)](#perception-terrain-and-quadrupeds) | **[InstinctMJ](#instinctmj--supermimic)** — depth-aware world model and terrain tracking<br>**[Go2-SuperMimic](#go2-supermimic)** — quadruped chase / dodge with released actors |
+| 🦾 [Manipulation & hands (4)](#manipulation-and-dexterous-hands) | **[supermimic_manipulation](#supermimic-for-robot-manipulation)** — three ARX5 arm tasks, weights and reset banks<br>**[Dex SuperMimic](#dex-supermimic)** — Wuji hands: cube reorientation, pen spinning and weights<br>**[In-Hand Rotation mjlab](#in-hand-rotation-mjlab)** — LEAP hand: world-model / PPO simulation comparisons |
+| 💪 [Muscles & interaction (3)](#muscle-interaction-and-diagnostics) | **[muscle-supermimic](#muscle-supermimic)** — two muscle-driven bodies, held-out KIT evaluation |
+| 🛠️ [Training stacks (6)](#frameworks-and-training-stacks) | **[UniSuperMimic](#unisupermimic)** — UniLab integration and both motion-data pipelines<br>**[ScaleBFM_Plus](#scalebfm_plus--supermimic)** — humanoid transformer integration and held-out evaluation |
+| 🤖 [Robot ports (6)](#robot-porting-and-retargeting) | **[SuperMimic Retargeted](#supermimic-retargeted)** — G1 / A3 / X2 Ultra retargeting and coordinate checks |
+| 💡 [Learning examples (3)](#inspired-experiments) | **[FlatWorld](#flatworld--supermimic-2d)** — see the learning loop in a 2D multi-skill demo |
 
 ## Real-robot deployment and Sim2Real
 
@@ -148,6 +148,20 @@ Reimplementations of the original method, with training, evaluation and reproduc
 
 <br>
 
+<a name="supermimic-mjlab"></a>
+
+### ⭐ SuperMimic Mjlab
+
+[Repository](https://github.com/Breezewrf/supermimic_mjlab) · [Setup](https://github.com/Breezewrf/supermimic_mjlab/blob/77183062eb92026bfbee2daf276f87cad36fd957/doc/setup_en.md) · [Ablations and checkpoint](https://github.com/Breezewrf/supermimic_mjlab/blob/77183062eb92026bfbee2daf276f87cad36fd957/README.md#ablation-results-and-released-checkpoint)
+
+- **By Breezewrf.** An independent SuperMimic reproduction for Unitree G1 in mjlab, with a complete performance-improvement ablation study, multi-motion and velocity training, OOD playback, video-to-motion export, full-clip evaluation and released policy/world-model checkpoints.
+- **Upstream report:** On all 40 LAFAN motions, the selected checkpoint achieves **40 / 40 successful motions**, **100% mean completion** and **0.8528 normalized return** in fixed-start, full-clip deterministic evaluation. Training for **15,000 iterations takes approximately 4 hours on one RTX A6000 48 GB**, with 4,096 environments and FP32 networks.
+- **Useful context:** Documents the full progression from Actor/Critic input normalization through a torso-frame motion orientation anchor, world-model normalization and a corrected cosine learning-rate schedule: mean normalized return **0.6016 → 0.8130 → 0.8504 → 0.8526** at 15,000 iterations over all 40 motions. The final rerun mean is distinct from the selected checkpoint score above. [Source snapshot](https://github.com/Breezewrf/supermimic_mjlab/blob/77183062eb92026bfbee2daf276f87cad36fd957/README.md).
+
+<a href="https://github.com/Breezewrf/supermimic_mjlab/blob/77183062eb92026bfbee2daf276f87cad36fd957/doc/assets/demo_v0.gif"><img src="assets/community/mjlab-demo.gif" width="480" alt="Simulation · 12-second excerpt from the SuperMimic Mjlab motion playback demo"></a><br><sub>Simulation · 12-second excerpt from the 60.8-second playback demo; click for the full upstream GIF</sub>
+
+<br>
+
 ### supermimic_vibe
 
 [Repository](https://github.com/dhmbb2/supermimic_vibe) · [Setup](https://github.com/dhmbb2/supermimic_vibe/blob/072f0910dadc9d95c720e625b546120e9ce917c9/README.md#setup) · [Results log](https://github.com/dhmbb2/supermimic_vibe/blob/072f0910dadc9d95c720e625b546120e9ce917c9/notes/RESULTS.md)
@@ -157,18 +171,6 @@ Reimplementations of the original method, with training, evaluation and reproduc
 - **Useful context:** The experiment log distinguishes reproduced, partial and pending results. BONES-SEED remains data-gated, hardware transfer is out of scope, and the A6000 timings are not H100 timings. [Source snapshot](https://github.com/dhmbb2/supermimic_vibe/blob/072f0910dadc9d95c720e625b546120e9ce917c9/README.md).
 
 <a href="https://github.com/dhmbb2/supermimic_vibe/blob/072f0910dadc9d95c720e625b546120e9ce917c9/README.md"><img src="assets/community/vibe-results.png" width="720" alt="Report screenshot · reproduction and ablations on one RTX A6000"></a><br><sub>Report screenshot · reproduction and ablations on one RTX A6000</sub>
-
-<br>
-
-### SuperMimic Mjlab
-
-[Repository](https://github.com/Breezewrf/supermimic_mjlab) · [Setup](https://github.com/Breezewrf/supermimic_mjlab/blob/77183062eb92026bfbee2daf276f87cad36fd957/doc/setup_en.md) · [Ablations and checkpoint](https://github.com/Breezewrf/supermimic_mjlab/blob/77183062eb92026bfbee2daf276f87cad36fd957/README.md#ablation-results-and-released-checkpoint)
-
-- **By Breezewrf.** An independent SuperMimic reproduction for Unitree G1 in mjlab, with a complete performance-improvement ablation study, multi-motion and velocity training, OOD playback, video-to-motion export, full-clip evaluation and released policy/world-model checkpoints.
-- **Upstream report:** On all 40 LAFAN motions, the selected checkpoint achieves **40 / 40 successful motions**, **100% mean completion** and **0.8528 normalized return** in fixed-start, full-clip deterministic evaluation. Training for **15,000 iterations takes approximately 4 hours on one RTX A6000 48 GB**, with 4,096 environments and FP32 networks.
-- **Useful context:** Documents the full progression from Actor/Critic input normalization through a torso-frame motion orientation anchor, world-model normalization and a corrected cosine learning-rate schedule: mean normalized return **0.6016 → 0.8130 → 0.8504 → 0.8526** at 15,000 iterations over all 40 motions. The final rerun mean is distinct from the selected checkpoint score above. [Source snapshot](https://github.com/Breezewrf/supermimic_mjlab/blob/77183062eb92026bfbee2daf276f87cad36fd957/README.md).
-
-<a href="https://github.com/Breezewrf/supermimic_mjlab/blob/77183062eb92026bfbee2daf276f87cad36fd957/doc/assets/demo_v0.gif"><img src="assets/community/mjlab-demo.gif" width="480" alt="Simulation · 12-second excerpt from the SuperMimic Mjlab motion playback demo"></a><br><sub>Simulation · 12-second excerpt from the 60.8-second playback demo; click for the full upstream GIF</sub>
 
 <br>
 
@@ -202,7 +204,9 @@ Algorithm changes, multi-robot morphology adaptations and focused control studie
 
 <br>
 
-### MorphMimic
+<a name="morphmimic"></a>
+
+### ⭐ MorphMimic
 
 [Repository](https://github.com/lzyang2000/morphmimic) · [Setup](https://github.com/lzyang2000/morphmimic/blob/aa40fe46a7fa995ba7a7354ad065a2c8ad64a302/README.md#setup) · [Method differences](https://github.com/lzyang2000/morphmimic/blob/aa40fe46a7fa995ba7a7354ad065a2c8ad64a302/README.md#differences-from-supermimic)
 
@@ -281,6 +285,20 @@ Vision, height-scan, terrain and quadruped task adaptations.
 
 <br>
 
+<a name="go2-supermimic"></a>
+
+### ⭐ Go2-SuperMimic
+
+[Repository](https://github.com/Zhengtianjin/go2-supermimic) · [Quickstart](https://github.com/Zhengtianjin/go2-supermimic/blob/054a13c13285a1c94b2e69dc8ac7331f9a8c71cf/README.md#-quickstart) · [Pretrained policies](https://github.com/Zhengtianjin/go2-supermimic/blob/054a13c13285a1c94b2e69dc8ac7331f9a8c71cf/README.md#pretrained-policies)
+
+- **By Zhengtianjin.** Adapts SuperMimic to Unitree Go2 chase-and-dodge tasks in mjlab, covering flat ground, obstacles and terrain with LiDAR or height-scan inputs.
+- **What it provides:** Publishes separate flat, obstacle and terrain actors, plus evaluation and recording tools. Actor-only downloads support playback; resuming training also needs the world model and critic.
+- **Useful context:** Simulation only, with ground-truth target perception. The released terrain policy still has falls and bar collisions under the hardest settings. [Source snapshot](https://github.com/Zhengtianjin/go2-supermimic/blob/054a13c13285a1c94b2e69dc8ac7331f9a8c71cf/README.md).
+
+<a href="https://github.com/Zhengtianjin/go2-supermimic"><img src="https://raw.githubusercontent.com/Zhengtianjin/go2-supermimic/054a13c13285a1c94b2e69dc8ac7331f9a8c71cf/resources/terrain.gif" width="480" alt="Simulation · Go2 terrain chase and dodge"></a><br><sub>Simulation · Go2 terrain chase and dodge</sub>
+
+<br>
+
 ### SuperMimic Parkour
 
 [Repository](https://github.com/yhx1203/supermimic_parkour) · [Data setup](https://github.com/yhx1203/supermimic_parkour/blob/f398519453a25b3f10722626b7356266d8b7f875/README.md#motion-data) · [Checkpoint](https://github.com/yhx1203/supermimic_parkour/blob/f398519453a25b3f10722626b7356266d8b7f875/logs/php_five_skills/last.pt)
@@ -305,18 +323,6 @@ Vision, height-scan, terrain and quadruped task adaptations.
 
 <br>
 
-### Go2-SuperMimic
-
-[Repository](https://github.com/Zhengtianjin/go2-supermimic) · [Quickstart](https://github.com/Zhengtianjin/go2-supermimic/blob/054a13c13285a1c94b2e69dc8ac7331f9a8c71cf/README.md#-quickstart) · [Pretrained policies](https://github.com/Zhengtianjin/go2-supermimic/blob/054a13c13285a1c94b2e69dc8ac7331f9a8c71cf/README.md#pretrained-policies)
-
-- **By Zhengtianjin.** Adapts SuperMimic to Unitree Go2 chase-and-dodge tasks in mjlab, covering flat ground, obstacles and terrain with LiDAR or height-scan inputs.
-- **What it provides:** Publishes separate flat, obstacle and terrain actors, plus evaluation and recording tools. Actor-only downloads support playback; resuming training also needs the world model and critic.
-- **Useful context:** Simulation only, with ground-truth target perception. The released terrain policy still has falls and bar collisions under the hardest settings. [Source snapshot](https://github.com/Zhengtianjin/go2-supermimic/blob/054a13c13285a1c94b2e69dc8ac7331f9a8c71cf/README.md).
-
-<a href="https://github.com/Zhengtianjin/go2-supermimic"><img src="https://raw.githubusercontent.com/Zhengtianjin/go2-supermimic/054a13c13285a1c94b2e69dc8ac7331f9a8c71cf/resources/terrain.gif" width="480" alt="Simulation · Go2 terrain chase and dodge"></a><br><sub>Simulation · Go2 terrain chase and dodge</sub>
-
-<br>
-
 ## Manipulation and dexterous hands
 
 Arm, hand and object-interaction tasks, with dexterous manipulation grouped here. The exploratory Ref2Dex contact-control project is listed under [Inspired experiments](#inspired-experiments).
@@ -335,7 +341,9 @@ Arm, hand and object-interaction tasks, with dexterous manipulation grouped here
 
 <br>
 
-### Dex SuperMimic
+<a name="dex-supermimic"></a>
+
+### ⭐ Dex SuperMimic
 
 [Repository](https://github.com/CumulusAlpha/Dex-Supermimic) · [Installation](https://github.com/CumulusAlpha/Dex-Supermimic/blob/3a7c1a33fd8e5c6cc047e381ea9309da96553c27/README.md#installation) · [Demos](https://github.com/CumulusAlpha/Dex-Supermimic/blob/3a7c1a33fd8e5c6cc047e381ea9309da96553c27/README.md#demos) · [Checkpoints](https://github.com/CumulusAlpha/Dex-Supermimic/releases/tag/pretrained-wuji-v2)
 
@@ -352,6 +360,20 @@ Arm, hand and object-interaction tasks, with dexterous manipulation grouped here
 
 <br>
 
+<a name="in-hand-rotation-mjlab"></a>
+
+### ⭐ In-Hand Rotation mjlab
+
+[Repository](https://github.com/Msornerrrr/in-hand-rotation-mjlab) · [Install](https://github.com/Msornerrrr/in-hand-rotation-mjlab/blob/0ab03eb2244b4a1a020d94ef38a4823bb9e15ba0/README.md#install) · [Results](https://github.com/Msornerrrr/in-hand-rotation-mjlab/blob/0ab03eb2244b4a1a020d94ef38a4823bb9e15ba0/README.md#results) · [Checkpoints](https://github.com/Msornerrrr/in-hand-rotation-mjlab/blob/0ab03eb2244b4a1a020d94ef38a4823bb9e15ba0/README.md#quick-start-the-released-policies)
+
+- **By Msornerrrr.** Applies SuperMimic-style world-model policy learning (an MLP world model refit online, backpropagation through imagined rollouts, a TD(λ) critic and weight averaging) to the LEAP Hand in mjlab / MuJoCo Warp, next to PPO baselines on the same environments: palm-up cube yaw, SO(3) cube reorientation (PPO only) and palm-down fingertip rotation of 22 objects, on a servo model identified on the real hand. Checkpoints for both methods are released.
+- **Upstream report:** On cube yaw, the world-model policy reaches PPO's level (≈0.26 reward/s) after **25 minutes and 18M env steps**, where PPO needs 6.5 hours and 262M, and ends at **0.292 vs 0.261**. On palm-down fingertip rotation (64 rollouts per object, 60 s, randomized pad friction 0.25–1.2), a joints-only world-model policy reaches **933°** rewarded yaw with **4.0%** drops, against **675° / 10.4%** for the deployed PPO student distilled from a teacher, and **944° / 2.1%** for the privileged PPO teacher.
+- **Useful context:** World-model results are in simulation; the real-robot videos (yaw and SO(3)) show PPO policies. Fingertip numbers use the repository's own evaluation (rotation reward capped at 0.3 rad/s; a drop is 30 mm of drift). Single runs per configuration; wall-clock times are on one RTX 4090. [Source snapshot](https://github.com/Msornerrrr/in-hand-rotation-mjlab/blob/0ab03eb2244b4a1a020d94ef38a4823bb9e15ba0/README.md).
+
+<a href="https://github.com/Msornerrrr/in-hand-rotation-mjlab"><img src="https://raw.githubusercontent.com/Msornerrrr/in-hand-rotation-mjlab/0ab03eb2244b4a1a020d94ef38a4823bb9e15ba0/assets/sim_fingertip.gif" width="480" alt="Simulation · palm-down fingertip rotation of a sphere, cube, cylinder and cuboid by a joints-only world-model policy"></a><br><sub>Simulation · palm-down fingertip rotation, joints-only world-model policy</sub>
+
+<br>
+
 ### Humanoid Mimic · SuperMimic
 
 [Repository](https://github.com/shuayyy/humanoid-amp-ppo) · [Quickstart](https://github.com/shuayyy/humanoid-amp-ppo/blob/4889389118e0c88d3945dff54d2cd3f992ed815e/README.md#quickstart) · [Results and protocol](https://github.com/shuayyy/humanoid-amp-ppo/blob/4889389118e0c88d3945dff54d2cd3f992ed815e/docs/supermimic/RESULTS.md)
@@ -361,18 +383,6 @@ Arm, hand and object-interaction tasks, with dexterous manipulation grouped here
 - **Useful context:** Those SuperMimic scores used clean observations. The newer evaluation adds observation noise, and the published checkpoints have not been re-evaluated under that setting. [Source snapshot](https://github.com/shuayyy/humanoid-amp-ppo/blob/4889389118e0c88d3945dff54d2cd3f992ed815e/README.md).
 
 <a href="https://github.com/shuayyy/humanoid-amp-ppo/blob/4889389118e0c88d3945dff54d2cd3f992ed815e/assets/supermimic_vs_ppo_lift.mp4"><img src="https://raw.githubusercontent.com/shuayyy/humanoid-amp-ppo/4889389118e0c88d3945dff54d2cd3f992ed815e/assets/supermimic_vs_ppo_lift.gif" width="480" alt="Box lift · SuperMimic 12k / PPO-Sim 6k iterations"></a><br><sub>Box lift · SuperMimic 12k / PPO-Sim 6k iterations</sub>
-
-<br>
-
-### In-Hand Rotation mjlab
-
-[Repository](https://github.com/Msornerrrr/in-hand-rotation-mjlab) · [Install](https://github.com/Msornerrrr/in-hand-rotation-mjlab/blob/0ab03eb2244b4a1a020d94ef38a4823bb9e15ba0/README.md#install) · [Results](https://github.com/Msornerrrr/in-hand-rotation-mjlab/blob/0ab03eb2244b4a1a020d94ef38a4823bb9e15ba0/README.md#results) · [Checkpoints](https://github.com/Msornerrrr/in-hand-rotation-mjlab/blob/0ab03eb2244b4a1a020d94ef38a4823bb9e15ba0/README.md#quick-start-the-released-policies)
-
-- **By Msornerrrr.** Applies SuperMimic-style world-model policy learning (an MLP world model refit online, backpropagation through imagined rollouts, a TD(λ) critic and weight averaging) to the LEAP Hand in mjlab / MuJoCo Warp, next to PPO baselines on the same environments: palm-up cube yaw, SO(3) cube reorientation (PPO only) and palm-down fingertip rotation of 22 objects, on a servo model identified on the real hand. Checkpoints for both methods are released.
-- **Upstream report:** On cube yaw, the world-model policy reaches PPO's level (≈0.26 reward/s) after **25 minutes and 18M env steps**, where PPO needs 6.5 hours and 262M, and ends at **0.292 vs 0.261**. On palm-down fingertip rotation (64 rollouts per object, 60 s, randomized pad friction 0.25–1.2), a joints-only world-model policy reaches **933°** rewarded yaw with **4.0%** drops, against **675° / 10.4%** for the deployed PPO student distilled from a teacher, and **944° / 2.1%** for the privileged PPO teacher.
-- **Useful context:** World-model results are in simulation; the real-robot videos (yaw and SO(3)) show PPO policies. Fingertip numbers use the repository's own evaluation (rotation reward capped at 0.3 rad/s; a drop is 30 mm of drift). Single runs per configuration; wall-clock times are on one RTX 4090. [Source snapshot](https://github.com/Msornerrrr/in-hand-rotation-mjlab/blob/0ab03eb2244b4a1a020d94ef38a4823bb9e15ba0/README.md).
-
-<a href="https://github.com/Msornerrrr/in-hand-rotation-mjlab"><img src="https://raw.githubusercontent.com/Msornerrrr/in-hand-rotation-mjlab/0ab03eb2244b4a1a020d94ef38a4823bb9e15ba0/assets/sim_fingertip.gif" width="480" alt="Simulation · palm-down fingertip rotation of a sphere, cube, cylinder and cuboid by a joints-only world-model policy"></a><br><sub>Simulation · palm-down fingertip rotation, joints-only world-model policy</sub>
 
 <br>
 
@@ -436,7 +446,9 @@ Integrations and reusable training or evaluation stacks.
 
 <br>
 
-### ScaleBFM_Plus · SuperMimic
+<a name="scalebfm_plus--supermimic"></a>
+
+### ⭐ ScaleBFM_Plus · SuperMimic
 
 [Repository](https://github.com/Hxxxz0/ScaleBFM_Plus) · [Training and results](https://github.com/Hxxxz0/ScaleBFM_Plus/blob/65e4d524bd31fdc4284ba8c6e624fb0b0127da03/ScaleTrack/README.md#fast-training-with-a-learned-world-model-supermimic) · [Released checkpoint](https://github.com/Hxxxz0/ScaleBFM_Plus/tree/65e4d524bd31fdc4284ba8c6e624fb0b0127da03/ScaleTrack/checkpoints/supermimic_m)
 

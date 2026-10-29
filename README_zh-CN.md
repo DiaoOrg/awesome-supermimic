@@ -72,19 +72,19 @@ SuperMimic 从仿真状态转移中学习一个共享的可微世界模型，再
 
 ## 社区项目
 
-**39 个项目，按目标选择。** ⭐ 标出有实验记录、可复用工具或直观学习示例的推荐起点，排在各分类最前。成绩和演示均为上游报告，本清单未独立重跑；各条目附核查版本。
+**39 个项目，按亮点选择。** ⭐ 推荐有实验记录、可复用工具或直观学习示例的项目；同类可有多个互补选择，均排在分类前面。成绩和演示均为上游报告，本清单未独立重跑；各条目附核查版本。
 
-| 想看什么 | 推荐先看 | 值得看的亮点 |
-| --- | --- | --- |
-| 🚀 [真机部署（2）](#真机部署与-sim2real) | [SuperMimic-Repro-Sim2Real](#supermimic-repro-sim2real) | G1 真机演示与部署记录 |
-| 🔬 [独立复现（5）](#独立复现) | [supermimic_vibed](#supermimic_vibed)<br>[SuperMimic-Reproduced](#supermimic-reproduced) | 前者看 LAFAN1 基线，后者看 BONES-SEED 日志与权重 |
-| 🧩 [方法改动（6）](#方法改动与形态适配) | [InstantTrack](#instanttrack) | 单张 RTX 5090 约 15 分钟达标 LAFAN1，三个种子 |
-| 👁️ [感知与地形（4）](#感知地形与四足任务) | [InstinctMJ](#instinctmj--supermimic) | 引入深度视觉的世界模型与地形跟踪 |
-| 🦾 [操作与灵巧手（4）](#操作与灵巧手) | [supermimic_manipulation](#supermimic-for-robot-manipulation) | 三项 ARX5 操作任务，附权重与重置状态库 |
-| 💪 [肌肉与交互（3）](#肌肉驱动交互与诊断) | [muscle-supermimic](#muscle-supermimic) | 两种肌肉驱动本体，含未见 KIT 动作评估 |
-| 🛠️ [框架与训练栈（6）](#框架与训练栈) | [UniSuperMimic](#unisupermimic) | UniLab 集成，LAFAN1 / BONES-SEED 数据流程 |
-| 🤖 [本体移植（6）](#机器人移植与重定向) | [SuperMimic Retargeted](#supermimic-retargeted) | G1 / A3 / X2 Ultra 重定向与坐标检查 |
-| 💡 [直观学习（3）](#方法借鉴与探索) | [FlatWorld](#flatworld--supermimic-2d) | 用 2D 多技能演示理解学习闭环 |
+| 方向 | 推荐项目与亮点 |
+| --- | --- |
+| 🚀 [真机部署（2）](#真机部署与-sim2real) | **[SuperMimic-Repro-Sim2Real](#supermimic-repro-sim2real)** — G1 真机演示与部署记录 |
+| 🔬 [独立复现（5）](#独立复现) | **[supermimic_vibed](#supermimic_vibed)** — LAFAN1 训练基线<br>**[SuperMimic-Reproduced](#supermimic-reproduced)** — BONES-SEED 实验日志与权重<br>**[SuperMimic Mjlab](#supermimic-mjlab)** — 逐项性能消融与公开检查点 |
+| 🧩 [方法改动（6）](#方法改动与形态适配) | **[InstantTrack](#instanttrack)** — 单张 RTX 5090 约 15 分钟达标 LAFAN1，三个种子<br>**[MorphMimic](#morphmimic)** — G1、X2 Ultra、T2 跨本体共享世界模型或策略 |
+| 👁️ [感知与地形（4）](#感知地形与四足任务) | **[InstinctMJ](#instinctmj--supermimic)** — 深度视觉世界模型与地形跟踪<br>**[Go2-SuperMimic](#go2-supermimic)** — 四足追逐与闪避，附公开策略 |
+| 🦾 [操作与灵巧手（4）](#操作与灵巧手) | **[supermimic_manipulation](#supermimic-for-robot-manipulation)** — 三项 ARX5 机械臂任务，附权重与重置状态库<br>**[Dex SuperMimic](#dex-supermimic)** — Wuji 灵巧手方块重定向、转笔与公开权重<br>**[In-Hand Rotation mjlab](#in-hand-rotation-mjlab)** — LEAP 手世界模型 / PPO 仿真对照 |
+| 💪 [肌肉与交互（3）](#肌肉驱动交互与诊断) | **[muscle-supermimic](#muscle-supermimic)** — 两种肌肉驱动本体，含未见 KIT 动作评估 |
+| 🛠️ [框架与训练栈（6）](#框架与训练栈) | **[UniSuperMimic](#unisupermimic)** — UniLab 集成与两套动作数据流程<br>**[ScaleBFM_Plus](#scalebfm_plus--supermimic)** — 人形 Transformer 策略集成与留出动作评估 |
+| 🤖 [本体移植（6）](#机器人移植与重定向) | **[SuperMimic Retargeted](#supermimic-retargeted)** — G1 / A3 / X2 Ultra 重定向与坐标检查 |
+| 💡 [直观学习（3）](#方法借鉴与探索) | **[FlatWorld](#flatworld--supermimic-2d)** — 用 2D 多技能演示理解学习闭环 |
 
 ## 真机部署与 Sim2Real
 
@@ -148,6 +148,20 @@ SuperMimic 从仿真状态转移中学习一个共享的可微世界模型，再
 
 <br>
 
+<a name="supermimic-mjlab"></a>
+
+### ⭐ SuperMimic Mjlab
+
+[仓库](https://github.com/Breezewrf/supermimic_mjlab) · [安装](https://github.com/Breezewrf/supermimic_mjlab/blob/77183062eb92026bfbee2daf276f87cad36fd957/doc/setup_en.md) · [消融实验与检查点](https://github.com/Breezewrf/supermimic_mjlab/blob/77183062eb92026bfbee2daf276f87cad36fd957/README.md#ablation-results-and-released-checkpoint)
+
+- **作者：Breezewrf。** 基于 mjlab 为 Unitree G1 独立复现 SuperMimic，提供完整的性能提升消融实验、多动作与速度训练、OOD 动作回放、video2motion、完整动作评估，以及已发布的策略与世界模型检查点。
+- **上游报告：** 所选检查点在全部 40 条 LAFAN 动作的固定起点、完整片段确定性评估中，达到 **40 / 40 成功、平均完成率 100%、归一化回报 0.8528**。使用 **单张 RTX A6000 48 GB**、4,096 个环境和 FP32 网络，训练 **15,000 次迭代约需 4 小时**。
+- **性能提升消融：** 完整记录从 Actor/Critic 输入归一化，依次加入躯干坐标系下的动作朝向锚点、世界模型归一化及修正余弦学习率调度的提升过程：在全部 40 条动作、15,000 次迭代的评估中，归一化回报均值为 **0.6016 → 0.8130 → 0.8504 → 0.8526**。最终重复运行均值与上述所选检查点分数分别报告。 [核查版本](https://github.com/Breezewrf/supermimic_mjlab/blob/77183062eb92026bfbee2daf276f87cad36fd957/README.md)。
+
+<a href="https://github.com/Breezewrf/supermimic_mjlab/blob/77183062eb92026bfbee2daf276f87cad36fd957/doc/assets/demo_v0.gif"><img src="assets/community/mjlab-demo.gif" width="480" alt="仿真 · SuperMimic Mjlab 动作回放的 12 秒截取"></a><br><sub>仿真 · 60.8 秒动作回放中的 12 秒片段；点击查看上游完整 GIF</sub>
+
+<br>
+
 ### supermimic_vibe
 
 [仓库](https://github.com/dhmbb2/supermimic_vibe) · [安装](https://github.com/dhmbb2/supermimic_vibe/blob/072f0910dadc9d95c720e625b546120e9ce917c9/README.md#setup) · [结果记录](https://github.com/dhmbb2/supermimic_vibe/blob/072f0910dadc9d95c720e625b546120e9ce917c9/notes/RESULTS.md)
@@ -157,18 +171,6 @@ SuperMimic 从仿真状态转移中学习一个共享的可微世界模型，再
 - **选择时注意：** 实验记录区分已复现、部分复现和待完成项；BONES-SEED 受数据许可限制，未覆盖真机迁移，A6000 耗时也不能直接等同于 H100。 [核查版本](https://github.com/dhmbb2/supermimic_vibe/blob/072f0910dadc9d95c720e625b546120e9ce917c9/README.md)。
 
 <a href="https://github.com/dhmbb2/supermimic_vibe/blob/072f0910dadc9d95c720e625b546120e9ce917c9/README.md"><img src="assets/community/vibe-results.png" width="720" alt="报告截图 · 单张 RTX A6000 上的复现与消融"></a><br><sub>报告截图 · 单张 RTX A6000 上的复现与消融</sub>
-
-<br>
-
-### SuperMimic Mjlab
-
-[仓库](https://github.com/Breezewrf/supermimic_mjlab) · [安装](https://github.com/Breezewrf/supermimic_mjlab/blob/77183062eb92026bfbee2daf276f87cad36fd957/doc/setup_en.md) · [消融实验与检查点](https://github.com/Breezewrf/supermimic_mjlab/blob/77183062eb92026bfbee2daf276f87cad36fd957/README.md#ablation-results-and-released-checkpoint)
-
-- **作者：Breezewrf。** 基于 mjlab 为 Unitree G1 独立复现 SuperMimic，提供完整的性能提升消融实验、多动作与速度训练、OOD 动作回放、video2motion、完整动作评估，以及已发布的策略与世界模型检查点。
-- **上游报告：** 所选检查点在全部 40 条 LAFAN 动作的固定起点、完整片段确定性评估中，达到 **40 / 40 成功、平均完成率 100%、归一化回报 0.8528**。使用 **单张 RTX A6000 48 GB**、4,096 个环境和 FP32 网络，训练 **15,000 次迭代约需 4 小时**。
-- **性能提升消融：** 完整记录从 Actor/Critic 输入归一化，依次加入躯干坐标系下的动作朝向锚点、世界模型归一化及修正余弦学习率调度的提升过程：在全部 40 条动作、15,000 次迭代的评估中，归一化回报均值为 **0.6016 → 0.8130 → 0.8504 → 0.8526**。最终重复运行均值与上述所选检查点分数分别报告。 [核查版本](https://github.com/Breezewrf/supermimic_mjlab/blob/77183062eb92026bfbee2daf276f87cad36fd957/README.md)。
-
-<a href="https://github.com/Breezewrf/supermimic_mjlab/blob/77183062eb92026bfbee2daf276f87cad36fd957/doc/assets/demo_v0.gif"><img src="assets/community/mjlab-demo.gif" width="480" alt="仿真 · SuperMimic Mjlab 动作回放的 12 秒截取"></a><br><sub>仿真 · 60.8 秒动作回放中的 12 秒片段；点击查看上游完整 GIF</sub>
 
 <br>
 
@@ -202,7 +204,9 @@ SuperMimic 从仿真状态转移中学习一个共享的可微世界模型，再
 
 <br>
 
-### MorphMimic
+<a name="morphmimic"></a>
+
+### ⭐ MorphMimic
 
 [仓库](https://github.com/lzyang2000/morphmimic) · [安装](https://github.com/lzyang2000/morphmimic/blob/aa40fe46a7fa995ba7a7354ad065a2c8ad64a302/README.md#setup) · [方法差异](https://github.com/lzyang2000/morphmimic/blob/aa40fe46a7fa995ba7a7354ad065a2c8ad64a302/README.md#differences-from-supermimic)
 
@@ -281,6 +285,20 @@ SuperMimic 从仿真状态转移中学习一个共享的可微世界模型，再
 
 <br>
 
+<a name="go2-supermimic"></a>
+
+### ⭐ Go2-SuperMimic
+
+[仓库](https://github.com/Zhengtianjin/go2-supermimic) · [快速开始](https://github.com/Zhengtianjin/go2-supermimic/blob/054a13c13285a1c94b2e69dc8ac7331f9a8c71cf/README.md#-quickstart) · [预训练策略](https://github.com/Zhengtianjin/go2-supermimic/blob/054a13c13285a1c94b2e69dc8ac7331f9a8c71cf/README.md#pretrained-policies)
+
+- **作者：Zhengtianjin。** 在 mjlab 中将方法用于 Unitree Go2 追逐与闪避，覆盖平地、障碍和地形场景，接入激光或高度扫描输入。
+- **提供内容：** 公开平地、障碍、地形三类 actor，以及评估与录制工具；仅下载 actor 可以回放，恢复训练还需要世界模型与 critic。
+- **选择时注意：** 目前只有仿真验证，目标感知来自仿真真值；发布的地形策略在最难设置下仍会摔倒或撞杆。 [核查版本](https://github.com/Zhengtianjin/go2-supermimic/blob/054a13c13285a1c94b2e69dc8ac7331f9a8c71cf/README.md)。
+
+<a href="https://github.com/Zhengtianjin/go2-supermimic"><img src="https://raw.githubusercontent.com/Zhengtianjin/go2-supermimic/054a13c13285a1c94b2e69dc8ac7331f9a8c71cf/resources/terrain.gif" width="480" alt="仿真 · Go2 地形追逐与闪避"></a><br><sub>仿真 · Go2 地形追逐与闪避</sub>
+
+<br>
+
 ### SuperMimic Parkour
 
 [仓库](https://github.com/yhx1203/supermimic_parkour) · [数据配置](https://github.com/yhx1203/supermimic_parkour/blob/f398519453a25b3f10722626b7356266d8b7f875/README.md#motion-data) · [检查点](https://github.com/yhx1203/supermimic_parkour/blob/f398519453a25b3f10722626b7356266d8b7f875/logs/php_five_skills/last.pt)
@@ -305,18 +323,6 @@ SuperMimic 从仿真状态转移中学习一个共享的可微世界模型，再
 
 <br>
 
-### Go2-SuperMimic
-
-[仓库](https://github.com/Zhengtianjin/go2-supermimic) · [快速开始](https://github.com/Zhengtianjin/go2-supermimic/blob/054a13c13285a1c94b2e69dc8ac7331f9a8c71cf/README.md#-quickstart) · [预训练策略](https://github.com/Zhengtianjin/go2-supermimic/blob/054a13c13285a1c94b2e69dc8ac7331f9a8c71cf/README.md#pretrained-policies)
-
-- **作者：Zhengtianjin。** 在 mjlab 中将方法用于 Unitree Go2 追逐与闪避，覆盖平地、障碍和地形场景，接入激光或高度扫描输入。
-- **提供内容：** 公开平地、障碍、地形三类 actor，以及评估与录制工具；仅下载 actor 可以回放，恢复训练还需要世界模型与 critic。
-- **选择时注意：** 目前只有仿真验证，目标感知来自仿真真值；发布的地形策略在最难设置下仍会摔倒或撞杆。 [核查版本](https://github.com/Zhengtianjin/go2-supermimic/blob/054a13c13285a1c94b2e69dc8ac7331f9a8c71cf/README.md)。
-
-<a href="https://github.com/Zhengtianjin/go2-supermimic"><img src="https://raw.githubusercontent.com/Zhengtianjin/go2-supermimic/054a13c13285a1c94b2e69dc8ac7331f9a8c71cf/resources/terrain.gif" width="480" alt="仿真 · Go2 地形追逐与闪避"></a><br><sub>仿真 · Go2 地形追逐与闪避</sub>
-
-<br>
-
 ## 操作与灵巧手
 
 机械臂、手部与物体交互任务，灵巧手项目集中在此；探索性的 Ref2Dex 接触控制项目列在[方法借鉴与探索](#方法借鉴与探索)。
@@ -335,7 +341,9 @@ SuperMimic 从仿真状态转移中学习一个共享的可微世界模型，再
 
 <br>
 
-### Dex SuperMimic
+<a name="dex-supermimic"></a>
+
+### ⭐ Dex SuperMimic
 
 [仓库](https://github.com/CumulusAlpha/Dex-Supermimic) · [安装](https://github.com/CumulusAlpha/Dex-Supermimic/blob/3a7c1a33fd8e5c6cc047e381ea9309da96553c27/README.md#installation) · [演示](https://github.com/CumulusAlpha/Dex-Supermimic/blob/3a7c1a33fd8e5c6cc047e381ea9309da96553c27/README.md#demos) · [检查点](https://github.com/CumulusAlpha/Dex-Supermimic/releases/tag/pretrained-wuji-v2)
 
@@ -352,6 +360,20 @@ SuperMimic 从仿真状态转移中学习一个共享的可微世界模型，再
 
 <br>
 
+<a name="in-hand-rotation-mjlab"></a>
+
+### ⭐ In-Hand Rotation mjlab
+
+[仓库](https://github.com/Msornerrrr/in-hand-rotation-mjlab) · [安装](https://github.com/Msornerrrr/in-hand-rotation-mjlab/blob/0ab03eb2244b4a1a020d94ef38a4823bb9e15ba0/README.md#install) · [结果](https://github.com/Msornerrrr/in-hand-rotation-mjlab/blob/0ab03eb2244b4a1a020d94ef38a4823bb9e15ba0/README.md#results) · [检查点](https://github.com/Msornerrrr/in-hand-rotation-mjlab/blob/0ab03eb2244b4a1a020d94ef38a4823bb9e15ba0/README.md#quick-start-the-released-policies)
+
+- **作者：Msornerrrr。** 在 mjlab / MuJoCo Warp 中将 SuperMimic 式世界模型策略学习（在线重拟合的 MLP 世界模型、通过想象轨迹反向传播、TD(λ) 评论家与权重平均）用于 LEAP 灵巧手，并在相同环境上提供 PPO 基线：掌心向上的方块偏航旋转、SO(3) 方块重定向（仅 PPO）和掌心向下用指尖旋转 22 种物体；使用在真实手上辨识的舵机模型。两种方法的检查点均已发布。
+- **上游报告：** 方块偏航任务中，世界模型策略在 **25 分钟、1,800 万环境步**时达到 PPO 的水平（每秒奖励约 0.26），PPO 需 6.5 小时、2.62 亿步，最终为 **0.292 对 0.261**。掌心向下指尖旋转任务中（每个物体 64 回合、每回合 60 秒，指垫摩擦随机化 0.25–1.2），仅用关节信息的世界模型策略计分偏航达到 **933°**、掉落 **4.0%**，而由教师蒸馏并已部署的 PPO 学生为 **675° / 10.4%**，特权 PPO 教师为 **944° / 2.1%**。
+- **选择时注意：** 世界模型结果均在仿真中；真实机器人视频（偏航与 SO(3)）展示的是 PPO 策略。指尖任务数值采用仓库自带评测（旋转奖励速度上限 0.3 rad/s，物体偏移 30 mm 记为掉落）。每种配置单次运行；训练时间基于单张 RTX 4090。 [核查版本](https://github.com/Msornerrrr/in-hand-rotation-mjlab/blob/0ab03eb2244b4a1a020d94ef38a4823bb9e15ba0/README.md)。
+
+<a href="https://github.com/Msornerrrr/in-hand-rotation-mjlab"><img src="https://raw.githubusercontent.com/Msornerrrr/in-hand-rotation-mjlab/0ab03eb2244b4a1a020d94ef38a4823bb9e15ba0/assets/sim_fingertip.gif" width="480" alt="仿真 · 仅用关节信息的世界模型策略在掌心向下时用指尖旋转球体、方块、圆柱和长方体"></a><br><sub>仿真 · 掌心向下指尖旋转，仅用关节信息的世界模型策略</sub>
+
+<br>
+
 ### Humanoid Mimic · SuperMimic
 
 [仓库](https://github.com/shuayyy/humanoid-amp-ppo) · [快速开始](https://github.com/shuayyy/humanoid-amp-ppo/blob/4889389118e0c88d3945dff54d2cd3f992ed815e/README.md#quickstart) · [结果与协议](https://github.com/shuayyy/humanoid-amp-ppo/blob/4889389118e0c88d3945dff54d2cd3f992ed815e/docs/supermimic/RESULTS.md)
@@ -361,18 +383,6 @@ SuperMimic 从仿真状态转移中学习一个共享的可微世界模型，再
 - **选择时注意：** 上述 SuperMimic 分数使用无噪声观测；新版评估已加入观测噪声，公开检查点尚未按这一设置重评。 [核查版本](https://github.com/shuayyy/humanoid-amp-ppo/blob/4889389118e0c88d3945dff54d2cd3f992ed815e/README.md)。
 
 <a href="https://github.com/shuayyy/humanoid-amp-ppo/blob/4889389118e0c88d3945dff54d2cd3f992ed815e/assets/supermimic_vs_ppo_lift.mp4"><img src="https://raw.githubusercontent.com/shuayyy/humanoid-amp-ppo/4889389118e0c88d3945dff54d2cd3f992ed815e/assets/supermimic_vs_ppo_lift.gif" width="480" alt="搬箱 · SuperMimic 12k / PPO-Sim 6k 次迭代"></a><br><sub>搬箱 · SuperMimic 12k / PPO-Sim 6k 次迭代</sub>
-
-<br>
-
-### In-Hand Rotation mjlab
-
-[仓库](https://github.com/Msornerrrr/in-hand-rotation-mjlab) · [安装](https://github.com/Msornerrrr/in-hand-rotation-mjlab/blob/0ab03eb2244b4a1a020d94ef38a4823bb9e15ba0/README.md#install) · [结果](https://github.com/Msornerrrr/in-hand-rotation-mjlab/blob/0ab03eb2244b4a1a020d94ef38a4823bb9e15ba0/README.md#results) · [检查点](https://github.com/Msornerrrr/in-hand-rotation-mjlab/blob/0ab03eb2244b4a1a020d94ef38a4823bb9e15ba0/README.md#quick-start-the-released-policies)
-
-- **作者：Msornerrrr。** 在 mjlab / MuJoCo Warp 中将 SuperMimic 式世界模型策略学习（在线重拟合的 MLP 世界模型、通过想象轨迹反向传播、TD(λ) 评论家与权重平均）用于 LEAP 灵巧手，并在相同环境上提供 PPO 基线：掌心向上的方块偏航旋转、SO(3) 方块重定向（仅 PPO）和掌心向下用指尖旋转 22 种物体；使用在真实手上辨识的舵机模型。两种方法的检查点均已发布。
-- **上游报告：** 方块偏航任务中，世界模型策略在 **25 分钟、1,800 万环境步**时达到 PPO 的水平（每秒奖励约 0.26），PPO 需 6.5 小时、2.62 亿步，最终为 **0.292 对 0.261**。掌心向下指尖旋转任务中（每个物体 64 回合、每回合 60 秒，指垫摩擦随机化 0.25–1.2），仅用关节信息的世界模型策略计分偏航达到 **933°**、掉落 **4.0%**，而由教师蒸馏并已部署的 PPO 学生为 **675° / 10.4%**，特权 PPO 教师为 **944° / 2.1%**。
-- **选择时注意：** 世界模型结果均在仿真中；真实机器人视频（偏航与 SO(3)）展示的是 PPO 策略。指尖任务数值采用仓库自带评测（旋转奖励速度上限 0.3 rad/s，物体偏移 30 mm 记为掉落）。每种配置单次运行；训练时间基于单张 RTX 4090。 [核查版本](https://github.com/Msornerrrr/in-hand-rotation-mjlab/blob/0ab03eb2244b4a1a020d94ef38a4823bb9e15ba0/README.md)。
-
-<a href="https://github.com/Msornerrrr/in-hand-rotation-mjlab"><img src="https://raw.githubusercontent.com/Msornerrrr/in-hand-rotation-mjlab/0ab03eb2244b4a1a020d94ef38a4823bb9e15ba0/assets/sim_fingertip.gif" width="480" alt="仿真 · 仅用关节信息的世界模型策略在掌心向下时用指尖旋转球体、方块、圆柱和长方体"></a><br><sub>仿真 · 掌心向下指尖旋转，仅用关节信息的世界模型策略</sub>
 
 <br>
 
@@ -436,7 +446,9 @@ SuperMimic 从仿真状态转移中学习一个共享的可微世界模型，再
 
 <br>
 
-### ScaleBFM_Plus · SuperMimic
+<a name="scalebfm_plus--supermimic"></a>
+
+### ⭐ ScaleBFM_Plus · SuperMimic
 
 [仓库](https://github.com/Hxxxz0/ScaleBFM_Plus) · [训练与结果](https://github.com/Hxxxz0/ScaleBFM_Plus/blob/65e4d524bd31fdc4284ba8c6e624fb0b0127da03/ScaleTrack/README.md#fast-training-with-a-learned-world-model-supermimic) · [发布权重](https://github.com/Hxxxz0/ScaleBFM_Plus/tree/65e4d524bd31fdc4284ba8c6e624fb0b0127da03/ScaleTrack/checkpoints/supermimic_m)
 
