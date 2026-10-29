@@ -72,11 +72,11 @@ SuperMimic 从仿真状态转移中学习一个共享的可微世界模型，再
 
 ## 社区项目
 
-按用途收录 **38 个社区项目**。本次于 **2026-10-28** 对照上游文档及部分源码新增或更新 12 个项目条目，In-Hand Rotation mjlab 也于当日加入；其余条目保留此前的来源版本。每项附有对应版本的来源链接。成绩和演示均为上游报告，本清单未独立重跑实验。
+按用途收录 **39 个社区项目**。本次于 **2026-10-28** 对照上游文档及部分源码新增或更新 12 个项目条目，In-Hand Rotation mjlab 也于当日加入；InstantTrack 于 **2026-10-29** 加入；其余条目保留此前的来源版本。每项附有对应版本的来源链接。成绩和演示均为上游报告，本清单未独立重跑实验。
 
 - 🚀 **[真机部署与 Sim2Real](#真机部署与-sim2real)** — **2 个项目** · 查看真机运行栈与 Sim2Real 迁移路径。
 - 🔬 **[独立复现](#独立复现)** — **5 个项目** · 复现与评估原始方法。
-- 🧩 **[方法改动与形态适配](#方法改动与形态适配)** — **5 个项目** · 查看算法改动、多本体形态适配和专项控制研究。
+- 🧩 **[方法改动与形态适配](#方法改动与形态适配)** — **6 个项目** · 查看算法改动、多本体形态适配和专项控制研究。
 - 👁️ **[感知、地形与四足任务](#感知地形与四足任务)** — **4 个项目** · 查看视觉、高度扫描、地形和四足任务适配。
 - 🦾 **[操作与灵巧手](#操作与灵巧手)** — **4 个项目** · 查看机械臂、手部与物体交互任务。
 - 💪 **[肌肉驱动、交互与诊断](#肌肉驱动交互与诊断)** — **3 个项目** · 查看肌肉驱动本体、物理交互和接触诊断。
@@ -179,6 +179,18 @@ SuperMimic 从仿真状态转移中学习一个共享的可微世界模型，再
 ## 方法改动与形态适配
 
 关注算法改动、多本体形态适配和专项控制研究。
+
+### InstantTrack
+
+[仓库](https://github.com/Huy-Quang-Dao/instantTrack) · [安装](https://github.com/Huy-Quang-Dao/instantTrack/blob/a33691a08bca8802d9d2985f62e2567479735a8e/README.md#setup) · [结果与消融](https://github.com/Huy-Quang-Dao/instantTrack/blob/a33691a08bca8802d9d2985f62e2567479735a8e/results/report.md) · [训练预设](https://github.com/Huy-Quang-Dao/instantTrack/blob/a33691a08bca8802d9d2985f62e2567479735a8e/scripts/presets.sh)
+
+- **作者：Huy-Quang-Dao。** 基于 supermimic_vibed 的 mjlab 移植版实现 G1 跟踪，结合 GPU 训练循环优化、EMA 策略权重平均、更小的世界模型和失败重点采样；主预设还在想象轨迹中加入接触奖励。
+- **上游报告：** 单张 RTX 5090 上，三个种子均在约 **15 分钟**达到 **LAFAN1 回报 ≥ 0.82、0 / 40 失败**，该时间点平均回报 **0.831**。报告的 **2.2 倍**加速相对于作者同机运行的 SuperMimic + EMA 基线，**6 倍**则相对于其未加 EMA 的基础复现。
+- **选择时注意：** 时间取连续三个达标检查点中的首个，不含离线评估，也不是从环境安装开始的总耗时。评估覆盖仿真中的训练动作，尚无更大动作库或真机结果；模型大小、更新次数和训练奖励均有改动，不能据此作跨项目速度排名。 [核查版本](https://github.com/Huy-Quang-Dao/instantTrack/blob/a33691a08bca8802d9d2985f62e2567479735a8e/README.md)。
+
+<a href="https://github.com/Huy-Quang-Dao/instantTrack/blob/a33691a08bca8802d9d2985f62e2567479735a8e/media/equal_time_15min.gif"><img src="https://raw.githubusercontent.com/Huy-Quang-Dao/instantTrack/a33691a08bca8802d9d2985f62e2567479735a8e/media/equal_time_15min.gif" width="480" alt="仿真 · 训练 15 分钟后的 SuperMimic + EMA 与 InstantTrack 对比"></a><br><sub>上游仿真演示 · 相同的 15 分钟训练预算；左为 SuperMimic + EMA，右为 InstantTrack，展示倒地起身动作</sub>
+
+<br>
 
 ### MorphMimic
 
