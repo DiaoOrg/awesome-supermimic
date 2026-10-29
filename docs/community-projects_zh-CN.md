@@ -3,6 +3,7 @@
 [返回排行榜](../README_zh-CN.md#most-starred-projects) · [English](community-projects.md)
 
 以下成绩和演示均为上游报告，本清单未独立重跑；保留核查版本、作者、限制条件及媒体署名。
+[全量核查记录与来源版本](project-review-2026-10-30.md)。
 
 ## 真机部署与 Sim2Real
 
@@ -48,6 +49,7 @@
 - **作者：Chong Zhang。** 基于 Isaac Lab 3 独立实现 G1 动作跟踪，提供 kit-less 环境、训练、完整动作评估和渲染工具。
 - **上游报告：** 单张 RTX PRO 6000 Blackwell 训练 **1.47 小时**，40 条 LAFAN1 动作的归一化回报为 **0.829**，**0 / 40 失败**。
 - **选择时注意：** 作者将其描述为快速开发、未经充分审查的复现；与论文的差异包括关闭自碰撞、MLP 使用 bf16，以及额外输入参考根部相对朝向。 [核查版本](https://github.com/zita-ch/supermimic_vibed/blob/a1508d42c9d1699a52e8233ab16d08c488441ab9/README.md)。
+- **当前源码更新：** 地面资产改为本地缓存，避免 OmniClient 的 S3 下载导致启动停滞；源码还修复了动作结尾目标速度、重复重置分箱聚合及回放窗口采样。这些是实现修复，上述成绩仍属于此前报告，不能视为修复后重新测得的结果。[当前安装说明](https://github.com/zita-ch/supermimic_vibed/blob/8bfc1158bd968f729fcc65d5e897a05b05ea3d36/README.md#setup) · [核查差异](https://github.com/zita-ch/supermimic_vibed/compare/a1508d42c9d1699a52e8233ab16d08c488441ab9...8bfc1158bd968f729fcc65d5e897a05b05ea3d36)。
 
 <a href="https://github.com/zita-ch/supermimic_vibed"><img src="https://raw.githubusercontent.com/zita-ch/supermimic_vibed/a1508d42c9d1699a52e8233ab16d08c488441ab9/results/supermimic_lafan1_highlight.gif" width="480" alt="仿真 · LAFAN1 动作集锦"></a><br><sub>仿真 · LAFAN1 动作集锦</sub>
 
@@ -83,13 +85,27 @@
 
 ### supermimic_vibe
 
-[仓库](https://github.com/dhmbb2/supermimic_vibe) · [安装](https://github.com/dhmbb2/supermimic_vibe/blob/072f0910dadc9d95c720e625b546120e9ce917c9/README.md#setup) · [结果记录](https://github.com/dhmbb2/supermimic_vibe/blob/072f0910dadc9d95c720e625b546120e9ce917c9/notes/RESULTS.md)
+[仓库](https://github.com/dhmbb2/supermimic_vibe) · [安装](https://github.com/dhmbb2/supermimic_vibe/blob/d0934d069207ee745be8489d9631a8314c94c1f3/README.md#setup) · [结果记录](https://github.com/dhmbb2/supermimic_vibe/blob/d0934d069207ee745be8489d9631a8314c94c1f3/notes/RESULTS.md)
+
+- **作者：dhmbb2。** G1 复现覆盖 LAFAN1 与 BONES-SEED 全量评测、PPO-Sim/PPO-WM 和 SONIC 对照、时域／critic 消融、推扰恢复与速度控制。
+- **上游报告：** 单张 RTX A6000 上，选定的 LAFAN1 检查点在 **11.4 小时**达到 **0.947、0 / 40 失败**；PPO-Sim 在 **18 小时**后为 **0.543**。在**全部 128,904 条过滤后 BONES-SEED 动作**上，选定的 184k 检查点训练 **14.4 小时**后报告 **0.923、45 条失败**。
+- **方法与限制：** BONES-SEED 配置让 **50% 的环境无探索噪声采集**，这是对论文的明确改动。论文原设置运行约 6 小时后崩溃；双卡零失败结论未复现。同仿真器的 SONIC 对照为 **0.893 / 642 条失败**。数据过滤与 A6000 硬件均不同于论文，不能据此跨项目排训练速度。
+- **来源：** [当前 README](https://github.com/dhmbb2/supermimic_vibe/blob/d0934d069207ee745be8489d9631a8314c94c1f3/README.md#results) · [完整实验日志](https://github.com/dhmbb2/supermimic_vibe/blob/d0934d069207ee745be8489d9631a8314c94c1f3/notes/RESULTS.md)。评测从首帧执行完整动作，使用确定性策略并关闭噪声和随机化；训练耗时不含评测。BONES-SEED 结果现已公开，数据获取仍需接受许可。以上为上游报告，本列表未重跑。
+
+<details>
+<summary>历史记录：此前的介绍、成绩与媒体</summary>
+
+以下说明对应所链接的早期版本。
+
+[安装](https://github.com/dhmbb2/supermimic_vibe/blob/072f0910dadc9d95c720e625b546120e9ce917c9/README.md#setup) · [结果记录](https://github.com/dhmbb2/supermimic_vibe/blob/072f0910dadc9d95c720e625b546120e9ce917c9/notes/RESULTS.md)
 
 - **作者：dhmbb2。** 基于 mjlab 独立复现 G1 跟踪，覆盖 PPO-Sim/PPO-WM 对照、时域与 critic 消融、推力恢复和速度控制实验。
 - **上游报告：** 单张 RTX A6000 上，LAFAN1 完整动作确定性评测在 **1.34 小时**达到回报 **0.833**，**12 小时**达到 **0.946、0 / 40 失败**。
 - **选择时注意：** 实验记录区分已复现、部分复现和待完成项；BONES-SEED 受数据许可限制，未覆盖真机迁移，A6000 耗时也不能直接等同于 H100。 [核查版本](https://github.com/dhmbb2/supermimic_vibe/blob/072f0910dadc9d95c720e625b546120e9ce917c9/README.md)。
 
 <a href="https://github.com/dhmbb2/supermimic_vibe/blob/072f0910dadc9d95c720e625b546120e9ce917c9/README.md"><img src="../assets/community/vibe-results.png" width="720" alt="报告截图 · 单张 RTX A6000 上的复现与消融"></a><br><sub>报告截图 · 单张 RTX A6000 上的复现与消融</sub>
+
+</details>
 
 <br>
 
@@ -147,6 +163,7 @@
 - **作者：Shimingyi。** 基于 supermimic_vibe，在 mjlab 中混用上身残差动作与腿部绝对动作，并加入世界模型损失加权和动作均衡采样。
 - **上游报告：** 单张 RTX 4090 使用推荐配置，训练 **0.83 小时**后，LAFAN1 完整动作评测达到 **0 / 40 失败、回报 0.91**；耗时不含评估。
 - **选择时注意：** 推荐配置包含算法和数据采样改动；仅训练 306 条困难动作的实验，与完整 BONES-SEED 训练是不同实验。 [核查版本](https://github.com/Shimingyi/allmimic/blob/cb334ff674b2f57248f33f8c21b7fb526fbdf8cc/README.md)。
+- **补充上游 BONES-SEED 报告：** 在**完整训练划分、两张 RTX 4090 上训练 6.6 小时 / 176k 轮**的策略完成 **306 / 306 条困难训练动作**，以及翻转、侧手翻、倒立共 **303 / 308 条**。BONES-SEED 未见动作报告 **100.0% 成功率 / 0.884 回报**，LAFAN1 为 **94.6% / 0.806**。这些测试集经过过滤并**切为 10 秒片段**，困难训练动作则完整评测；它与仅用 306 条动作训练的实验分开，也不代表整个 BONES-SEED 动作库零失败。[协议与表格](https://github.com/Shimingyi/allmimic/blob/cb334ff674b2f57248f33f8c21b7fb526fbdf8cc/README.md#bones-seed)。
 
 <a href="https://github.com/Shimingyi/allmimic"><img src="https://raw.githubusercontent.com/Shimingyi/allmimic/cb334ff674b2f57248f33f8c21b7fb526fbdf8cc/assets/challenge_cases.gif" width="480" alt="仿真 · 高难度动作片段"></a><br><sub>仿真 · 高难度动作片段</sub>
 
@@ -166,12 +183,25 @@
 
 ### Rethinking SuperMimic
 
-[仓库](https://github.com/btx0424/rethinking-supermimic) · [安装](https://github.com/btx0424/rethinking-supermimic/blob/aa77b71054a850075431248f1534bb77ca62b4d8/README.md#installation) · [实现对照](https://github.com/btx0424/rethinking-supermimic/blob/aa77b71054a850075431248f1534bb77ca62b4d8/README.md#ours-the-paper-and-supermimic_vibed)
+[仓库](https://github.com/btx0424/rethinking-supermimic) · [安装](https://github.com/btx0424/rethinking-supermimic/blob/2cbbd1278bfb8bd59c31fe48d7413c46ae205e32/README.md#installation) · [实现对照](https://github.com/btx0424/rethinking-supermimic/blob/2cbbd1278bfb8bd59c31fe48d7413c46ae205e32/README.md#ours-the-paper-and-supermimic_vibed) · [SuperMimic / SAC 入口](https://github.com/btx0424/rethinking-supermimic/blob/2cbbd1278bfb8bd59c31fe48d7413c46ae205e32/src/supermimic/train.py)
+
+- **作者：btx0424。** 在 mjlab 的 G1 上研究拼接与 FiLM 目标条件化、HL-Gauss critic，以及 heading/pelvis 世界模型坐标。当前[训练入口](https://github.com/btx0424/rethinking-supermimic/blob/2cbbd1278bfb8bd59c31fe48d7413c46ae205e32/src/supermimic/train.py)可选择 SuperMimic 或新增的 SAC 基线。
+- **本次更新：** 两套算法配置均提供策略 EMA（`pi_ema: 0.995`），并增加接触误差、神经元休眠、时域梯度、tanh 饱和及隐变量漂移诊断。[SuperMimic 配置](https://github.com/btx0424/rethinking-supermimic/blob/2cbbd1278bfb8bd59c31fe48d7413c46ae205e32/src/supermimic/conf/algo/supermimic.yaml) · [SAC 配置](https://github.com/btx0424/rethinking-supermimic/blob/2cbbd1278bfb8bd59c31fe48d7413c46ae205e32/src/supermimic/conf/algo/sac.yaml)。
+- **选择时注意：** [实现对照](https://github.com/btx0424/rethinking-supermimic/blob/2cbbd1278bfb8bd59c31fe48d7413c46ae205e32/README.md#ours-the-paper-and-supermimic_vibed)继续说明观测、自碰撞、锚点与归一化差异。SAC/EMA 的支持已核对源码和配置；该 README 未发布新增 SAC/EMA 性能测量，本列表未执行这些训练入口。
+
+<details>
+<summary>历史记录：此前的介绍、成绩与媒体</summary>
+
+以下说明对应所链接的早期版本。
+
+[安装](https://github.com/btx0424/rethinking-supermimic/blob/aa77b71054a850075431248f1534bb77ca62b4d8/README.md#installation) · [实现对照](https://github.com/btx0424/rethinking-supermimic/blob/aa77b71054a850075431248f1534bb77ca62b4d8/README.md#ours-the-paper-and-supermimic_vibed)
 
 - **作者：btx0424。** 在 mjlab 的 G1 跟踪任务中研究目标条件化：比较目标与本体观测直接拼接，以及用 FiLM 调制策略各层。最新版本加入 HL-Gauss critic、梯度检查，以及可选朝向坐标系或骨盆坐标系的世界模型坐标。
 - **选择时注意：** 提供可配置观测、锚点选择及 Viser 回放；实现对照表解释了与论文、supermimic_vibed 在自碰撞、观测输入等方面的差异。 [核查版本](https://github.com/btx0424/rethinking-supermimic/blob/aa77b71054a850075431248f1534bb77ca62b4d8/README.md)。
 
 <a href="https://github.com/btx0424/rethinking-supermimic/blob/ecdaeb6a916a16cf7eb69b19226c17be31a6bc27/README.md"><img src="../assets/community/rethinking-comparison.png" width="720" alt="历史实现对照表节选 · 2026-10-26 快照；当前对照见上方链接"></a><br><sub>历史实现对照表节选 · 2026-10-26 快照；当前对照见上方链接</sub>
+
+</details>
 
 <br>
 
@@ -196,13 +226,28 @@
 
 ### ⭐ InstinctMJ · SuperMimic
 
-[仓库](https://github.com/project-instinct/InstinctMJ/tree/supermimic) · [方法与结果](https://github.com/project-instinct/InstinctMJ/blob/7ca851e002980011f24a1664011305d0ba94aefc/src/instinct_mj/rl/supermimic/README.md#results) · [发布资源](https://github.com/project-instinct/InstinctMJ/releases)
+[仓库](https://github.com/project-instinct/InstinctMJ/tree/supermimic) · [方法与结果](https://github.com/project-instinct/InstinctMJ/blob/3f0952d36268c6aad299e256d27cc65d3bcc1434/src/instinct_mj/rl/supermimic/README.md#results) · [发布资源](https://github.com/project-instinct/InstinctMJ/releases)
+
+- **团队：Project Instinct。** 在 **supermimic 分支**训练感知 G1 地形跟踪。世界模型现预测机器人状态；依据预测状态和已知场景／机器人网格，可微光线投射生成想象深度图，再加入相机噪声，策略损失端到端训练深度编码器。
+- **上游报告：** 新渲染方案在**单张 RTX 3090、1,024 个环境**下训练 **8,000 轮 / 2.8 小时**，对 **5 类地形、10 个动作**报告 **95% 完整动作成功率 / 97% 完成度**。单种子，每个动作评测 12–13 次；从首帧开始，开启相机噪声，不施加推扰。
+- **选择时注意：** 旧隐变量预测方案的 **97% / 3.2 小时**对应另一套设计与参数，耗时还包含共享 GPU 的评测；新结果只计训练时间。地形跟踪与平地 LAFAN1 不同，渲染依赖已知几何；外部检查点需适配关节顺序。[当前方法与结果](https://github.com/project-instinct/InstinctMJ/blob/3f0952d36268c6aad299e256d27cc65d3bcc1434/src/instinct_mj/rl/supermimic/README.md)。
+
+<a href="https://github.com/project-instinct/InstinctMJ/blob/3f0952d36268c6aad299e256d27cc65d3bcc1434/src/instinct_mj/rl/supermimic/assets/method.png"><img src="https://raw.githubusercontent.com/project-instinct/InstinctMJ/3f0952d36268c6aad299e256d27cc65d3bcc1434/src/instinct_mj/rl/supermimic/assets/method.png" width="720" alt="当前方法 · 根据预测状态可微渲染深度图"></a><br><sub>当前方法 · 根据预测状态可微渲染深度图</sub>
+
+<details>
+<summary>历史记录：此前的介绍、成绩与媒体</summary>
+
+以下说明对应所链接的早期版本。
+
+[方法与结果](https://github.com/project-instinct/InstinctMJ/blob/7ca851e002980011f24a1664011305d0ba94aefc/src/instinct_mj/rl/supermimic/README.md#results) · [发布资源](https://github.com/project-instinct/InstinctMJ/releases)
 
 - **团队：Project Instinct。** 在 mjlab / instinct_rl 中扩展到 G1 视觉动作跟踪和目标点跑酷；世界模型预测机器人状态及深度编码器潜变量，部分组件改编自 supermimic_vibed。
 - **上游报告：** 单张 RTX 3090 训练 **8,000 次迭代 / 3.2 小时**，在 **5 类地形、10 个动作**上达到 **97% 完整动作成功率**；单种子，每个动作评估 12–13 次，开启相机噪声。
 - **选择时注意：** 使用 **supermimic 分支**。这是地形跟踪任务，与平地 LAFAN1 不同；外部 checkpoint 需要适配关节顺序，许可为 CC BY-NC 4.0。 [核查版本](https://github.com/project-instinct/InstinctMJ/blob/7ca851e002980011f24a1664011305d0ba94aefc/src/instinct_mj/rl/supermimic/README.md)。
 
 <a href="https://github.com/project-instinct/InstinctMJ/blob/7ca851e002980011f24a1664011305d0ba94aefc/src/instinct_mj/rl/supermimic/assets/world_model_simple.png"><img src="https://raw.githubusercontent.com/project-instinct/InstinctMJ/7ca851e002980011f24a1664011305d0ba94aefc/src/instinct_mj/rl/supermimic/assets/world_model_simple.png" width="720" alt="方法图 · 机器人状态与视觉潜变量预测"></a><br><sub>方法图 · 机器人状态与视觉潜变量预测</sub>
+
+</details>
 
 <br>
 
@@ -412,13 +457,26 @@
 
 ### TrackerLab SuperMimic
 
-[仓库](https://github.com/Renforce-Dynamics/trackerlab-supermimic) · [安装](https://github.com/Renforce-Dynamics/trackerlab-supermimic/blob/29d24524f2f731bf4df75b319c3e76544165849e/README.md#install) · [结果与限制](https://github.com/Renforce-Dynamics/trackerlab-supermimic/blob/29d24524f2f731bf4df75b319c3e76544165849e/docs/results.md)
+[仓库](https://github.com/Renforce-Dynamics/trackerlab-supermimic) · [安装](https://github.com/Renforce-Dynamics/trackerlab-supermimic/blob/813f37a89d9be0791c9c72695a322307001a5d11/README.md#install) · [结果与限制](https://github.com/Renforce-Dynamics/trackerlab-supermimic/blob/813f37a89d9be0791c9c72695a322307001a5d11/docs/results.md) · [可选 G1 Warp 训练](https://github.com/Renforce-Dynamics/trackerlab-supermimic/blob/813f37a89d9be0791c9c72695a322307001a5d11/docs/warp_training.md)
+
+- **团队：Renforce Dynamics。** 保留 G1、Go2、A3、T1、Bumi、Pi+ 的 Isaac Lab / PhysX 重定向、训练和评测流程，新增独立的 **G1 MuJoCo-Warp** 训练入口，采用 GPU 常驻动作参考、BF16 MLP 与 CUDA Graphs。
+- **当前改动：** 共享修复仅对超出动作结尾的合成目标保持末帧姿态并将速度归零，保留原本为 50 Hz 的全部源帧，稳定归一化缓冲区存储。更换加载器后需重新核对派生动作缓存。[边界与归一化修复](https://github.com/Renforce-Dynamics/trackerlab-supermimic/blob/813f37a89d9be0791c9c72695a322307001a5d11/docs/reference_tail_fix.md)。
+- **成绩与限制：** 早期 PhysX 检查点的 **0.8694663 / 40 条 LAFAN1 中 0 失败**保留为历史结果。导入的 Warp 运行时需要预先准备 root83 缓存，目前面向从随机初始化训练 G1。上游集成已覆盖 CPU 回归检查，目标机器上的 CUDA 运行验收及新训练结果仍待完成；来源遥操作实验的吞吐量不能视为本仓库集成的基准。[Warp 环境与范围](https://github.com/Renforce-Dynamics/trackerlab-supermimic/blob/813f37a89d9be0791c9c72695a322307001a5d11/docs/warp_training.md)。
+
+<details>
+<summary>历史记录：此前的介绍、成绩与媒体</summary>
+
+以下说明对应所链接的早期版本。
+
+[安装](https://github.com/Renforce-Dynamics/trackerlab-supermimic/blob/29d24524f2f731bf4df75b319c3e76544165849e/README.md#install) · [结果与限制](https://github.com/Renforce-Dynamics/trackerlab-supermimic/blob/29d24524f2f731bf4df75b319c3e76544165849e/docs/results.md)
 
 - **团队：Renforce Dynamics。** 在 Isaac Lab / PhysX 中提供统一的重定向、训练、完整动作评估与导出流程，覆盖 G1、Go2、A3、T1、Bumi 和 Pi+，另含 Go2 任务策略。
 - **上游报告：** 重新评估第 32,000 次迭代的 G1 上游检查点，得到归一化回报 **0.8694663、0 / 40 条 LAFAN1 动作失败**。
 - **选择时注意：** 结果使用 PhysX，而 supermimic_vibed 使用 MuJoCo Warp；各本体的动作库与训练过程不同，未见动作泛化仍未测量。 [核查版本](https://github.com/Renforce-Dynamics/trackerlab-supermimic/blob/29d24524f2f731bf4df75b319c3e76544165849e/README.md)。
 
 <a href="https://github.com/Renforce-Dynamics/trackerlab-supermimic/blob/29d24524f2f731bf4df75b319c3e76544165849e/docs/media/g1_dance_032000.mp4"><img src="https://raw.githubusercontent.com/Renforce-Dynamics/trackerlab-supermimic/29d24524f2f731bf4df75b319c3e76544165849e/docs/media/g1_dance_032000.gif" width="480" alt="仿真 · G1 策略与参考舞蹈"></a><br><sub>仿真 · G1 策略与参考舞蹈</sub>
+
+</details>
 
 <br>
 
@@ -552,6 +610,7 @@
 
 - **作者：azizkhadraoui。** 将 SuperMimic 式梯度学习借鉴到 LIBERO 上的 G0.5 VLA 引导：通过世界模型、critic 和冻结流匹配采样器训练噪声策略。
 - **选择时注意：** 这是更大 VLA 系统中的一个特定任务引导实验；所链接脚本对应相关方法，仓库中其他规划与记忆结果属于不同实验。 [核查版本](https://github.com/azizkhadraoui/g05/blob/e3de0de50db7d90068483e2d30f2eacd781300b4/jobs/119_smsteer.py)。
+- **上游负结果：** 通过世界模型与 critic 直接微调 G0.5 策略权重时，普通锚定配置的切换指令成功数为 **0 / 200**，原任务成功数由 **99 / 100 降至 0 / 100**；更强锚定配置为 **40 / 200**，冻结基线为 **39 / 200**。该直接策略实验与仓库中噪声策略、规划器和记忆模块的成绩分开，本列表未重跑这些测量。[结果表](https://github.com/azizkhadraoui/g05/blob/e3de0de50db7d90068483e2d30f2eacd781300b4/README.md)。
 
 <a href="https://github.com/azizkhadraoui/g05/blob/e3de0de50db7d90068483e2d30f2eacd781300b4/README.md"><img src="../assets/community/g05-steering-entry.png" width="720" alt="代码索引截图 · 世界模型与 critic 引导实验"></a><br><sub>代码索引截图 · 世界模型与 critic 引导实验</sub>
 

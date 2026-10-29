@@ -149,8 +149,8 @@
       ],
       "repository_url": "https://github.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real",
       "highlights": {
-        "en": "G1 hardware dances and clip-specific deployment notes.",
-        "zh": "G1 真机舞蹈演示与单片段部署记录。"
+        "en": "Clip-specific G1 dances, video-to-motion tools and ONNX deployment.",
+        "zh": "G1 单舞蹈策略、视频转动作工具与 ONNX 真机部署。"
       },
       "links": {
         "en": [
@@ -204,8 +204,8 @@
       ],
       "repository_url": "https://github.com/KyrieYoung926/supermimic_deploy",
       "highlights": {
-        "en": "29-DoF G1 deployment with simulation and hardware guides.",
-        "zh": "29 自由度 G1 部署，含仿真与真机指南。"
+        "en": "ONNX playback for 29-DoF G1 in MuJoCo and on hardware.",
+        "zh": "29 自由度 G1 的 ONNX 策略回放，覆盖 MuJoCo 与真机。"
       },
       "links": {
         "en": [
@@ -248,28 +248,28 @@
       ],
       "repository_url": "https://github.com/zita-ch/supermimic_vibed",
       "highlights": {
-        "en": "G1 LAFAN1 baseline with full-clip evaluation tools.",
-        "zh": "G1 LAFAN1 基线与完整片段评估工具。"
+        "en": "Kit-less Isaac Lab G1 baseline with full-clip evaluation and cached ground assets.",
+        "zh": "免 Kit 的 Isaac Lab G1 基线，含完整动作评测与地面资产缓存。"
       },
       "links": {
         "en": [
           {
             "label": "Setup and usage",
-            "url": "https://github.com/zita-ch/supermimic_vibed/blob/a1508d42c9d1699a52e8233ab16d08c488441ab9/README.md#setup"
+            "url": "https://github.com/zita-ch/supermimic_vibed/blob/8bfc1158bd968f729fcc65d5e897a05b05ea3d36/README.md#setup"
           },
           {
             "label": "Results",
-            "url": "https://github.com/zita-ch/supermimic_vibed/blob/a1508d42c9d1699a52e8233ab16d08c488441ab9/README.md#result-lafan1-40-clips-one-rtx-pro-6000-blackwell"
+            "url": "https://github.com/zita-ch/supermimic_vibed/blob/8bfc1158bd968f729fcc65d5e897a05b05ea3d36/README.md#result-lafan1-40-clips-one-rtx-pro-6000-blackwell"
           }
         ],
         "zh": [
           {
             "label": "安装与使用",
-            "url": "https://github.com/zita-ch/supermimic_vibed/blob/a1508d42c9d1699a52e8233ab16d08c488441ab9/README.md#setup"
+            "url": "https://github.com/zita-ch/supermimic_vibed/blob/8bfc1158bd968f729fcc65d5e897a05b05ea3d36/README.md#setup"
           },
           {
             "label": "结果",
-            "url": "https://github.com/zita-ch/supermimic_vibed/blob/a1508d42c9d1699a52e8233ab16d08c488441ab9/README.md#result-lafan1-40-clips-one-rtx-pro-6000-blackwell"
+            "url": "https://github.com/zita-ch/supermimic_vibed/blob/8bfc1158bd968f729fcc65d5e897a05b05ea3d36/README.md#result-lafan1-40-clips-one-rtx-pro-6000-blackwell"
           }
         ]
       },
@@ -296,8 +296,8 @@
       ],
       "repository_url": "https://github.com/CuboiLeo/SuperMimic-Reproduced",
       "highlights": {
-        "en": "BONES-SEED training logs, checkpoints and observation comparisons.",
-        "zh": "BONES-SEED 训练日志、权重与观测配置对照。"
+        "en": "Full BONES-SEED checkpoint and paper-vs-anchor observation experiments.",
+        "zh": "全量 BONES-SEED 权重与论文观测／锚点观测对照实验。"
       },
       "links": {
         "en": [
@@ -352,8 +352,8 @@
       ],
       "repository_url": "https://github.com/Breezewrf/supermimic_mjlab",
       "highlights": {
-        "en": "Step-by-step training ablations and released checkpoints.",
-        "zh": "逐项训练消融与公开检查点。"
+        "en": "40-motion G1 tracking, velocity training and normalization / learning-rate ablations.",
+        "zh": "G1 的 40 动作跟踪、速度训练，以及归一化与学习率消融。"
       },
       "links": {
         "en": [
@@ -399,32 +399,32 @@
       ],
       "repository_url": "https://github.com/dhmbb2/supermimic_vibe",
       "highlights": {
-        "en": "PPO-Sim / PPO-WM comparisons and horizon / critic ablations.",
-        "zh": "PPO-Sim / PPO-WM 对照与时域、critic 消融。"
+        "en": "Full BONES-SEED evaluation, SONIC / PPO comparisons and training-collapse ablations.",
+        "zh": "BONES-SEED 全量评测、SONIC / PPO 对照与训练崩溃消融。"
       },
       "links": {
         "en": [
           {
             "label": "Setup",
-            "url": "https://github.com/dhmbb2/supermimic_vibe/blob/072f0910dadc9d95c720e625b546120e9ce917c9/README.md#setup"
+            "url": "https://github.com/dhmbb2/supermimic_vibe/blob/d0934d069207ee745be8489d9631a8314c94c1f3/README.md#setup"
           },
           {
             "label": "Results log",
-            "url": "https://github.com/dhmbb2/supermimic_vibe/blob/072f0910dadc9d95c720e625b546120e9ce917c9/notes/RESULTS.md"
+            "url": "https://github.com/dhmbb2/supermimic_vibe/blob/d0934d069207ee745be8489d9631a8314c94c1f3/notes/RESULTS.md"
           }
         ],
         "zh": [
           {
             "label": "安装",
-            "url": "https://github.com/dhmbb2/supermimic_vibe/blob/072f0910dadc9d95c720e625b546120e9ce917c9/README.md#setup"
+            "url": "https://github.com/dhmbb2/supermimic_vibe/blob/d0934d069207ee745be8489d9631a8314c94c1f3/README.md#setup"
           },
           {
             "label": "结果记录",
-            "url": "https://github.com/dhmbb2/supermimic_vibe/blob/072f0910dadc9d95c720e625b546120e9ce917c9/notes/RESULTS.md"
+            "url": "https://github.com/dhmbb2/supermimic_vibe/blob/d0934d069207ee745be8489d9631a8314c94c1f3/notes/RESULTS.md"
           }
         ]
       },
-      "demo": "https://github.com/dhmbb2/supermimic_vibe/blob/072f0910dadc9d95c720e625b546120e9ce917c9/README.md",
+      "demo": "https://github.com/dhmbb2/supermimic_vibe/blob/d0934d069207ee745be8489d9631a8314c94c1f3/README.md#results",
       "added": {
         "date": "2026-10-26",
         "source": "https://github.com/miao-org/awesome-supermimic/commit/28231b6aecd7dd705bb390f3d309b3b544c4e416"
@@ -442,8 +442,8 @@
       ],
       "repository_url": "https://github.com/rzc156/supermimic-rtx5080",
       "highlights": {
-        "en": "G1 reproduction configured for a 16 GB RTX 5080.",
-        "zh": "面向 16 GB RTX 5080 的 G1 复现。"
+        "en": "16 GB RTX 5080 adaptation with anchor observations and full LAFAN1 evaluation.",
+        "zh": "16 GB RTX 5080 适配，采用锚点观测并提供完整 LAFAN1 评测。"
       },
       "links": {
         "en": [
@@ -486,8 +486,8 @@
       ],
       "repository_url": "https://github.com/Huy-Quang-Dao/instantTrack",
       "highlights": {
-        "en": "GPU-loop optimizations with a three-seed LAFAN1 report.",
-        "zh": "GPU 训练循环优化，附三个种子的 LAFAN1 报告。"
+        "en": "EMA, fused GPU updates and contact rewards; three-seed LAFAN1 study.",
+        "zh": "EMA、融合 GPU 更新与接触奖励，附三个种子的 LAFAN1 对照。"
       },
       "links": {
         "en": [
@@ -542,8 +542,8 @@
       ],
       "repository_url": "https://github.com/lzyang2000/morphmimic",
       "highlights": {
-        "en": "World-model and policy sharing across G1, X2 Ultra and T2.",
-        "zh": "G1、X2 Ultra、T2 跨本体共享世界模型与策略。"
+        "en": "Morphology-conditioned G1 / X2 / T2 sharing with full-motion and five-point goals.",
+        "zh": "G1 / X2 / T2 形态条件化共享，支持完整动作与五点目标。"
       },
       "links": {
         "en": [
@@ -589,8 +589,8 @@
       ],
       "repository_url": "https://github.com/Shimingyi/allmimic",
       "highlights": {
-        "en": "Residual upper-body actions and balanced motion sampling.",
-        "zh": "上半身残差动作与均衡动作采样。"
+        "en": "Residual actions and balanced sampling, with hard-motion and held-out BONES-SEED reports.",
+        "zh": "残差动作与均衡采样，含困难动作和 BONES-SEED 留出集报告。"
       },
       "links": {
         "en": [
@@ -632,8 +632,8 @@
       ],
       "repository_url": "https://github.com/Alchedata/supermimic-locomujoco",
       "highlights": {
-        "en": "H1 ODE world models and anti-saturation ablations.",
-        "zh": "H1 ODE 世界模型与抗饱和消融。"
+        "en": "H1 full-state ODE dynamics and three-seed anti-saturation comparisons.",
+        "zh": "H1 全状态 ODE 动力学与三个种子的抗饱和对照。"
       },
       "links": {
         "en": [
@@ -675,28 +675,36 @@
       ],
       "repository_url": "https://github.com/btx0424/rethinking-supermimic",
       "highlights": {
-        "en": "Goal-conditioning comparisons, HL-Gauss critic and gradient checks.",
-        "zh": "目标条件化对照、HL-Gauss critic 与梯度检查。"
+        "en": "FiLM goal conditioning, SAC baseline, policy EMA and gradient diagnostics.",
+        "zh": "FiLM 目标条件化、SAC 基线、策略 EMA 与梯度诊断。"
       },
       "links": {
         "en": [
           {
             "label": "Installation",
-            "url": "https://github.com/btx0424/rethinking-supermimic/blob/aa77b71054a850075431248f1534bb77ca62b4d8/README.md#installation"
+            "url": "https://github.com/btx0424/rethinking-supermimic/blob/2cbbd1278bfb8bd59c31fe48d7413c46ae205e32/README.md#installation"
           },
           {
             "label": "Implementation comparison",
-            "url": "https://github.com/btx0424/rethinking-supermimic/blob/aa77b71054a850075431248f1534bb77ca62b4d8/README.md#ours-the-paper-and-supermimic_vibed"
+            "url": "https://github.com/btx0424/rethinking-supermimic/blob/2cbbd1278bfb8bd59c31fe48d7413c46ae205e32/README.md#ours-the-paper-and-supermimic_vibed"
+          },
+          {
+            "label": "SuperMimic / SAC entry point",
+            "url": "https://github.com/btx0424/rethinking-supermimic/blob/2cbbd1278bfb8bd59c31fe48d7413c46ae205e32/src/supermimic/train.py"
           }
         ],
         "zh": [
           {
             "label": "安装",
-            "url": "https://github.com/btx0424/rethinking-supermimic/blob/aa77b71054a850075431248f1534bb77ca62b4d8/README.md#installation"
+            "url": "https://github.com/btx0424/rethinking-supermimic/blob/2cbbd1278bfb8bd59c31fe48d7413c46ae205e32/README.md#installation"
           },
           {
             "label": "实现对照",
-            "url": "https://github.com/btx0424/rethinking-supermimic/blob/aa77b71054a850075431248f1534bb77ca62b4d8/README.md#ours-the-paper-and-supermimic_vibed"
+            "url": "https://github.com/btx0424/rethinking-supermimic/blob/2cbbd1278bfb8bd59c31fe48d7413c46ae205e32/README.md#ours-the-paper-and-supermimic_vibed"
+          },
+          {
+            "label": "SuperMimic / SAC 入口",
+            "url": "https://github.com/btx0424/rethinking-supermimic/blob/2cbbd1278bfb8bd59c31fe48d7413c46ae205e32/src/supermimic/train.py"
           }
         ]
       },
@@ -718,8 +726,8 @@
       ],
       "repository_url": "https://github.com/JackMin7/supermimic_whole_body_tracking",
       "highlights": {
-        "en": "Controlled standing-task comparison of MBRL and PPO.",
-        "zh": "站立任务中 MBRL 与 PPO 的条件对照。"
+        "en": "Matched G1 standing-task inputs and budget for MBRL / PPO comparisons.",
+        "zh": "统一 G1 站立任务输入与训练预算的 MBRL / PPO 对照。"
       },
       "links": {
         "en": [
@@ -762,14 +770,14 @@
       ],
       "repository_url": "https://github.com/project-instinct/InstinctMJ/tree/supermimic",
       "highlights": {
-        "en": "Depth-aware G1 world model and terrain tracking; use supermimic branch.",
-        "zh": "深度感知 G1 世界模型与地形跟踪；使用 supermimic 分支。"
+        "en": "G1 terrain tracking with differentiable depth rendering in imagination; supermimic branch.",
+        "zh": "在想象轨迹中可微渲染深度图的 G1 地形跟踪；使用 supermimic 分支。"
       },
       "links": {
         "en": [
           {
             "label": "Method and results",
-            "url": "https://github.com/project-instinct/InstinctMJ/blob/7ca851e002980011f24a1664011305d0ba94aefc/src/instinct_mj/rl/supermimic/README.md#results"
+            "url": "https://github.com/project-instinct/InstinctMJ/blob/3f0952d36268c6aad299e256d27cc65d3bcc1434/src/instinct_mj/rl/supermimic/README.md#results"
           },
           {
             "label": "Releases",
@@ -779,7 +787,7 @@
         "zh": [
           {
             "label": "方法与结果",
-            "url": "https://github.com/project-instinct/InstinctMJ/blob/7ca851e002980011f24a1664011305d0ba94aefc/src/instinct_mj/rl/supermimic/README.md#results"
+            "url": "https://github.com/project-instinct/InstinctMJ/blob/3f0952d36268c6aad299e256d27cc65d3bcc1434/src/instinct_mj/rl/supermimic/README.md#results"
           },
           {
             "label": "发布资源",
@@ -788,10 +796,10 @@
         ]
       },
       "pick_reason": {
-        "en": "depth-aware world model and terrain tracking",
-        "zh": "深度视觉世界模型与地形跟踪"
+        "en": "Differentiable depth rendering for perceptive terrain tracking",
+        "zh": "以可微深度渲染训练感知地形跟踪"
       },
-      "demo": "https://github.com/project-instinct/InstinctMJ/blob/7ca851e002980011f24a1664011305d0ba94aefc/src/instinct_mj/rl/supermimic/assets/world_model_simple.png",
+      "demo": "https://github.com/project-instinct/InstinctMJ/blob/3f0952d36268c6aad299e256d27cc65d3bcc1434/src/instinct_mj/rl/supermimic/assets/method.png",
       "added": {
         "date": "2026-10-26",
         "source": "https://github.com/miao-org/awesome-supermimic/commit/28231b6aecd7dd705bb390f3d309b3b544c4e416"
@@ -810,28 +818,28 @@
       ],
       "repository_url": "https://github.com/Zhengtianjin/go2-supermimic",
       "highlights": {
-        "en": "Go2 chase / dodge tasks with released simulation actors.",
-        "zh": "Go2 追逐、闪避任务与公开仿真策略。"
+        "en": "Simulated Go2 chase / dodge on flat ground and terrain, with released actors.",
+        "zh": "Go2 平地与地形追逐／闪避仿真，附公开策略。"
       },
       "links": {
         "en": [
           {
             "label": "Quickstart",
-            "url": "https://github.com/Zhengtianjin/go2-supermimic/blob/054a13c13285a1c94b2e69dc8ac7331f9a8c71cf/README.md#-quickstart"
+            "url": "https://github.com/Zhengtianjin/go2-supermimic/blob/d9eee9b3f248e5300e636c433255db2c1c3e086a/README.md#-quickstart"
           },
           {
             "label": "Pretrained policies",
-            "url": "https://github.com/Zhengtianjin/go2-supermimic/blob/054a13c13285a1c94b2e69dc8ac7331f9a8c71cf/README.md#pretrained-policies"
+            "url": "https://github.com/Zhengtianjin/go2-supermimic/blob/d9eee9b3f248e5300e636c433255db2c1c3e086a/README.md#pretrained-policies"
           }
         ],
         "zh": [
           {
             "label": "快速开始",
-            "url": "https://github.com/Zhengtianjin/go2-supermimic/blob/054a13c13285a1c94b2e69dc8ac7331f9a8c71cf/README.md#-quickstart"
+            "url": "https://github.com/Zhengtianjin/go2-supermimic/blob/d9eee9b3f248e5300e636c433255db2c1c3e086a/README.md#-quickstart"
           },
           {
             "label": "预训练策略",
-            "url": "https://github.com/Zhengtianjin/go2-supermimic/blob/054a13c13285a1c94b2e69dc8ac7331f9a8c71cf/README.md#pretrained-policies"
+            "url": "https://github.com/Zhengtianjin/go2-supermimic/blob/d9eee9b3f248e5300e636c433255db2c1c3e086a/README.md#pretrained-policies"
           }
         ]
       },
@@ -857,8 +865,8 @@
       ],
       "repository_url": "https://github.com/yhx1203/supermimic_parkour",
       "highlights": {
-        "en": "Five-skill G1 parkour checkpoint and browser playback.",
-        "zh": "五技能 G1 跑酷检查点与浏览器回放。"
+        "en": "G1 five-skill parkour using PHP motion bundles and a released checkpoint.",
+        "zh": "基于 PHP 动作包的 G1 五技能跑酷，附公开检查点。"
       },
       "links": {
         "en": [
@@ -900,8 +908,8 @@
       ],
       "repository_url": "https://github.com/mode1223345/SuperMimic-perceptive",
       "highlights": {
-        "en": "Shared frozen heightmap encoder for policy, critic and world model.",
-        "zh": "策略、critic 与世界模型共享冻结高度图编码器。"
+        "en": "Frozen shared heightmap AE for actor, critic and world model; controlled runs in progress.",
+        "zh": "Actor、critic 与世界模型共享冻结高程图 AE；控制对照仍在进行。"
       },
       "links": {
         "en": [
@@ -944,8 +952,8 @@
       ],
       "repository_url": "https://github.com/emoPointer/supermimic_manipulation",
       "highlights": {
-        "en": "Three ARX5 arm tasks with weights and reset banks.",
-        "zh": "三项 ARX5 机械臂任务，附权重与重置状态库。"
+        "en": "ARX5 lemon / box / mug tasks with held-out reset banks and released policies.",
+        "zh": "ARX5 柠檬／箱体／杯子操作，含留出重置状态库与公开策略。"
       },
       "links": {
         "en": [
@@ -992,8 +1000,8 @@
       ],
       "repository_url": "https://github.com/CumulusAlpha/Dex-Supermimic",
       "highlights": {
-        "en": "Wuji-hand cube reorientation, pen spinning and checkpoints.",
-        "zh": "Wuji 灵巧手方块重定向、转笔与公开权重。"
+        "en": "Wuji Hand 1 / 2 cube reorientation and Hand 2 pen spin with released weights.",
+        "zh": "Wuji Hand 1 / 2 方块重定向、Hand 2 转笔与公开权重。"
       },
       "links": {
         "en": [
@@ -1048,8 +1056,8 @@
       ],
       "repository_url": "https://github.com/Msornerrrr/in-hand-rotation-mjlab",
       "highlights": {
-        "en": "LEAP-hand world-model / PPO comparisons in simulation.",
-        "zh": "LEAP 灵巧手世界模型与 PPO 仿真对照。"
+        "en": "LEAP yaw and 22-object fingertip world-model / PPO comparisons; real demos use PPO.",
+        "zh": "LEAP 偏航与 22 物体指尖旋转的世界模型／PPO 对照；真机演示为 PPO。"
       },
       "links": {
         "en": [
@@ -1103,28 +1111,28 @@
       ],
       "repository_url": "https://github.com/shuayyy/humanoid-amp-ppo",
       "highlights": {
-        "en": "Shared G1 walking, squatting and box-lifting comparisons.",
-        "zh": "G1 行走、下蹲与抬箱的共享任务对照。"
+        "en": "G1 walk / squat / box-lift comparisons; SuperMimic scores use clean observations.",
+        "zh": "G1 行走／下蹲／抬箱对照；SuperMimic 成绩采用无噪声观测。"
       },
       "links": {
         "en": [
           {
             "label": "Quickstart",
-            "url": "https://github.com/shuayyy/humanoid-amp-ppo/blob/4889389118e0c88d3945dff54d2cd3f992ed815e/README.md#quickstart"
+            "url": "https://github.com/shuayyy/humanoid-amp-ppo/blob/681874bab20273ba9211cb92d5ff108900ce3490/README.md#quickstart"
           },
           {
             "label": "Results and protocol",
-            "url": "https://github.com/shuayyy/humanoid-amp-ppo/blob/4889389118e0c88d3945dff54d2cd3f992ed815e/docs/supermimic/RESULTS.md"
+            "url": "https://github.com/shuayyy/humanoid-amp-ppo/blob/681874bab20273ba9211cb92d5ff108900ce3490/docs/supermimic/RESULTS.md"
           }
         ],
         "zh": [
           {
             "label": "快速开始",
-            "url": "https://github.com/shuayyy/humanoid-amp-ppo/blob/4889389118e0c88d3945dff54d2cd3f992ed815e/README.md#quickstart"
+            "url": "https://github.com/shuayyy/humanoid-amp-ppo/blob/681874bab20273ba9211cb92d5ff108900ce3490/README.md#quickstart"
           },
           {
             "label": "结果与协议",
-            "url": "https://github.com/shuayyy/humanoid-amp-ppo/blob/4889389118e0c88d3945dff54d2cd3f992ed815e/docs/supermimic/RESULTS.md"
+            "url": "https://github.com/shuayyy/humanoid-amp-ppo/blob/681874bab20273ba9211cb92d5ff108900ce3490/docs/supermimic/RESULTS.md"
           }
         ]
       },
@@ -1147,28 +1155,28 @@
       ],
       "repository_url": "https://github.com/kaibohex/muscle-supermimic",
       "highlights": {
-        "en": "Two muscle-driven bodies with held-out KIT evaluation.",
-        "zh": "两种肌肉驱动本体，附未见 KIT 动作评估。"
+        "en": "700 / 354-muscle body tracking with differentiable muscles and held-out KIT evaluation.",
+        "zh": "700 / 354 肌肉本体跟踪，含可微肌肉模型与 KIT 留出集评测。"
       },
       "links": {
         "en": [
           {
             "label": "Setup",
-            "url": "https://github.com/kaibohex/muscle-supermimic/blob/b7c7cdd83e82399e057cb9d3f1b76f23ca022c7b/README.md#install"
+            "url": "https://github.com/kaibohex/muscle-supermimic/blob/932ac22ca720b1c4db40c4323a3b67bf3c1eaa99/README.md#install"
           },
           {
             "label": "Status",
-            "url": "https://github.com/kaibohex/muscle-supermimic/blob/b7c7cdd83e82399e057cb9d3f1b76f23ca022c7b/README.md#status"
+            "url": "https://github.com/kaibohex/muscle-supermimic/blob/932ac22ca720b1c4db40c4323a3b67bf3c1eaa99/README.md#status"
           }
         ],
         "zh": [
           {
             "label": "安装",
-            "url": "https://github.com/kaibohex/muscle-supermimic/blob/b7c7cdd83e82399e057cb9d3f1b76f23ca022c7b/README.md#install"
+            "url": "https://github.com/kaibohex/muscle-supermimic/blob/932ac22ca720b1c4db40c4323a3b67bf3c1eaa99/README.md#install"
           },
           {
             "label": "当前状态",
-            "url": "https://github.com/kaibohex/muscle-supermimic/blob/b7c7cdd83e82399e057cb9d3f1b76f23ca022c7b/README.md#status"
+            "url": "https://github.com/kaibohex/muscle-supermimic/blob/932ac22ca720b1c4db40c4323a3b67bf3c1eaa99/README.md#status"
           }
         ]
       },
@@ -1194,8 +1202,8 @@
       ],
       "repository_url": "https://github.com/shangchaohu718/supermimic-pera",
       "highlights": {
-        "en": "Frozen tracking policy with separate interaction experiments.",
-        "zh": "冻结跟踪策略与独立交互实验。"
+        "en": "Frozen G1 tracker plus a separate simulated skateboarding policy.",
+        "zh": "冻结 G1 跟踪器，另有独立滑板仿真策略。"
       },
       "links": {
         "en": [
@@ -1237,8 +1245,8 @@
       ],
       "repository_url": "https://github.com/liudi159/supermimic-backflip-5090",
       "highlights": {
-        "en": "G1 backflip diagnostics for symmetry, contact and landing.",
-        "zh": "G1 后空翻的对称性、接触与落地诊断。"
+        "en": "G1 backflip symmetry and landing diagnostics; strict contact checks still fail.",
+        "zh": "G1 后空翻对称性与落地诊断；严格接触验收仍未通过。"
       },
       "links": {
         "en": [
@@ -1329,8 +1337,8 @@
       ],
       "repository_url": "https://github.com/Hxxxz0/ScaleBFM_Plus",
       "highlights": {
-        "en": "Humanoid transformer integration and held-out evaluation.",
-        "zh": "人形 Transformer 策略集成与留出动作评估。"
+        "en": "SuperMimic updates for ScaleTrack's humanoid transformer, with held-out motion reports.",
+        "zh": "将 SuperMimic 更新接入 ScaleTrack 人形 Transformer，附留出动作报告。"
       },
       "links": {
         "en": [
@@ -1376,28 +1384,28 @@
       ],
       "repository_url": "https://github.com/HorizonRobotics/HoloMotion",
       "highlights": {
-        "en": "SuperMimic and PPO share HoloMotion tasks and evaluation.",
-        "zh": "SuperMimic 与 PPO 共享 HoloMotion 任务和评估。"
+        "en": "Shared G1 tasks for PPO / SuperMimic on MuJoCo Warp and Isaac PhysX.",
+        "zh": "在 MuJoCo Warp / Isaac PhysX 上为 PPO 与 SuperMimic 共享 G1 任务。"
       },
       "links": {
         "en": [
           {
             "label": "Training guide",
-            "url": "https://github.com/HorizonRobotics/HoloMotion/blob/adaacd50ada6ba9338f6c3f539093f85453e2554/docs/supermimic.md"
+            "url": "https://github.com/HorizonRobotics/HoloMotion/blob/f52dd81ae935a828b0296f5ee0f833beb7378bf0/docs/supermimic.md"
           },
           {
             "label": "Results",
-            "url": "https://github.com/HorizonRobotics/HoloMotion/blob/adaacd50ada6ba9338f6c3f539093f85453e2554/docs/supermimic.md#7-recorded-30-minute-results"
+            "url": "https://github.com/HorizonRobotics/HoloMotion/blob/f52dd81ae935a828b0296f5ee0f833beb7378bf0/docs/supermimic.md#7-recorded-30-minute-results"
           }
         ],
         "zh": [
           {
             "label": "训练指南",
-            "url": "https://github.com/HorizonRobotics/HoloMotion/blob/adaacd50ada6ba9338f6c3f539093f85453e2554/docs/supermimic.md"
+            "url": "https://github.com/HorizonRobotics/HoloMotion/blob/f52dd81ae935a828b0296f5ee0f833beb7378bf0/docs/supermimic.md"
           },
           {
             "label": "结果",
-            "url": "https://github.com/HorizonRobotics/HoloMotion/blob/adaacd50ada6ba9338f6c3f539093f85453e2554/docs/supermimic.md#7-recorded-30-minute-results"
+            "url": "https://github.com/HorizonRobotics/HoloMotion/blob/f52dd81ae935a828b0296f5ee0f833beb7378bf0/docs/supermimic.md#7-recorded-30-minute-results"
           }
         ]
       },
@@ -1419,28 +1427,36 @@
       ],
       "repository_url": "https://github.com/Renforce-Dynamics/trackerlab-supermimic",
       "highlights": {
-        "en": "Multi-robot retargeting, training, evaluation and export tools.",
-        "zh": "多本体重定向、训练、评估与导出工具。"
+        "en": "Multi-robot PhysX stack plus optional G1 Warp training; new CUDA qualification pending.",
+        "zh": "多本体 PhysX 训练栈，新增可选 G1 Warp 训练；CUDA 运行验收待完成。"
       },
       "links": {
         "en": [
           {
             "label": "Install",
-            "url": "https://github.com/Renforce-Dynamics/trackerlab-supermimic/blob/29d24524f2f731bf4df75b319c3e76544165849e/README.md#install"
+            "url": "https://github.com/Renforce-Dynamics/trackerlab-supermimic/blob/813f37a89d9be0791c9c72695a322307001a5d11/README.md#install"
           },
           {
             "label": "Results and limits",
-            "url": "https://github.com/Renforce-Dynamics/trackerlab-supermimic/blob/29d24524f2f731bf4df75b319c3e76544165849e/docs/results.md"
+            "url": "https://github.com/Renforce-Dynamics/trackerlab-supermimic/blob/813f37a89d9be0791c9c72695a322307001a5d11/docs/results.md"
+          },
+          {
+            "label": "Optional G1 Warp training",
+            "url": "https://github.com/Renforce-Dynamics/trackerlab-supermimic/blob/813f37a89d9be0791c9c72695a322307001a5d11/docs/warp_training.md"
           }
         ],
         "zh": [
           {
             "label": "安装",
-            "url": "https://github.com/Renforce-Dynamics/trackerlab-supermimic/blob/29d24524f2f731bf4df75b319c3e76544165849e/README.md#install"
+            "url": "https://github.com/Renforce-Dynamics/trackerlab-supermimic/blob/813f37a89d9be0791c9c72695a322307001a5d11/README.md#install"
           },
           {
             "label": "结果与限制",
-            "url": "https://github.com/Renforce-Dynamics/trackerlab-supermimic/blob/29d24524f2f731bf4df75b319c3e76544165849e/docs/results.md"
+            "url": "https://github.com/Renforce-Dynamics/trackerlab-supermimic/blob/813f37a89d9be0791c9c72695a322307001a5d11/docs/results.md"
+          },
+          {
+            "label": "可选 G1 Warp 训练",
+            "url": "https://github.com/Renforce-Dynamics/trackerlab-supermimic/blob/813f37a89d9be0791c9c72695a322307001a5d11/docs/warp_training.md"
           }
         ]
       },
@@ -1449,7 +1465,7 @@
         "date": "2026-10-26",
         "source": "https://github.com/miao-org/awesome-supermimic/commit/28231b6aecd7dd705bb390f3d309b3b544c4e416"
       },
-      "stack": "Isaac Lab / PhysX"
+      "stack": "Isaac Lab / PhysX; optional MuJoCo Warp"
     },
     {
       "repo": "chu-fa/isaaclab-supermimic",
@@ -1462,8 +1478,8 @@
       ],
       "repository_url": "https://github.com/chu-fa/isaaclab-supermimic",
       "highlights": {
-        "en": "Reusable learner and runner with a separate A3 example.",
-        "zh": "可复用学习器与 runner，附独立 A3 示例。"
+        "en": "Isaac Lab learner / task contracts with a separately installable A3 example.",
+        "zh": "Isaac Lab 学习器与任务接口约定，附可独立安装的 A3 示例。"
       },
       "links": {
         "en": [
@@ -1505,8 +1521,8 @@
       ],
       "repository_url": "https://github.com/OMEGA-i/SuperMimicKit",
       "highlights": {
-        "en": "G1 / H2 / A3 retargeting and experimental browser previews.",
-        "zh": "G1 / H2 / A3 重定向与实验性浏览器预览。"
+        "en": "G1 / H2 train40 / val37 metrics and G1 / H2 / A3 ONNX / WebGPU previews.",
+        "zh": "G1 / H2 的 train40 / val37 指标与 G1 / H2 / A3 浏览器预览。"
       },
       "links": {
         "en": [
@@ -1549,8 +1565,8 @@
       ],
       "repository_url": "https://github.com/tianshuwu/supermimic-retargeted",
       "highlights": {
-        "en": "G1 / A3 / X2 Ultra retargeting and coordinate checks.",
-        "zh": "G1 / A3 / X2 Ultra 重定向与坐标检查。"
+        "en": "G1 / A3 / X2 Ultra ports with SOMA retargeting and per-robot experiment records.",
+        "zh": "G1 / A3 / X2 Ultra 移植，含 SOMA 重定向与各本体实验记录。"
       },
       "links": {
         "en": [
@@ -1596,8 +1612,8 @@
       ],
       "repository_url": "https://github.com/wenconggan/SuperMimic_e1",
       "highlights": {
-        "en": "DroidUp E1 adaptation with native-MuJoCo sim-to-sim playback.",
-        "zh": "DroidUp E1 适配与原生 MuJoCo 跨仿真回放。"
+        "en": "21-DoF E1 tracking with native MuJoCo playback and separate full-clip metrics.",
+        "zh": "21 自由度 E1 跟踪、原生 MuJoCo 回放与单列的完整动作评测。"
       },
       "links": {
         "en": [
@@ -1639,8 +1655,8 @@
       ],
       "repository_url": "https://github.com/liuskywalkerjskd/supermimic_oli",
       "highlights": {
-        "en": "31-DoF LimX Oli port with full-motion video export.",
-        "zh": "31 自由度 LimX Oli 移植与完整动作视频导出。"
+        "en": "31-DoF Oli adaptation with 40-clip metrics and full-motion videos.",
+        "zh": "31 自由度 Oli 适配，附 40 动作指标与完整动作视频。"
       },
       "links": {
         "en": [
@@ -1682,8 +1698,8 @@
       ],
       "repository_url": "https://github.com/WXyuany/supermimic-m5",
       "highlights": {
-        "en": "Apple Silicon training adaptation with released G1 weights.",
-        "zh": "Apple Silicon 训练适配与公开 G1 权重。"
+        "en": "Apple M5: MPS learning, CPU MuJoCo physics and released G1 weights.",
+        "zh": "Apple M5：MPS 学习、CPU MuJoCo 物理仿真与公开 G1 权重。"
       },
       "links": {
         "en": [
@@ -1725,8 +1741,8 @@
       ],
       "repository_url": "https://github.com/panhainan2020/SuperMimic-MuJoCo",
       "highlights": {
-        "en": "G1 port with held-out 100STYLE evaluation and inference weights.",
-        "zh": "G1 移植，附留出 100STYLE 评估与推理权重。"
+        "en": "G1 mjlab / CPU MuJoCo port with 3,573 held-out 100STYLE clips and policy weights.",
+        "zh": "G1 mjlab / CPU MuJoCo 移植，含 3,573 条留出 100STYLE 动作评测与权重。"
       },
       "links": {
         "en": [
@@ -1769,8 +1785,8 @@
       ],
       "repository_url": "https://github.com/RadiantForever/supermimic_wheelbipe",
       "highlights": {
-        "en": "Velocity-command learning for the wheeled-legged wheelbipe.",
-        "zh": "面向 wheelbipe 轮足机器人的速度指令学习。"
+        "en": "Wheelbipe forward / yaw / leg-height control learned through world-model rollouts.",
+        "zh": "通过世界模型 rollout 学习 wheelbipe 前进、偏航与腿高控制。"
       },
       "links": {
         "en": [
@@ -1813,28 +1829,28 @@
       ],
       "repository_url": "https://github.com/swaggyliu/FlatWorld",
       "highlights": {
-        "en": "Illustrative shared-world-model learning with a 2D humanoid.",
-        "zh": "用二维人形角色演示共享世界模型学习。"
+        "en": "2D multi-skill humanoid tracking to explore shared world-model learning.",
+        "zh": "用二维多技能人形跟踪探索共享世界模型学习。"
       },
       "links": {
         "en": [
           {
             "label": "Quickstart",
-            "url": "https://github.com/swaggyliu/FlatWorld/blob/886dad634c44ed652eea951be62370478f367d8b/supermimic2d/README.md#quick-start"
+            "url": "https://github.com/swaggyliu/FlatWorld/blob/c0f262d52e6492705079928ac69e453c775daeed/supermimic2d/README.md#quick-start"
           },
           {
             "label": "Reference motions",
-            "url": "https://github.com/swaggyliu/FlatWorld/blob/886dad634c44ed652eea951be62370478f367d8b/supermimic2d/README.md#reference-motions-lafan-like-2d"
+            "url": "https://github.com/swaggyliu/FlatWorld/blob/c0f262d52e6492705079928ac69e453c775daeed/supermimic2d/README.md#reference-motions-lafan-like-2d"
           }
         ],
         "zh": [
           {
             "label": "快速开始",
-            "url": "https://github.com/swaggyliu/FlatWorld/blob/886dad634c44ed652eea951be62370478f367d8b/supermimic2d/README.md#quick-start"
+            "url": "https://github.com/swaggyliu/FlatWorld/blob/c0f262d52e6492705079928ac69e453c775daeed/supermimic2d/README.md#quick-start"
           },
           {
             "label": "参考动作",
-            "url": "https://github.com/swaggyliu/FlatWorld/blob/886dad634c44ed652eea951be62370478f367d8b/supermimic2d/README.md#reference-motions-lafan-like-2d"
+            "url": "https://github.com/swaggyliu/FlatWorld/blob/c0f262d52e6492705079928ac69e453c775daeed/supermimic2d/README.md#reference-motions-lafan-like-2d"
           }
         ]
       },
@@ -1860,20 +1876,28 @@
       ],
       "repository_url": "https://github.com/azizkhadraoui/g05",
       "highlights": {
-        "en": "World-model / critic gradients for a VLA steering experiment.",
-        "zh": "以世界模型、critic 梯度开展 VLA 引导实验。"
+        "en": "SuperMimic-style VLA steering and direct-policy fine-tuning failures on LIBERO.",
+        "zh": "LIBERO 上的 SuperMimic 式 VLA 引导与直接策略微调失败记录。"
       },
       "links": {
         "en": [
           {
             "label": "Experiment code",
             "url": "https://github.com/azizkhadraoui/g05/blob/e3de0de50db7d90068483e2d30f2eacd781300b4/jobs/119_smsteer.py"
+          },
+          {
+            "label": "Experiment outcomes",
+            "url": "https://github.com/azizkhadraoui/g05/blob/e3de0de50db7d90068483e2d30f2eacd781300b4/README.md"
           }
         ],
         "zh": [
           {
             "label": "实验代码",
             "url": "https://github.com/azizkhadraoui/g05/blob/e3de0de50db7d90068483e2d30f2eacd781300b4/jobs/119_smsteer.py"
+          },
+          {
+            "label": "实验结果",
+            "url": "https://github.com/azizkhadraoui/g05/blob/e3de0de50db7d90068483e2d30f2eacd781300b4/README.md"
           }
         ]
       },

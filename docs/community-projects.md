@@ -2,7 +2,7 @@
 
 [Back to rankings](../README.md#most-starred-projects) · [简体中文](community-projects_zh-CN.md)
 
-All results and demos below are upstream reports, not independently rerun here. Reviewed revisions, authors, limitations and media credits are retained.
+All results and demos below are upstream reports, not independently rerun here. Reviewed revisions, authors, limitations and media credits are retained. [Catalog review and source revisions](project-review-2026-10-30.md).
 
 ## Real-robot deployment and Sim2Real
 
@@ -48,6 +48,7 @@ Reimplementations of the original method, with training, evaluation and reproduc
 - **By Chong Zhang.** An independent G1 implementation on Isaac Lab 3, with a kit-less setup, training, full-clip evaluation and rendering tools.
 - **Upstream report:** On 40 LAFAN1 clips, normalized return **0.829** and **0 / 40 failures** after **1.47 hours on one RTX PRO 6000 Blackwell**.
 - **Useful context:** The author describes it as a rapid, unreviewed reproduction. Documented deviations include disabled self-collisions, bf16 MLP computation and an extra reference-root orientation input. [Source snapshot](https://github.com/zita-ch/supermimic_vibed/blob/a1508d42c9d1699a52e8233ab16d08c488441ab9/README.md).
+- **Current source update:** Ground-plane assets are now cached locally to avoid the OmniClient S3 startup stall. The source also repairs clip-end goal velocities, duplicate reset-bin aggregation and replay-window sampling. These are implementation fixes, not a newly measured training result; the score above remains the earlier report. [Current setup](https://github.com/zita-ch/supermimic_vibed/blob/8bfc1158bd968f729fcc65d5e897a05b05ea3d36/README.md#setup) · [Reviewed changes](https://github.com/zita-ch/supermimic_vibed/compare/a1508d42c9d1699a52e8233ab16d08c488441ab9...8bfc1158bd968f729fcc65d5e897a05b05ea3d36).
 
 <a href="https://github.com/zita-ch/supermimic_vibed"><img src="https://raw.githubusercontent.com/zita-ch/supermimic_vibed/a1508d42c9d1699a52e8233ab16d08c488441ab9/results/supermimic_lafan1_highlight.gif" width="480" alt="Simulation · LAFAN1 highlights"></a><br><sub>Simulation · LAFAN1 highlights</sub>
 
@@ -83,13 +84,27 @@ Reimplementations of the original method, with training, evaluation and reproduc
 
 ### supermimic_vibe
 
-[Repository](https://github.com/dhmbb2/supermimic_vibe) · [Setup](https://github.com/dhmbb2/supermimic_vibe/blob/072f0910dadc9d95c720e625b546120e9ce917c9/README.md#setup) · [Results log](https://github.com/dhmbb2/supermimic_vibe/blob/072f0910dadc9d95c720e625b546120e9ce917c9/notes/RESULTS.md)
+[Repository](https://github.com/dhmbb2/supermimic_vibe) · [Setup](https://github.com/dhmbb2/supermimic_vibe/blob/d0934d069207ee745be8489d9631a8314c94c1f3/README.md#setup) · [Results log](https://github.com/dhmbb2/supermimic_vibe/blob/d0934d069207ee745be8489d9631a8314c94c1f3/notes/RESULTS.md)
+
+- **By dhmbb2.** A G1 reproduction with LAFAN1 and full BONES-SEED evaluation, PPO-Sim/PPO-WM and SONIC comparisons, horizon/critic ablations, push recovery and velocity control.
+- **Upstream report:** On one RTX A6000, the selected LAFAN1 checkpoint reaches **0.947 with 0 / 40 failures at 11.4 hours**; PPO-Sim reaches **0.543 after 18 hours**. On **all 128,904 filtered BONES-SEED clips**, the selected 184k checkpoint reports **0.923 and 45 failures after 14.4 hours**.
+- **Method and limits:** The BONES-SEED result collects **50% of environments without exploration noise**, an explicit change from the paper. The paper-faithful run collapses after about 6 hours; the two-GPU zero-failure claim was not reproduced. The same-simulator SONIC run reports **0.893 / 642 failures**. Dataset filtering and A6000 hardware differ from the paper; do not interpret the comparison as a cross-project speed ranking.
+- **Sources:** [Current README](https://github.com/dhmbb2/supermimic_vibe/blob/d0934d069207ee745be8489d9631a8314c94c1f3/README.md#results) · [Full experiment log](https://github.com/dhmbb2/supermimic_vibe/blob/d0934d069207ee745be8489d9631a8314c94c1f3/notes/RESULTS.md). Evaluation uses deterministic complete clips from their first frame, without noise or randomization; training times exclude evaluation. BONES-SEED results are now available, although obtaining the dataset still requires accepting its license. These are upstream reports; this list has not rerun them.
+
+<details>
+<summary>Historical record: previous description, results and media</summary>
+
+The statements below describe the linked earlier revision.
+
+[Setup](https://github.com/dhmbb2/supermimic_vibe/blob/072f0910dadc9d95c720e625b546120e9ce917c9/README.md#setup) · [Results log](https://github.com/dhmbb2/supermimic_vibe/blob/072f0910dadc9d95c720e625b546120e9ce917c9/notes/RESULTS.md)
 
 - **By dhmbb2.** An independent G1 reproduction in mjlab, covering PPO-Sim/PPO-WM comparisons, horizon and critic ablations, push recovery and velocity-control experiments.
 - **Upstream report:** On one RTX A6000, LAFAN1 normalized return reaches **0.833 at 1.34 hours** and **0.946 with 0 / 40 failures at 12 hours**, using complete deterministic clip evaluation.
 - **Useful context:** The experiment log distinguishes reproduced, partial and pending results. BONES-SEED remains data-gated, hardware transfer is out of scope, and the A6000 timings are not H100 timings. [Source snapshot](https://github.com/dhmbb2/supermimic_vibe/blob/072f0910dadc9d95c720e625b546120e9ce917c9/README.md).
 
 <a href="https://github.com/dhmbb2/supermimic_vibe/blob/072f0910dadc9d95c720e625b546120e9ce917c9/README.md"><img src="../assets/community/vibe-results.png" width="720" alt="Report screenshot · reproduction and ablations on one RTX A6000"></a><br><sub>Report screenshot · reproduction and ablations on one RTX A6000</sub>
+
+</details>
 
 <br>
 
@@ -147,6 +162,7 @@ Algorithm changes, multi-robot morphology adaptations and focused control studie
 - **By Shimingyi.** Builds on supermimic_vibe for G1 in mjlab, mixing residual upper-body actions with absolute leg actions, weighting world-model losses and balancing motion sampling.
 - **Upstream report:** With the recommended preset on one RTX 4090, full-length LAFAN1 evaluation reports **0 / 40 failures and return 0.91 after 0.83 hours**; training time excludes evaluation.
 - **Useful context:** The recommended preset changes the method and data sampling. The 306-hard-motion-only run and full BONES-SEED training are separate experiments. [Source snapshot](https://github.com/Shimingyi/allmimic/blob/cb334ff674b2f57248f33f8c21b7fb526fbdf8cc/README.md).
+- **Additional upstream BONES-SEED report:** A policy trained on the full training split on **two RTX 4090s for 6.6 hours / 176k iterations** completes **306 / 306 hard training motions** and **303 / 308 flips, cartwheels and handstands**. Held-out BONES-SEED motions report **100.0% success / 0.884 return**, and LAFAN1 **94.6% / 0.806**. Those test sets are filtered and **cut into 10-second segments**; the hard training motions are evaluated in full. This is separate from the 306-clip-only training run and does not establish zero failures over the full BONES-SEED library. [Protocol and table](https://github.com/Shimingyi/allmimic/blob/cb334ff674b2f57248f33f8c21b7fb526fbdf8cc/README.md#bones-seed).
 
 <a href="https://github.com/Shimingyi/allmimic"><img src="https://raw.githubusercontent.com/Shimingyi/allmimic/cb334ff674b2f57248f33f8c21b7fb526fbdf8cc/assets/challenge_cases.gif" width="480" alt="Simulation · challenging motion clips"></a><br><sub>Simulation · challenging motion clips</sub>
 
@@ -166,12 +182,25 @@ Algorithm changes, multi-robot morphology adaptations and focused control studie
 
 ### Rethinking SuperMimic
 
-[Repository](https://github.com/btx0424/rethinking-supermimic) · [Installation](https://github.com/btx0424/rethinking-supermimic/blob/aa77b71054a850075431248f1534bb77ca62b4d8/README.md#installation) · [Implementation comparison](https://github.com/btx0424/rethinking-supermimic/blob/aa77b71054a850075431248f1534bb77ca62b4d8/README.md#ours-the-paper-and-supermimic_vibed)
+[Repository](https://github.com/btx0424/rethinking-supermimic) · [Installation](https://github.com/btx0424/rethinking-supermimic/blob/2cbbd1278bfb8bd59c31fe48d7413c46ae205e32/README.md#installation) · [Implementation comparison](https://github.com/btx0424/rethinking-supermimic/blob/2cbbd1278bfb8bd59c31fe48d7413c46ae205e32/README.md#ours-the-paper-and-supermimic_vibed) · [SuperMimic / SAC entry point](https://github.com/btx0424/rethinking-supermimic/blob/2cbbd1278bfb8bd59c31fe48d7413c46ae205e32/src/supermimic/train.py)
+
+- **By btx0424.** Studies concatenated versus FiLM goal conditioning, an HL-Gauss critic and heading/pelvis world-model coordinates for G1 in mjlab. The current [training entry point](https://github.com/btx0424/rethinking-supermimic/blob/2cbbd1278bfb8bd59c31fe48d7413c46ae205e32/src/supermimic/train.py) selects SuperMimic or a new SAC baseline.
+- **What changed:** Both algorithm presets expose policy EMA (`pi_ema: 0.995`); the update also adds contact-error, dormant-unit, horizon-gradient, tanh-saturation and latent-drift diagnostics. [SuperMimic preset](https://github.com/btx0424/rethinking-supermimic/blob/2cbbd1278bfb8bd59c31fe48d7413c46ae205e32/src/supermimic/conf/algo/supermimic.yaml) · [SAC preset](https://github.com/btx0424/rethinking-supermimic/blob/2cbbd1278bfb8bd59c31fe48d7413c46ae205e32/src/supermimic/conf/algo/sac.yaml).
+- **Useful context:** The [implementation comparison](https://github.com/btx0424/rethinking-supermimic/blob/2cbbd1278bfb8bd59c31fe48d7413c46ae205e32/README.md#ours-the-paper-and-supermimic_vibed) still documents observation, self-collision, anchor and normalization choices. SAC/EMA support was checked in source and configuration; no new SAC/EMA performance measurement is published in that README, and these paths were not executed here.
+
+<details>
+<summary>Historical record: previous description, results and media</summary>
+
+The statements below describe the linked earlier revision.
+
+[Installation](https://github.com/btx0424/rethinking-supermimic/blob/aa77b71054a850075431248f1534bb77ca62b4d8/README.md#installation) · [Implementation comparison](https://github.com/btx0424/rethinking-supermimic/blob/aa77b71054a850075431248f1534bb77ca62b4d8/README.md#ours-the-paper-and-supermimic_vibed)
 
 - **By btx0424.** Studies goal conditioning for G1 in mjlab: concatenating the goal with proprioception versus using FiLM to modulate the policy layers. The latest revision adds an HL-Gauss critic, gradient checks and selectable heading- or pelvis-frame world-model coordinates.
 - **Useful context:** Provides configurable observations, anchor choices and Viser playback. Its implementation table explains differences from the paper and supermimic_vibed, including self-collisions and observation inputs. [Source snapshot](https://github.com/btx0424/rethinking-supermimic/blob/aa77b71054a850075431248f1534bb77ca62b4d8/README.md).
 
 <a href="https://github.com/btx0424/rethinking-supermimic/blob/ecdaeb6a916a16cf7eb69b19226c17be31a6bc27/README.md"><img src="../assets/community/rethinking-comparison.png" width="720" alt="Historical implementation table excerpt · 2026-10-26 snapshot; current comparison linked above"></a><br><sub>Historical implementation table excerpt · 2026-10-26 snapshot; current comparison linked above</sub>
+
+</details>
 
 <br>
 
@@ -196,13 +225,28 @@ Vision, height-scan, terrain and quadruped task adaptations.
 
 ### ⭐ InstinctMJ · SuperMimic
 
-[Repository](https://github.com/project-instinct/InstinctMJ/tree/supermimic) · [Method and results](https://github.com/project-instinct/InstinctMJ/blob/7ca851e002980011f24a1664011305d0ba94aefc/src/instinct_mj/rl/supermimic/README.md#results) · [Releases](https://github.com/project-instinct/InstinctMJ/releases)
+[Repository](https://github.com/project-instinct/InstinctMJ/tree/supermimic) · [Method and results](https://github.com/project-instinct/InstinctMJ/blob/3f0952d36268c6aad299e256d27cc65d3bcc1434/src/instinct_mj/rl/supermimic/README.md#results) · [Releases](https://github.com/project-instinct/InstinctMJ/releases)
+
+- **By Project Instinct.** Trains perceptive G1 terrain tracking on the **supermimic branch**. The world model now predicts robot state; imagined depth images are differentiably ray-cast from that state and known scene/robot meshes, then passed through camera noise. The policy loss trains the depth encoder end to end.
+- **Upstream report:** The new renderer version reports **95% full-motion success / 97% completion** after **8,000 iterations / 2.8 hours of training on one RTX 3090**, with 1,024 environments, **10 motions on 5 terrains**, one seed and 12–13 evaluation episodes per motion. Evaluation starts at the first frame with camera noise on and no pushes.
+- **Useful context:** The previous latent-prediction version's **97% / 3.2-hour** result belongs to a different design and flags; its time also included shared-GPU evaluations. The new result excludes evaluation time. Terrain tracking is distinct from flat-ground LAFAN1, and the renderer assumes known geometry. External checkpoints require joint-order adaptation. [Current method and results](https://github.com/project-instinct/InstinctMJ/blob/3f0952d36268c6aad299e256d27cc65d3bcc1434/src/instinct_mj/rl/supermimic/README.md).
+
+<a href="https://github.com/project-instinct/InstinctMJ/blob/3f0952d36268c6aad299e256d27cc65d3bcc1434/src/instinct_mj/rl/supermimic/assets/method.png"><img src="https://raw.githubusercontent.com/project-instinct/InstinctMJ/3f0952d36268c6aad299e256d27cc65d3bcc1434/src/instinct_mj/rl/supermimic/assets/method.png" width="720" alt="Current method · differentiable depth rendering from predicted states"></a><br><sub>Current method · differentiable depth rendering from predicted states</sub>
+
+<details>
+<summary>Historical record: previous description, results and media</summary>
+
+The statements below describe the linked earlier revision.
+
+[Method and results](https://github.com/project-instinct/InstinctMJ/blob/7ca851e002980011f24a1664011305d0ba94aefc/src/instinct_mj/rl/supermimic/README.md#results) · [Releases](https://github.com/project-instinct/InstinctMJ/releases)
 
 - **By Project Instinct.** Extends the method to perceptive G1 tracking and goal-reaching parkour in mjlab / instinct_rl. The world model predicts robot state and depth-encoder latents; components are adapted from supermimic_vibed.
 - **Upstream report:** **97% full-motion success** across **10 motions on 5 terrains** after **8,000 iterations / 3.2 hours on one RTX 3090**; one seed, 12–13 episodes per motion, camera noise enabled.
 - **Useful context:** Use the **supermimic branch**. This is terrain tracking, distinct from flat-ground LAFAN1; external checkpoints require joint-order adaptation. Licensed CC BY-NC 4.0. [Source snapshot](https://github.com/project-instinct/InstinctMJ/blob/7ca851e002980011f24a1664011305d0ba94aefc/src/instinct_mj/rl/supermimic/README.md).
 
 <a href="https://github.com/project-instinct/InstinctMJ/blob/7ca851e002980011f24a1664011305d0ba94aefc/src/instinct_mj/rl/supermimic/assets/world_model_simple.png"><img src="https://raw.githubusercontent.com/project-instinct/InstinctMJ/7ca851e002980011f24a1664011305d0ba94aefc/src/instinct_mj/rl/supermimic/assets/world_model_simple.png" width="720" alt="Method diagram · robot-state and visual-latent prediction"></a><br><sub>Method diagram · robot-state and visual-latent prediction</sub>
+
+</details>
 
 <br>
 
@@ -412,13 +456,26 @@ The earlier description and sources are retained below; the sampled-only limitat
 
 ### TrackerLab SuperMimic
 
-[Repository](https://github.com/Renforce-Dynamics/trackerlab-supermimic) · [Install](https://github.com/Renforce-Dynamics/trackerlab-supermimic/blob/29d24524f2f731bf4df75b319c3e76544165849e/README.md#install) · [Results and limits](https://github.com/Renforce-Dynamics/trackerlab-supermimic/blob/29d24524f2f731bf4df75b319c3e76544165849e/docs/results.md)
+[Repository](https://github.com/Renforce-Dynamics/trackerlab-supermimic) · [Install](https://github.com/Renforce-Dynamics/trackerlab-supermimic/blob/813f37a89d9be0791c9c72695a322307001a5d11/README.md#install) · [Results and limits](https://github.com/Renforce-Dynamics/trackerlab-supermimic/blob/813f37a89d9be0791c9c72695a322307001a5d11/docs/results.md) · [Optional G1 Warp training](https://github.com/Renforce-Dynamics/trackerlab-supermimic/blob/813f37a89d9be0791c9c72695a322307001a5d11/docs/warp_training.md)
+
+- **By Renforce Dynamics.** Retains the Isaac Lab / PhysX retargeting, training and evaluation stack for G1, Go2, A3, T1, Bumi and Pi+, and adds a separate **G1 MuJoCo-Warp** training entry point with GPU-resident motion references, BF16 MLPs and CUDA Graphs.
+- **Current changes:** Shared repairs hold the last pose with zero velocity only for synthetic goals beyond a clip, preserve already-50-Hz source frames and keep normalizer buffer storage stable. Revalidate derived motion caches after changing loaders. [Boundary and normalization fixes](https://github.com/Renforce-Dynamics/trackerlab-supermimic/blob/813f37a89d9be0791c9c72695a322307001a5d11/docs/reference_tail_fix.md).
+- **Results and limits:** The earlier PhysX checkpoint's **0.8694663 / 0 of 40 LAFAN1 failures** remains a historical result. The imported Warp runtime requires a prepared root83 cache and currently targets G1 training from random initialization. Its upstream integration has CPU regression coverage; fresh CUDA qualification and new training results on the target machine remain necessary. The source teleoperation experiment's throughput is not a benchmark of this repository integration. [Warp setup and scope](https://github.com/Renforce-Dynamics/trackerlab-supermimic/blob/813f37a89d9be0791c9c72695a322307001a5d11/docs/warp_training.md).
+
+<details>
+<summary>Historical record: previous description, results and media</summary>
+
+The statements below describe the linked earlier revision.
+
+[Install](https://github.com/Renforce-Dynamics/trackerlab-supermimic/blob/29d24524f2f731bf4df75b319c3e76544165849e/README.md#install) · [Results and limits](https://github.com/Renforce-Dynamics/trackerlab-supermimic/blob/29d24524f2f731bf4df75b319c3e76544165849e/docs/results.md)
 
 - **By Renforce Dynamics.** Provides a shared Isaac Lab / PhysX workflow for retargeting, training, full-clip evaluation and export across G1, Go2, A3, T1, Bumi and Pi+, plus Go2 task policies.
 - **Upstream report:** Re-evaluation of the 32,000-iteration G1 parent checkpoint reports normalized return **0.8694663** and **0 / 40 LAFAN1 failures**.
 - **Useful context:** Results use PhysX, while supermimic_vibed uses MuJoCo Warp. Robot-specific motion libraries and training histories differ; held-out motion generalization remains unmeasured. [Source snapshot](https://github.com/Renforce-Dynamics/trackerlab-supermimic/blob/29d24524f2f731bf4df75b319c3e76544165849e/README.md).
 
 <a href="https://github.com/Renforce-Dynamics/trackerlab-supermimic/blob/29d24524f2f731bf4df75b319c3e76544165849e/docs/media/g1_dance_032000.mp4"><img src="https://raw.githubusercontent.com/Renforce-Dynamics/trackerlab-supermimic/29d24524f2f731bf4df75b319c3e76544165849e/docs/media/g1_dance_032000.gif" width="480" alt="Simulation · G1 policy / reference dance"></a><br><sub>Simulation · G1 policy / reference dance</sub>
+
+</details>
 
 <br>
 
@@ -550,6 +607,7 @@ Ideas transferred to other control settings, with different tasks and evaluation
 
 - **By azizkhadraoui.** Transfers SuperMimic-style gradient-based learning to G0.5 VLA steering on LIBERO: a noise policy is trained through a frozen flow sampler using world-model and critic gradients.
 - **Useful context:** This is one task-specific steering experiment within a broader VLA stack. The linked script identifies the relevant method; the repository’s other planning and memory results are separate experiments. [Source snapshot](https://github.com/azizkhadraoui/g05/blob/e3de0de50db7d90068483e2d30f2eacd781300b4/jobs/119_smsteer.py).
+- **Upstream negative result:** Directly fine-tuning G0.5's own policy weights through the world model and critic reports **0 / 200** command-switch successes with the normal anchor, while its original-task successes fall from **99 / 100 to 0 / 100**. A stronger anchor gives **40 / 200**, versus **39 / 200** for the frozen baseline. This direct-policy experiment is separate from the noise-policy, planner and memory results elsewhere in the repository; the measurements were not rerun here. [Outcome table](https://github.com/azizkhadraoui/g05/blob/e3de0de50db7d90068483e2d30f2eacd781300b4/README.md).
 
 <a href="https://github.com/azizkhadraoui/g05/blob/e3de0de50db7d90068483e2d30f2eacd781300b4/README.md"><img src="../assets/community/g05-steering-entry.png" width="720" alt="Code index screenshot · world-model / critic steering experiment"></a><br><sub>Code index screenshot · world-model / critic steering experiment</sub>
 
