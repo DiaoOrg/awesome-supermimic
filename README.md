@@ -28,11 +28,11 @@ Find community implementations by GitHub Stars, task and framework. Stars measur
 
 ### Most Starred Projects
 
-GitHub REST API snapshot: **2026-10-29 16:57:08 UTC**. Stars descending; ties use case-insensitive `owner/repo` ascending. Badges use the same snapshot. Checked daily; commits only on data or status changes. Stars cover the entire repository, including broader frameworks; they are not SuperMimic benchmark scores.
+GitHub API snapshot: **2026-10-29 16:57:08 UTC** · Checked daily · Stars descending, ties by case-insensitive `owner/repo`. Stars cover the whole repository, including broader frameworks; they measure attention, not benchmark quality.
 
 Data status: complete valid snapshot. [Update policy](docs/star-rankings.md).
 
-| Rank | Project | Stars | Category | Highlights |
+| Rank | Project | GitHub&nbsp;Stars | Category | Highlights |
 | ---: | --- | --- | --- | --- |
 | 1 | [HoloMotion · SuperMimic](https://github.com/HorizonRobotics/HoloMotion) | [![750 stars](assets/stars/1028843437.svg)](https://github.com/HorizonRobotics/HoloMotion/stargazers) | [Training Frameworks](#frameworks-and-training-stacks) | SuperMimic and PPO share HoloMotion tasks and evaluation. |
 | 2 | [supermimic_vibed](https://github.com/zita-ch/supermimic_vibed) | [![724 stars](assets/stars/1428714029.svg)](https://github.com/zita-ch/supermimic_vibed/stargazers) | [Reproductions](#independent-reproductions) | G1 LAFAN1 baseline with full-clip evaluation tools. |

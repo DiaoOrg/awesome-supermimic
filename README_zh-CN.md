@@ -28,11 +28,11 @@
 
 ### Most Starred Projects · Stars 排行榜
 
-GitHub REST API 数值快照：**2026-10-29 16:57:08 UTC**。按 Stars 降序；同分按 `owner/repo` 忽略大小写升序。Badge 与排序共用快照，每日检查，仅数据或状态变化时提交。Stars 计入整个仓库（含更大框架），不代表 SuperMimic 专项成绩。
+GitHub API 数值快照：**2026-10-29 16:57:08 UTC** · 每日检查 · Stars 降序，同分按 `owner/repo` 忽略大小写升序。Stars 计入整个仓库（含更大框架），反映关注度，不代表基准成绩。
 
 数据状态：完整有效快照。 [Update policy](docs/star-rankings.md).
 
-| 排名 | 项目 | Stars | 分类 | 一句话亮点 |
+| 排名 | 项目 | GitHub&nbsp;Stars | 分类 | 一句话亮点 |
 | ---: | --- | --- | --- | --- |
 | 1 | [HoloMotion · SuperMimic](https://github.com/HorizonRobotics/HoloMotion) | [![750 stars](assets/stars/1028843437.svg)](https://github.com/HorizonRobotics/HoloMotion/stargazers) | [框架与训练栈](#框架与训练栈) | SuperMimic 与 PPO 共享 HoloMotion 任务和评估。 |
 | 2 | [supermimic_vibed](https://github.com/zita-ch/supermimic_vibed) | [![724 stars](assets/stars/1428714029.svg)](https://github.com/zita-ch/supermimic_vibed/stargazers) | [独立复现](#独立复现) | G1 LAFAN1 基线与完整片段评估工具。 |

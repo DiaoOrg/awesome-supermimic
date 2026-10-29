@@ -329,11 +329,11 @@ def render_catalog(catalog: dict, snapshot: dict, lang: str) -> str:
     date = snapshot["snapshot_at"].replace("T", " ").replace("+00:00", " UTC")
     if zh:
         lines += [
-            f"GitHub REST API 数值快照：**{date}**。按 Stars 降序；同分按 `owner/repo` 忽略大小写升序。Badge 与排序共用快照，每日检查，仅数据或状态变化时提交。Stars 计入整个仓库（含更大框架），不代表 SuperMimic 专项成绩。"
+            f"GitHub API 数值快照：**{date}** · 每日检查 · Stars 降序，同分按 `owner/repo` 忽略大小写升序。Stars 计入整个仓库（含更大框架），反映关注度，不代表基准成绩。"
         ]
     else:
         lines += [
-            f"GitHub REST API snapshot: **{date}**. Stars descending; ties use case-insensitive `owner/repo` ascending. Badges use the same snapshot. Checked daily; commits only on data or status changes. Stars cover the entire repository, including broader frameworks; they are not SuperMimic benchmark scores."
+            f"GitHub API snapshot: **{date}** · Checked daily · Stars descending, ties by case-insensitive `owner/repo`. Stars cover the whole repository, including broader frameworks; they measure attention, not benchmark quality."
         ]
     if snapshot["failures"]:
         lines += [
@@ -361,9 +361,9 @@ def render_catalog(catalog: dict, snapshot: dict, lang: str) -> str:
         ]
     lines += [
         "",
-        "| 排名 | 项目 | Stars | 分类 | 一句话亮点 |"
+        "| 排名 | 项目 | GitHub&nbsp;Stars | 分类 | 一句话亮点 |"
         if zh
-        else "| Rank | Project | Stars | Category | Highlights |",
+        else "| Rank | Project | GitHub&nbsp;Stars | Category | Highlights |",
         "| ---: | --- | --- | --- | --- |",
     ]
     for rank, p in enumerate(projects, 1):
