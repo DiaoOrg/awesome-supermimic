@@ -38,7 +38,7 @@ GitHub API 数值快照：**2026-10-29 16:57:08 UTC** · 每日检查 · Stars �
 | 2 | [supermimic_vibed](https://github.com/zita-ch/supermimic_vibed) | [![724 stars](assets/stars/1428714029.svg)](https://github.com/zita-ch/supermimic_vibed/stargazers) | [独立复现](#独立复现) | G1 LAFAN1 基线与完整片段评估工具。 |
 | 3 | [SuperMimic-Reproduced](https://github.com/CuboiLeo/SuperMimic-Reproduced) | [![315 stars](assets/stars/1429037845.svg)](https://github.com/CuboiLeo/SuperMimic-Reproduced/stargazers) | [独立复现](#独立复现) | BONES-SEED 训练日志、权重与观测配置对照。 |
 | 4 | [InstinctMJ · SuperMimic](https://github.com/project-instinct/InstinctMJ/tree/supermimic) | [![301 stars](assets/stars/1176761185.svg)](https://github.com/project-instinct/InstinctMJ/stargazers) | [感知与地形](#感知地形与四足任务) | 深度感知 G1 世界模型与地形跟踪；使用 supermimic 分支。 |
-| 5 | [UniSuperMimic](https://github.com/Motphys/Uni-SuperMimic) | [![205 stars](assets/stars/1429498465.svg)](https://github.com/Motphys/Uni-SuperMimic/stargazers) | [框架与训练栈](#框架与训练栈) | 含 LAFAN1 与 BONES-SEED 流程的 G1 训练栈。 |
+| 5 | [UniSuperMimic](https://github.com/Motphys/Uni-SuperMimic) | [![205 stars](assets/stars/1429498465.svg)](https://github.com/Motphys/Uni-SuperMimic/stargazers) | [框架与训练栈](#框架与训练栈) | G1 三后端训练，含 12.9 万段 BONES-SEED 数据流程与全库评测。 |
 | 6 | [MorphMimic](https://github.com/lzyang2000/morphmimic) | [![152 stars](assets/stars/1430789167.svg)](https://github.com/lzyang2000/morphmimic/stargazers) | [方法改动](#方法改动与形态适配) | G1、X2 Ultra、T2 跨本体共享世界模型与策略。 |
 | 7 | [Dex SuperMimic](https://github.com/CumulusAlpha/Dex-Supermimic) | [![74 stars](assets/stars/1433804344.svg)](https://github.com/CumulusAlpha/Dex-Supermimic/stargazers) | [操作与灵巧手](#操作与灵巧手) | Wuji 灵巧手方块重定向、转笔与公开权重。 |
 | 8 | [Go2-SuperMimic](https://github.com/Zhengtianjin/go2-supermimic) | [![69 stars](assets/stars/1431486582.svg)](https://github.com/Zhengtianjin/go2-supermimic/stargazers) | [感知与地形](#感知地形与四足任务) | Go2 追逐、闪避任务与公开仿真策略。 |
@@ -101,7 +101,7 @@ GitHub API 数值快照：**2026-10-29 16:57:08 UTC** · 每日检查 · Stars �
 | ⭐ [Dex SuperMimic](#dex-supermimic) | Wuji 灵巧手方块重定向、转笔与公开权重 |
 | ⭐ [In-Hand Rotation mjlab](#in-hand-rotation-mjlab) | LEAP 手世界模型 / PPO 仿真对照 |
 | ⭐ [Muscle SuperMimic](#muscle-supermimic) | 两种肌肉驱动本体，含未见 KIT 动作评估 |
-| ⭐ [UniSuperMimic](#unisupermimic) | UniLab 集成与两套动作数据流程 |
+| ⭐ [UniSuperMimic](#unisupermimic) | 三后端、全库评测与 EMA / no-sync 训练优化 |
 | ⭐ [ScaleBFM_Plus · SuperMimic](#scalebfm_plus--supermimic) | 人形 Transformer 策略集成与留出动作评估 |
 | ⭐ [SuperMimic Retargeted](#supermimic-retargeted) | G1 / A3 / X2 Ultra 重定向与坐标检查 |
 | ⭐ [FlatWorld · SuperMimic-2D](#flatworld--supermimic-2d) | 用 2D 多技能演示理解学习闭环 |
@@ -396,10 +396,10 @@ SuperMimic 与 PPO 共享 HoloMotion 任务和评估。
 
 **[UniSuperMimic](https://github.com/Motphys/Uni-SuperMimic)** · [![205 stars](assets/stars/1429498465.svg)](https://github.com/Motphys/Uni-SuperMimic/stargazers) · ⭐ 维护者精选
 
-**技术栈:** UniLab · **作者:** Motphys<br>
-含 LAFAN1 与 BONES-SEED 流程的 G1 训练栈。
+**技术栈:** UniLab / mjwarp / MuJoCo / Motrix · **作者:** Motphys<br>
+G1 三后端训练，含 12.9 万段 BONES-SEED 数据流程与全库评测。
 
-[仓库](https://github.com/Motphys/Uni-SuperMimic) · [演示](https://github.com/Motphys/Uni-SuperMimic/blob/9bdcbde1f191d88b489309182624a9877e7b6c30/docs/assets/supermimic_comparison.mp4) · [实验与详情](docs/community-projects_zh-CN.md#unisupermimic) · [安装](https://github.com/Motphys/Uni-SuperMimic/blob/9bdcbde1f191d88b489309182624a9877e7b6c30/README.md#installation)
+[仓库](https://github.com/Motphys/Uni-SuperMimic) · [演示](https://github.com/Motphys/Uni-SuperMimic/blob/9bdcbde1f191d88b489309182624a9877e7b6c30/docs/assets/supermimic_comparison.mp4) · [实验与详情](docs/community-projects_zh-CN.md#unisupermimic) · [安装](https://github.com/Motphys/Uni-SuperMimic/blob/05a9772ca09509c50a4cc3fe96f9d6b3c180f3d2/README.md#installation)
 
 <a id="scalebfm_plus--supermimic"></a>
 <a id="-scalebfm_plus--supermimic"></a>

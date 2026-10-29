@@ -360,11 +360,25 @@
 
 ### ⭐ UniSuperMimic
 
-[仓库](https://github.com/Motphys/Uni-SuperMimic) · [安装](https://github.com/Motphys/Uni-SuperMimic/blob/9bdcbde1f191d88b489309182624a9877e7b6c30/README.md#installation) · [结果](https://github.com/Motphys/Uni-SuperMimic/blob/9bdcbde1f191d88b489309182624a9877e7b6c30/README.md#results)
+[仓库](https://github.com/Motphys/Uni-SuperMimic) · [安装](https://github.com/Motphys/Uni-SuperMimic/blob/05a9772ca09509c50a4cc3fe96f9d6b3c180f3d2/README.md#installation) · [结果](https://github.com/Motphys/Uni-SuperMimic/blob/05a9772ca09509c50a4cc3fe96f9d6b3c180f3d2/README.md#results)
+
+- **团队：Motphys。** 基于 UniLab 的独立 SuperMimic 复现，面向 G1，支持 mjwarp、MuJoCo 与 Motrix 三种后端。集成可微世界模型、目标条件策略，以及 LAFAN1 / BONES-SEED 的下载、转换、过滤、打包、训练和确定性全库评测流程。
+- **上游全库报告：** 在**全部 129,487 段过滤后 BONES-SEED 动作**上，mjwarp 基线在**单张 RTX 4090（48 GB）上训练 12,000 轮、learner 耗时 1.69 小时**，报告归一化回报 **0.9243**，失败 **350 / 129,487 段（0.27%）**。
+- **上游训练优化：** 加入 **EMA（`pi_ema: 0.995`）、no-sync 训练及 `lr: 4e-4`** 后，**8,000 轮**检查点在相同全库和 GPU 配置下报告回报 **0.9395**，失败 **193 / 129,487 段（0.15%）**。[结果与曲线](https://github.com/Motphys/Uni-SuperMimic/blob/05a9772ca09509c50a4cc3fe96f9d6b3c180f3d2/README.md#results)。
+- **选择时注意：** 以上为上游报告，本列表未独立复现。量化结果来自 mjwarp 对训练动作库的评测，不能据此判断未见动作泛化或 MuJoCo / Motrix 的同条件指标。12,000 轮全库结果使用早期“每段一个环境”的评测器，当前评测器会回收已结束环境。[核查版本](https://github.com/Motphys/Uni-SuperMimic/blob/05a9772ca09509c50a4cc3fe96f9d6b3c180f3d2/README.md)。
+
+<details>
+<summary>历史记录：此前的 LAFAN1 与 BONES-SEED 抽样评测</summary>
+
+以下保留早期版本的说明与来源；其中关于“仅抽样评测”的限制对应当时版本。
+
+[安装](https://github.com/Motphys/Uni-SuperMimic/blob/9bdcbde1f191d88b489309182624a9877e7b6c30/README.md#installation) · [结果](https://github.com/Motphys/Uni-SuperMimic/blob/9bdcbde1f191d88b489309182624a9877e7b6c30/README.md#results)
 
 - **团队：Motphys。** 将 supermimic_vibed 移植到 UniLab 的 Manager-Based G1 任务，提供 LAFAN1 与 BONES-SEED 数据流程、可选仿真后端、确定性完整动作评估和视频导出。
 - **上游报告：** 第 **12,000** 次迭代的 LAFAN1 检查点报告 **0.827227**、**0 / 40 失败**。为新的 BONES-SEED 对照在同机重跑 LAFAN1 得到 **0.8336、0 / 40**；在 **129,487 条 BONES-SEED 动作**上，单张 RTX 5090 训练 **2.55 小时**，在随机抽取的 **10,000 条**上评分为 **0.9262**，**30 / 10,000 失败（0.3%）**。
 - **选择时注意：** BONES-SEED 是抽样评估，不是全量动作库；已发布的跟踪成绩均使用 mjwarp，MuJoCo 和 Motrix 的运行入口不代表已经取得相同训练成绩。 [核查版本](https://github.com/Motphys/Uni-SuperMimic/blob/9bdcbde1f191d88b489309182624a9877e7b6c30/README.md)。
+
+</details>
 
 <a href="https://github.com/Motphys/Uni-SuperMimic/blob/9bdcbde1f191d88b489309182624a9877e7b6c30/docs/assets/supermimic_comparison.mp4"><img src="https://raw.githubusercontent.com/Motphys/Uni-SuperMimic/9bdcbde1f191d88b489309182624a9877e7b6c30/docs/assets/supermimic_comparison.gif" width="480" alt="仿真 · G1 跳跃跟踪"></a><br><sub>仿真 · G1 跳跃跟踪</sub>
 

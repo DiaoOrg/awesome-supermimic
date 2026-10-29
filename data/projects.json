@@ -1281,41 +1281,41 @@
       ],
       "repository_url": "https://github.com/Motphys/Uni-SuperMimic",
       "highlights": {
-        "en": "G1 training stack with LAFAN1 and BONES-SEED pipelines.",
-        "zh": "含 LAFAN1 与 BONES-SEED 流程的 G1 训练栈。"
+        "en": "Three-backend G1 training with a 129k-clip BONES-SEED pipeline and full-library evaluation.",
+        "zh": "G1 三后端训练，含 12.9 万段 BONES-SEED 数据流程与全库评测。"
       },
       "links": {
         "en": [
           {
             "label": "Installation",
-            "url": "https://github.com/Motphys/Uni-SuperMimic/blob/9bdcbde1f191d88b489309182624a9877e7b6c30/README.md#installation"
+            "url": "https://github.com/Motphys/Uni-SuperMimic/blob/05a9772ca09509c50a4cc3fe96f9d6b3c180f3d2/README.md#installation"
           },
           {
             "label": "Results",
-            "url": "https://github.com/Motphys/Uni-SuperMimic/blob/9bdcbde1f191d88b489309182624a9877e7b6c30/README.md#results"
+            "url": "https://github.com/Motphys/Uni-SuperMimic/blob/05a9772ca09509c50a4cc3fe96f9d6b3c180f3d2/README.md#results"
           }
         ],
         "zh": [
           {
             "label": "安装",
-            "url": "https://github.com/Motphys/Uni-SuperMimic/blob/9bdcbde1f191d88b489309182624a9877e7b6c30/README.md#installation"
+            "url": "https://github.com/Motphys/Uni-SuperMimic/blob/05a9772ca09509c50a4cc3fe96f9d6b3c180f3d2/README.md#installation"
           },
           {
             "label": "结果",
-            "url": "https://github.com/Motphys/Uni-SuperMimic/blob/9bdcbde1f191d88b489309182624a9877e7b6c30/README.md#results"
+            "url": "https://github.com/Motphys/Uni-SuperMimic/blob/05a9772ca09509c50a4cc3fe96f9d6b3c180f3d2/README.md#results"
           }
         ]
       },
       "pick_reason": {
-        "en": "UniLab integration and both motion-data pipelines",
-        "zh": "UniLab 集成与两套动作数据流程"
+        "en": "Three backends, full-library evaluation and EMA / no-sync training",
+        "zh": "三后端、全库评测与 EMA / no-sync 训练优化"
       },
       "demo": "https://github.com/Motphys/Uni-SuperMimic/blob/9bdcbde1f191d88b489309182624a9877e7b6c30/docs/assets/supermimic_comparison.mp4",
       "added": {
         "date": "2026-10-26",
         "source": "https://github.com/miao-org/awesome-supermimic/commit/28231b6aecd7dd705bb390f3d309b3b544c4e416"
       },
-      "stack": "UniLab"
+      "stack": "UniLab / mjwarp / MuJoCo / Motrix"
     },
     {
       "repo": "Hxxxz0/ScaleBFM_Plus",

@@ -38,7 +38,7 @@ Data status: complete valid snapshot. [Update policy](docs/star-rankings.md).
 | 2 | [supermimic_vibed](https://github.com/zita-ch/supermimic_vibed) | [![724 stars](assets/stars/1428714029.svg)](https://github.com/zita-ch/supermimic_vibed/stargazers) | [Reproductions](#independent-reproductions) | G1 LAFAN1 baseline with full-clip evaluation tools. |
 | 3 | [SuperMimic-Reproduced](https://github.com/CuboiLeo/SuperMimic-Reproduced) | [![315 stars](assets/stars/1429037845.svg)](https://github.com/CuboiLeo/SuperMimic-Reproduced/stargazers) | [Reproductions](#independent-reproductions) | BONES-SEED training logs, checkpoints and observation comparisons. |
 | 4 | [InstinctMJ · SuperMimic](https://github.com/project-instinct/InstinctMJ/tree/supermimic) | [![301 stars](assets/stars/1176761185.svg)](https://github.com/project-instinct/InstinctMJ/stargazers) | [Perception &amp; Terrain](#perception-terrain-and-quadrupeds) | Depth-aware G1 world model and terrain tracking; use supermimic branch. |
-| 5 | [UniSuperMimic](https://github.com/Motphys/Uni-SuperMimic) | [![205 stars](assets/stars/1429498465.svg)](https://github.com/Motphys/Uni-SuperMimic/stargazers) | [Training Frameworks](#frameworks-and-training-stacks) | G1 training stack with LAFAN1 and BONES-SEED pipelines. |
+| 5 | [UniSuperMimic](https://github.com/Motphys/Uni-SuperMimic) | [![205 stars](assets/stars/1429498465.svg)](https://github.com/Motphys/Uni-SuperMimic/stargazers) | [Training Frameworks](#frameworks-and-training-stacks) | Three-backend G1 training with a 129k-clip BONES-SEED pipeline and full-library evaluation. |
 | 6 | [MorphMimic](https://github.com/lzyang2000/morphmimic) | [![152 stars](assets/stars/1430789167.svg)](https://github.com/lzyang2000/morphmimic/stargazers) | [Method Variants](#method-and-morphology-variants) | World-model and policy sharing across G1, X2 Ultra and T2. |
 | 7 | [Dex SuperMimic](https://github.com/CumulusAlpha/Dex-Supermimic) | [![74 stars](assets/stars/1433804344.svg)](https://github.com/CumulusAlpha/Dex-Supermimic/stargazers) | [Manipulation &amp; Hands](#manipulation-and-dexterous-hands) | Wuji-hand cube reorientation, pen spinning and checkpoints. |
 | 8 | [Go2-SuperMimic](https://github.com/Zhengtianjin/go2-supermimic) | [![69 stars](assets/stars/1431486582.svg)](https://github.com/Zhengtianjin/go2-supermimic/stargazers) | [Perception &amp; Terrain](#perception-terrain-and-quadrupeds) | Go2 chase / dodge tasks with released simulation actors. |
@@ -101,7 +101,7 @@ Each category also follows Stars order. Full experiments, limitations and GIFs l
 | ⭐ [Dex SuperMimic](#dex-supermimic) | Wuji hands: cube reorientation, pen spinning and weights |
 | ⭐ [In-Hand Rotation mjlab](#in-hand-rotation-mjlab) | LEAP hand: world-model / PPO simulation comparisons |
 | ⭐ [Muscle SuperMimic](#muscle-supermimic) | two muscle-driven bodies, held-out KIT evaluation |
-| ⭐ [UniSuperMimic](#unisupermimic) | UniLab integration and both motion-data pipelines |
+| ⭐ [UniSuperMimic](#unisupermimic) | Three backends, full-library evaluation and EMA / no-sync training |
 | ⭐ [ScaleBFM_Plus · SuperMimic](#scalebfm_plus--supermimic) | humanoid transformer integration and held-out evaluation |
 | ⭐ [SuperMimic Retargeted](#supermimic-retargeted) | G1 / A3 / X2 Ultra retargeting and coordinate checks |
 | ⭐ [FlatWorld · SuperMimic-2D](#flatworld--supermimic-2d) | see the learning loop in a 2D multi-skill demo |
@@ -396,10 +396,10 @@ SuperMimic and PPO share HoloMotion tasks and evaluation.
 
 **[UniSuperMimic](https://github.com/Motphys/Uni-SuperMimic)** · [![205 stars](assets/stars/1429498465.svg)](https://github.com/Motphys/Uni-SuperMimic/stargazers) · ⭐ Maintainer’s Pick
 
-**Stack:** UniLab · **By:** Motphys<br>
-G1 training stack with LAFAN1 and BONES-SEED pipelines.
+**Stack:** UniLab / mjwarp / MuJoCo / Motrix · **By:** Motphys<br>
+Three-backend G1 training with a 129k-clip BONES-SEED pipeline and full-library evaluation.
 
-[Repository](https://github.com/Motphys/Uni-SuperMimic) · [Demo](https://github.com/Motphys/Uni-SuperMimic/blob/9bdcbde1f191d88b489309182624a9877e7b6c30/docs/assets/supermimic_comparison.mp4) · [Results & details](docs/community-projects.md#unisupermimic) · [Installation](https://github.com/Motphys/Uni-SuperMimic/blob/9bdcbde1f191d88b489309182624a9877e7b6c30/README.md#installation)
+[Repository](https://github.com/Motphys/Uni-SuperMimic) · [Demo](https://github.com/Motphys/Uni-SuperMimic/blob/9bdcbde1f191d88b489309182624a9877e7b6c30/docs/assets/supermimic_comparison.mp4) · [Results & details](docs/community-projects.md#unisupermimic) · [Installation](https://github.com/Motphys/Uni-SuperMimic/blob/05a9772ca09509c50a4cc3fe96f9d6b3c180f3d2/README.md#installation)
 
 <a id="scalebfm_plus--supermimic"></a>
 <a id="-scalebfm_plus--supermimic"></a>

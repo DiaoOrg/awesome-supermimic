@@ -360,11 +360,25 @@ Integrations and reusable training or evaluation stacks.
 
 ### ⭐ UniSuperMimic
 
-[Repository](https://github.com/Motphys/Uni-SuperMimic) · [Installation](https://github.com/Motphys/Uni-SuperMimic/blob/9bdcbde1f191d88b489309182624a9877e7b6c30/README.md#installation) · [Results](https://github.com/Motphys/Uni-SuperMimic/blob/9bdcbde1f191d88b489309182624a9877e7b6c30/README.md#results)
+[Repository](https://github.com/Motphys/Uni-SuperMimic) · [Installation](https://github.com/Motphys/Uni-SuperMimic/blob/05a9772ca09509c50a4cc3fe96f9d6b3c180f3d2/README.md#installation) · [Results](https://github.com/Motphys/Uni-SuperMimic/blob/05a9772ca09509c50a4cc3fe96f9d6b3c180f3d2/README.md#results)
+
+- **By Motphys.** An independent SuperMimic reproduction on UniLab for G1, with mjwarp, MuJoCo and Motrix backends. It combines a differentiable world model and goal-conditioned policy with LAFAN1 and BONES-SEED download, conversion, filtering, packing, training and deterministic full-library evaluation.
+- **Upstream full-library report:** On **all 129,487 retained BONES-SEED clips**, the mjwarp baseline reports normalized return **0.9243** and **350 / 129,487 failures (0.27%)** after **12,000 iterations / 1.69 hours of learner time on one RTX 4090 (48 GB)**.
+- **Upstream training optimization:** With **EMA (`pi_ema: 0.995`), no-sync training and `lr: 4e-4`**, the **8,000-iteration** checkpoint reports **0.9395** and **193 / 129,487 failures (0.15%)** on the same full library and GPU configuration. [Results and curves](https://github.com/Motphys/Uni-SuperMimic/blob/05a9772ca09509c50a4cc3fe96f9d6b3c180f3d2/README.md#results).
+- **Useful context:** These are upstream-reported results, not independently reproduced here. The tables document mjwarp on the training motion library; they do not establish held-out generalization or matched quantitative results for MuJoCo and Motrix. The 12,000-iteration full-library result used the earlier one-environment-per-clip evaluator; the current evaluator recycles finished environments. [Source snapshot](https://github.com/Motphys/Uni-SuperMimic/blob/05a9772ca09509c50a4cc3fe96f9d6b3c180f3d2/README.md).
+
+<details>
+<summary>Historical record: earlier LAFAN1 and sampled BONES-SEED evaluation</summary>
+
+The earlier description and sources are retained below; the sampled-only limitation applies to that revision.
+
+[Installation](https://github.com/Motphys/Uni-SuperMimic/blob/9bdcbde1f191d88b489309182624a9877e7b6c30/README.md#installation) · [Results](https://github.com/Motphys/Uni-SuperMimic/blob/9bdcbde1f191d88b489309182624a9877e7b6c30/README.md#results)
 
 - **By Motphys.** Ports supermimic_vibed to a UniLab Manager-Based G1 task, with LAFAN1 and BONES-SEED data pipelines, selectable simulation backends, deterministic full-clip evaluation and video export.
 - **Upstream report:** At iteration **12,000**, the LAFAN1 checkpoint reports **0.827227** with **0 / 40 failures**. A same-machine LAFAN1 rerun used for the new BONES-SEED comparison reaches **0.8336, 0 / 40**; on **129,487 BONES-SEED clips**, one RTX 5090 trains for **2.55 hours** and scores **0.9262** on a random **10,000-clip subset**, with **30 / 10,000 failures (0.3%)**.
 - **Useful context:** The BONES-SEED result is a sampled evaluation, not the full library, and all published tracking numbers use mjwarp. MuJoCo and Motrix entry points do not establish equivalent training results. [Source snapshot](https://github.com/Motphys/Uni-SuperMimic/blob/9bdcbde1f191d88b489309182624a9877e7b6c30/README.md).
+
+</details>
 
 <a href="https://github.com/Motphys/Uni-SuperMimic/blob/9bdcbde1f191d88b489309182624a9877e7b6c30/docs/assets/supermimic_comparison.mp4"><img src="https://raw.githubusercontent.com/Motphys/Uni-SuperMimic/9bdcbde1f191d88b489309182624a9877e7b6c30/docs/assets/supermimic_comparison.gif" width="480" alt="Simulation · G1 jump tracking"></a><br><sub>Simulation · G1 jump tracking</sub>
 
