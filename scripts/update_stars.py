@@ -270,11 +270,34 @@ def cell(text: str) -> str:
 
 def badge(project: dict, snapshot: dict) -> str:
     record = snapshot["repositories"][project["repo"]]
-    repo, stars = record["full_name"], record["stars"]
+    repo, count = record["full_name"], record["stars"]
     return (
-        f"[![{repo}: {stars} stars (snapshot)](https://img.shields.io/badge/stars-{stars}-blue?logo=github)]"
+        f"[![{count} stars](assets/stars/{record['id']}.svg)]"
         f"(https://github.com/{repo}/stargazers)"
     )
+
+
+def badge_svg(record: dict) -> str:
+    """Self-contained, deterministic badge; no third-party image request needed."""
+    count = record["stars"]
+    right_width = max(26, len(str(count)) * 7 + 14)
+    width = 56 + right_width
+    center = 56 + right_width / 2
+    label = html.escape(f"{record['full_name']}: {count} stars", quote=True)
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="20" role="img" aria-label="{label}">
+  <title>{label}</title>
+  <clipPath id="rounded"><rect width="{width}" height="20" rx="3"/></clipPath>
+  <g clip-path="url(#rounded)">
+    <rect width="56" height="20" fill="#555"/>
+    <rect x="56" width="{right_width}" height="20" fill="#007ec6"/>
+  </g>
+  <path fill="#f4cf58" d="M10 3.5 12 7.6 16.5 8.2 13.2 11.4 14 15.9 10 13.8 6 15.9 6.8 11.4 3.5 8.2 8 7.6Z"/>
+  <g fill="#fff" text-anchor="middle" font-family="Verdana,DejaVu Sans,sans-serif" font-size="11">
+    <text x="35" y="14">stars</text>
+    <text x="{center:g}" y="14">{count}</text>
+  </g>
+</svg>
+'''
 
 
 def repository_url(project: dict, snapshot: dict) -> str:
@@ -489,6 +512,9 @@ def update(root: Path, *, offline: bool = False, check: bool = False) -> bool:
         )
     validate_snapshot(snapshot, catalog["projects"])
     outputs = {cache_path: json.dumps(snapshot, ensure_ascii=False, indent=2) + "\n"}
+    for project in catalog["projects"]:
+        record = snapshot["repositories"][project["repo"]]
+        outputs[root / "assets" / "stars" / f"{record['id']}.svg"] = badge_svg(record)
     for lang, filename in LANGUAGES.items():
         path = root / filename
         outputs[path] = replace_generated(
@@ -507,6 +533,7 @@ def update(root: Path, *, offline: bool = False, check: bool = False) -> bool:
             )
     else:
         for path in changed:
+            path.parent.mkdir(parents=True, exist_ok=True)
             temporary = path.with_suffix(path.suffix + ".tmp")
             temporary.write_text(outputs[path], encoding="utf-8")
             temporary.replace(path)

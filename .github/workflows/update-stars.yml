@@ -53,7 +53,7 @@ jobs:
           git diff --check
       - name: Commit only changed data and generated content
         run: |
-          git add data/stars.json README.md README_zh-CN.md
+          git add data/stars.json assets/stars README.md README_zh-CN.md
           if git diff --cached --quiet; then
             echo "Stars and status unchanged; no commit."
             exit 0

@@ -6,6 +6,7 @@ import re
 import shutil
 import tempfile
 import unittest
+import xml.etree.ElementTree as ET
 from io import BytesIO
 from pathlib import Path
 from unittest.mock import patch
@@ -316,7 +317,7 @@ class CatalogTests(unittest.TestCase):
             for p in ordered:
                 record = self.snapshot["repositories"][p["repo"]]
                 self.assertIn(
-                    f"/badge/stars-{record['stars']}-blue?",
+                    f"assets/stars/{record['id']}.svg",
                     stars.badge(p, self.snapshot),
                 )
                 self.assertIn(
@@ -331,6 +332,23 @@ class CatalogTests(unittest.TestCase):
                 positions = [section.index(f'<a id="{p["anchor"]}">') for p in members]
                 self.assertEqual(positions, sorted(positions))
                 self.assertIn(f"({len(members)})", section.splitlines()[0])
+
+    def test_badges_contain_exact_snapshot_values_and_identity(self):
+        for record in self.snapshot["repositories"].values():
+            xml = stars.badge_svg(record)
+            svg = ET.fromstring(xml)
+            self.assertEqual(
+                svg.attrib["aria-label"],
+                f"{record['full_name']}: {record['stars']} stars",
+            )
+            texts = [
+                element.text
+                for element in svg.findall(".//{http://www.w3.org/2000/svg}text")
+            ]
+            self.assertEqual(texts, ["stars", str(record["stars"])])
+            self.assertEqual(
+                xml, (stars.ROOT / "assets/stars" / f"{record['id']}.svg").read_text()
+            )
 
     def test_rename_preserves_branch_link(self):
         project = next(
@@ -379,6 +397,7 @@ class CatalogTests(unittest.TestCase):
                 "README_zh-CN.md",
             ]:
                 shutil.copy(stars.ROOT / filename, root / filename)
+            shutil.copytree(stars.ROOT / "assets/stars", root / "assets/stars")
             before = {p: p.read_bytes() for p in root.rglob("*") if p.is_file()}
             self.assertFalse(stars.update(root, offline=True))
             self.assertFalse(stars.update(root, offline=True))
