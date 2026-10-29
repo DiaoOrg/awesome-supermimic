@@ -288,6 +288,51 @@ class CatalogTests(unittest.TestCase):
             self.assertEqual(set(repos), expected)
             self.assertEqual(len(repos), len(expected))
 
+    def test_scope_requires_editorial_decision_and_integration_evidence(self):
+        for invalid in ("missing", "unknown", "reason", "source"):
+            data = copy.deepcopy(self.catalog)
+            project = data["projects"][0]
+            if invalid == "missing":
+                del project["scope"]
+            elif invalid == "unknown":
+                project["scope"] = "guess"
+            else:
+                project["scope"] = "integration"
+                project["scope_note"] = {
+                    "en": "Module in a larger project",
+                    "zh": "较大项目中的模块",
+                }
+                project["scope_source"] = (
+                    "https://github.com/wrong/repo/blob/" + "a" * 40 + "/README.md"
+                )
+                if invalid == "reason":
+                    del project["scope_note"]["zh"]
+            with tempfile.TemporaryDirectory() as tmp:
+                path = Path(tmp) / "projects.json"
+                path.write_text(json.dumps(data))
+                with self.assertRaises(ValueError):
+                    stars.load_catalog(path)
+
+    def test_broader_repository_stars_cannot_change_dedicated_ranking(self):
+        dedicated, integrations = stars.grouped_projects(
+            self.catalog["projects"], self.snapshot
+        )
+        self.assertEqual(
+            set(p["repo"] for p in dedicated) | set(p["repo"] for p in integrations),
+            set(p["repo"] for p in self.catalog["projects"]),
+        )
+        self.assertTrue(all(p["scope"] == "dedicated" for p in dedicated))
+        self.assertTrue(all(p["scope"] == "integration" for p in integrations))
+        self.assertEqual(
+            integrations, sorted(integrations, key=lambda p: p["repo"].casefold())
+        )
+        for p in integrations:
+            self.snapshot["repositories"][p["repo"]]["stars"] = 10_000_000
+        self.assertEqual(
+            stars.grouped_projects(self.catalog["projects"], self.snapshot),
+            (dedicated, integrations),
+        )
+
     def test_catalog_detail_anchors_resolve(self):
         for filename in ["community-projects.md", "community-projects_zh-CN.md"]:
             text = (stars.ROOT / "docs" / filename).read_text()
@@ -298,13 +343,19 @@ class CatalogTests(unittest.TestCase):
                 self.assertIn(project["anchor"], anchors, (filename, project["name"]))
 
     def test_rankings_badges_and_category_order_match_in_both_languages(self):
-        ordered = stars.ranked(self.catalog["projects"], self.snapshot)
+        dedicated, integrations = stars.grouped_projects(
+            self.catalog["projects"], self.snapshot
+        )
+        ordered = dedicated + integrations
         expected = [
-            self.snapshot["repositories"][p["repo"]]["full_name"] for p in ordered
+            self.snapshot["repositories"][p["repo"]]["full_name"] for p in dedicated
         ]
         for lang in stars.LANGUAGES:
             text = stars.render_catalog(self.catalog, self.snapshot, lang)
-            ranking = text.split('<a id="browse-by-category">')[0]
+            overview = text.split('<a id="browse-by-category">')[0]
+            ranking, integration_table = overview.split(
+                '<a id="integrations-in-broader-projects"></a>'
+            )
             rows = re.findall(r"^\| (\d+) \| (.*)$", ranking, re.M)
             self.assertEqual(
                 [int(n) for n, _ in rows], list(range(1, len(expected) + 1))
@@ -313,6 +364,21 @@ class CatalogTests(unittest.TestCase):
                 re.findall(r"\]\(https://github.com/([^)]*)/stargazers\)", ranking),
                 expected,
             )
+            self.assertFalse(re.findall(r"^\| \d+ \|", integration_table, re.M))
+            self.assertEqual(
+                re.findall(
+                    r"\]\(https://github.com/([^)]*)/stargazers\)", integration_table
+                ),
+                [
+                    self.snapshot["repositories"][p["repo"]]["full_name"]
+                    for p in integrations
+                ],
+            )
+            for project in integrations:
+                self.assertIn(project["scope_source"], integration_table)
+                self.assertIn(
+                    stars.cell(project["scope_note"][lang]), integration_table
+                )
             for p in ordered:
                 record = self.snapshot["repositories"][p["repo"]]
                 self.assertIn(

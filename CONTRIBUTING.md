@@ -4,7 +4,7 @@ We welcome public implementations, extensions, demos, datasets and learning reso
 
 ## Add or update a project
 
-1. Add one entry to [`data/projects.json`](data/projects.json), or update its existing entry. Use the GitHub `owner/repo` as `repo`, and preserve a branch URL in `repository_url` when necessary. One repository belongs to one category; aliases must not duplicate an existing repository.
+1. Add one entry to [`data/projects.json`](data/projects.json), or update its existing entry. Use the GitHub `owner/repo` as `repo`, and preserve a branch URL in `repository_url` when necessary. One repository belongs to one category; aliases must not duplicate an existing repository. Set `scope` explicitly to `dedicated` for a repository primarily about SuperMimic, or `integration` for a branch, module or experiment in a broader project. Integrations require bilingual `scope_note` and a `scope_source` link to evidence at a pinned commit in that repository. Classify by documented scope, not its current Stars, age, organization or whether it has comparison baselines.
 2. Supply its public name, original author, supported stack and a short highlight in **both English and Chinese**. Use the existing categories where possible. Keep the stable `anchor` and all `legacy_anchors` when renaming an entry.
 3. Set `added.date` to its first inclusion date in this list and `added.source` to the corresponding inclusion commit or PR. For a new submission, open the PR and then add its link before review. Do not use an assumed upstream release date. Do not change this date when updating results.
 4. Add matching entries to [`docs/community-projects.md`](docs/community-projects.md) and [`docs/community-projects_zh-CN.md`](docs/community-projects_zh-CN.md). Keep the stable anchor, repository/branch, author, reviewed source revision and important links. Preserve the task, data, hardware, denominator and protocol for any quoted result. Mark upstream reports accurately; do not describe them as independently verified.
@@ -25,7 +25,7 @@ A repository returning 404 is not proof that it was never open source: it may be
 
 ## Editorial picks and new entries
 
-Stars rank community attention, not incompatible benchmarks. ⭐ Maintainer’s Picks highlight documented technical strengths independently of Stars. Retain complementary choices by use case; do not impose a one-project-per-category quota. To propose a pick, add a concise evidence-based `pick_reason` in both languages and cite its basis in the detail entry. Picks never override Stars ordering.
+Dedicated repositories are ranked by Stars; broader-project integrations are listed alphabetically with repository Stars for context. Apply the same separation inside categories. Whole-repository Stars cannot be attributed to a branch or module; do not invent adjusted counts or treat growth since a release as SuperMimic-specific interest. ⭐ Maintainer’s Picks highlight documented technical strengths independently of Stars. Retain complementary choices by use case; do not impose a one-project-per-category quota. To propose a pick, add a concise evidence-based `pick_reason` in both languages and cite its basis in the detail entry. Picks may include either scope and do not alter the ordering within either group.
 
 New & Noteworthy is generated from the five latest catalog addition dates, with repository names breaking same-day ties. It has no Stars threshold and does not assert upstream release dates or unverified quality ratings.
 

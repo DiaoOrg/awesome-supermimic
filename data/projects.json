@@ -191,7 +191,8 @@
         "date": "2026-10-26",
         "source": "https://github.com/miao-org/awesome-supermimic/commit/28231b6aecd7dd705bb390f3d309b3b544c4e416"
       },
-      "stack": "mjlab / MuJoCo / Unitree SDK"
+      "stack": "mjlab / MuJoCo / Unitree SDK",
+      "scope": "dedicated"
     },
     {
       "repo": "KyrieYoung926/supermimic_deploy",
@@ -234,7 +235,8 @@
         "date": "2026-10-26",
         "source": "https://github.com/miao-org/awesome-supermimic/commit/28231b6aecd7dd705bb390f3d309b3b544c4e416"
       },
-      "stack": "ONNX Runtime / MuJoCo / Unitree SDK2"
+      "stack": "ONNX Runtime / MuJoCo / Unitree SDK2",
+      "scope": "dedicated"
     },
     {
       "repo": "zita-ch/supermimic_vibed",
@@ -282,7 +284,8 @@
         "date": "2026-10-26",
         "source": "https://github.com/miao-org/awesome-supermimic/commit/28231b6aecd7dd705bb390f3d309b3b544c4e416"
       },
-      "stack": "Isaac Lab 3"
+      "stack": "Isaac Lab 3",
+      "scope": "dedicated"
     },
     {
       "repo": "CuboiLeo/SuperMimic-Reproduced",
@@ -338,7 +341,8 @@
         "date": "2026-10-26",
         "source": "https://github.com/miao-org/awesome-supermimic/commit/28231b6aecd7dd705bb390f3d309b3b544c4e416"
       },
-      "stack": "mjlab"
+      "stack": "mjlab",
+      "scope": "dedicated"
     },
     {
       "repo": "Breezewrf/supermimic_mjlab",
@@ -386,7 +390,8 @@
         "date": "2026-10-27",
         "source": "https://github.com/miao-org/awesome-supermimic/commit/1c3bc86615c24799fa2038472fc4ed6c45007ef0"
       },
-      "stack": "mjlab"
+      "stack": "mjlab",
+      "scope": "dedicated"
     },
     {
       "repo": "dhmbb2/supermimic_vibe",
@@ -429,7 +434,8 @@
         "date": "2026-10-26",
         "source": "https://github.com/miao-org/awesome-supermimic/commit/28231b6aecd7dd705bb390f3d309b3b544c4e416"
       },
-      "stack": "mjlab"
+      "stack": "mjlab",
+      "scope": "dedicated"
     },
     {
       "repo": "rzc156/supermimic-rtx5080",
@@ -472,7 +478,8 @@
         "date": "2026-10-28",
         "source": "https://github.com/miao-org/awesome-supermimic/commit/0035f0d90c1fae44cf2ecbf6fb8584bee6f1f415"
       },
-      "stack": "mjlab"
+      "stack": "mjlab",
+      "scope": "dedicated"
     },
     {
       "repo": "Huy-Quang-Dao/instantTrack",
@@ -528,7 +535,8 @@
         "date": "2026-10-29",
         "source": "https://github.com/miao-org/awesome-supermimic/commit/4ec2021a76c389760c79cf8149fa5a20e998fe98"
       },
-      "stack": "mjlab"
+      "stack": "mjlab",
+      "scope": "dedicated"
     },
     {
       "repo": "lzyang2000/morphmimic",
@@ -576,7 +584,8 @@
         "date": "2026-10-26",
         "source": "https://github.com/miao-org/awesome-supermimic/commit/28231b6aecd7dd705bb390f3d309b3b544c4e416"
       },
-      "stack": "mjlab"
+      "stack": "mjlab",
+      "scope": "dedicated"
     },
     {
       "repo": "Shimingyi/allmimic",
@@ -619,7 +628,8 @@
         "date": "2026-10-26",
         "source": "https://github.com/miao-org/awesome-supermimic/commit/28231b6aecd7dd705bb390f3d309b3b544c4e416"
       },
-      "stack": "mjlab"
+      "stack": "mjlab",
+      "scope": "dedicated"
     },
     {
       "repo": "Alchedata/supermimic-locomujoco",
@@ -662,7 +672,8 @@
         "date": "2026-10-26",
         "source": "https://github.com/miao-org/awesome-supermimic/commit/28231b6aecd7dd705bb390f3d309b3b544c4e416"
       },
-      "stack": "JAX / LocoMuJoCo"
+      "stack": "JAX / LocoMuJoCo",
+      "scope": "dedicated"
     },
     {
       "repo": "btx0424/rethinking-supermimic",
@@ -713,7 +724,8 @@
         "date": "2026-10-26",
         "source": "https://github.com/miao-org/awesome-supermimic/commit/28231b6aecd7dd705bb390f3d309b3b544c4e416"
       },
-      "stack": "mjlab"
+      "stack": "mjlab",
+      "scope": "dedicated"
     },
     {
       "repo": "JackMin7/supermimic_whole_body_tracking",
@@ -756,7 +768,8 @@
         "date": "2026-10-28",
         "source": "https://github.com/miao-org/awesome-supermimic/commit/0035f0d90c1fae44cf2ecbf6fb8584bee6f1f415"
       },
-      "stack": "RSL-RL / G1"
+      "stack": "RSL-RL / G1",
+      "scope": "dedicated"
     },
     {
       "repo": "project-instinct/InstinctMJ",
@@ -804,7 +817,13 @@
         "date": "2026-10-26",
         "source": "https://github.com/miao-org/awesome-supermimic/commit/28231b6aecd7dd705bb390f3d309b3b544c4e416"
       },
-      "stack": "mjlab / instinct_rl"
+      "stack": "mjlab / instinct_rl",
+      "scope": "integration",
+      "scope_note": {
+        "en": "SuperMimic branch within the broader InstinctMJ task framework.",
+        "zh": "InstinctMJ 多任务框架中的 supermimic 分支。"
+      },
+      "scope_source": "https://github.com/project-instinct/InstinctMJ/blob/6edbc19d4e386ba42ec8a0f8c705ec4a2f983ffb/README.md"
     },
     {
       "repo": "Zhengtianjin/go2-supermimic",
@@ -852,7 +871,8 @@
         "date": "2026-10-26",
         "source": "https://github.com/miao-org/awesome-supermimic/commit/28231b6aecd7dd705bb390f3d309b3b544c4e416"
       },
-      "stack": "mjlab"
+      "stack": "mjlab",
+      "scope": "dedicated"
     },
     {
       "repo": "yhx1203/supermimic_parkour",
@@ -895,7 +915,8 @@
         "date": "2026-10-28",
         "source": "https://github.com/miao-org/awesome-supermimic/commit/0035f0d90c1fae44cf2ecbf6fb8584bee6f1f415"
       },
-      "stack": "mjlab / PHP Parkour"
+      "stack": "mjlab / PHP Parkour",
+      "scope": "dedicated"
     },
     {
       "repo": "mode1223345/SuperMimic-perceptive",
@@ -938,7 +959,8 @@
         "date": "2026-10-26",
         "source": "https://github.com/miao-org/awesome-supermimic/commit/28231b6aecd7dd705bb390f3d309b3b544c4e416"
       },
-      "stack": "Isaac Lab 3"
+      "stack": "Isaac Lab 3",
+      "scope": "dedicated"
     },
     {
       "repo": "emoPointer/supermimic_manipulation",
@@ -986,7 +1008,8 @@
         "date": "2026-10-27",
         "source": "https://github.com/miao-org/awesome-supermimic/commit/2e268bc3538d20f4128440e7ce06ad096f1c1873"
       },
-      "stack": "mjlab / MuJoCo Warp"
+      "stack": "mjlab / MuJoCo Warp",
+      "scope": "dedicated"
     },
     {
       "repo": "CumulusAlpha/Dex-Supermimic",
@@ -1042,7 +1065,8 @@
         "date": "2026-10-26",
         "source": "https://github.com/miao-org/awesome-supermimic/commit/28231b6aecd7dd705bb390f3d309b3b544c4e416"
       },
-      "stack": "mjlab / MuJoCo Warp / InstinctMJ"
+      "stack": "mjlab / MuJoCo Warp / InstinctMJ",
+      "scope": "dedicated"
     },
     {
       "repo": "Msornerrrr/in-hand-rotation-mjlab",
@@ -1098,7 +1122,13 @@
         "date": "2026-10-28",
         "source": "https://github.com/miao-org/awesome-supermimic/commit/f03b1b9e0a24b3ca65f6da06ec3f12aa8eced02c"
       },
-      "stack": "mjlab / MuJoCo Warp"
+      "stack": "mjlab / MuJoCo Warp",
+      "scope": "integration",
+      "scope_note": {
+        "en": "World-model learning added to an existing LEAP / PPO manipulation project.",
+        "zh": "既有 LEAP / PPO 操作项目新增的世界模型学习。"
+      },
+      "scope_source": "https://github.com/Msornerrrr/in-hand-rotation-mjlab/blob/0ab03eb2244b4a1a020d94ef38a4823bb9e15ba0/README.md"
     },
     {
       "repo": "shuayyy/humanoid-amp-ppo",
@@ -1141,7 +1171,13 @@
         "date": "2026-10-26",
         "source": "https://github.com/miao-org/awesome-supermimic/commit/28231b6aecd7dd705bb390f3d309b3b544c4e416"
       },
-      "stack": "mjlab"
+      "stack": "mjlab",
+      "scope": "integration",
+      "scope_note": {
+        "en": "SuperMimic tracking alongside the AMP-PPO locomotion and lifting stack.",
+        "zh": "AMP-PPO 行走与抬箱训练栈中的 SuperMimic 跟踪模块。"
+      },
+      "scope_source": "https://github.com/shuayyy/humanoid-amp-ppo/blob/681874bab20273ba9211cb92d5ff108900ce3490/README.md"
     },
     {
       "repo": "kaibohex/muscle-supermimic",
@@ -1189,7 +1225,8 @@
         "date": "2026-10-27",
         "source": "https://github.com/miao-org/awesome-supermimic/commit/2e268bc3538d20f4128440e7ce06ad096f1c1873"
       },
-      "stack": "mjlab / MuJoCo Warp"
+      "stack": "mjlab / MuJoCo Warp",
+      "scope": "dedicated"
     },
     {
       "repo": "shangchaohu718/supermimic-pera",
@@ -1232,7 +1269,8 @@
         "date": "2026-10-26",
         "source": "https://github.com/miao-org/awesome-supermimic/commit/28231b6aecd7dd705bb390f3d309b3b544c4e416"
       },
-      "stack": "UniLab / MuJoCo"
+      "stack": "UniLab / MuJoCo",
+      "scope": "dedicated"
     },
     {
       "repo": "liudi159/supermimic-backflip-5090",
@@ -1275,7 +1313,8 @@
         "date": "2026-10-26",
         "source": "https://github.com/miao-org/awesome-supermimic/commit/28231b6aecd7dd705bb390f3d309b3b544c4e416"
       },
-      "stack": "Isaac Lab 3"
+      "stack": "Isaac Lab 3",
+      "scope": "dedicated"
     },
     {
       "repo": "Motphys/Uni-SuperMimic",
@@ -1323,7 +1362,8 @@
         "date": "2026-10-26",
         "source": "https://github.com/miao-org/awesome-supermimic/commit/28231b6aecd7dd705bb390f3d309b3b544c4e416"
       },
-      "stack": "UniLab / mjwarp / MuJoCo / Motrix"
+      "stack": "UniLab / mjwarp / MuJoCo / Motrix",
+      "scope": "dedicated"
     },
     {
       "repo": "Hxxxz0/ScaleBFM_Plus",
@@ -1371,7 +1411,13 @@
         "date": "2026-10-27",
         "source": "https://github.com/miao-org/awesome-supermimic/commit/954156ebd6ad1572174bd24c59a3dfabfbbc74a6"
       },
-      "stack": "Isaac Lab / RSL-RL"
+      "stack": "Isaac Lab / RSL-RL",
+      "scope": "integration",
+      "scope_note": {
+        "en": "A SuperMimic learner in ScaleTrack, alongside ScaleRetarget and ScaleBridge.",
+        "zh": "ScaleBFM 的 ScaleTrack 训练扩展；整仓还包含重定向与部署。"
+      },
+      "scope_source": "https://github.com/Hxxxz0/ScaleBFM_Plus/blob/65e4d524bd31fdc4284ba8c6e624fb0b0127da03/README.md"
     },
     {
       "repo": "HorizonRobotics/HoloMotion",
@@ -1414,7 +1460,13 @@
         "date": "2026-10-26",
         "source": "https://github.com/miao-org/awesome-supermimic/commit/28231b6aecd7dd705bb390f3d309b3b544c4e416"
       },
-      "stack": "MuJoCo Warp / Isaac PhysX / Hydra"
+      "stack": "MuJoCo Warp / Isaac PhysX / Hydra",
+      "scope": "integration",
+      "scope_note": {
+        "en": "SuperMimic training alongside HoloMotion tracking, teleoperation and HoloBoxing.",
+        "zh": "HoloMotion 跟踪、遥操作与 HoloBoxing 框架中的 SuperMimic 训练。"
+      },
+      "scope_source": "https://github.com/HorizonRobotics/HoloMotion/blob/f52dd81ae935a828b0296f5ee0f833beb7378bf0/README.md"
     },
     {
       "repo": "Renforce-Dynamics/trackerlab-supermimic",
@@ -1465,7 +1517,8 @@
         "date": "2026-10-26",
         "source": "https://github.com/miao-org/awesome-supermimic/commit/28231b6aecd7dd705bb390f3d309b3b544c4e416"
       },
-      "stack": "Isaac Lab / PhysX; optional MuJoCo Warp"
+      "stack": "Isaac Lab / PhysX; optional MuJoCo Warp",
+      "scope": "dedicated"
     },
     {
       "repo": "chu-fa/isaaclab-supermimic",
@@ -1508,7 +1561,8 @@
         "date": "2026-10-26",
         "source": "https://github.com/miao-org/awesome-supermimic/commit/28231b6aecd7dd705bb390f3d309b3b544c4e416"
       },
-      "stack": "Isaac Lab"
+      "stack": "Isaac Lab",
+      "scope": "dedicated"
     },
     {
       "repo": "OMEGA-i/SuperMimicKit",
@@ -1551,7 +1605,8 @@
         "date": "2026-10-26",
         "source": "https://github.com/miao-org/awesome-supermimic/commit/28231b6aecd7dd705bb390f3d309b3b544c4e416"
       },
-      "stack": "MuJoCo Warp / ONNX / WebGPU"
+      "stack": "MuJoCo Warp / ONNX / WebGPU",
+      "scope": "dedicated"
     },
     {
       "repo": "tianshuwu/supermimic-retargeted",
@@ -1599,7 +1654,8 @@
         "date": "2026-10-26",
         "source": "https://github.com/miao-org/awesome-supermimic/commit/28231b6aecd7dd705bb390f3d309b3b544c4e416"
       },
-      "stack": "mjlab / SOMA"
+      "stack": "mjlab / SOMA",
+      "scope": "dedicated"
     },
     {
       "repo": "wenconggan/SuperMimic_e1",
@@ -1642,7 +1698,8 @@
         "date": "2026-10-26",
         "source": "https://github.com/miao-org/awesome-supermimic/commit/28231b6aecd7dd705bb390f3d309b3b544c4e416"
       },
-      "stack": "Isaac Lab 3 / MuJoCo"
+      "stack": "Isaac Lab 3 / MuJoCo",
+      "scope": "dedicated"
     },
     {
       "repo": "liuskywalkerjskd/supermimic_oli",
@@ -1685,7 +1742,8 @@
         "date": "2026-10-26",
         "source": "https://github.com/miao-org/awesome-supermimic/commit/28231b6aecd7dd705bb390f3d309b3b544c4e416"
       },
-      "stack": "Isaac Lab 3"
+      "stack": "Isaac Lab 3",
+      "scope": "dedicated"
     },
     {
       "repo": "WXyuany/supermimic-m5",
@@ -1728,7 +1786,8 @@
         "date": "2026-10-26",
         "source": "https://github.com/miao-org/awesome-supermimic/commit/28231b6aecd7dd705bb390f3d309b3b544c4e416"
       },
-      "stack": "MuJoCo / PyTorch MPS"
+      "stack": "MuJoCo / PyTorch MPS",
+      "scope": "dedicated"
     },
     {
       "repo": "panhainan2020/SuperMimic-MuJoCo",
@@ -1771,7 +1830,8 @@
         "date": "2026-10-26",
         "source": "https://github.com/miao-org/awesome-supermimic/commit/28231b6aecd7dd705bb390f3d309b3b544c4e416"
       },
-      "stack": "mjlab / CPU MuJoCo"
+      "stack": "mjlab / CPU MuJoCo",
+      "scope": "dedicated"
     },
     {
       "repo": "RadiantForever/supermimic_wheelbipe",
@@ -1815,7 +1875,8 @@
         "date": "2026-10-28",
         "source": "https://github.com/miao-org/awesome-supermimic/commit/9706213a5c3eee8ea16e0e53fdc3d589eab23441"
       },
-      "stack": "Isaac Lab / PhysX"
+      "stack": "Isaac Lab / PhysX",
+      "scope": "dedicated"
     },
     {
       "repo": "swaggyliu/FlatWorld",
@@ -1863,7 +1924,13 @@
         "date": "2026-10-26",
         "source": "https://github.com/miao-org/awesome-supermimic/commit/28231b6aecd7dd705bb390f3d309b3b544c4e416"
       },
-      "stack": "FlatWorld / 2D"
+      "stack": "FlatWorld / 2D",
+      "scope": "integration",
+      "scope_note": {
+        "en": "SuperMimic-2D inside a physics engine with several world-model controllers.",
+        "zh": "二维物理引擎与多种世界模型控制器中的 SuperMimic-2D。"
+      },
+      "scope_source": "https://github.com/swaggyliu/FlatWorld/blob/c0f262d52e6492705079928ac69e453c775daeed/README.md"
     },
     {
       "repo": "azizkhadraoui/g05",
@@ -1906,7 +1973,13 @@
         "date": "2026-10-26",
         "source": "https://github.com/miao-org/awesome-supermimic/commit/28231b6aecd7dd705bb390f3d309b3b544c4e416"
       },
-      "stack": "G0.5 / LIBERO"
+      "stack": "G0.5 / LIBERO",
+      "scope": "integration",
+      "scope_note": {
+        "en": "SuperMimic-style steering within a larger VLA, planning and memory study.",
+        "zh": "VLA、规划与记忆研究中的 SuperMimic 式引导实验。"
+      },
+      "scope_source": "https://github.com/azizkhadraoui/g05/blob/e3de0de50db7d90068483e2d30f2eacd781300b4/README.md"
     }
   ]
 }

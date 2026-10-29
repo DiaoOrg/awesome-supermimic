@@ -23,6 +23,10 @@ BEGIN = "<!-- BEGIN GENERATED PROJECTS -->"
 END = "<!-- END GENERATED PROJECTS -->"
 REPOSITORY = re.compile(r"[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+\Z")
 LANGUAGES = {"en": "README.md", "zh": "README_zh-CN.md"}
+SCOPES = {
+    "dedicated": {"en": "Dedicated repositories", "zh": "SuperMimic 专项仓库"},
+    "integration": {"en": "Integrations in broader projects", "zh": "较大项目中的集成"},
+}
 
 
 class FetchError(Exception):
@@ -78,6 +82,15 @@ def load_catalog(path: Path) -> dict:
             raise ValueError(f"Repository link mismatch: {repo}")
         if project["category"] not in ids:
             raise ValueError(f"Unknown category: {repo}")
+        if project.get("scope") not in SCOPES:
+            raise ValueError(f"Explicit repository scope required: {repo}")
+        if project["scope"] == "integration":
+            localized(project.get("scope_note", {}), "scope note")
+            if not re.fullmatch(
+                rf"https://github.com/{re.escape(repo)}/blob/[a-f0-9]{{40}}/.+",
+                project.get("scope_source", ""),
+            ):
+                raise ValueError(f"Pinned repository-scope evidence required: {repo}")
         for field in ("name", "author", "stack", "anchor"):
             if (
                 not isinstance(project[field], str)
@@ -268,6 +281,18 @@ def cell(text: str) -> str:
     return html.escape(text, quote=False).replace("|", "&#124;")
 
 
+def grouped_projects(
+    projects: list[dict], snapshot: dict
+) -> tuple[list[dict], list[dict]]:
+    """Keep whole-framework popularity out of the dedicated-project ranking."""
+    dedicated = ranked([p for p in projects if p["scope"] == "dedicated"], snapshot)
+    integrations = sorted(
+        (p for p in projects if p["scope"] == "integration"),
+        key=lambda p: p["repo"].casefold(),
+    )
+    return dedicated, integrations
+
+
 def badge(project: dict, snapshot: dict) -> str:
     repo = snapshot["repositories"][project["repo"]]["full_name"]
     return (
@@ -291,7 +316,8 @@ def details_url(project: dict, lang: str) -> str:
 
 def render_catalog(catalog: dict, snapshot: dict, lang: str) -> str:
     zh = lang == "zh"
-    projects = ranked(catalog["projects"], snapshot)
+    dedicated, integrations = grouped_projects(catalog["projects"], snapshot)
+    projects = dedicated + integrations
     categories = {c["id"]: c for c in catalog["categories"]}
     lines = [
         f"**{len(projects)} 个项目 · {len(categories)} 个分类**"
@@ -299,18 +325,27 @@ def render_catalog(catalog: dict, snapshot: dict, lang: str) -> str:
         else f"**{len(projects)} projects · {len(categories)} categories**",
         "",
         '<a id="most-starred-projects"></a>',
+        *(['<a id="most-starred-projects--stars-排行榜"></a>'] if zh else []),
+        '<a id="dedicated-projects"></a>',
         "",
-        "### Most Starred Projects" + (" · Stars 排行榜" if zh else ""),
+        ("### SuperMimic 专项仓库" if zh else "### Dedicated SuperMimic Repositories")
+        + f" ({len(dedicated)})",
+        "",
+        (
+            "仅对以 SuperMimic 实现、变体或部署为主要内容的仓库按 Stars 排序；较大项目的分支、模块或实验[单独列出](#integrations-in-broader-projects)，不参与此排名。专项仓库也有发布时间与曝光差异，Stars 不代表技术质量。"
+            if zh
+            else "Stars ranking for repositories primarily dedicated to SuperMimic implementations, variants or deployment. Branches, modules and experiments in broader projects are [listed separately](#integrations-in-broader-projects) and do not compete here. Dedicated repositories still differ in age and exposure; Stars are not a quality score."
+        ),
         "",
     ]
     date = snapshot["snapshot_at"].replace("T", " ").replace("+00:00", " UTC")
     if zh:
         lines += [
-            f"排序依据 GitHub API 快照：**{date}** · 每日按 Stars 降序更新，同分按 `owner/repo` 忽略大小写升序。徽章通过实时 Stars 接口更新（有服务缓存），可能暂时与排序快照不同。Stars 计入整个仓库（含更大框架），反映关注度，不代表基准成绩。"
+            f"排序依据 GitHub API 快照：**{date}** · 每日按 Stars 降序更新，同分按 `owner/repo` 忽略大小写升序。徽章通过实时 Stars 接口更新（有服务缓存），可能暂时与排序快照不同。"
         ]
     else:
         lines += [
-            f"Ranked by GitHub API snapshot: **{date}** · Order refreshed daily, Stars descending, ties by case-insensitive `owner/repo`. Badges query live Stars through a cached service and may temporarily differ from the ranking snapshot. Stars cover the whole repository, including broader frameworks; they measure attention, not benchmark quality."
+            f"Ranked by GitHub API snapshot: **{date}** · Order refreshed daily, Stars descending, ties by case-insensitive `owner/repo`. Badges query live Stars through a cached service and may temporarily differ from the ranking snapshot."
         ]
     if snapshot["failures"]:
         lines += [
@@ -343,10 +378,33 @@ def render_catalog(catalog: dict, snapshot: dict, lang: str) -> str:
         else "| Rank | Project | GitHub&nbsp;Stars | Category | Highlights |",
         "| ---: | --- | --- | --- | --- |",
     ]
-    for rank, p in enumerate(projects, 1):
+    for rank, p in enumerate(dedicated, 1):
         cat = categories[p["category"]]
         lines.append(
             f"| {rank} | [{cell(p['name'])}]({repository_url(p, snapshot)}) | {badge(p, snapshot)} | [{cell(cat['short_title'][lang])}](#{cat['anchor'][lang]}) | {cell(p['highlights'][lang])} |"
+        )
+    lines += [
+        "",
+        '<a id="integrations-in-broader-projects"></a>',
+        "",
+        ("### 较大项目中的集成与扩展" if zh else "### Integrations in Broader Projects")
+        + f" ({len(integrations)})",
+        "",
+        (
+            "按 `owner/repo` 名称排列，不设名次。徽章是**整仓 Stars，仅供背景参考**；GitHub 不提供分支或模块的独立 Star 数，不能把历史积累或近期增长归因于 SuperMimic。集成位置附来源，技术价值仍可见维护者精选与项目详情。"
+            if zh
+            else "Alphabetical by `owner/repo`, without ranks. Badges show **whole-repository Stars for context only**. GitHub provides no separate branch or module Star count; neither historical totals nor recent growth can be attributed to SuperMimic. Integration scope links to evidence; see picks and project details for technical value."
+        ),
+        "",
+        "| 项目 | 整仓&nbsp;Stars（参考） | 分类 | 集成位置与来源 |"
+        if zh
+        else "| Project | Repository&nbsp;Stars (context) | Category | Integration scope & source |",
+        "| --- | --- | --- | --- |",
+    ]
+    for p in integrations:
+        cat = categories[p["category"]]
+        lines.append(
+            f"| [{cell(p['name'])}]({repository_url(p, snapshot)}) | {badge(p, snapshot)} | [{cell(cat['short_title'][lang])}](#{cat['anchor'][lang]}) | [{cell(p['scope_note'][lang])}]({p['scope_source']}) |"
         )
     lines += [
         "",
@@ -360,9 +418,9 @@ def render_catalog(catalog: dict, snapshot: dict, lang: str) -> str:
         ),
         "",
         (
-            "分类内同样按 Stars 排序；完整实验、限制与 GIF 见各项目详情。"
+            "分类内同样分组：专项仓库按 Stars 降序，较大项目的集成按仓库名称排列。完整实验、限制与 GIF 见各项目详情。"
             if zh
-            else "Each category also follows Stars order. Full experiments, limitations and GIFs live in the linked project details."
+            else "Within each category: dedicated repositories by Stars, then broader-project integrations alphabetically. Full experiments, limitations and GIFs live in the linked project details."
         ),
         "",
         '<a id="maintainers-picks"></a>',
@@ -415,7 +473,11 @@ def render_catalog(catalog: dict, snapshot: dict, lang: str) -> str:
             f"### {cat['title'][lang]} ({len(members)})",
             "",
         ]
+        previous_scope = None
         for p in members:
+            if p["scope"] != previous_scope:
+                previous_scope = p["scope"]
+                lines += [f"**{SCOPES[p['scope']][lang]}**", ""]
             lines += [
                 *(f'<a id="{a}"></a>' for a in p["legacy_anchors"]),
                 "",
@@ -430,6 +492,16 @@ def render_catalog(catalog: dict, snapshot: dict, lang: str) -> str:
                 cell(p["highlights"][lang]),
                 "",
             ]
+            if p["scope"] == "integration":
+                lines += [
+                    (
+                        "整仓 Stars 仅供参考 · "
+                        if zh
+                        else "Whole-repository Stars, context only · "
+                    )
+                    + f"[{cell(p['scope_note'][lang])}]({p['scope_source']})",
+                    "",
+                ]
             links = [
                 f"[{'仓库' if zh else 'Repository'}]({repository_url(p, snapshot)})"
             ]
