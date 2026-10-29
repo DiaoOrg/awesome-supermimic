@@ -1,5 +1,14 @@
 # Community media credits
 
+## InstantTrack animated preview
+
+Checked on **2026-10-29**, source revision **`a33691a08bca8802d9d2985f62e2567479735a8e`**.
+
+- **Source / author:** [Huy-Quang-Dao / instantTrack](https://github.com/Huy-Quang-Dao/instantTrack).
+- **Original preview:** [media/equal_time_15min.gif](https://github.com/Huy-Quang-Dao/instantTrack/blob/a33691a08bca8802d9d2985f62e2567479735a8e/media/equal_time_15min.gif). Embedded directly from the pinned upstream revision at 480 pixels wide, preserving aspect ratio, frame order and timing; no local copy or re-encoding.
+- **Context:** The author's simulation comparison on `fallAndGetUp1_subject1` after the same 15-minute training budget on one RTX 5090: SuperMimic + EMA on the left and InstantTrack on the right. The left policy falls at 8.4 seconds. This is one demonstration, not the complete 40-clip evaluation or an experiment rerun by this collection.
+- **Rights:** The upstream attribution excludes data-derived media from its MIT code license and provides them for non-commercial research and illustration. Rights remain with the source owners; this preview is excluded from this collection's CC0 dedication. See the [upstream terms](https://github.com/Huy-Quang-Dao/instantTrack/blob/a33691a08bca8802d9d2985f62e2567479735a8e/README.md#attribution-and-licenses).
+
 ## SuperMimic Mjlab animated preview
 
 Checked on **2026-10-28**, source revision **`77183062eb92026bfbee2daf276f87cad36fd957`**.

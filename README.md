@@ -72,11 +72,11 @@ The authors report surpassing SONIC's released-checkpoint return after **3 hours
 
 ## Community projects
 
-**38 community projects**, grouped by purpose. Twelve project entries were added or refreshed against upstream documentation and selected source files on **2026-10-28**; the In-Hand Rotation mjlab entry was also added on that date. Other entries retain their earlier source snapshots. Each entry links to the reviewed source revision. Results and demos are upstream reports; this list has not independently rerun the experiments.
+**39 community projects**, grouped by purpose. Twelve project entries were added or refreshed against upstream documentation and selected source files on **2026-10-28**; the In-Hand Rotation mjlab entry was also added on that date. InstantTrack was added on **2026-10-29**. Other entries retain their earlier source snapshots. Each entry links to the reviewed source revision. Results and demos are upstream reports; this list has not independently rerun the experiments.
 
 - 🚀 **[Real-robot deployment and Sim2Real](#real-robot-deployment-and-sim2real)** — **2 projects** · Follow real-robot runtimes and sim-to-real transfer paths.
 - 🔬 **[Independent reproductions](#independent-reproductions)** — **5 projects** · Reproduce and evaluate the original method.
-- 🧩 **[Method and morphology variants](#method-and-morphology-variants)** — **5 projects** · Explore algorithm changes, robot-morphology adaptations and focused control studies.
+- 🧩 **[Method and morphology variants](#method-and-morphology-variants)** — **6 projects** · Explore algorithm changes, robot-morphology adaptations and focused control studies.
 - 👁️ **[Perception, terrain and quadrupeds](#perception-terrain-and-quadrupeds)** — **4 projects** · Find vision, height-scan, terrain and quadruped task adaptations.
 - 🦾 **[Manipulation and dexterous hands](#manipulation-and-dexterous-hands)** — **4 projects** · Find arm, hand and object-interaction tasks.
 - 💪 **[Muscle, interaction and diagnostics](#muscle-interaction-and-diagnostics)** — **3 projects** · Explore muscle-actuated bodies, physical interaction and contact-focused studies.
@@ -179,6 +179,18 @@ Reimplementations of the original method, with training, evaluation and reproduc
 ## Method and morphology variants
 
 Algorithm changes, multi-robot morphology adaptations and focused control studies.
+
+### InstantTrack
+
+[Repository](https://github.com/Huy-Quang-Dao/instantTrack) · [Setup](https://github.com/Huy-Quang-Dao/instantTrack/blob/a33691a08bca8802d9d2985f62e2567479735a8e/README.md#setup) · [Results and ablations](https://github.com/Huy-Quang-Dao/instantTrack/blob/a33691a08bca8802d9d2985f62e2567479735a8e/results/report.md) · [Training presets](https://github.com/Huy-Quang-Dao/instantTrack/blob/a33691a08bca8802d9d2985f62e2567479735a8e/scripts/presets.sh)
+
+- **By Huy-Quang-Dao.** Builds on the mjlab port of supermimic_vibed for G1, combining GPU training-loop optimizations, EMA policy weights, a smaller world model and failure-focused resets; the main preset also adds a contact reward during imagined rollouts.
+- **Upstream report:** On one RTX 5090, all three seeds reach **return ≥ 0.82 and 0 / 40 failed LAFAN1 clips in about 15 minutes**, with mean return **0.831** at that point. The reported **2.2×** speed-up is against the author's SuperMimic + EMA baseline on the same machine; the **6×** figure uses their plain reimplementation.
+- **Useful context:** Time marks the first of three consecutive qualifying checkpoints, excludes offline evaluation and is not an end-to-end setup time. Evaluation covers the training clips in simulation; no larger motion library or real-robot results are reported. Model size, update count and training reward differ from the baseline; this is not a cross-project speed ranking. [Source snapshot](https://github.com/Huy-Quang-Dao/instantTrack/blob/a33691a08bca8802d9d2985f62e2567479735a8e/README.md).
+
+<a href="https://github.com/Huy-Quang-Dao/instantTrack/blob/a33691a08bca8802d9d2985f62e2567479735a8e/media/equal_time_15min.gif"><img src="https://raw.githubusercontent.com/Huy-Quang-Dao/instantTrack/a33691a08bca8802d9d2985f62e2567479735a8e/media/equal_time_15min.gif" width="480" alt="Simulation · SuperMimic + EMA versus InstantTrack after 15 minutes of training"></a><br><sub>Upstream simulation · same 15-minute training budget; SuperMimic + EMA (left), InstantTrack (right), fall-and-get-up motion</sub>
+
+<br>
 
 ### MorphMimic
 
