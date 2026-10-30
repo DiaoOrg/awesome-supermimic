@@ -88,7 +88,7 @@ Within each category, **⭐ highlighted projects come first**, followed by the r
 ### ⭐ Featured projects
 
 <table width="100%">
-<thead><tr><th align="left" width="32%">Explore</th><th align="left" width="36%">Project · Stars</th><th align="left" width="32%">Highlight</th></tr></thead>
+<thead><tr><th align="left" width="32%">Explore</th><th align="left" width="40%">Project · Stars</th><th align="left" width="28%">Highlight</th></tr></thead>
 <tbody>
 <tr>
 <td rowspan="8" valign="top"><a href="#reproductions-methods-and-training-frameworks">🔬&nbsp;Reproduction&nbsp;&amp;&nbsp;training&nbsp;(17)</a></td>

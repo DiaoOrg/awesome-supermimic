@@ -88,7 +88,7 @@ SuperMimic 从仿真状态转移中学习一个共享的可微世界模型，再
 ### ⭐ 精选项目
 
 <table width="100%">
-<thead><tr><th align="left" width="32%">方向</th><th align="left" width="36%">项目 · Stars</th><th align="left" width="32%">亮点</th></tr></thead>
+<thead><tr><th align="left" width="32%">方向</th><th align="left" width="40%">项目 · Stars</th><th align="left" width="28%">亮点</th></tr></thead>
 <tbody>
 <tr>
 <td rowspan="8" valign="top"><a href="#复现方法与训练框架">🔬&nbsp;复现与训练（17）</a></td>
