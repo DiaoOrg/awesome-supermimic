@@ -88,77 +88,77 @@ Within each category, **⭐ highlighted projects come first**, followed by the r
 <tbody>
 <tr>
 <td rowspan="8" valign="middle"><a href="#reproductions-methods-and-training-frameworks">🔬&nbsp;Reproduction&nbsp;&amp;&nbsp;training&nbsp;(17)</a></td>
-<td valign="top"><strong><a href="#supermimic_vibed">supermimic_vibed</a></strong>&nbsp;<a href="https://github.com/zita-ch/supermimic_vibed/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/zita-ch/supermimic_vibed.svg?style=social"></a></td>
+<td valign="top" nowrap="nowrap"><strong><a href="#supermimic_vibed">supermimic_vibed</a></strong>&nbsp;<a href="https://github.com/zita-ch/supermimic_vibed/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/zita-ch/supermimic_vibed.svg?style=social"></a></td>
 <td valign="top"><strong>Reusable Isaac Lab G1 baseline:</strong> 40/40 LAFAN1 clips completed after 1.47 h training on one RTX PRO 6000 Blackwell; return 0.829.</td>
 </tr>
 <tr>
-<td valign="top"><strong><a href="#supermimic-reproduced">SuperMimic-Reproduced</a></strong>&nbsp;<a href="https://github.com/CuboiLeo/SuperMimic-Reproduced/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/CuboiLeo/SuperMimic-Reproduced.svg?style=social"></a></td>
+<td valign="top" nowrap="nowrap"><strong><a href="#supermimic-reproduced">SuperMimic-Reproduced</a></strong>&nbsp;<a href="https://github.com/CuboiLeo/SuperMimic-Reproduced/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/CuboiLeo/SuperMimic-Reproduced.svg?style=social"></a></td>
 <td valign="top"><strong>Large-library reproduction with released weights:</strong> 495/129,943 BONES-SEED training clips fail after 7.1 h on 4× RTX 5090; paper observations, return 0.930.</td>
 </tr>
 <tr>
-<td valign="top"><strong><a href="#unisupermimic">UniSuperMimic</a></strong>&nbsp;<a href="https://github.com/Motphys/Uni-SuperMimic/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/Motphys/Uni-SuperMimic.svg?style=social"></a></td>
+<td valign="top" nowrap="nowrap"><strong><a href="#unisupermimic">UniSuperMimic</a></strong>&nbsp;<a href="https://github.com/Motphys/Uni-SuperMimic/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/Motphys/Uni-SuperMimic.svg?style=social"></a></td>
 <td valign="top"><strong>UniLab training-loop and EMA improvements:</strong> 193/129,487 BONES-SEED training clips fail at 8k iterations; return 0.9395 on one RTX 4090 (48 GB reported); optimized-run time unspecified.</td>
 </tr>
 <tr>
-<td valign="top"><strong><a href="#morphmimic">MorphMimic</a></strong>&nbsp;<a href="https://github.com/lzyang2000/morphmimic/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/lzyang2000/morphmimic.svg?style=social"></a></td>
+<td valign="top" nowrap="nowrap"><strong><a href="#morphmimic">MorphMimic</a></strong>&nbsp;<a href="https://github.com/lzyang2000/morphmimic/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/lzyang2000/morphmimic.svg?style=social"></a></td>
 <td valign="top"><strong>One policy across three bodies:</strong> released ONNX policy for G1, X2 Ultra and T2, plus direct PICO human-motion input; hardware tested on G1 only.</td>
 </tr>
 <tr>
-<td valign="top"><strong><a href="#instanttrack">InstantTrack</a></strong>&nbsp;<a href="https://github.com/Huy-Quang-Dao/instantTrack/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/Huy-Quang-Dao/instantTrack.svg?style=social"></a></td>
+<td valign="top" nowrap="nowrap"><strong><a href="#instanttrack">InstantTrack</a></strong>&nbsp;<a href="https://github.com/Huy-Quang-Dao/instantTrack/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/Huy-Quang-Dao/instantTrack.svg?style=social"></a></td>
 <td valign="top"><strong>15-minute training on one RTX 5090:</strong> all three seeds reach LAFAN1 return ≥0.82 with 0/40 failed training clips; offline evaluation excluded.</td>
 </tr>
 <tr>
-<td valign="top"><strong><a href="#allmimic">allmimic</a></strong>&nbsp;<a href="https://github.com/Shimingyi/allmimic/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/Shimingyi/allmimic.svg?style=social"></a></td>
+<td valign="top" nowrap="nowrap"><strong><a href="#allmimic">allmimic</a></strong>&nbsp;<a href="https://github.com/Shimingyi/allmimic/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/Shimingyi/allmimic.svg?style=social"></a></td>
 <td valign="top"><strong>Mixed residual/absolute actions and balanced sampling:</strong> one RTX 4090, 0.83 h, LAFAN1 return 0.91 and 0/40 failures; evaluation time excluded.</td>
 </tr>
 <tr>
-<td valign="top"><strong><a href="#scalebfm_plus--supermimic">ScaleBFM_Plus</a></strong>&nbsp;<a href="https://github.com/Hxxxz0/ScaleBFM_Plus/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/Hxxxz0/ScaleBFM_Plus.svg?style=social"></a></td>
+<td valign="top" nowrap="nowrap"><strong><a href="#scalebfm_plus--supermimic">ScaleBFM_Plus</a></strong>&nbsp;<a href="https://github.com/Hxxxz0/ScaleBFM_Plus/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/Hxxxz0/ScaleBFM_Plus.svg?style=social"></a></td>
 <td valign="top"><strong>Humanoid transformer with held-out evaluation:</strong> 99.5% tracking success on 2,575 held-out motions after 8.3 h on 16× RTX 5090.</td>
 </tr>
 <tr>
-<td valign="top"><strong><a href="#supermimic-mjlab">SuperMimic Mjlab</a></strong>&nbsp;<a href="https://github.com/Breezewrf/supermimic_mjlab/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/Breezewrf/supermimic_mjlab.svg?style=social"></a></td>
+<td valign="top" nowrap="nowrap"><strong><a href="#supermimic-mjlab">SuperMimic Mjlab</a></strong>&nbsp;<a href="https://github.com/Breezewrf/supermimic_mjlab/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/Breezewrf/supermimic_mjlab.svg?style=social"></a></td>
 <td valign="top"><strong>Traceable performance ablations:</strong> LAFAN return rises from 0.6016 to 0.8526; 15k iterations take ≈4 h on one A6000; policy and world-model checkpoints released.</td>
 </tr>
 <tr>
 <td rowspan="2" valign="middle"><a href="#perception-terrain-and-quadrupeds">👁️&nbsp;Perception&nbsp;&amp;&nbsp;terrain&nbsp;(4)</a></td>
-<td valign="top"><strong><a href="#instinctmj--supermimic">InstinctMJ</a></strong>&nbsp;<a href="https://github.com/project-instinct/InstinctMJ/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/project-instinct/InstinctMJ.svg?style=social"></a></td>
+<td valign="top" nowrap="nowrap"><strong><a href="#instinctmj--supermimic">InstinctMJ</a></strong>&nbsp;<a href="https://github.com/project-instinct/InstinctMJ/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/project-instinct/InstinctMJ.svg?style=social"></a></td>
 <td valign="top"><strong>Depth-aware G1 terrain tracking:</strong> Render route reports 94.9% success over 10 motions after ≈2.7 h on one RTX 3090; one training seed.</td>
 </tr>
 <tr>
-<td valign="top"><strong><a href="#go2-supermimic">Go2-SuperMimic</a></strong>&nbsp;<a href="https://github.com/Zhengtianjin/go2-supermimic/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/Zhengtianjin/go2-supermimic.svg?style=social"></a></td>
+<td valign="top" nowrap="nowrap"><strong><a href="#go2-supermimic">Go2-SuperMimic</a></strong>&nbsp;<a href="https://github.com/Zhengtianjin/go2-supermimic/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/Zhengtianjin/go2-supermimic.svg?style=social"></a></td>
 <td valign="top"><strong>Quadruped chase-and-dodge with perception:</strong> three released actors cover flat ground, obstacles and terrain, with evaluation/recording tools; simulation only.</td>
 </tr>
 <tr>
 <td rowspan="3" valign="middle"><a href="#manipulation-and-dexterous-hands">🦾&nbsp;Manipulation&nbsp;&amp;&nbsp;hands&nbsp;(4)</a></td>
-<td valign="top"><strong><a href="#dex-supermimic">Dex SuperMimic</a></strong>&nbsp;<a href="https://github.com/CumulusAlpha/Dex-Supermimic/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/CumulusAlpha/Dex-Supermimic.svg?style=social"></a></td>
+<td valign="top" nowrap="nowrap"><strong><a href="#dex-supermimic">Dex SuperMimic</a></strong>&nbsp;<a href="https://github.com/CumulusAlpha/Dex-Supermimic/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/CumulusAlpha/Dex-Supermimic.svg?style=social"></a></td>
 <td valign="top"><strong>Wuji-hand cube reorientation and pen spinning:</strong> three 8k-iteration checkpoints, bundled assets and Viser playback make the hand tasks directly inspectable.</td>
 </tr>
 <tr>
-<td valign="top"><strong><a href="#supermimic-for-robot-manipulation">supermimic_manipulation</a></strong>&nbsp;<a href="https://github.com/emoPointer/supermimic_manipulation/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/emoPointer/supermimic_manipulation.svg?style=social"></a></td>
+<td valign="top" nowrap="nowrap"><strong><a href="#supermimic-for-robot-manipulation">supermimic_manipulation</a></strong>&nbsp;<a href="https://github.com/emoPointer/supermimic_manipulation/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/emoPointer/supermimic_manipulation.svg?style=social"></a></td>
 <td valign="top"><strong>Three ARX5 manipulation tasks:</strong> 100% / 94.9% / 96.9% success on held-out resets (256 episodes/task); 1.8–2.8 h per run sharing one A100 80 GB; weights released.</td>
 </tr>
 <tr>
-<td valign="top"><strong><a href="#in-hand-rotation-mjlab">In-Hand Rotation mjlab</a></strong>&nbsp;<a href="https://github.com/Msornerrrr/in-hand-rotation-mjlab/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/Msornerrrr/in-hand-rotation-mjlab.svg?style=social"></a></td>
+<td valign="top" nowrap="nowrap"><strong><a href="#in-hand-rotation-mjlab">In-Hand Rotation mjlab</a></strong>&nbsp;<a href="https://github.com/Msornerrrr/in-hand-rotation-mjlab/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/Msornerrrr/in-hand-rotation-mjlab.svg?style=social"></a></td>
 <td valign="top"><strong>World-model vs PPO on LEAP cube rotation:</strong> matches PPO’s 6.5-hour reward level in 25 min on one RTX 4090; simulation, one run per configuration.</td>
 </tr>
 <tr>
 <td rowspan="1" valign="middle"><a href="#muscle-interaction-and-diagnostics">💪&nbsp;Muscles&nbsp;&amp;&nbsp;interaction&nbsp;(3)</a></td>
-<td valign="top"><strong><a href="#muscle-supermimic">muscle-supermimic</a></strong>&nbsp;<a href="https://github.com/kaibohex/muscle-supermimic/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/kaibohex/muscle-supermimic.svg?style=social"></a></td>
+<td valign="top" nowrap="nowrap"><strong><a href="#muscle-supermimic">muscle-supermimic</a></strong>&nbsp;<a href="https://github.com/kaibohex/muscle-supermimic/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/kaibohex/muscle-supermimic.svg?style=social"></a></td>
 <td valign="top"><strong>700-muscle whole-body control:</strong> MS-Human-700 tracks 104/108 held-out KIT clips after 10.1 h on one RTX 5090; also supports 354-muscle MyoFullBody.</td>
 </tr>
 <tr>
 <td rowspan="1" valign="middle"><a href="#robot-porting-and-retargeting">🤖&nbsp;Robot&nbsp;ports&nbsp;(6)</a></td>
-<td valign="top"><strong><a href="#supermimic-retargeted">SuperMimic Retargeted</a></strong>&nbsp;<a href="https://github.com/tianshuwu/supermimic-retargeted/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/tianshuwu/supermimic-retargeted.svg?style=social"></a></td>
+<td valign="top" nowrap="nowrap"><strong><a href="#supermimic-retargeted">SuperMimic Retargeted</a></strong>&nbsp;<a href="https://github.com/tianshuwu/supermimic-retargeted/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/tianshuwu/supermimic-retargeted.svg?style=social"></a></td>
 <td valign="top"><strong>Motion preparation for three robot bodies:</strong> SOMA retargeting, coordinate correction and foot-contact checks for G1, A3 and X2 Ultra; training weights not released.</td>
 </tr>
 <tr>
 <td rowspan="1" valign="middle"><a href="#real-robot-deployment-and-sim2real">🚀&nbsp;Real&nbsp;robots&nbsp;(2)</a></td>
-<td valign="top"><strong><a href="#supermimic-repro-sim2real">SuperMimic-Repro-Sim2Real</a></strong>&nbsp;<a href="https://github.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real.svg?style=social"></a></td>
+<td valign="top" nowrap="nowrap"><strong><a href="#supermimic-repro-sim2real">SuperMimic-Repro-Sim2Real</a></strong>&nbsp;<a href="https://github.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real.svg?style=social"></a></td>
 <td valign="top"><strong>Clip-specific fine-tuning through real-G1 deployment:</strong> a ≈22 s dance with rapid turns and a one-foot landing completed twice; slack safety tether used.</td>
 </tr>
 <tr>
 <td rowspan="1" valign="middle"><a href="#inspired-experiments">💡&nbsp;Learning&nbsp;examples&nbsp;(2)</a></td>
-<td valign="top"><strong><a href="#flatworld--supermimic-2d">FlatWorld</a></strong>&nbsp;<a href="https://github.com/swaggyliu/FlatWorld/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/swaggyliu/FlatWorld.svg?style=social"></a></td>
+<td valign="top" nowrap="nowrap"><strong><a href="#flatworld--supermimic-2d">FlatWorld</a></strong>&nbsp;<a href="https://github.com/swaggyliu/FlatWorld/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/swaggyliu/FlatWorld.svg?style=social"></a></td>
 <td valign="top"><strong>A readable 2D learning loop:</strong> eight-joint humanoid, procedural references, training and per-skill rendering; a 33.3 s multi-skill demo, not a G1 benchmark.</td>
 </tr>
 </tbody>
