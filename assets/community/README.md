@@ -92,7 +92,7 @@ These images are embedded directly from their source repositories, without editi
 
 | Project | Image and source | What it shows |
 | --- | --- | --- |
-| [InstinctMJ · SuperMimic](https://github.com/project-instinct/InstinctMJ) | [world_model_simple.png](https://github.com/project-instinct/InstinctMJ/blob/7ca851e002980011f24a1664011305d0ba94aefc/src/instinct_mj/rl/supermimic/assets/world_model_simple.png) | Method diagram · robot-state and visual-latent prediction |
+| [InstinctMJ · SuperMimic](https://github.com/project-instinct/InstinctMJ) | [method.png](https://github.com/project-instinct/InstinctMJ/blob/3f0952d36268c6aad299e256d27cc65d3bcc1434/src/instinct_mj/rl/supermimic/assets/method.png) | Current method diagram · predicted state and differentiable depth rendering |
 | [SuperMimic-perceptive](https://github.com/mode1223345/SuperMimic-perceptive) | [Curves.png](https://github.com/mode1223345/SuperMimic-perceptive/blob/3d38bacbaf5bee7e782bdada6a6da678264d0bfa/results/Curves.png) | Training curves · 2026-10-24 snapshot; control comparisons in progress |
 
 ### Local result figure copy
@@ -105,7 +105,7 @@ The six PNGs below preserve the selected upstream table content. The tables were
 
 | Screenshot | Pinned source | Selection |
 | --- | --- | --- |
-| [vibe-results.png](vibe-results.png) | [supermimic_vibe](https://github.com/dhmbb2/supermimic_vibe/blob/072f0910dadc9d95c720e625b546120e9ce917c9/README.md) | Complete reproduction-status table, including partial, pending, blocked and out-of-scope items. |
+| [vibe-results.png](vibe-results.png) | [supermimic_vibe](https://github.com/dhmbb2/supermimic_vibe/blob/072f0910dadc9d95c720e625b546120e9ce917c9/README.md) | Historical reproduction-status table from the linked revision. Kept as an attributed preview; the README text cites the refreshed 2026-10-30 report, including newer BONES-SEED results. |
 | [rethinking-comparison.png](rethinking-comparison.png) | [Rethinking SuperMimic](https://github.com/btx0424/rethinking-supermimic/blob/ecdaeb6a916a16cf7eb69b19226c17be31a6bc27/README.md) | Excerpt: header and first three rows — dynamics state, MLP details and world-model loss. |
 | [pera-tracking-results.png](pera-tracking-results.png) | [SuperMimic-PERA](https://github.com/shangchaohu718/supermimic-pera/blob/0e89e55187a800341e609129b5d5200a607a467c/README.md) | Complete tracking-checkpoint table. This is the tracker baseline, not the separate skateboarding result. |
 | [contact-bptt-results.png](contact-bptt-results.png) | [Ref2Dex · Dex Contact MBRL](https://github.com/hitsz-oyx/Ref2Dex-agent/blob/31cdb9ac759838b83d62bbc0addfd5cf28f3dff4/src/task/dex-contact-mbrl/docs/CONTACT-REFINEMENT-RESULTS-20261026.md) | Complete three-arm native-physics comparison. Higher reference survival accompanies lower mean return. |
