@@ -83,7 +83,9 @@ The authors report surpassing SONIC's released-checkpoint return after **3 hours
 
 Within each category, **⭐ highlighted projects come first**, followed by the remaining projects; **each group is sorted by GitHub Stars, highest first**. The overview selections follow the same Stars order (2026-10-30 snapshot; ties by repository name). Badges update dynamically; the order does not. Stars reflect repository popularity; results and demos are upstream reports.
 
-### Featured projects
+<a name="featured-projects"></a>
+
+### ⭐ Featured projects
 
 <table width="100%">
 <thead><tr><th align="left" width="32%">Explore</th><th align="left" width="36%">Project · Stars</th><th align="left" width="32%">Highlight</th></tr></thead>
