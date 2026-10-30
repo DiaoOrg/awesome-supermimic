@@ -84,7 +84,7 @@ SuperMimic 从仿真状态转移中学习一个共享的可微世界模型，再
 各分类内，**⭐ 亮点项目在前，其余项目在后，两组内部各按 GitHub Stars 降序**排列。汇总表的推荐项目也按 Stars 降序排列（2026-10-30 快照；同数按仓库名排序）。徽章动态更新，排列顺序不会自动变化。Stars 体现仓库关注度；结果与演示为上游报告。
 
 <table width="100%">
-<thead><tr><th align="left" width="22%">方向</th><th align="left" width="30%">项目 · Stars</th><th align="left" width="48%">亮点</th></tr></thead>
+<thead><tr><th align="left" width="32%">方向</th><th align="left" width="36%">项目 · Stars</th><th align="left" width="32%">亮点</th></tr></thead>
 <tbody>
 <tr>
 <td rowspan="8" valign="middle"><a href="#复现方法与训练框架">🔬&nbsp;复现与训练（17）</a></td>

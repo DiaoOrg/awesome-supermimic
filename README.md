@@ -84,10 +84,10 @@ The authors report surpassing SONIC's released-checkpoint return after **3 hours
 Within each category, **⭐ highlighted projects come first**, followed by the remaining projects; **each group is sorted by GitHub Stars, highest first**. The overview selections follow the same Stars order (2026-10-30 snapshot; ties by repository name). Badges update dynamically; the order does not. Stars reflect repository popularity; results and demos are upstream reports.
 
 <table width="100%">
-<thead><tr><th align="left" width="22%">Explore</th><th align="left" width="30%">Project · Stars</th><th align="left" width="48%">Highlight</th></tr></thead>
+<thead><tr><th align="left" width="32%">Explore</th><th align="left" width="36%">Project · Stars</th><th align="left" width="32%">Highlight</th></tr></thead>
 <tbody>
 <tr>
-<td rowspan="8" valign="middle"><a href="#reproductions-methods-and-training-frameworks">🔬&nbsp;Training&nbsp;(17)</a></td>
+<td rowspan="8" valign="middle"><a href="#reproductions-methods-and-training-frameworks">🔬&nbsp;Reproduction&nbsp;&amp;&nbsp;training&nbsp;(17)</a></td>
 <td valign="top"><strong><a href="#supermimic_vibed">supermimic_vibed</a></strong><br><a href="https://github.com/zita-ch/supermimic_vibed/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/zita-ch/supermimic_vibed.svg?style=social"></a></td>
 <td valign="top"><strong>Reusable Isaac Lab G1 baseline:</strong> 40/40 LAFAN1 clips completed after 1.47 h training on one RTX PRO 6000 Blackwell; return 0.829.</td>
 </tr>
@@ -120,7 +120,7 @@ Within each category, **⭐ highlighted projects come first**, followed by the r
 <td valign="top"><strong>Traceable performance ablations:</strong> LAFAN return rises from 0.6016 to 0.8526; 15k iterations take ≈4 h on one A6000; policy and world-model checkpoints released.</td>
 </tr>
 <tr>
-<td rowspan="2" valign="middle"><a href="#perception-terrain-and-quadrupeds">👁️&nbsp;Terrain&nbsp;(4)</a></td>
+<td rowspan="2" valign="middle"><a href="#perception-terrain-and-quadrupeds">👁️&nbsp;Perception&nbsp;&amp;&nbsp;terrain&nbsp;(4)</a></td>
 <td valign="top"><strong><a href="#instinctmj--supermimic">InstinctMJ</a></strong><br><a href="https://github.com/project-instinct/InstinctMJ/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/project-instinct/InstinctMJ.svg?style=social"></a></td>
 <td valign="top"><strong>Depth-aware G1 terrain tracking:</strong> Render route reports 94.9% success over 10 motions after ≈2.7 h on one RTX 3090; one training seed.</td>
 </tr>
@@ -129,7 +129,7 @@ Within each category, **⭐ highlighted projects come first**, followed by the r
 <td valign="top"><strong>Quadruped chase-and-dodge with perception:</strong> three released actors cover flat ground, obstacles and terrain, with evaluation/recording tools; simulation only.</td>
 </tr>
 <tr>
-<td rowspan="3" valign="middle"><a href="#manipulation-and-dexterous-hands">🦾&nbsp;Manipulation&nbsp;(4)</a></td>
+<td rowspan="3" valign="middle"><a href="#manipulation-and-dexterous-hands">🦾&nbsp;Manipulation&nbsp;&amp;&nbsp;hands&nbsp;(4)</a></td>
 <td valign="top"><strong><a href="#dex-supermimic">Dex SuperMimic</a></strong><br><a href="https://github.com/CumulusAlpha/Dex-Supermimic/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/CumulusAlpha/Dex-Supermimic.svg?style=social"></a></td>
 <td valign="top"><strong>Wuji-hand cube reorientation and pen spinning:</strong> three 8k-iteration checkpoints, bundled assets and Viser playback make the hand tasks directly inspectable.</td>
 </tr>
@@ -142,12 +142,12 @@ Within each category, **⭐ highlighted projects come first**, followed by the r
 <td valign="top"><strong>World-model vs PPO on LEAP cube rotation:</strong> matches PPO’s 6.5-hour reward level in 25 min on one RTX 4090; simulation, one run per configuration.</td>
 </tr>
 <tr>
-<td rowspan="1" valign="middle"><a href="#muscle-interaction-and-diagnostics">💪&nbsp;Muscles&nbsp;(3)</a></td>
+<td rowspan="1" valign="middle"><a href="#muscle-interaction-and-diagnostics">💪&nbsp;Muscles&nbsp;&amp;&nbsp;interaction&nbsp;(3)</a></td>
 <td valign="top"><strong><a href="#muscle-supermimic">muscle-supermimic</a></strong><br><a href="https://github.com/kaibohex/muscle-supermimic/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/kaibohex/muscle-supermimic.svg?style=social"></a></td>
 <td valign="top"><strong>700-muscle whole-body control:</strong> MS-Human-700 tracks 104/108 held-out KIT clips after 10.1 h on one RTX 5090; also supports 354-muscle MyoFullBody.</td>
 </tr>
 <tr>
-<td rowspan="1" valign="middle"><a href="#robot-porting-and-retargeting">🤖&nbsp;Retargeting&nbsp;(6)</a></td>
+<td rowspan="1" valign="middle"><a href="#robot-porting-and-retargeting">🤖&nbsp;Robot&nbsp;ports&nbsp;(6)</a></td>
 <td valign="top"><strong><a href="#supermimic-retargeted">SuperMimic Retargeted</a></strong><br><a href="https://github.com/tianshuwu/supermimic-retargeted/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/tianshuwu/supermimic-retargeted.svg?style=social"></a></td>
 <td valign="top"><strong>Motion preparation for three robot bodies:</strong> SOMA retargeting, coordinate correction and foot-contact checks for G1, A3 and X2 Ultra; training weights not released.</td>
 </tr>
@@ -157,7 +157,7 @@ Within each category, **⭐ highlighted projects come first**, followed by the r
 <td valign="top"><strong>Clip-specific fine-tuning through real-G1 deployment:</strong> a ≈22 s dance with rapid turns and a one-foot landing completed twice; slack safety tether used.</td>
 </tr>
 <tr>
-<td rowspan="1" valign="middle"><a href="#inspired-experiments">💡&nbsp;Learning&nbsp;(2)</a></td>
+<td rowspan="1" valign="middle"><a href="#inspired-experiments">💡&nbsp;Learning&nbsp;examples&nbsp;(2)</a></td>
 <td valign="top"><strong><a href="#flatworld--supermimic-2d">FlatWorld</a></strong><br><a href="https://github.com/swaggyliu/FlatWorld/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/swaggyliu/FlatWorld.svg?style=social"></a></td>
 <td valign="top"><strong>A readable 2D learning loop:</strong> eight-joint humanoid, procedural references, training and per-skill rendering; a 33.3 s multi-skill demo, not a G1 benchmark.</td>
 </tr>
