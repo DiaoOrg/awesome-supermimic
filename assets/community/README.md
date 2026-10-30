@@ -92,7 +92,7 @@ These images are embedded directly from their source repositories, without editi
 
 | Project | Image and source | What it shows |
 | --- | --- | --- |
-| [InstinctMJ · SuperMimic](https://github.com/project-instinct/InstinctMJ) | [method.png](https://github.com/project-instinct/InstinctMJ/blob/3f0952d36268c6aad299e256d27cc65d3bcc1434/src/instinct_mj/rl/supermimic/assets/method.png) | Current method diagram · predicted state and differentiable depth rendering |
+| [InstinctMJ · SuperMimic](https://github.com/project-instinct/InstinctMJ) | [two_methods.png](https://github.com/project-instinct/InstinctMJ/blob/03563ee02665f327425106372264070315673748/src/instinct_mj/rl/supermimic/assets/two_methods.png) | Current method comparison · Render and Latent vision routes |
 | [SuperMimic-perceptive](https://github.com/mode1223345/SuperMimic-perceptive) | [Curves.png](https://github.com/mode1223345/SuperMimic-perceptive/blob/3d38bacbaf5bee7e782bdada6a6da678264d0bfa/results/Curves.png) | Training curves · 2026-10-24 snapshot; control comparisons in progress |
 
 ### Local result figure copy
