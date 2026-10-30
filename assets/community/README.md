@@ -101,14 +101,13 @@ Updated on 2026-10-28: [locomujoco-results.png](locomujoco-results.png) is a cop
 
 ### Source-table screenshots
 
-The six PNGs below preserve the selected upstream table content. The tables were rendered locally with a dark theme and wrapped cells for legibility, without GitHub navigation. Text and values were not rewritten; the two excerpts are identified below. These are report or code-index screenshots, not simulation frames or new measurements. The original sources remain available as selectable text.
+The five PNGs below preserve the selected upstream table content. The tables were rendered locally with a dark theme and wrapped cells for legibility, without GitHub navigation. Text and values were not rewritten; the two excerpts are identified below. These are report or code-index screenshots, not simulation frames or new measurements. The original sources remain available as selectable text.
 
 | Screenshot | Pinned source | Selection |
 | --- | --- | --- |
 | [vibe-results.png](vibe-results.png) | [supermimic_vibe](https://github.com/dhmbb2/supermimic_vibe/blob/072f0910dadc9d95c720e625b546120e9ce917c9/README.md) | Historical reproduction-status table from the linked revision. Kept as an attributed preview; the README text cites the refreshed 2026-10-30 report, including newer BONES-SEED results. |
 | [rethinking-comparison.png](rethinking-comparison.png) | [Rethinking SuperMimic](https://github.com/btx0424/rethinking-supermimic/blob/ecdaeb6a916a16cf7eb69b19226c17be31a6bc27/README.md) | Excerpt: header and first three rows — dynamics state, MLP details and world-model loss. |
 | [pera-tracking-results.png](pera-tracking-results.png) | [SuperMimic-PERA](https://github.com/shangchaohu718/supermimic-pera/blob/0e89e55187a800341e609129b5d5200a607a467c/README.md) | Complete tracking-checkpoint table. This is the tracker baseline, not the separate skateboarding result. |
-| [contact-bptt-results.png](contact-bptt-results.png) | [Ref2Dex · Dex Contact MBRL](https://github.com/hitsz-oyx/Ref2Dex-agent/blob/31cdb9ac759838b83d62bbc0addfd5cf28f3dff4/src/task/dex-contact-mbrl/docs/CONTACT-REFINEMENT-RESULTS-20261026.md) | Complete three-arm native-physics comparison. Higher reference survival accompanies lower mean return. |
 | [g05-steering-entry.png](g05-steering-entry.png) | [G0.5 · SuperMimic-style Steering](https://github.com/azizkhadraoui/g05/blob/e3de0de50db7d90068483e2d30f2eacd781300b4/README.md) | Excerpt: code-index header and Noise policies row identifying the SuperMimic-style scripts; not a rollout. |
 | [mujoco-evaluation.png](mujoco-evaluation.png) | [SuperMimic-MuJoCo](https://github.com/panhainan2020/SuperMimic-MuJoCo/blob/db045afa9c52458f213e2c66037387e9c109a03a/README.md) | Complete evaluation summary. The external video cover returned HTTP 403 when checked; the README retains the gallery link. |
 
