@@ -38,12 +38,12 @@ Start with the original work below, then choose an implementation by framework a
 
 - [Original SuperMimic](#original-supermimic)
 - [Community projects](#community-projects)
-  - 🚀 [Real robots (2)](#real-robot-deployment-and-sim2real)
   - 🔬 [Reproductions, methods & frameworks (17)](#reproductions-methods-and-training-frameworks)
   - 👁️ [Perception & terrain (4)](#perception-terrain-and-quadrupeds)
   - 🦾 [Manipulation & hands (4)](#manipulation-and-dexterous-hands)
   - 💪 [Muscles & interaction (3)](#muscle-interaction-and-diagnostics)
   - 🤖 [Robot ports (6)](#robot-porting-and-retargeting)
+  - 🚀 [Real robots (2)](#real-robot-deployment-and-sim2real)
   - 💡 [Learning examples (2)](#inspired-experiments)
 - [Related methods and baselines](#related-methods-and-baselines)
 - [Data and learning resources](#data-and-learning-resources)
@@ -79,107 +79,17 @@ The authors report surpassing SONIC's released-checkpoint return after **3 hours
 
 ## Community projects
 
-**38 projects · 7 categories.** The table shows the ten most-starred repositories in this collection (2026-10-30 snapshot). Stars measure repository-wide popularity, not reproduction quality or training performance; badges update independently of the table order.
+**38 projects in 7 categories, organized by purpose.** Start with reproduction and training, then explore task extensions, robot adaptation and real-world deployment. Each project has one primary entry; overlapping capabilities are described within it.
 
-All 38 projects and their demos remain in the categories below, ordered by Stars within each category. ⭐ marks a recommended starting point independently of the Top 10. Results are upstream reports, not independently rerun; compute and time belong to the cited run. Different tasks and evaluation protocols are not directly comparable.
+- 🔬 [Reproductions, methods & frameworks (17)](#reproductions-methods-and-training-frameworks) — Reproduce the method and explore algorithm and training implementations.
+- 👁️ [Perception & terrain (4)](#perception-terrain-and-quadrupeds) — Vision, terrain tracking and quadruped tasks.
+- 🦾 [Manipulation & hands (4)](#manipulation-and-dexterous-hands) — Arm manipulation and in-hand tasks.
+- 💪 [Muscles & interaction (3)](#muscle-interaction-and-diagnostics) — Muscle-driven bodies, physical interaction and contact diagnostics.
+- 🤖 [Robot ports (6)](#robot-porting-and-retargeting) — Adapt robot bodies, motion data and hardware platforms.
+- 🚀 [Real robots (2)](#real-robot-deployment-and-sim2real) — Explore hardware demonstrations and deployment workflows.
+- 💡 [Learning examples (2)](#inspired-experiments) — Learn through 2D examples and other control problems.
 
-### Star Top 10 · Project overview
-
-<table width="100%">
-<thead>
-<tr>
-  <th align="left" width="24%">Project · Stars</th>
-  <th align="left" width="34%">Task and training setup</th>
-  <th align="left" width="42%">Strength and reported outcome</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-  <td valign="top"><strong>1. <a href="#holomotion--supermimic">HoloMotion · SuperMimic</a></strong><br><br><a href="https://github.com/HorizonRobotics/HoloMotion/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/HorizonRobotics/HoloMotion.svg?style=social" /></a></td>
-  <td valign="top">G1 · LAFAN1 tracking<br>HoloMotion / MuJoCo Warp (reported run); Isaac PhysX also supported<br>1× RTX 5090 · 30 min</td>
-  <td valign="top"><strong>Shared tasks and evaluation with PPO across two simulator backends</strong><br>Selected compact-policy recipe: 32/40 training clips completed. <a href="https://github.com/HorizonRobotics/HoloMotion/blob/f52dd81ae935a828b0296f5ee0f833beb7378bf0/docs/supermimic.md">Source</a></td>
-</tr>
-<tr>
-  <td valign="top"><strong>2. <a href="#supermimic_vibed">supermimic_vibed</a></strong><br><br><a href="https://github.com/zita-ch/supermimic_vibed/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/zita-ch/supermimic_vibed.svg?style=social" /></a></td>
-  <td valign="top">G1 · LAFAN1 tracking<br>Isaac Lab 3 / Newton + MuJoCo Warp<br>1× RTX PRO 6000 Blackwell · 1.47 h</td>
-  <td valign="top"><strong>Training baseline reused by multiple downstream projects</strong><br>40 training clips: return 0.829; 0/40 failures. <a href="https://github.com/zita-ch/supermimic_vibed/blob/8bfc1158bd968f729fcc65d5e897a05b05ea3d36/README.md">Source</a></td>
-</tr>
-<tr>
-  <td valign="top"><strong>3. <a href="#supermimic-reproduced">SuperMimic-Reproduced</a></strong><br><br><a href="https://github.com/CuboiLeo/SuperMimic-Reproduced/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/CuboiLeo/SuperMimic-Reproduced.svg?style=social" /></a></td>
-  <td valign="top">G1 · BONES-SEED tracking<br>mjlab / MuJoCo Warp<br>4× RTX 5090 · 7.1 h (≈28 GPU·h)</td>
-  <td valign="top"><strong>Full-library BONES-SEED reproduction logs and weights</strong><br>129,943 training clips: return 0.930; 495/129,943 failures; paper observations. <a href="https://github.com/CuboiLeo/SuperMimic-Reproduced/blob/ba6105349069bf040f1fdad60873d13138d505a2/docs/EXPERIMENTS.md">Source</a></td>
-</tr>
-<tr>
-  <td valign="top"><strong>4. <a href="#instinctmj--supermimic">InstinctMJ</a></strong><br><br><a href="https://github.com/project-instinct/InstinctMJ/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/project-instinct/InstinctMJ.svg?style=social" /></a></td>
-  <td valign="top">G1 · perceptive terrain tracking<br>mjlab + instinct_rl / MuJoCo Warp<br>1× RTX 3090 · 2.8 h / 8k iterations</td>
-  <td valign="top"><strong>Differentiable depth rendering inside world-model policy training</strong><br>10 motions, 5 terrains: 95% full-motion success, 97% completion; one seed, camera noise on. <a href="https://github.com/project-instinct/InstinctMJ/blob/3f0952d36268c6aad299e256d27cc65d3bcc1434/src/instinct_mj/rl/supermimic/README.md">Source</a></td>
-</tr>
-<tr>
-  <td valign="top"><strong>5. <a href="#unisupermimic">UniSuperMimic</a></strong><br><br><a href="https://github.com/Motphys/Uni-SuperMimic/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/Motphys/Uni-SuperMimic.svg?style=social" /></a></td>
-  <td valign="top">G1 · BONES-SEED tracking<br>UniLab / mjwarp (reported run)<br>1× RTX 4090 (48 GB as reported) · 8k iterations; optimized-run time not listed</td>
-  <td valign="top"><strong>Full-library evaluation of EMA and training-loop optimizations</strong><br>Full 129,487-clip library: return 0.9395, 193 failures; EMA + no-sync; 12k baseline: 1.69 h / 350 failures. <a href="https://github.com/Motphys/Uni-SuperMimic/blob/05a9772ca09509c50a4cc3fe96f9d6b3c180f3d2/README.md">Source</a></td>
-</tr>
-<tr>
-  <td valign="top"><strong>6. <a href="#morphmimic">MorphMimic</a></strong><br><br><a href="https://github.com/lzyang2000/morphmimic/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/lzyang2000/morphmimic.svg?style=social" /></a></td>
-  <td valign="top">G1 / X2 Ultra / T2 · tracking, teleoperation<br>mjlab / MuJoCo Warp<br>Full 3-robot setup: 3× GPU, ≈51–58 GB VRAM/GPU · 60k released weights; time not listed</td>
-  <td valign="top"><strong>One policy across bodies, direct human-input teleoperation</strong><br>Unified ONNX policy and PICO body input; G1 hardware tested, X2 / T2 simulation only; aggregate success rate not listed. <a href="https://github.com/lzyang2000/morphmimic/blob/770394b4a0cad9effbf807a6c03435d1699733d0/README.md">Source</a></td>
-</tr>
-<tr>
-  <td valign="top"><strong>7. <a href="#dex-supermimic">Dex SuperMimic</a></strong><br><br><a href="https://github.com/CumulusAlpha/Dex-Supermimic/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/CumulusAlpha/Dex-Supermimic.svg?style=social" /></a></td>
-  <td valign="top">Wuji Hand 1/2 · cube reorientation, pen spin<br>mjlab / MuJoCo Warp<br>8k-iteration weights; GPU model / time not listed</td>
-  <td valign="top"><strong>Multiple Wuji-hand tasks with released checkpoints</strong><br>3 task checkpoints and demos; quantitative success rate not listed. <a href="https://github.com/CumulusAlpha/Dex-Supermimic/blob/3a7c1a33fd8e5c6cc047e381ea9309da96553c27/README.md">Source</a></td>
-</tr>
-<tr>
-  <td valign="top"><strong>8. <a href="#go2-supermimic">Go2-SuperMimic</a></strong><br><br><a href="https://github.com/Zhengtianjin/go2-supermimic/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/Zhengtianjin/go2-supermimic.svg?style=social" /></a></td>
-  <td valign="top">Go2 · chase, dodge, terrain<br>mjlab / MuJoCo Warp<br>GPU / time not listed</td>
-  <td valign="top"><strong>From humanoid tracking to quadruped chase and dodge</strong><br>Flat / obstacle / terrain actors released; falls and bar hits remain on hard terrain. <a href="https://github.com/Zhengtianjin/go2-supermimic/blob/d9eee9b3f248e5300e636c433255db2c1c3e086a/README.md">Source</a></td>
-</tr>
-<tr>
-  <td valign="top"><strong>9. <a href="#instanttrack">InstantTrack</a></strong><br><br><a href="https://github.com/Huy-Quang-Dao/instantTrack/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/Huy-Quang-Dao/instantTrack.svg?style=social" /></a></td>
-  <td valign="top">G1 · LAFAN1 tracking<br>mjlab / MuJoCo Warp<br>1× RTX 5090 32 GB · ≈15 min; excludes offline evaluation</td>
-  <td valign="top"><strong>Fast iteration with a three-seed time-to-target check</strong><br>3 seeds: return ≥0.82 and 0/40 training-clip failures, held for 3 checkpoints. <a href="https://github.com/Huy-Quang-Dao/instantTrack/blob/a33691a08bca8802d9d2985f62e2567479735a8e/README.md">Source</a></td>
-</tr>
-<tr>
-  <td valign="top"><strong>10. <a href="#flatworld--supermimic-2d">FlatWorld</a></strong><br><br><a href="https://github.com/swaggyliu/FlatWorld/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/swaggyliu/FlatWorld.svg?style=social" /></a></td>
-  <td valign="top">2D eight-joint humanoid · multi-skill tracking<br>FlatWorld 2D simulation<br>GPU / time not listed</td>
-  <td valign="top"><strong>Understand the training loop through 2D multi-skill demos</strong><br>≈33 s multi-skill demo; procedural references, not real LAFAN1 data. <a href="https://github.com/swaggyliu/FlatWorld/blob/601d96c3aa69b5b226533f767d1c2e6f917c5a5d/supermimic2d/README.md">Source</a></td>
-</tr>
-</tbody>
-</table>
-
-## Real-robot deployment and Sim2Real
-
-Real-robot runtimes and sim-to-real transfer paths. Also see [MorphMimic’s G1 teleoperation](#morphmimic) and [SuperMimic Mjlab’s deployment notes](#supermimic-mjlab) in the combined methods section.
-
-<a name="supermimic-repro-sim2real"></a>
-
-<a name="-supermimic-repro-sim2real"></a>
-
-### ⭐ SuperMimic-Repro-Sim2Real [![GitHub stars](https://img.shields.io/github/stars/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real.svg?style=social)](https://github.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real/stargazers)
-
-[Repository](https://github.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real) · [Quickstart](https://github.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real/blob/f8f60d7bbdba68468c050ef100af02d752ca238e/README.md#快速开始) · [v1.1 field notes](https://github.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real/blob/f8f60d7bbdba68468c050ef100af02d752ca238e/docs/REAL_ROBOT_LEAN35KFS.md) · [G1 deployment](https://github.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real/blob/f8f60d7bbdba68468c050ef100af02d752ca238e/docs/DEPLOY_G1.md)
-
-- **By NJU R&amp;L Group Embodied Lab.** Extends the CuboiLeo mjlab baseline with custom dance/video-motion tools, clip-specific fine-tuning, ONNX export and G1 deployment through native MuJoCo and the Unitree SDK.
-- **Upstream report:** v1.0 publishes a roughly **46-second real-G1 dance** assembled from four motion segments. In v1.1, the clip-specific `e24_0355000` policy completed a roughly **22-second dance twice on the real G1**, including two rapid turns and a one-foot landing jump; nine earlier models had failed this clip. Both v1.1 runs used a slack safety tether, and repeating one model is not an ablation.
-- **Useful context:** The v1.1 checkpoint is specialized to that single dance, not general motion tracking. Paper-style observations and anchor-augmented training remain separate configurations. [Source snapshot](https://github.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real/blob/f8f60d7bbdba68468c050ef100af02d752ca238e/README.md).
-
-<a href="https://github.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real/releases/download/v1.1/shanshenbu_pro_real_robot.mp4"><img src="https://raw.githubusercontent.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real/f8f60d7bbdba68468c050ef100af02d752ca238e/docs/assets/shanshenbu_pro_demo.gif" width="480" alt="Real G1 · v1.1 dance with fast turns and a one-foot landing jump"></a><br><sub>Real G1 · v1.1 clip-specific dance; human reference on the left, robot on the right</sub>
-
-<br>
-
-<a name="supermimic-g1-deployment"></a>
-
-### SuperMimic G1 Deployment [![GitHub stars](https://img.shields.io/github/stars/KyrieYoung926/supermimic_deploy.svg?style=social)](https://github.com/KyrieYoung926/supermimic_deploy/stargazers)
-
-[Repository](https://github.com/KyrieYoung926/supermimic_deploy) · [MuJoCo guide](https://github.com/KyrieYoung926/supermimic_deploy/blob/7e63e3bbd5150d55afbdece28278781800f3ed21/README.md#3-run-in-mujoco) · [Real-G1 guide](https://github.com/KyrieYoung926/supermimic_deploy/blob/7e63e3bbd5150d55afbdece28278781800f3ed21/README.md#4-run-on-the-real-g1)
-
-- **By KyrieYoung926.** A deployment runtime for a SuperMimic-Reproduced policy on the 29-DoF G1, using ONNX Runtime, MuJoCo and Unitree SDK2.
-- **What it provides:** Provides both simulation and real-G1 demos, with separate guides for fetching deployment assets and running the policy on each target.
-- **Useful context:** This repository covers deployment, not a new training benchmark. Motion data, model weights and robot assets retain their own terms beyond the code license. [Source snapshot](https://github.com/KyrieYoung926/supermimic_deploy/blob/7e63e3bbd5150d55afbdece28278781800f3ed21/README.md).
-
-<a href="https://github.com/KyrieYoung926/supermimic_deploy"><img src="https://raw.githubusercontent.com/KyrieYoung926/supermimic_deploy/7e63e3bbd5150d55afbdece28278781800f3ed21/media/deploy_real.gif" width="480" alt="Real G1 · upstream deployment demo"></a><br><sub>Real G1 · upstream deployment demo</sub>
-
-<br>
+⭐ marks a recommended starting point. Entries within each category retain the 2026-10-30 Stars order; badges update independently. Repository-wide Stars do not measure SuperMimic implementation quality. Results and demos are upstream reports, not independently rerun.
 
 ## Reproductions, methods and training frameworks
 
@@ -716,6 +626,40 @@ Robot-, simulator- and hardware-specific ports, together with motion-retargeting
 - **Useful context:** Return is normalized by executed steps without zero-padding after failure, and the actor uses nine extra anchor-observation dimensions. Read return together with completion; held-out generalization is untested. [Source snapshot](https://github.com/WXyuany/supermimic-m5/blob/42451591718e1a9a5ec601366997f47c0ad180a3/README.md).
 
 <a href="https://github.com/WXyuany/supermimic-m5/blob/42451591718e1a9a5ec601366997f47c0ad180a3/assets/videos/walk1_subject1.mp4"><img src="https://raw.githubusercontent.com/WXyuany/supermimic-m5/42451591718e1a9a5ec601366997f47c0ad180a3/assets/images/walk-preview.gif" width="480" alt="Simulation · G1 walking on Apple M5"></a><br><sub>Simulation · G1 walking on Apple M5</sub>
+
+<br>
+
+## Real-robot deployment and Sim2Real
+
+Real-robot runtimes and sim-to-real transfer paths. Also see [MorphMimic’s G1 teleoperation](#morphmimic) and [SuperMimic Mjlab’s deployment notes](#supermimic-mjlab) in the combined methods section.
+
+<a name="supermimic-repro-sim2real"></a>
+
+<a name="-supermimic-repro-sim2real"></a>
+
+### ⭐ SuperMimic-Repro-Sim2Real [![GitHub stars](https://img.shields.io/github/stars/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real.svg?style=social)](https://github.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real/stargazers)
+
+[Repository](https://github.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real) · [Quickstart](https://github.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real/blob/f8f60d7bbdba68468c050ef100af02d752ca238e/README.md#快速开始) · [v1.1 field notes](https://github.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real/blob/f8f60d7bbdba68468c050ef100af02d752ca238e/docs/REAL_ROBOT_LEAN35KFS.md) · [G1 deployment](https://github.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real/blob/f8f60d7bbdba68468c050ef100af02d752ca238e/docs/DEPLOY_G1.md)
+
+- **By NJU R&amp;L Group Embodied Lab.** Extends the CuboiLeo mjlab baseline with custom dance/video-motion tools, clip-specific fine-tuning, ONNX export and G1 deployment through native MuJoCo and the Unitree SDK.
+- **Upstream report:** v1.0 publishes a roughly **46-second real-G1 dance** assembled from four motion segments. In v1.1, the clip-specific `e24_0355000` policy completed a roughly **22-second dance twice on the real G1**, including two rapid turns and a one-foot landing jump; nine earlier models had failed this clip. Both v1.1 runs used a slack safety tether, and repeating one model is not an ablation.
+- **Useful context:** The v1.1 checkpoint is specialized to that single dance, not general motion tracking. Paper-style observations and anchor-augmented training remain separate configurations. [Source snapshot](https://github.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real/blob/f8f60d7bbdba68468c050ef100af02d752ca238e/README.md).
+
+<a href="https://github.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real/releases/download/v1.1/shanshenbu_pro_real_robot.mp4"><img src="https://raw.githubusercontent.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real/f8f60d7bbdba68468c050ef100af02d752ca238e/docs/assets/shanshenbu_pro_demo.gif" width="480" alt="Real G1 · v1.1 dance with fast turns and a one-foot landing jump"></a><br><sub>Real G1 · v1.1 clip-specific dance; human reference on the left, robot on the right</sub>
+
+<br>
+
+<a name="supermimic-g1-deployment"></a>
+
+### SuperMimic G1 Deployment [![GitHub stars](https://img.shields.io/github/stars/KyrieYoung926/supermimic_deploy.svg?style=social)](https://github.com/KyrieYoung926/supermimic_deploy/stargazers)
+
+[Repository](https://github.com/KyrieYoung926/supermimic_deploy) · [MuJoCo guide](https://github.com/KyrieYoung926/supermimic_deploy/blob/7e63e3bbd5150d55afbdece28278781800f3ed21/README.md#3-run-in-mujoco) · [Real-G1 guide](https://github.com/KyrieYoung926/supermimic_deploy/blob/7e63e3bbd5150d55afbdece28278781800f3ed21/README.md#4-run-on-the-real-g1)
+
+- **By KyrieYoung926.** A deployment runtime for a SuperMimic-Reproduced policy on the 29-DoF G1, using ONNX Runtime, MuJoCo and Unitree SDK2.
+- **What it provides:** Provides both simulation and real-G1 demos, with separate guides for fetching deployment assets and running the policy on each target.
+- **Useful context:** This repository covers deployment, not a new training benchmark. Motion data, model weights and robot assets retain their own terms beyond the code license. [Source snapshot](https://github.com/KyrieYoung926/supermimic_deploy/blob/7e63e3bbd5150d55afbdece28278781800f3ed21/README.md).
+
+<a href="https://github.com/KyrieYoung926/supermimic_deploy"><img src="https://raw.githubusercontent.com/KyrieYoung926/supermimic_deploy/7e63e3bbd5150d55afbdece28278781800f3ed21/media/deploy_real.gif" width="480" alt="Real G1 · upstream deployment demo"></a><br><sub>Real G1 · upstream deployment demo</sub>
 
 <br>
 

@@ -38,12 +38,12 @@
 
 - [原始 SuperMimic](#原始-supermimic)
 - [社区项目](#社区项目)
-  - 🚀 [真机部署（2）](#真机部署与-sim2real)
   - 🔬 [复现、方法与训练框架（17）](#复现方法与训练框架)
   - 👁️ [感知与地形（4）](#感知地形与四足任务)
   - 🦾 [操作与灵巧手（4）](#操作与灵巧手)
   - 💪 [肌肉与交互（3）](#肌肉驱动交互与诊断)
   - 🤖 [本体移植（6）](#机器人移植与重定向)
+  - 🚀 [真机部署（2）](#真机部署与-sim2real)
   - 💡 [直观学习（2）](#方法借鉴与探索)
 - [相关方法与基线](#相关方法与基线)
 - [数据与学习资源](#数据与学习资源)
@@ -79,107 +79,17 @@ SuperMimic 从仿真状态转移中学习一个共享的可微世界模型，再
 
 ## 社区项目
 
-**38 个项目 · 7 个方向。** 下表展示本清单中仓库 Star 数前十的项目（2026-10-30 快照）。Star 反映整个仓库的关注度，不代表复现质量或训练性能；徽章动态更新，表格顺序以快照为准。
+**38 个项目，按用途分为 7 类。** 从复现与训练出发，再看任务扩展、本体适配和真机部署。一个项目只保留一个主条目，跨方向能力在介绍中说明。
 
-后面的分类保留全部 38 个项目及演示，分类内按 Star 排序。⭐ 仍标记值得推荐的项目，与 Top 10 排名独立。成绩均为上游报告，未独立重跑；资源与耗时对应所引运行，不同任务与评测协议不能直接比较。
+- 🔬 [复现、方法与训练框架（17）](#复现方法与训练框架) — 复现原方法，比较算法改动与训练实现。
+- 👁️ [感知与地形（4）](#感知地形与四足任务) — 视觉、地形跟踪与四足任务。
+- 🦾 [操作与灵巧手（4）](#操作与灵巧手) — 机械臂操作与手内操作。
+- 💪 [肌肉与交互（3）](#肌肉驱动交互与诊断) — 肌肉驱动、物理交互与接触诊断。
+- 🤖 [本体移植（6）](#机器人移植与重定向) — 更换机器人本体、重定向动作与适配硬件。
+- 🚀 [真机部署（2）](#真机部署与-sim2real) — 查看实际机器人演示与部署流程。
+- 💡 [直观学习（2）](#方法借鉴与探索) — 通过二维示例及其他控制问题理解方法。
 
-### Star Top 10 · 项目速览
-
-<table width="100%">
-<thead>
-<tr>
-  <th align="left" width="24%">项目 · Stars</th>
-  <th align="left" width="34%">任务与训练配置</th>
-  <th align="left" width="42%">亮点与结果</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-  <td valign="top"><strong>1. <a href="#holomotion--supermimic">HoloMotion · SuperMimic</a></strong><br><br><a href="https://github.com/HorizonRobotics/HoloMotion/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/HorizonRobotics/HoloMotion.svg?style=social" /></a></td>
-  <td valign="top">G1 · LAFAN1 跟踪<br>HoloMotion / MuJoCo Warp（报告配置）；也支持 Isaac PhysX<br>1× RTX 5090 · 30 min</td>
-  <td valign="top"><strong>两个仿真后端共用 PPO 的任务与评测接口</strong><br>选定的紧凑策略配置：完整通过 32/40 条训练动作。<a href="https://github.com/HorizonRobotics/HoloMotion/blob/f52dd81ae935a828b0296f5ee0f833beb7378bf0/docs/supermimic.md">来源</a></td>
-</tr>
-<tr>
-  <td valign="top"><strong>2. <a href="#supermimic_vibed">supermimic_vibed</a></strong><br><br><a href="https://github.com/zita-ch/supermimic_vibed/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/zita-ch/supermimic_vibed.svg?style=social" /></a></td>
-  <td valign="top">G1 · LAFAN1 跟踪<br>Isaac Lab 3 / Newton + MuJoCo Warp<br>1× RTX PRO 6000 Blackwell · 1.47 h</td>
-  <td valign="top"><strong>多个下游项目沿用的训练基线</strong><br>训练集 40 条：回报 0.829，失败 0/40。<a href="https://github.com/zita-ch/supermimic_vibed/blob/8bfc1158bd968f729fcc65d5e897a05b05ea3d36/README.md">来源</a></td>
-</tr>
-<tr>
-  <td valign="top"><strong>3. <a href="#supermimic-reproduced">SuperMimic-Reproduced</a></strong><br><br><a href="https://github.com/CuboiLeo/SuperMimic-Reproduced/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/CuboiLeo/SuperMimic-Reproduced.svg?style=social" /></a></td>
-  <td valign="top">G1 · BONES-SEED 跟踪<br>mjlab / MuJoCo Warp<br>4× RTX 5090 · 7.1 h（约 28 GPU·h）</td>
-  <td valign="top"><strong>全量 BONES-SEED 复现日志与权重</strong><br>129,943 条训练动作：回报 0.930，失败 495/129,943；论文观测。<a href="https://github.com/CuboiLeo/SuperMimic-Reproduced/blob/ba6105349069bf040f1fdad60873d13138d505a2/docs/EXPERIMENTS.md">来源</a></td>
-</tr>
-<tr>
-  <td valign="top"><strong>4. <a href="#instinctmj--supermimic">InstinctMJ</a></strong><br><br><a href="https://github.com/project-instinct/InstinctMJ/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/project-instinct/InstinctMJ.svg?style=social" /></a></td>
-  <td valign="top">G1 · 感知式地形跟踪<br>mjlab + instinct_rl / MuJoCo Warp<br>1× RTX 3090 · 2.8 h / 8k 迭代</td>
-  <td valign="top"><strong>把可微深度渲染接入世界模型训练</strong><br>10 动作、5 地形：整段成功率 95%，完成度 97%；单种子，开启相机噪声。<a href="https://github.com/project-instinct/InstinctMJ/blob/3f0952d36268c6aad299e256d27cc65d3bcc1434/src/instinct_mj/rl/supermimic/README.md">来源</a></td>
-</tr>
-<tr>
-  <td valign="top"><strong>5. <a href="#unisupermimic">UniSuperMimic</a></strong><br><br><a href="https://github.com/Motphys/Uni-SuperMimic/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/Motphys/Uni-SuperMimic.svg?style=social" /></a></td>
-  <td valign="top">G1 · BONES-SEED 跟踪<br>UniLab / mjwarp（该成绩所用后端）<br>1× RTX 4090（上游标注 48 GB） · 8k 迭代；该优化运行耗时未列出</td>
-  <td valign="top"><strong>全库评测，量化 EMA 与训练循环优化</strong><br>129,487 条全库：回报 0.9395，失败 193 条；EMA + no-sync；12k 基线为 1.69 h / 350 次失败。<a href="https://github.com/Motphys/Uni-SuperMimic/blob/05a9772ca09509c50a4cc3fe96f9d6b3c180f3d2/README.md">来源</a></td>
-</tr>
-<tr>
-  <td valign="top"><strong>6. <a href="#morphmimic">MorphMimic</a></strong><br><br><a href="https://github.com/lzyang2000/morphmimic/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/lzyang2000/morphmimic.svg?style=social" /></a></td>
-  <td valign="top">G1 / X2 Ultra / T2 · 跟踪、遥操作<br>mjlab / MuJoCo Warp<br>三本体全量配置：3× GPU，约 51–58 GB 显存/卡 · 60k 发布权重；耗时未列出</td>
-  <td valign="top"><strong>跨本体统一策略，人体输入直接遥操作</strong><br>统一 ONNX 策略与 PICO 人体接口；G1 真机已测试，X2 / T2 仅仿真；未列出统一成功率。<a href="https://github.com/lzyang2000/morphmimic/blob/770394b4a0cad9effbf807a6c03435d1699733d0/README.md">来源</a></td>
-</tr>
-<tr>
-  <td valign="top"><strong>7. <a href="#dex-supermimic">Dex SuperMimic</a></strong><br><br><a href="https://github.com/CumulusAlpha/Dex-Supermimic/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/CumulusAlpha/Dex-Supermimic.svg?style=social" /></a></td>
-  <td valign="top">Wuji Hand 1/2 · 方块重定向、转笔<br>mjlab / MuJoCo Warp<br>8k 迭代权重；GPU 型号 / 耗时未列出</td>
-  <td valign="top"><strong>Wuji 灵巧手多任务，公开任务权重</strong><br>3 个任务检查点与演示；未列出定量成功率。<a href="https://github.com/CumulusAlpha/Dex-Supermimic/blob/3a7c1a33fd8e5c6cc047e381ea9309da96553c27/README.md">来源</a></td>
-</tr>
-<tr>
-  <td valign="top"><strong>8. <a href="#go2-supermimic">Go2-SuperMimic</a></strong><br><br><a href="https://github.com/Zhengtianjin/go2-supermimic/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/Zhengtianjin/go2-supermimic.svg?style=social" /></a></td>
-  <td valign="top">Go2 · 追逐、闪避、地形<br>mjlab / MuJoCo Warp<br>GPU / 耗时未列出</td>
-  <td valign="top"><strong>从人形跟踪扩展到四足追逐与闪避</strong><br>公开平地 / 障碍 / 地形 actor；困难地形仍会跌倒或碰杆。<a href="https://github.com/Zhengtianjin/go2-supermimic/blob/d9eee9b3f248e5300e636c433255db2c1c3e086a/README.md">来源</a></td>
-</tr>
-<tr>
-  <td valign="top"><strong>9. <a href="#instanttrack">InstantTrack</a></strong><br><br><a href="https://github.com/Huy-Quang-Dao/instantTrack/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/Huy-Quang-Dao/instantTrack.svg?style=social" /></a></td>
-  <td valign="top">G1 · LAFAN1 跟踪<br>mjlab / MuJoCo Warp<br>1× RTX 5090 32 GB · 约 15 min；不含离线评测</td>
-  <td valign="top"><strong>面向短周转复现，三个种子核验达标</strong><br>3 个种子：40 条训练动作回报 ≥0.82 且失败 0/40，连续 3 个检查点达标。<a href="https://github.com/Huy-Quang-Dao/instantTrack/blob/a33691a08bca8802d9d2985f62e2567479735a8e/README.md">来源</a></td>
-</tr>
-<tr>
-  <td valign="top"><strong>10. <a href="#flatworld--supermimic-2d">FlatWorld</a></strong><br><br><a href="https://github.com/swaggyliu/FlatWorld/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/swaggyliu/FlatWorld.svg?style=social" /></a></td>
-  <td valign="top">2D 八关节人形 · 多技能跟踪<br>FlatWorld 2D 仿真<br>GPU / 耗时未列出</td>
-  <td valign="top"><strong>用 2D 多技能演示理解训练闭环</strong><br>约 33 秒多技能演示；程序化参考动作，非真实 LAFAN1 数据。<a href="https://github.com/swaggyliu/FlatWorld/blob/601d96c3aa69b5b226533f767d1c2e6f917c5a5d/supermimic2d/README.md">来源</a></td>
-</tr>
-</tbody>
-</table>
-
-## 真机部署与 Sim2Real
-
-真机运行栈与 Sim2Real 迁移路径。跨方向项目另见 [MorphMimic 的 G1 遥操作](#morphmimic)和 [SuperMimic Mjlab 的部署记录](#supermimic-mjlab)。
-
-<a name="supermimic-repro-sim2real"></a>
-
-<a name="-supermimic-repro-sim2real"></a>
-
-### ⭐ SuperMimic-Repro-Sim2Real [![GitHub stars](https://img.shields.io/github/stars/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real.svg?style=social)](https://github.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real/stargazers)
-
-[仓库](https://github.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real) · [快速开始](https://github.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real/blob/f8f60d7bbdba68468c050ef100af02d752ca238e/README.md#快速开始) · [v1.1 真机记录](https://github.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real/blob/f8f60d7bbdba68468c050ef100af02d752ca238e/docs/REAL_ROBOT_LEAN35KFS.md) · [G1 部署](https://github.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real/blob/f8f60d7bbdba68468c050ef100af02d752ca238e/docs/DEPLOY_G1.md)
-
-- **团队：NJU R&amp;L Group Embodied Lab。** 在 CuboiLeo 的 mjlab 复现上增加自定义舞蹈、视频动作工具、单段动作微调、ONNX 导出，以及原生 MuJoCo 和 Unitree SDK 的 G1 部署流程。
-- **上游报告：** v1.0 公开一段由四个动作片段组成、约 **46 秒的 G1 真机舞蹈**。v1.1 的单段策略 `e24_0355000` 在真机上**连续两次完成约 22 秒舞蹈**，包含两次快速转体和一次单脚落地的跳跃；此前 9 个模型都未能完成该动作。两次运行均挂着松弛的保护绳，同一模型重复运行不构成消融实验。
-- **选择时注意：** v1.1 检查点只针对这一段舞蹈微调，不是通用动作跟踪模型；按论文观测训练与增加锚点观测仍是不同配置。 [核查版本](https://github.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real/blob/f8f60d7bbdba68468c050ef100af02d752ca238e/README.md)。
-
-<a href="https://github.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real/releases/download/v1.1/shanshenbu_pro_real_robot.mp4"><img src="https://raw.githubusercontent.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real/f8f60d7bbdba68468c050ef100af02d752ca238e/docs/assets/shanshenbu_pro_demo.gif" width="480" alt="G1 真机 · v1.1 快速转体与单脚落地跳跃"></a><br><sub>G1 真机 · v1.1 单段舞蹈；左为人类参考，右为机器人</sub>
-
-<br>
-
-<a name="supermimic-g1-deployment"></a>
-
-### SuperMimic G1 Deployment [![GitHub stars](https://img.shields.io/github/stars/KyrieYoung926/supermimic_deploy.svg?style=social)](https://github.com/KyrieYoung926/supermimic_deploy/stargazers)
-
-[仓库](https://github.com/KyrieYoung926/supermimic_deploy) · [MuJoCo 使用](https://github.com/KyrieYoung926/supermimic_deploy/blob/7e63e3bbd5150d55afbdece28278781800f3ed21/README.md#3-run-in-mujoco) · [真机使用](https://github.com/KyrieYoung926/supermimic_deploy/blob/7e63e3bbd5150d55afbdece28278781800f3ed21/README.md#4-run-on-the-real-g1)
-
-- **作者：KyrieYoung926。** 面向 29 自由度 G1 部署 SuperMimic-Reproduced 策略，采用 ONNX Runtime、MuJoCo 和 Unitree SDK2。
-- **提供内容：** 提供仿真与 G1 真机演示，并分别说明如何准备部署资产、在仿真和真机上运行策略。
-- **选择时注意：** 仓库重点是部署，不是新的训练基准；动作数据、模型权重和机器人资产保留各自条款，不由代码许可证统一覆盖。 [核查版本](https://github.com/KyrieYoung926/supermimic_deploy/blob/7e63e3bbd5150d55afbdece28278781800f3ed21/README.md)。
-
-<a href="https://github.com/KyrieYoung926/supermimic_deploy"><img src="https://raw.githubusercontent.com/KyrieYoung926/supermimic_deploy/7e63e3bbd5150d55afbdece28278781800f3ed21/media/deploy_real.gif" width="480" alt="G1 真机 · 上游部署演示"></a><br><sub>G1 真机 · 上游部署演示</sub>
-
-<br>
+⭐ 标记值得优先阅读的项目。分类内沿用 2026-10-30 Star 快照排序，徽章动态更新；仓库总 Star 不代表 SuperMimic 实现质量。成绩与演示均来自上游，未独立重跑。
 
 ## 复现、方法与训练框架
 
@@ -716,6 +626,40 @@ SuperMimic 从仿真状态转移中学习一个共享的可微世界模型，再
 - **选择时注意：** 回报按已执行步数归一化，失败后的剩余帧不补零，actor 额外使用 9 维锚点观测；需结合完成率阅读，未测试未见动作泛化。 [核查版本](https://github.com/WXyuany/supermimic-m5/blob/42451591718e1a9a5ec601366997f47c0ad180a3/README.md)。
 
 <a href="https://github.com/WXyuany/supermimic-m5/blob/42451591718e1a9a5ec601366997f47c0ad180a3/assets/videos/walk1_subject1.mp4"><img src="https://raw.githubusercontent.com/WXyuany/supermimic-m5/42451591718e1a9a5ec601366997f47c0ad180a3/assets/images/walk-preview.gif" width="480" alt="仿真 · Apple M5 上的 G1 行走"></a><br><sub>仿真 · Apple M5 上的 G1 行走</sub>
+
+<br>
+
+## 真机部署与 Sim2Real
+
+真机运行栈与 Sim2Real 迁移路径。跨方向项目另见 [MorphMimic 的 G1 遥操作](#morphmimic)和 [SuperMimic Mjlab 的部署记录](#supermimic-mjlab)。
+
+<a name="supermimic-repro-sim2real"></a>
+
+<a name="-supermimic-repro-sim2real"></a>
+
+### ⭐ SuperMimic-Repro-Sim2Real [![GitHub stars](https://img.shields.io/github/stars/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real.svg?style=social)](https://github.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real/stargazers)
+
+[仓库](https://github.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real) · [快速开始](https://github.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real/blob/f8f60d7bbdba68468c050ef100af02d752ca238e/README.md#快速开始) · [v1.1 真机记录](https://github.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real/blob/f8f60d7bbdba68468c050ef100af02d752ca238e/docs/REAL_ROBOT_LEAN35KFS.md) · [G1 部署](https://github.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real/blob/f8f60d7bbdba68468c050ef100af02d752ca238e/docs/DEPLOY_G1.md)
+
+- **团队：NJU R&amp;L Group Embodied Lab。** 在 CuboiLeo 的 mjlab 复现上增加自定义舞蹈、视频动作工具、单段动作微调、ONNX 导出，以及原生 MuJoCo 和 Unitree SDK 的 G1 部署流程。
+- **上游报告：** v1.0 公开一段由四个动作片段组成、约 **46 秒的 G1 真机舞蹈**。v1.1 的单段策略 `e24_0355000` 在真机上**连续两次完成约 22 秒舞蹈**，包含两次快速转体和一次单脚落地的跳跃；此前 9 个模型都未能完成该动作。两次运行均挂着松弛的保护绳，同一模型重复运行不构成消融实验。
+- **选择时注意：** v1.1 检查点只针对这一段舞蹈微调，不是通用动作跟踪模型；按论文观测训练与增加锚点观测仍是不同配置。 [核查版本](https://github.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real/blob/f8f60d7bbdba68468c050ef100af02d752ca238e/README.md)。
+
+<a href="https://github.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real/releases/download/v1.1/shanshenbu_pro_real_robot.mp4"><img src="https://raw.githubusercontent.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real/f8f60d7bbdba68468c050ef100af02d752ca238e/docs/assets/shanshenbu_pro_demo.gif" width="480" alt="G1 真机 · v1.1 快速转体与单脚落地跳跃"></a><br><sub>G1 真机 · v1.1 单段舞蹈；左为人类参考，右为机器人</sub>
+
+<br>
+
+<a name="supermimic-g1-deployment"></a>
+
+### SuperMimic G1 Deployment [![GitHub stars](https://img.shields.io/github/stars/KyrieYoung926/supermimic_deploy.svg?style=social)](https://github.com/KyrieYoung926/supermimic_deploy/stargazers)
+
+[仓库](https://github.com/KyrieYoung926/supermimic_deploy) · [MuJoCo 使用](https://github.com/KyrieYoung926/supermimic_deploy/blob/7e63e3bbd5150d55afbdece28278781800f3ed21/README.md#3-run-in-mujoco) · [真机使用](https://github.com/KyrieYoung926/supermimic_deploy/blob/7e63e3bbd5150d55afbdece28278781800f3ed21/README.md#4-run-on-the-real-g1)
+
+- **作者：KyrieYoung926。** 面向 29 自由度 G1 部署 SuperMimic-Reproduced 策略，采用 ONNX Runtime、MuJoCo 和 Unitree SDK2。
+- **提供内容：** 提供仿真与 G1 真机演示，并分别说明如何准备部署资产、在仿真和真机上运行策略。
+- **选择时注意：** 仓库重点是部署，不是新的训练基准；动作数据、模型权重和机器人资产保留各自条款，不由代码许可证统一覆盖。 [核查版本](https://github.com/KyrieYoung926/supermimic_deploy/blob/7e63e3bbd5150d55afbdece28278781800f3ed21/README.md)。
+
+<a href="https://github.com/KyrieYoung926/supermimic_deploy"><img src="https://raw.githubusercontent.com/KyrieYoung926/supermimic_deploy/7e63e3bbd5150d55afbdece28278781800f3ed21/media/deploy_real.gif" width="480" alt="G1 真机 · 上游部署演示"></a><br><sub>G1 真机 · 上游部署演示</sub>
 
 <br>
 
