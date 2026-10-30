@@ -76,15 +76,15 @@ The authors report surpassing SONIC's released-checkpoint return after **3 hours
 
 | Explore | Recommended projects and strengths |
 | --- | --- |
-| 🚀 [Real robots (2)](#real-robot-deployment-and-sim2real) | **[SuperMimic-Repro-Sim2Real](#supermimic-repro-sim2real)** — G1 hardware demos and deployment notes |
-| 🔬 [Reproductions (5)](#independent-reproductions) | **[supermimic_vibed](#supermimic_vibed)** — LAFAN1 training baseline<br>**[SuperMimic-Reproduced](#supermimic-reproduced)** — BONES-SEED experiment logs and weights<br>**[SuperMimic Mjlab](#supermimic-mjlab)** — step-by-step ablations and released checkpoints |
-| 🧩 [Method variants (6)](#method-and-morphology-variants) | **[InstantTrack](#instanttrack)** — 15-minute LAFAN1 target on one RTX 5090, three seeds<br>**[MorphMimic](#morphmimic)** — world-model / policy sharing across G1, X2 Ultra and T2 |
-| 👁️ [Perception & terrain (4)](#perception-terrain-and-quadrupeds) | **[InstinctMJ](#instinctmj--supermimic)** — depth-aware world model and terrain tracking<br>**[Go2-SuperMimic](#go2-supermimic)** — quadruped chase / dodge with released actors |
-| 🦾 [Manipulation & hands (4)](#manipulation-and-dexterous-hands) | **[supermimic_manipulation](#supermimic-for-robot-manipulation)** — three ARX5 arm tasks, weights and reset banks<br>**[Dex SuperMimic](#dex-supermimic)** — Wuji hands: cube reorientation, pen spinning and weights<br>**[In-Hand Rotation mjlab](#in-hand-rotation-mjlab)** — LEAP hand: world-model / PPO simulation comparisons |
-| 💪 [Muscles & interaction (3)](#muscle-interaction-and-diagnostics) | **[muscle-supermimic](#muscle-supermimic)** — two muscle-driven bodies, held-out KIT evaluation |
-| 🛠️ [Training stacks (6)](#frameworks-and-training-stacks) | **[UniSuperMimic](#unisupermimic)** — UniLab integration and both motion-data pipelines<br>**[ScaleBFM_Plus](#scalebfm_plus--supermimic)** — humanoid transformer integration and held-out evaluation |
-| 🤖 [Robot ports (6)](#robot-porting-and-retargeting) | **[SuperMimic Retargeted](#supermimic-retargeted)** — G1 / A3 / X2 Ultra retargeting and coordinate checks |
-| 💡 [Learning examples (3)](#inspired-experiments) | **[FlatWorld](#flatworld--supermimic-2d)** — see the learning loop in a 2D multi-skill demo |
+| 🚀 [Real robots (2)](#real-robot-deployment-and-sim2real) | **[SuperMimic-Repro-Sim2Real](#supermimic-repro-sim2real)** [![GitHub stars](https://img.shields.io/github/stars/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real.svg?style=social)](https://github.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real/stargazers) — G1 hardware demos and deployment notes |
+| 🔬 [Reproductions (5)](#independent-reproductions) | **[supermimic_vibed](#supermimic_vibed)** [![GitHub stars](https://img.shields.io/github/stars/zita-ch/supermimic_vibed.svg?style=social)](https://github.com/zita-ch/supermimic_vibed/stargazers) — LAFAN1 training baseline<br>**[SuperMimic-Reproduced](#supermimic-reproduced)** [![GitHub stars](https://img.shields.io/github/stars/CuboiLeo/SuperMimic-Reproduced.svg?style=social)](https://github.com/CuboiLeo/SuperMimic-Reproduced/stargazers) — BONES-SEED experiment logs and weights<br>**[SuperMimic Mjlab](#supermimic-mjlab)** [![GitHub stars](https://img.shields.io/github/stars/Breezewrf/supermimic_mjlab.svg?style=social)](https://github.com/Breezewrf/supermimic_mjlab/stargazers) — step-by-step ablations and released checkpoints |
+| 🧩 [Method variants (6)](#method-and-morphology-variants) | **[InstantTrack](#instanttrack)** [![GitHub stars](https://img.shields.io/github/stars/Huy-Quang-Dao/instantTrack.svg?style=social)](https://github.com/Huy-Quang-Dao/instantTrack/stargazers) — 15-minute LAFAN1 target on one RTX 5090, three seeds<br>**[MorphMimic](#morphmimic)** [![GitHub stars](https://img.shields.io/github/stars/lzyang2000/morphmimic.svg?style=social)](https://github.com/lzyang2000/morphmimic/stargazers) — world-model / policy sharing across G1, X2 Ultra and T2 |
+| 👁️ [Perception & terrain (4)](#perception-terrain-and-quadrupeds) | **[InstinctMJ](#instinctmj--supermimic)** [![GitHub stars](https://img.shields.io/github/stars/project-instinct/InstinctMJ.svg?style=social)](https://github.com/project-instinct/InstinctMJ/stargazers) — depth-aware world model and terrain tracking<br>**[Go2-SuperMimic](#go2-supermimic)** [![GitHub stars](https://img.shields.io/github/stars/Zhengtianjin/go2-supermimic.svg?style=social)](https://github.com/Zhengtianjin/go2-supermimic/stargazers) — quadruped chase / dodge with released actors |
+| 🦾 [Manipulation & hands (4)](#manipulation-and-dexterous-hands) | **[supermimic_manipulation](#supermimic-for-robot-manipulation)** [![GitHub stars](https://img.shields.io/github/stars/emoPointer/supermimic_manipulation.svg?style=social)](https://github.com/emoPointer/supermimic_manipulation/stargazers) — three ARX5 arm tasks, weights and reset banks<br>**[Dex SuperMimic](#dex-supermimic)** [![GitHub stars](https://img.shields.io/github/stars/CumulusAlpha/Dex-Supermimic.svg?style=social)](https://github.com/CumulusAlpha/Dex-Supermimic/stargazers) — Wuji hands: cube reorientation, pen spinning and weights<br>**[In-Hand Rotation mjlab](#in-hand-rotation-mjlab)** [![GitHub stars](https://img.shields.io/github/stars/Msornerrrr/in-hand-rotation-mjlab.svg?style=social)](https://github.com/Msornerrrr/in-hand-rotation-mjlab/stargazers) — LEAP hand: world-model / PPO simulation comparisons |
+| 💪 [Muscles & interaction (3)](#muscle-interaction-and-diagnostics) | **[muscle-supermimic](#muscle-supermimic)** [![GitHub stars](https://img.shields.io/github/stars/kaibohex/muscle-supermimic.svg?style=social)](https://github.com/kaibohex/muscle-supermimic/stargazers) — two muscle-driven bodies, held-out KIT evaluation |
+| 🛠️ [Training stacks (6)](#frameworks-and-training-stacks) | **[UniSuperMimic](#unisupermimic)** [![GitHub stars](https://img.shields.io/github/stars/Motphys/Uni-SuperMimic.svg?style=social)](https://github.com/Motphys/Uni-SuperMimic/stargazers) — UniLab integration and both motion-data pipelines<br>**[ScaleBFM_Plus](#scalebfm_plus--supermimic)** [![GitHub stars](https://img.shields.io/github/stars/Hxxxz0/ScaleBFM_Plus.svg?style=social)](https://github.com/Hxxxz0/ScaleBFM_Plus/stargazers) — humanoid transformer integration and held-out evaluation |
+| 🤖 [Robot ports (6)](#robot-porting-and-retargeting) | **[SuperMimic Retargeted](#supermimic-retargeted)** [![GitHub stars](https://img.shields.io/github/stars/tianshuwu/supermimic-retargeted.svg?style=social)](https://github.com/tianshuwu/supermimic-retargeted/stargazers) — G1 / A3 / X2 Ultra retargeting and coordinate checks |
+| 💡 [Learning examples (3)](#inspired-experiments) | **[FlatWorld](#flatworld--supermimic-2d)** [![GitHub stars](https://img.shields.io/github/stars/swaggyliu/FlatWorld.svg?style=social)](https://github.com/swaggyliu/FlatWorld/stargazers) — see the learning loop in a 2D multi-skill demo |
 
 ## Real-robot deployment and Sim2Real
 
@@ -92,7 +92,9 @@ Real-robot runtimes and sim-to-real transfer paths.
 
 <a name="supermimic-repro-sim2real"></a>
 
-### ⭐ SuperMimic-Repro-Sim2Real
+<a name="-supermimic-repro-sim2real"></a>
+
+### ⭐ SuperMimic-Repro-Sim2Real [![GitHub stars](https://img.shields.io/github/stars/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real.svg?style=social)](https://github.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real/stargazers)
 
 [Repository](https://github.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real) · [Quickstart](https://github.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real/blob/f8f60d7bbdba68468c050ef100af02d752ca238e/README.md#快速开始) · [v1.1 field notes](https://github.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real/blob/f8f60d7bbdba68468c050ef100af02d752ca238e/docs/REAL_ROBOT_LEAN35KFS.md) · [G1 deployment](https://github.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real/blob/f8f60d7bbdba68468c050ef100af02d752ca238e/docs/DEPLOY_G1.md)
 
@@ -104,7 +106,9 @@ Real-robot runtimes and sim-to-real transfer paths.
 
 <br>
 
-### SuperMimic G1 Deployment
+<a name="supermimic-g1-deployment"></a>
+
+### SuperMimic G1 Deployment [![GitHub stars](https://img.shields.io/github/stars/KyrieYoung926/supermimic_deploy.svg?style=social)](https://github.com/KyrieYoung926/supermimic_deploy/stargazers)
 
 [Repository](https://github.com/KyrieYoung926/supermimic_deploy) · [MuJoCo guide](https://github.com/KyrieYoung926/supermimic_deploy/blob/7e63e3bbd5150d55afbdece28278781800f3ed21/README.md#3-run-in-mujoco) · [Real-G1 guide](https://github.com/KyrieYoung926/supermimic_deploy/blob/7e63e3bbd5150d55afbdece28278781800f3ed21/README.md#4-run-on-the-real-g1)
 
@@ -122,7 +126,9 @@ Reimplementations of the original method, with training, evaluation and reproduc
 
 <a name="supermimic_vibed"></a>
 
-### ⭐ supermimic_vibed
+<a name="-supermimic_vibed"></a>
+
+### ⭐ supermimic_vibed [![GitHub stars](https://img.shields.io/github/stars/zita-ch/supermimic_vibed.svg?style=social)](https://github.com/zita-ch/supermimic_vibed/stargazers)
 
 [Repository](https://github.com/zita-ch/supermimic_vibed) · [Setup and usage](https://github.com/zita-ch/supermimic_vibed/blob/a1508d42c9d1699a52e8233ab16d08c488441ab9/README.md#setup) · [Results](https://github.com/zita-ch/supermimic_vibed/blob/a1508d42c9d1699a52e8233ab16d08c488441ab9/README.md#result-lafan1-40-clips-one-rtx-pro-6000-blackwell)
 
@@ -136,7 +142,9 @@ Reimplementations of the original method, with training, evaluation and reproduc
 
 <a name="supermimic-reproduced"></a>
 
-### ⭐ SuperMimic-Reproduced
+<a name="-supermimic-reproduced"></a>
+
+### ⭐ SuperMimic-Reproduced [![GitHub stars](https://img.shields.io/github/stars/CuboiLeo/SuperMimic-Reproduced.svg?style=social)](https://github.com/CuboiLeo/SuperMimic-Reproduced/stargazers)
 
 [Repository](https://github.com/CuboiLeo/SuperMimic-Reproduced) · [Setup](https://github.com/CuboiLeo/SuperMimic-Reproduced/blob/ba6105349069bf040f1fdad60873d13138d505a2/README.md#setup) · [Experiment log](https://github.com/CuboiLeo/SuperMimic-Reproduced/blob/ba6105349069bf040f1fdad60873d13138d505a2/docs/EXPERIMENTS.md) · [Checkpoint](https://github.com/CuboiLeo/SuperMimic-Reproduced/releases/tag/e8-boneseed-100k)
 
@@ -150,7 +158,9 @@ Reimplementations of the original method, with training, evaluation and reproduc
 
 <a name="supermimic-mjlab"></a>
 
-### ⭐ SuperMimic Mjlab
+<a name="-supermimic-mjlab"></a>
+
+### ⭐ SuperMimic Mjlab [![GitHub stars](https://img.shields.io/github/stars/Breezewrf/supermimic_mjlab.svg?style=social)](https://github.com/Breezewrf/supermimic_mjlab/stargazers)
 
 [Repository](https://github.com/Breezewrf/supermimic_mjlab) · [Setup](https://github.com/Breezewrf/supermimic_mjlab/blob/77183062eb92026bfbee2daf276f87cad36fd957/doc/setup_en.md) · [Ablations and checkpoint](https://github.com/Breezewrf/supermimic_mjlab/blob/77183062eb92026bfbee2daf276f87cad36fd957/README.md#ablation-results-and-released-checkpoint)
 
@@ -162,7 +172,9 @@ Reimplementations of the original method, with training, evaluation and reproduc
 
 <br>
 
-### supermimic_vibe
+<a name="supermimic_vibe"></a>
+
+### supermimic_vibe [![GitHub stars](https://img.shields.io/github/stars/dhmbb2/supermimic_vibe.svg?style=social)](https://github.com/dhmbb2/supermimic_vibe/stargazers)
 
 [Repository](https://github.com/dhmbb2/supermimic_vibe) · [Setup](https://github.com/dhmbb2/supermimic_vibe/blob/072f0910dadc9d95c720e625b546120e9ce917c9/README.md#setup) · [Results log](https://github.com/dhmbb2/supermimic_vibe/blob/072f0910dadc9d95c720e625b546120e9ce917c9/notes/RESULTS.md)
 
@@ -174,7 +186,9 @@ Reimplementations of the original method, with training, evaluation and reproduc
 
 <br>
 
-### SuperMimic on RTX 5080
+<a name="supermimic-on-rtx-5080"></a>
+
+### SuperMimic on RTX 5080 [![GitHub stars](https://img.shields.io/github/stars/rzc156/supermimic-rtx5080.svg?style=social)](https://github.com/rzc156/supermimic-rtx5080/stargazers)
 
 [Repository](https://github.com/rzc156/supermimic-rtx5080) · [Reproduction analysis](https://github.com/rzc156/supermimic-rtx5080/blob/df967c61c29a2ed9ba6b188e1607ba59225fe8a7/REPRODUCTION_ANALYSIS.md) · [Evaluation videos](https://github.com/rzc156/supermimic-rtx5080/blob/df967c61c29a2ed9ba6b188e1607ba59225fe8a7/results/lafan1_anchor/videos/index.html)
 
@@ -192,7 +206,9 @@ Algorithm changes, multi-robot morphology adaptations and focused control studie
 
 <a name="instanttrack"></a>
 
-### ⭐ InstantTrack
+<a name="-instanttrack"></a>
+
+### ⭐ InstantTrack [![GitHub stars](https://img.shields.io/github/stars/Huy-Quang-Dao/instantTrack.svg?style=social)](https://github.com/Huy-Quang-Dao/instantTrack/stargazers)
 
 [Repository](https://github.com/Huy-Quang-Dao/instantTrack) · [Setup](https://github.com/Huy-Quang-Dao/instantTrack/blob/a33691a08bca8802d9d2985f62e2567479735a8e/README.md#setup) · [Results and ablations](https://github.com/Huy-Quang-Dao/instantTrack/blob/a33691a08bca8802d9d2985f62e2567479735a8e/results/report.md) · [Training presets](https://github.com/Huy-Quang-Dao/instantTrack/blob/a33691a08bca8802d9d2985f62e2567479735a8e/scripts/presets.sh)
 
@@ -206,7 +222,9 @@ Algorithm changes, multi-robot morphology adaptations and focused control studie
 
 <a name="morphmimic"></a>
 
-### ⭐ MorphMimic
+<a name="-morphmimic"></a>
+
+### ⭐ MorphMimic [![GitHub stars](https://img.shields.io/github/stars/lzyang2000/morphmimic.svg?style=social)](https://github.com/lzyang2000/morphmimic/stargazers)
 
 [Repository](https://github.com/lzyang2000/morphmimic) · [Setup](https://github.com/lzyang2000/morphmimic/blob/aa40fe46a7fa995ba7a7354ad065a2c8ad64a302/README.md#setup) · [Method differences](https://github.com/lzyang2000/morphmimic/blob/aa40fe46a7fa995ba7a7354ad065a2c8ad64a302/README.md#differences-from-supermimic)
 
@@ -220,7 +238,9 @@ Algorithm changes, multi-robot morphology adaptations and focused control studie
 
 <br>
 
-### allmimic
+<a name="allmimic"></a>
+
+### allmimic [![GitHub stars](https://img.shields.io/github/stars/Shimingyi/allmimic.svg?style=social)](https://github.com/Shimingyi/allmimic/stargazers)
 
 [Repository](https://github.com/Shimingyi/allmimic) · [Install](https://github.com/Shimingyi/allmimic/blob/cb334ff674b2f57248f33f8c21b7fb526fbdf8cc/README.md#install) · [Results](https://github.com/Shimingyi/allmimic/blob/cb334ff674b2f57248f33f8c21b7fb526fbdf8cc/README.md#results)
 
@@ -232,7 +252,9 @@ Algorithm changes, multi-robot morphology adaptations and focused control studie
 
 <br>
 
-### SuperMimic on LocoMuJoCo
+<a name="supermimic-on-locomujoco"></a>
+
+### SuperMimic on LocoMuJoCo [![GitHub stars](https://img.shields.io/github/stars/Alchedata/supermimic-locomujoco.svg?style=social)](https://github.com/Alchedata/supermimic-locomujoco/stargazers)
 
 [Repository](https://github.com/Alchedata/supermimic-locomujoco) · [Setup](https://github.com/Alchedata/supermimic-locomujoco/blob/de9f39191b9e8b87ff1afd2b0129dd93d4795e8c/README.md#setup) · [Results](https://github.com/Alchedata/supermimic-locomujoco/blob/de9f39191b9e8b87ff1afd2b0129dd93d4795e8c/README.md#results)
 
@@ -244,7 +266,9 @@ Algorithm changes, multi-robot morphology adaptations and focused control studie
 
 <br>
 
-### Rethinking SuperMimic
+<a name="rethinking-supermimic"></a>
+
+### Rethinking SuperMimic [![GitHub stars](https://img.shields.io/github/stars/btx0424/rethinking-supermimic.svg?style=social)](https://github.com/btx0424/rethinking-supermimic/stargazers)
 
 [Repository](https://github.com/btx0424/rethinking-supermimic) · [Installation](https://github.com/btx0424/rethinking-supermimic/blob/aa77b71054a850075431248f1534bb77ca62b4d8/README.md#installation) · [Implementation comparison](https://github.com/btx0424/rethinking-supermimic/blob/aa77b71054a850075431248f1534bb77ca62b4d8/README.md#ours-the-paper-and-supermimic_vibed)
 
@@ -255,7 +279,9 @@ Algorithm changes, multi-robot morphology adaptations and focused control studie
 
 <br>
 
-### Standing MBRL vs PPO
+<a name="standing-mbrl-vs-ppo"></a>
+
+### Standing MBRL vs PPO [![GitHub stars](https://img.shields.io/github/stars/JackMin7/supermimic_whole_body_tracking.svg?style=social)](https://github.com/JackMin7/supermimic_whole_body_tracking/stargazers)
 
 [Repository](https://github.com/JackMin7/supermimic_whole_body_tracking) · [Experiment details](https://github.com/JackMin7/supermimic_whole_body_tracking/blob/553a7d32dc5fc00cbe6de5ee46479af2fcceeda8/docs/EXPERIMENTS.md) · [Reproduction notes](https://github.com/JackMin7/supermimic_whole_body_tracking/blob/553a7d32dc5fc00cbe6de5ee46479af2fcceeda8/docs/REPRODUCIBILITY.md)
 
@@ -273,7 +299,9 @@ Vision, height-scan, terrain and quadruped task adaptations.
 
 <a name="instinctmj--supermimic"></a>
 
-### ⭐ InstinctMJ · SuperMimic
+<a name="-instinctmj--supermimic"></a>
+
+### ⭐ InstinctMJ · SuperMimic [![GitHub stars](https://img.shields.io/github/stars/project-instinct/InstinctMJ.svg?style=social)](https://github.com/project-instinct/InstinctMJ/stargazers)
 
 [Repository](https://github.com/project-instinct/InstinctMJ/tree/supermimic) · [Method and results](https://github.com/project-instinct/InstinctMJ/blob/7ca851e002980011f24a1664011305d0ba94aefc/src/instinct_mj/rl/supermimic/README.md#results) · [Releases](https://github.com/project-instinct/InstinctMJ/releases)
 
@@ -287,7 +315,9 @@ Vision, height-scan, terrain and quadruped task adaptations.
 
 <a name="go2-supermimic"></a>
 
-### ⭐ Go2-SuperMimic
+<a name="-go2-supermimic"></a>
+
+### ⭐ Go2-SuperMimic [![GitHub stars](https://img.shields.io/github/stars/Zhengtianjin/go2-supermimic.svg?style=social)](https://github.com/Zhengtianjin/go2-supermimic/stargazers)
 
 [Repository](https://github.com/Zhengtianjin/go2-supermimic) · [Quickstart](https://github.com/Zhengtianjin/go2-supermimic/blob/054a13c13285a1c94b2e69dc8ac7331f9a8c71cf/README.md#-quickstart) · [Pretrained policies](https://github.com/Zhengtianjin/go2-supermimic/blob/054a13c13285a1c94b2e69dc8ac7331f9a8c71cf/README.md#pretrained-policies)
 
@@ -299,7 +329,9 @@ Vision, height-scan, terrain and quadruped task adaptations.
 
 <br>
 
-### SuperMimic Parkour
+<a name="supermimic-parkour"></a>
+
+### SuperMimic Parkour [![GitHub stars](https://img.shields.io/github/stars/yhx1203/supermimic_parkour.svg?style=social)](https://github.com/yhx1203/supermimic_parkour/stargazers)
 
 [Repository](https://github.com/yhx1203/supermimic_parkour) · [Data setup](https://github.com/yhx1203/supermimic_parkour/blob/f398519453a25b3f10722626b7356266d8b7f875/README.md#motion-data) · [Checkpoint](https://github.com/yhx1203/supermimic_parkour/blob/f398519453a25b3f10722626b7356266d8b7f875/logs/php_five_skills/last.pt)
 
@@ -311,7 +343,9 @@ Vision, height-scan, terrain and quadruped task adaptations.
 
 <br>
 
-### SuperMimic-perceptive
+<a name="supermimic-perceptive"></a>
+
+### SuperMimic-perceptive [![GitHub stars](https://img.shields.io/github/stars/mode1223345/SuperMimic-perceptive.svg?style=social)](https://github.com/mode1223345/SuperMimic-perceptive/stargazers)
 
 [Repository](https://github.com/mode1223345/SuperMimic-perceptive) · [Method](https://github.com/mode1223345/SuperMimic-perceptive/blob/3d38bacbaf5bee7e782bdada6a6da678264d0bfa/Ae.md) · [Progress](https://github.com/mode1223345/SuperMimic-perceptive/blob/3d38bacbaf5bee7e782bdada6a6da678264d0bfa/Progress.md)
 
@@ -329,7 +363,9 @@ Arm, hand and object-interaction tasks, with dexterous manipulation grouped here
 
 <a name="supermimic-for-robot-manipulation"></a>
 
-### ⭐ SuperMimic for Robot Manipulation
+<a name="-supermimic-for-robot-manipulation"></a>
+
+### ⭐ SuperMimic for Robot Manipulation [![GitHub stars](https://img.shields.io/github/stars/emoPointer/supermimic_manipulation.svg?style=social)](https://github.com/emoPointer/supermimic_manipulation/stargazers)
 
 [Repository](https://github.com/emoPointer/supermimic_manipulation) · [Setup](https://github.com/emoPointer/supermimic_manipulation/blob/810e5768c50117d2fec75f20f9e643a11cd0882b/README.md#install) · [Results](https://github.com/emoPointer/supermimic_manipulation/blob/810e5768c50117d2fec75f20f9e643a11cd0882b/README.md#results)
 
@@ -343,7 +379,9 @@ Arm, hand and object-interaction tasks, with dexterous manipulation grouped here
 
 <a name="dex-supermimic"></a>
 
-### ⭐ Dex SuperMimic
+<a name="-dex-supermimic"></a>
+
+### ⭐ Dex SuperMimic [![GitHub stars](https://img.shields.io/github/stars/CumulusAlpha/Dex-Supermimic.svg?style=social)](https://github.com/CumulusAlpha/Dex-Supermimic/stargazers)
 
 [Repository](https://github.com/CumulusAlpha/Dex-Supermimic) · [Installation](https://github.com/CumulusAlpha/Dex-Supermimic/blob/3a7c1a33fd8e5c6cc047e381ea9309da96553c27/README.md#installation) · [Demos](https://github.com/CumulusAlpha/Dex-Supermimic/blob/3a7c1a33fd8e5c6cc047e381ea9309da96553c27/README.md#demos) · [Checkpoints](https://github.com/CumulusAlpha/Dex-Supermimic/releases/tag/pretrained-wuji-v2)
 
@@ -362,7 +400,9 @@ Arm, hand and object-interaction tasks, with dexterous manipulation grouped here
 
 <a name="in-hand-rotation-mjlab"></a>
 
-### ⭐ In-Hand Rotation mjlab
+<a name="-in-hand-rotation-mjlab"></a>
+
+### ⭐ In-Hand Rotation mjlab [![GitHub stars](https://img.shields.io/github/stars/Msornerrrr/in-hand-rotation-mjlab.svg?style=social)](https://github.com/Msornerrrr/in-hand-rotation-mjlab/stargazers)
 
 [Repository](https://github.com/Msornerrrr/in-hand-rotation-mjlab) · [Install](https://github.com/Msornerrrr/in-hand-rotation-mjlab/blob/0ab03eb2244b4a1a020d94ef38a4823bb9e15ba0/README.md#install) · [Results](https://github.com/Msornerrrr/in-hand-rotation-mjlab/blob/0ab03eb2244b4a1a020d94ef38a4823bb9e15ba0/README.md#results) · [Checkpoints](https://github.com/Msornerrrr/in-hand-rotation-mjlab/blob/0ab03eb2244b4a1a020d94ef38a4823bb9e15ba0/README.md#quick-start-the-released-policies)
 
@@ -374,7 +414,9 @@ Arm, hand and object-interaction tasks, with dexterous manipulation grouped here
 
 <br>
 
-### Humanoid Mimic · SuperMimic
+<a name="humanoid-mimic--supermimic"></a>
+
+### Humanoid Mimic · SuperMimic [![GitHub stars](https://img.shields.io/github/stars/shuayyy/humanoid-amp-ppo.svg?style=social)](https://github.com/shuayyy/humanoid-amp-ppo/stargazers)
 
 [Repository](https://github.com/shuayyy/humanoid-amp-ppo) · [Quickstart](https://github.com/shuayyy/humanoid-amp-ppo/blob/4889389118e0c88d3945dff54d2cd3f992ed815e/README.md#quickstart) · [Results and protocol](https://github.com/shuayyy/humanoid-amp-ppo/blob/4889389118e0c88d3945dff54d2cd3f992ed815e/docs/supermimic/RESULTS.md)
 
@@ -392,7 +434,9 @@ Muscle-actuated bodies, physical interaction and contact-focused diagnostics.
 
 <a name="muscle-supermimic"></a>
 
-### ⭐ Muscle SuperMimic
+<a name="-muscle-supermimic"></a>
+
+### ⭐ Muscle SuperMimic [![GitHub stars](https://img.shields.io/github/stars/kaibohex/muscle-supermimic.svg?style=social)](https://github.com/kaibohex/muscle-supermimic/stargazers)
 
 [Repository](https://github.com/kaibohex/muscle-supermimic) · [Setup](https://github.com/kaibohex/muscle-supermimic/blob/b7c7cdd83e82399e057cb9d3f1b76f23ca022c7b/README.md#install) · [Status](https://github.com/kaibohex/muscle-supermimic/blob/b7c7cdd83e82399e057cb9d3f1b76f23ca022c7b/README.md#status)
 
@@ -404,7 +448,9 @@ Muscle-actuated bodies, physical interaction and contact-focused diagnostics.
 
 <br>
 
-### SuperMimic-PERA
+<a name="supermimic-pera"></a>
+
+### SuperMimic-PERA [![GitHub stars](https://img.shields.io/github/stars/shangchaohu718/supermimic-pera.svg?style=social)](https://github.com/shangchaohu718/supermimic-pera/stargazers)
 
 [Repository](https://github.com/shangchaohu718/supermimic-pera) · [Current status](https://github.com/shangchaohu718/supermimic-pera/blob/0e89e55187a800341e609129b5d5200a607a467c/README.md#当前状态) · [Skateboarding report](https://github.com/shangchaohu718/supermimic-pera/blob/0e89e55187a800341e609129b5d5200a607a467c/docs/FIRST_SKATEBOARD_SKILL.md)
 
@@ -416,7 +462,9 @@ Muscle-actuated bodies, physical interaction and contact-focused diagnostics.
 
 <br>
 
-### SuperMimic Backflip Diagnostics
+<a name="supermimic-backflip-diagnostics"></a>
+
+### SuperMimic Backflip Diagnostics [![GitHub stars](https://img.shields.io/github/stars/liudi159/supermimic-backflip-5090.svg?style=social)](https://github.com/liudi159/supermimic-backflip-5090/stargazers)
 
 [Repository](https://github.com/liudi159/supermimic-backflip-5090) · [Results](https://github.com/liudi159/supermimic-backflip-5090/blob/5b313d75e804cdd2ff1ce9bdcfa899a98eca856b/README.md#结果) · [Quickstart](https://github.com/liudi159/supermimic-backflip-5090/blob/5b313d75e804cdd2ff1ce9bdcfa899a98eca856b/README.md#快速入口)
 
@@ -434,7 +482,9 @@ Integrations and reusable training or evaluation stacks.
 
 <a name="unisupermimic"></a>
 
-### ⭐ UniSuperMimic
+<a name="-unisupermimic"></a>
+
+### ⭐ UniSuperMimic [![GitHub stars](https://img.shields.io/github/stars/Motphys/Uni-SuperMimic.svg?style=social)](https://github.com/Motphys/Uni-SuperMimic/stargazers)
 
 [Repository](https://github.com/Motphys/Uni-SuperMimic) · [Installation](https://github.com/Motphys/Uni-SuperMimic/blob/9bdcbde1f191d88b489309182624a9877e7b6c30/README.md#installation) · [Results](https://github.com/Motphys/Uni-SuperMimic/blob/9bdcbde1f191d88b489309182624a9877e7b6c30/README.md#results)
 
@@ -448,7 +498,9 @@ Integrations and reusable training or evaluation stacks.
 
 <a name="scalebfm_plus--supermimic"></a>
 
-### ⭐ ScaleBFM_Plus · SuperMimic
+<a name="-scalebfm_plus--supermimic"></a>
+
+### ⭐ ScaleBFM_Plus · SuperMimic [![GitHub stars](https://img.shields.io/github/stars/Hxxxz0/ScaleBFM_Plus.svg?style=social)](https://github.com/Hxxxz0/ScaleBFM_Plus/stargazers)
 
 [Repository](https://github.com/Hxxxz0/ScaleBFM_Plus) · [Training and results](https://github.com/Hxxxz0/ScaleBFM_Plus/blob/65e4d524bd31fdc4284ba8c6e624fb0b0127da03/ScaleTrack/README.md#fast-training-with-a-learned-world-model-supermimic) · [Released checkpoint](https://github.com/Hxxxz0/ScaleBFM_Plus/tree/65e4d524bd31fdc4284ba8c6e624fb0b0127da03/ScaleTrack/checkpoints/supermimic_m)
 
@@ -460,7 +512,9 @@ Integrations and reusable training or evaluation stacks.
 
 <br>
 
-### HoloMotion · SuperMimic
+<a name="holomotion--supermimic"></a>
+
+### HoloMotion · SuperMimic [![GitHub stars](https://img.shields.io/github/stars/HorizonRobotics/HoloMotion.svg?style=social)](https://github.com/HorizonRobotics/HoloMotion/stargazers)
 
 [Repository](https://github.com/HorizonRobotics/HoloMotion) · [Training guide](https://github.com/HorizonRobotics/HoloMotion/blob/adaacd50ada6ba9338f6c3f539093f85453e2554/docs/supermimic.md) · [Results](https://github.com/HorizonRobotics/HoloMotion/blob/adaacd50ada6ba9338f6c3f539093f85453e2554/docs/supermimic.md#7-recorded-30-minute-results)
 
@@ -472,7 +526,9 @@ Integrations and reusable training or evaluation stacks.
 
 <br>
 
-### TrackerLab SuperMimic
+<a name="trackerlab-supermimic"></a>
+
+### TrackerLab SuperMimic [![GitHub stars](https://img.shields.io/github/stars/Renforce-Dynamics/trackerlab-supermimic.svg?style=social)](https://github.com/Renforce-Dynamics/trackerlab-supermimic/stargazers)
 
 [Repository](https://github.com/Renforce-Dynamics/trackerlab-supermimic) · [Install](https://github.com/Renforce-Dynamics/trackerlab-supermimic/blob/29d24524f2f731bf4df75b319c3e76544165849e/README.md#install) · [Results and limits](https://github.com/Renforce-Dynamics/trackerlab-supermimic/blob/29d24524f2f731bf4df75b319c3e76544165849e/docs/results.md)
 
@@ -484,7 +540,9 @@ Integrations and reusable training or evaluation stacks.
 
 <br>
 
-### SuperMimic Lab
+<a name="supermimic-lab"></a>
+
+### SuperMimic Lab [![GitHub stars](https://img.shields.io/github/stars/chu-fa/isaaclab-supermimic.svg?style=social)](https://github.com/chu-fa/isaaclab-supermimic/stargazers)
 
 [Repository](https://github.com/chu-fa/isaaclab-supermimic) · [Setup](https://github.com/chu-fa/isaaclab-supermimic/blob/d350e4378c6dc08a3f2a1d35d47b45d83db0e081/docs/SETUP.md) · [Custom-task guide](https://github.com/chu-fa/isaaclab-supermimic/blob/d350e4378c6dc08a3f2a1d35d47b45d83db0e081/docs/CUSTOM_TASKS.md)
 
@@ -496,7 +554,9 @@ Integrations and reusable training or evaluation stacks.
 
 <br>
 
-### SuperMimicKit
+<a name="supermimickit"></a>
+
+### SuperMimicKit [![GitHub stars](https://img.shields.io/github/stars/OMEGA-i/SuperMimicKit.svg?style=social)](https://github.com/OMEGA-i/SuperMimicKit/stargazers)
 
 [Repository](https://github.com/OMEGA-i/SuperMimicKit) · [Preview release](https://github.com/OMEGA-i/SuperMimicKit/releases/tag/demo-preview-20261024) · [Evaluation and limits](https://github.com/OMEGA-i/SuperMimicKit/blob/6697ff8ca53adc9233ded12a7c8777610ca1154d/docs/preview-release.md)
 
@@ -514,7 +574,9 @@ Robot-, simulator- and hardware-specific ports, together with motion-retargeting
 
 <a name="supermimic-retargeted"></a>
 
-### ⭐ SuperMimic Retargeted
+<a name="-supermimic-retargeted"></a>
+
+### ⭐ SuperMimic Retargeted [![GitHub stars](https://img.shields.io/github/stars/tianshuwu/supermimic-retargeted.svg?style=social)](https://github.com/tianshuwu/supermimic-retargeted/stargazers)
 
 [Repository](https://github.com/tianshuwu/supermimic-retargeted) · [Quickstart](https://github.com/tianshuwu/supermimic-retargeted/blob/ff69a0e5305126eb5b80b323bcd815805bc3df4e/README.md#快速开始) · [Data guide](https://github.com/tianshuwu/supermimic-retargeted/blob/ff69a0e5305126eb5b80b323bcd815805bc3df4e/docs/DATA.md)
 
@@ -526,7 +588,9 @@ Robot-, simulator- and hardware-specific ports, together with motion-retargeting
 
 <br>
 
-### SuperMimic E1
+<a name="supermimic-e1"></a>
+
+### SuperMimic E1 [![GitHub stars](https://img.shields.io/github/stars/wenconggan/SuperMimic_e1.svg?style=social)](https://github.com/wenconggan/SuperMimic_e1/stargazers)
 
 [Repository](https://github.com/wenconggan/SuperMimic_e1) · [Setup](https://github.com/wenconggan/SuperMimic_e1/blob/d5fbe8f219c438b84633130652c5e6e74beff628/README.md#安装与资源) · [Results](https://github.com/wenconggan/SuperMimic_e1/blob/d5fbe8f219c438b84633130652c5e6e74beff628/README.md#已测结果)
 
@@ -538,7 +602,9 @@ Robot-, simulator- and hardware-specific ports, together with motion-retargeting
 
 <br>
 
-### SuperMimic Oli
+<a name="supermimic-oli"></a>
+
+### SuperMimic Oli [![GitHub stars](https://img.shields.io/github/stars/liuskywalkerjskd/supermimic_oli.svg?style=social)](https://github.com/liuskywalkerjskd/supermimic_oli/stargazers)
 
 [Repository](https://github.com/liuskywalkerjskd/supermimic_oli) · [Setup](https://github.com/liuskywalkerjskd/supermimic_oli/blob/2dc90d90e89fb2e097e985c84c8b99a77708fa5f/README.md#setup) · [Results](https://github.com/liuskywalkerjskd/supermimic_oli/blob/2dc90d90e89fb2e097e985c84c8b99a77708fa5f/README.md#results)
 
@@ -550,7 +616,9 @@ Robot-, simulator- and hardware-specific ports, together with motion-retargeting
 
 <br>
 
-### SuperMimic on Apple M5
+<a name="supermimic-on-apple-m5"></a>
+
+### SuperMimic on Apple M5 [![GitHub stars](https://img.shields.io/github/stars/WXyuany/supermimic-m5.svg?style=social)](https://github.com/WXyuany/supermimic-m5/stargazers)
 
 [Repository](https://github.com/WXyuany/supermimic-m5) · [Run the released model](https://github.com/WXyuany/supermimic-m5/blob/42451591718e1a9a5ec601366997f47c0ad180a3/README.md#三步运行已训练模型) · [Results](https://github.com/WXyuany/supermimic-m5/blob/42451591718e1a9a5ec601366997f47c0ad180a3/README.md#实验结果)
 
@@ -562,7 +630,9 @@ Robot-, simulator- and hardware-specific ports, together with motion-retargeting
 
 <br>
 
-### SuperMimic-MuJoCo
+<a name="supermimic-mujoco"></a>
+
+### SuperMimic-MuJoCo [![GitHub stars](https://img.shields.io/github/stars/panhainan2020/SuperMimic-MuJoCo.svg?style=social)](https://github.com/panhainan2020/SuperMimic-MuJoCo/stargazers)
 
 [Repository](https://github.com/panhainan2020/SuperMimic-MuJoCo) · [Setup](https://github.com/panhainan2020/SuperMimic-MuJoCo/blob/db045afa9c52458f213e2c66037387e9c109a03a/README.md#环境安装) · [Evaluation](https://github.com/panhainan2020/SuperMimic-MuJoCo/blob/db045afa9c52458f213e2c66037387e9c109a03a/README.md#评估结果)
 
@@ -576,7 +646,9 @@ Robot-, simulator- and hardware-specific ports, together with motion-retargeting
 
 <br>
 
-### SuperMimic Wheel-Legged (wheelbipe)
+<a name="supermimic-wheel-legged-wheelbipe"></a>
+
+### SuperMimic Wheel-Legged (wheelbipe) [![GitHub stars](https://img.shields.io/github/stars/RadiantForever/supermimic_wheelbipe.svg?style=social)](https://github.com/RadiantForever/supermimic_wheelbipe/stargazers)
 
 [Repository](https://github.com/RadiantForever/supermimic_wheelbipe) · [Setup](https://github.com/RadiantForever/supermimic_wheelbipe/blob/0bf3456299a9f754289da58dce6c97c46afd3f03/README.md#setup) · [Results](https://github.com/RadiantForever/supermimic_wheelbipe/blob/0bf3456299a9f754289da58dce6c97c46afd3f03/README.md#results)
 
@@ -594,7 +666,9 @@ Ideas transferred to other control settings, with different tasks and evaluation
 
 <a name="flatworld--supermimic-2d"></a>
 
-### ⭐ FlatWorld · SuperMimic-2D
+<a name="-flatworld--supermimic-2d"></a>
+
+### ⭐ FlatWorld · SuperMimic-2D [![GitHub stars](https://img.shields.io/github/stars/swaggyliu/FlatWorld.svg?style=social)](https://github.com/swaggyliu/FlatWorld/stargazers)
 
 [Repository](https://github.com/swaggyliu/FlatWorld) · [Quickstart](https://github.com/swaggyliu/FlatWorld/blob/886dad634c44ed652eea951be62370478f367d8b/supermimic2d/README.md#quick-start) · [Reference motions](https://github.com/swaggyliu/FlatWorld/blob/886dad634c44ed652eea951be62370478f367d8b/supermimic2d/README.md#reference-motions-lafan-like-2d)
 
@@ -604,7 +678,9 @@ Ideas transferred to other control settings, with different tasks and evaluation
 
 <a href="https://github.com/swaggyliu/FlatWorld/blob/886dad634c44ed652eea951be62370478f367d8b/docs/media/promo_supermimic.mp4"><img src="assets/community/flatworld.gif" width="480" alt="2D simulation · 33-second multi-skill motion-tracking promo"></a><br><sub>2D simulation · full 33.3-second multi-skill promo</sub>
 
-### Ref2Dex · Dex Contact MBRL
+<a name="ref2dex--dex-contact-mbrl"></a>
+
+### Ref2Dex · Dex Contact MBRL [![GitHub stars](https://img.shields.io/github/stars/hitsz-oyx/Ref2Dex-agent.svg?style=social)](https://github.com/hitsz-oyx/Ref2Dex-agent/stargazers)
 
 [Repository](https://github.com/hitsz-oyx/Ref2Dex-agent) · [Task and results](https://github.com/hitsz-oyx/Ref2Dex-agent/blob/31cdb9ac759838b83d62bbc0addfd5cf28f3dff4/src/task/dex-contact-mbrl/README.md)
 
@@ -616,7 +692,9 @@ Ideas transferred to other control settings, with different tasks and evaluation
 
 <br>
 
-### G0.5 · SuperMimic-style Steering
+<a name="g05--supermimic-style-steering"></a>
+
+### G0.5 · SuperMimic-style Steering [![GitHub stars](https://img.shields.io/github/stars/azizkhadraoui/g05.svg?style=social)](https://github.com/azizkhadraoui/g05/stargazers)
 
 [Repository](https://github.com/azizkhadraoui/g05) · [Experiment code](https://github.com/azizkhadraoui/g05/blob/e3de0de50db7d90068483e2d30f2eacd781300b4/jobs/119_smsteer.py)
 
