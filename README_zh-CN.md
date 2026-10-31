@@ -81,7 +81,7 @@ SuperMimic 从仿真状态转移中学习一个共享的可微世界模型，再
 
 **40 个项目，按用途分为 7 类。** 每个项目只收录一次，跨方向的能力在介绍中说明。下表保留各方向的推荐入口，⭐ 表示有值得阅读的实验、工具或示例。
 
-各分类内，**⭐ 亮点项目在前，其余项目在后，两组内部各按 GitHub Stars 降序**排列。汇总表的推荐项目也按 Stars 降序排列（2026-11-01 快照；同数按仓库名排序）。徽章动态更新，排列顺序不会自动变化。Stars 体现仓库关注度；结果与演示为上游报告。
+各分类内，**所有项目统一按 GitHub Stars 降序排列**（2026-11-01 快照；同数按仓库名排序），⭐ 表示编辑推荐，不影响排序。汇总表仍按分类组织，并在分类内遵循相同顺序。徽章动态更新，排列顺序不会自动变化。Stars 体现仓库关注度；结果与演示为上游报告。
 
 <a name="精选项目"></a>
 
@@ -198,6 +198,20 @@ SuperMimic 从仿真状态转移中学习一个共享的可微世界模型，再
 
 <br>
 
+<a name="holomotion--supermimic"></a>
+
+### HoloMotion · SuperMimic [![GitHub stars](https://img.shields.io/github/stars/HorizonRobotics/HoloMotion.svg?style=social)](https://github.com/HorizonRobotics/HoloMotion/stargazers)
+
+[仓库](https://github.com/HorizonRobotics/HoloMotion) · [训练指南](https://github.com/HorizonRobotics/HoloMotion/blob/f52dd81ae935a828b0296f5ee0f833beb7378bf0/docs/supermimic.md) · [结果](https://github.com/HorizonRobotics/HoloMotion/blob/f52dd81ae935a828b0296f5ee0f833beb7378bf0/docs/supermimic.md#7-recorded-30-minute-results)
+
+- **团队：Horizon Robotics。** 将 SuperMimic 接入 HoloMotion 的 G1 资产、HDF5 动作数据和 Hydra 流程，在 MuJoCo Warp 与 Isaac PhysX 上共用 PPO 的任务和评测接口。
+- **上游报告：** 选定的 MuJoCo Warp 配置在单张 RTX 5090 上训练 **30 分钟**后，完整通过 **32 / 40 条 LAFAN1 训练动作**。
+- **选择时注意：** 已验证路线使用紧凑策略；预览来自另一轮运行的短片段，不能替代完整动作评测，也不代表规划中的大策略集成已经验证。 [核查版本](https://github.com/HorizonRobotics/HoloMotion/blob/f52dd81ae935a828b0296f5ee0f833beb7378bf0/docs/supermimic.md)。
+
+<a href="https://github.com/HorizonRobotics/HoloMotion"><img src="https://raw.githubusercontent.com/HorizonRobotics/HoloMotion/adaacd50ada6ba9338f6c3f539093f85453e2554/docs/media/supermimic_training_progress.webp" width="480" alt="仿真 · PPO / SuperMimic，两个仿真后端"></a><br><sub>仿真 · PPO / SuperMimic，两个仿真后端</sub>
+
+<br>
+
 <a name="supermimic-reproduced"></a>
 
 <a name="-supermimic-reproduced"></a>
@@ -278,52 +292,6 @@ SuperMimic 从仿真状态转移中学习一个共享的可微世界模型，再
 
 <br>
 
-<a name="scalebfm_plus--supermimic"></a>
-
-<a name="-scalebfm_plus--supermimic"></a>
-
-### ⭐ ScaleBFM_Plus · SuperMimic [![GitHub stars](https://img.shields.io/github/stars/Hxxxz0/ScaleBFM_Plus.svg?style=social)](https://github.com/Hxxxz0/ScaleBFM_Plus/stargazers)
-
-[仓库](https://github.com/Hxxxz0/ScaleBFM_Plus) · [训练与结果](https://github.com/Hxxxz0/ScaleBFM_Plus/blob/65e4d524bd31fdc4284ba8c6e624fb0b0127da03/ScaleTrack/README.md#fast-training-with-a-learned-world-model-supermimic) · [发布权重](https://github.com/Hxxxz0/ScaleBFM_Plus/tree/65e4d524bd31fdc4284ba8c6e624fb0b0127da03/ScaleTrack/checkpoints/supermimic_m)
-
-- **作者：Hxxxz0，基于 ScaleBFM 扩展。** 在 IsaacLab / RSL-RL 的 G1 ScaleTrack 流程中接入 SuperMimic 式世界模型学习与 32 步 BPTT，保留 humanoid transformer 和跟踪模式，支持兼容 PPO 格式的策略导出与回放。
-- **上游报告：** 使用 BONES-SEED、any4hdmi、LAFAN1 共 **309 小时 / 13.8 万条动作**，在 **16 张 RTX 5090 上训练 8.3 小时**，对 **2,575 条留出测试动作**报告 **99.5% 跟踪成功率**。在 386 条高动态测试动作中，该策略与官方 ScaleBFM-M 检查点均成功 **376 / 386**，平均全局身体位置误差分别为 **6.35 cm** 和 **6.43 cm**。
-- **选择时注意：** 这是 ScaleBFM 的社区扩展。报告的 **26× 单步提速**对比的是 **16 张 RTX 5090 上的 0.65 秒**与 PPO 在 **8 张 RTX 5090 上的 17.0 秒**，并非相同算力或达到同等质量所需时间的对照。 [核查版本](https://github.com/Hxxxz0/ScaleBFM_Plus/blob/65e4d524bd31fdc4284ba8c6e624fb0b0127da03/ScaleTrack/README.md)。
-
-<a href="https://github.com/Hxxxz0/ScaleBFM_Plus/blob/65e4d524bd31fdc4284ba8c6e624fb0b0127da03/ScaleTrack/assets/demos/supermimic_vs_official.gif"><img src="https://media.githubusercontent.com/media/Hxxxz0/ScaleBFM_Plus/65e4d524bd31fdc4284ba8c6e624fb0b0127da03/ScaleTrack/assets/demos/supermimic_vs_official.gif" width="480" alt="仿真 · 官方 ScaleBFM-M（左）与 SuperMimic（右），未见 LAFAN 舞蹈"></a><br><sub>仿真 · 官方 ScaleBFM-M（左）与 SuperMimic（右），未见 LAFAN 舞蹈 · 来源：Hxxxz0 / ScaleBFM_Plus</sub>
-
-<br>
-
-<a name="supermimic-mjlab"></a>
-
-<a name="-supermimic-mjlab"></a>
-
-### ⭐ SuperMimic Mjlab [![GitHub stars](https://img.shields.io/github/stars/Breezewrf/supermimic_mjlab.svg?style=social)](https://github.com/Breezewrf/supermimic_mjlab/stargazers)
-
-[仓库](https://github.com/Breezewrf/supermimic_mjlab) · [安装](https://github.com/Breezewrf/supermimic_mjlab/blob/a7cee74636a4c596cd8710f8c2e51f82d78bb150/doc/setup_en.md) · [消融实验与检查点](https://github.com/Breezewrf/supermimic_mjlab/blob/a7cee74636a4c596cd8710f8c2e51f82d78bb150/README.md#ablation-results-and-released-checkpoint)
-
-- **作者：Breezewrf。** 基于 mjlab 为 Unitree G1 独立复现 SuperMimic，提供完整的性能提升消融实验、多动作与速度训练、OOD 动作回放、video2motion、完整动作评估，以及已发布的策略与世界模型检查点。
-- **上游报告：** 所选检查点在全部 40 条 LAFAN 动作的固定起点、完整片段确定性评估中，达到 **40 / 40 成功、平均完成率 100%、归一化回报 0.8528**。使用 **单张 RTX A6000 48 GB**、4,096 个环境和 FP32 网络，训练 **15,000 次迭代约需 4 小时**。
-- **性能提升消融：** 完整记录从 Actor/Critic 输入归一化，依次加入躯干坐标系下的动作朝向锚点、世界模型归一化及修正余弦学习率调度的提升过程：在全部 40 条动作、15,000 次迭代的评估中，归一化回报均值为 **0.6016 → 0.8130 → 0.8504 → 0.8526**。最终重复运行均值与上述所选检查点分数分别报告。 新版文档新增 RoboJuDo-Plus 的 SuperMimic 部署入口；作者报告使用 G1 **23DoF** 真机，速度跟踪仍在开发。 [核查版本](https://github.com/Breezewrf/supermimic_mjlab/blob/a7cee74636a4c596cd8710f8c2e51f82d78bb150/README.md)。
-
-<a href="https://github.com/Breezewrf/supermimic_mjlab/blob/77183062eb92026bfbee2daf276f87cad36fd957/doc/assets/demo_v0.gif"><img src="assets/community/mjlab-demo.gif" width="480" alt="仿真 · SuperMimic Mjlab 动作回放的 12 秒截取"></a><br><sub>仿真 · 60.8 秒动作回放中的 12 秒片段；点击查看上游完整 GIF</sub>
-
-<br>
-
-<a name="holomotion--supermimic"></a>
-
-### HoloMotion · SuperMimic [![GitHub stars](https://img.shields.io/github/stars/HorizonRobotics/HoloMotion.svg?style=social)](https://github.com/HorizonRobotics/HoloMotion/stargazers)
-
-[仓库](https://github.com/HorizonRobotics/HoloMotion) · [训练指南](https://github.com/HorizonRobotics/HoloMotion/blob/f52dd81ae935a828b0296f5ee0f833beb7378bf0/docs/supermimic.md) · [结果](https://github.com/HorizonRobotics/HoloMotion/blob/f52dd81ae935a828b0296f5ee0f833beb7378bf0/docs/supermimic.md#7-recorded-30-minute-results)
-
-- **团队：Horizon Robotics。** 将 SuperMimic 接入 HoloMotion 的 G1 资产、HDF5 动作数据和 Hydra 流程，在 MuJoCo Warp 与 Isaac PhysX 上共用 PPO 的任务和评测接口。
-- **上游报告：** 选定的 MuJoCo Warp 配置在单张 RTX 5090 上训练 **30 分钟**后，完整通过 **32 / 40 条 LAFAN1 训练动作**。
-- **选择时注意：** 已验证路线使用紧凑策略；预览来自另一轮运行的短片段，不能替代完整动作评测，也不代表规划中的大策略集成已经验证。 [核查版本](https://github.com/HorizonRobotics/HoloMotion/blob/f52dd81ae935a828b0296f5ee0f833beb7378bf0/docs/supermimic.md)。
-
-<a href="https://github.com/HorizonRobotics/HoloMotion"><img src="https://raw.githubusercontent.com/HorizonRobotics/HoloMotion/adaacd50ada6ba9338f6c3f539093f85453e2554/docs/media/supermimic_training_progress.webp" width="480" alt="仿真 · PPO / SuperMimic，两个仿真后端"></a><br><sub>仿真 · PPO / SuperMimic，两个仿真后端</sub>
-
-<br>
-
 <a name="rethinking-supermimic"></a>
 
 ### Rethinking SuperMimic [![GitHub stars](https://img.shields.io/github/stars/btx0424/rethinking-supermimic.svg?style=social)](https://github.com/btx0424/rethinking-supermimic/stargazers)
@@ -351,6 +319,22 @@ SuperMimic 从仿真状态转移中学习一个共享的可微世界模型，再
 
 <br>
 
+<a name="scalebfm_plus--supermimic"></a>
+
+<a name="-scalebfm_plus--supermimic"></a>
+
+### ⭐ ScaleBFM_Plus · SuperMimic [![GitHub stars](https://img.shields.io/github/stars/Hxxxz0/ScaleBFM_Plus.svg?style=social)](https://github.com/Hxxxz0/ScaleBFM_Plus/stargazers)
+
+[仓库](https://github.com/Hxxxz0/ScaleBFM_Plus) · [训练与结果](https://github.com/Hxxxz0/ScaleBFM_Plus/blob/65e4d524bd31fdc4284ba8c6e624fb0b0127da03/ScaleTrack/README.md#fast-training-with-a-learned-world-model-supermimic) · [发布权重](https://github.com/Hxxxz0/ScaleBFM_Plus/tree/65e4d524bd31fdc4284ba8c6e624fb0b0127da03/ScaleTrack/checkpoints/supermimic_m)
+
+- **作者：Hxxxz0，基于 ScaleBFM 扩展。** 在 IsaacLab / RSL-RL 的 G1 ScaleTrack 流程中接入 SuperMimic 式世界模型学习与 32 步 BPTT，保留 humanoid transformer 和跟踪模式，支持兼容 PPO 格式的策略导出与回放。
+- **上游报告：** 使用 BONES-SEED、any4hdmi、LAFAN1 共 **309 小时 / 13.8 万条动作**，在 **16 张 RTX 5090 上训练 8.3 小时**，对 **2,575 条留出测试动作**报告 **99.5% 跟踪成功率**。在 386 条高动态测试动作中，该策略与官方 ScaleBFM-M 检查点均成功 **376 / 386**，平均全局身体位置误差分别为 **6.35 cm** 和 **6.43 cm**。
+- **选择时注意：** 这是 ScaleBFM 的社区扩展。报告的 **26× 单步提速**对比的是 **16 张 RTX 5090 上的 0.65 秒**与 PPO 在 **8 张 RTX 5090 上的 17.0 秒**，并非相同算力或达到同等质量所需时间的对照。 [核查版本](https://github.com/Hxxxz0/ScaleBFM_Plus/blob/65e4d524bd31fdc4284ba8c6e624fb0b0127da03/ScaleTrack/README.md)。
+
+<a href="https://github.com/Hxxxz0/ScaleBFM_Plus/blob/65e4d524bd31fdc4284ba8c6e624fb0b0127da03/ScaleTrack/assets/demos/supermimic_vs_official.gif"><img src="https://media.githubusercontent.com/media/Hxxxz0/ScaleBFM_Plus/65e4d524bd31fdc4284ba8c6e624fb0b0127da03/ScaleTrack/assets/demos/supermimic_vs_official.gif" width="480" alt="仿真 · 官方 ScaleBFM-M（左）与 SuperMimic（右），未见 LAFAN 舞蹈"></a><br><sub>仿真 · 官方 ScaleBFM-M（左）与 SuperMimic（右），未见 LAFAN 舞蹈 · 来源：Hxxxz0 / ScaleBFM_Plus</sub>
+
+<br>
+
 <a name="trackerlab-supermimic"></a>
 
 ### TrackerLab SuperMimic [![GitHub stars](https://img.shields.io/github/stars/Renforce-Dynamics/trackerlab-supermimic.svg?style=social)](https://github.com/Renforce-Dynamics/trackerlab-supermimic/stargazers)
@@ -362,6 +346,22 @@ SuperMimic 从仿真状态转移中学习一个共享的可微世界模型，再
 - **选择时注意：** 结果使用 PhysX，而 supermimic_vibed 使用 MuJoCo Warp；各本体的动作库与训练过程不同，未见动作泛化仍未测量。 新增独立 G1 MuJoCo-Warp 训练入口及参考动作末帧 / 归一化修正；Warp 集成仅有 CPU 回归覆盖，仍需目标 GPU 验证，不能继承上述历史 PhysX 成绩。 [核查版本](https://github.com/Renforce-Dynamics/trackerlab-supermimic/blob/813f37a89d9be0791c9c72695a322307001a5d11/README.md)。
 
 <a href="https://github.com/Renforce-Dynamics/trackerlab-supermimic/blob/29d24524f2f731bf4df75b319c3e76544165849e/docs/media/g1_dance_032000.mp4"><img src="https://raw.githubusercontent.com/Renforce-Dynamics/trackerlab-supermimic/29d24524f2f731bf4df75b319c3e76544165849e/docs/media/g1_dance_032000.gif" width="480" alt="仿真 · G1 策略与参考舞蹈"></a><br><sub>仿真 · G1 策略与参考舞蹈</sub>
+
+<br>
+
+<a name="supermimic-mjlab"></a>
+
+<a name="-supermimic-mjlab"></a>
+
+### ⭐ SuperMimic Mjlab [![GitHub stars](https://img.shields.io/github/stars/Breezewrf/supermimic_mjlab.svg?style=social)](https://github.com/Breezewrf/supermimic_mjlab/stargazers)
+
+[仓库](https://github.com/Breezewrf/supermimic_mjlab) · [安装](https://github.com/Breezewrf/supermimic_mjlab/blob/a7cee74636a4c596cd8710f8c2e51f82d78bb150/doc/setup_en.md) · [消融实验与检查点](https://github.com/Breezewrf/supermimic_mjlab/blob/a7cee74636a4c596cd8710f8c2e51f82d78bb150/README.md#ablation-results-and-released-checkpoint)
+
+- **作者：Breezewrf。** 基于 mjlab 为 Unitree G1 独立复现 SuperMimic，提供完整的性能提升消融实验、多动作与速度训练、OOD 动作回放、video2motion、完整动作评估，以及已发布的策略与世界模型检查点。
+- **上游报告：** 所选检查点在全部 40 条 LAFAN 动作的固定起点、完整片段确定性评估中，达到 **40 / 40 成功、平均完成率 100%、归一化回报 0.8528**。使用 **单张 RTX A6000 48 GB**、4,096 个环境和 FP32 网络，训练 **15,000 次迭代约需 4 小时**。
+- **性能提升消融：** 完整记录从 Actor/Critic 输入归一化，依次加入躯干坐标系下的动作朝向锚点、世界模型归一化及修正余弦学习率调度的提升过程：在全部 40 条动作、15,000 次迭代的评估中，归一化回报均值为 **0.6016 → 0.8130 → 0.8504 → 0.8526**。最终重复运行均值与上述所选检查点分数分别报告。 新版文档新增 RoboJuDo-Plus 的 SuperMimic 部署入口；作者报告使用 G1 **23DoF** 真机，速度跟踪仍在开发。 [核查版本](https://github.com/Breezewrf/supermimic_mjlab/blob/a7cee74636a4c596cd8710f8c2e51f82d78bb150/README.md)。
+
+<a href="https://github.com/Breezewrf/supermimic_mjlab/blob/77183062eb92026bfbee2daf276f87cad36fd957/doc/assets/demo_v0.gif"><img src="assets/community/mjlab-demo.gif" width="480" alt="仿真 · SuperMimic Mjlab 动作回放的 12 秒截取"></a><br><sub>仿真 · 60.8 秒动作回放中的 12 秒片段；点击查看上游完整 GIF</sub>
 
 <br>
 
@@ -556,20 +556,6 @@ SuperMimic 从仿真状态转移中学习一个共享的可微世界模型，再
 
 <br>
 
-<a name="sharpa-supermimic"></a>
-
-<a name="-sharpa-supermimic"></a>
-
-### ⭐ Sharpa SuperMimic · UniLab [![GitHub stars](https://img.shields.io/github/stars/Mingrui-Yu/sharpa_rl_unilab.svg?style=social)](https://github.com/Mingrui-Yu/sharpa_rl_unilab/stargazers)
-
-[仓库](https://github.com/Mingrui-Yu/sharpa_rl_unilab/tree/feat/supermimic-training) · [安装与验证](https://github.com/Mingrui-Yu/sharpa_rl_unilab/blob/a74e50bfe903ac7167fbcef39e37fabc737fba95/README.md#installation-and-validation) · [训练](https://github.com/Mingrui-Yu/sharpa_rl_unilab/blob/a74e50bfe903ac7167fbcef39e37fabc737fba95/docs/en/training.md) · [验证记录](https://github.com/Mingrui-Yu/sharpa_rl_unilab/blob/a74e50bfe903ac7167fbcef39e37fabc737fba95/docs/validation/unilab-1.5.4-20261031.json)
-
-- **作者：Mingrui Yu。** 提供独立的 UniLab 任务包，让 22 自由度 Sharpa Wave 手旋转自由圆柱体。SuperMimic 是默认教师：先从真实回放转移拟合世界模型，再通过想象的 rollout 优化共享 HORA 策略。
-- **提供内容：** 教师到学生的蒸馏管线、MJWarp 与 MuJoCo 入口、触觉历史、critic 特权观测、八种物体尺度，以及 PPO / APPO / FlashSAC 对照基线。
-- **验证与边界：** 2026-10-31 的验证记录显示，在单张 RTX 4090 上 **223 项测试**通过，覆盖 slow/CUDA 测试和一次短程 SuperMimic 训练—评估—蒸馏 smoke；这证明训练管线已接通，不构成完整的策略性能对比。SuperMimic 工作目前位于 `feat/supermimic-training`，默认 `main` 尚未包含它。 [核查版本](https://github.com/Mingrui-Yu/sharpa_rl_unilab/blob/a74e50bfe903ac7167fbcef39e37fabc737fba95/README.md)。
-
-<br>
-
 <a name="humanoid-mimic--supermimic"></a>
 
 ### Humanoid Mimic · SuperMimic [![GitHub stars](https://img.shields.io/github/stars/shuayyy/humanoid-amp-ppo.svg?style=social)](https://github.com/shuayyy/humanoid-amp-ppo/stargazers)
@@ -581,6 +567,20 @@ SuperMimic 从仿真状态转移中学习一个共享的可微世界模型，再
 - **选择时注意：** 上述 SuperMimic 分数使用无噪声观测；新版评估已加入观测噪声，公开检查点尚未按这一设置重评。 [核查版本](https://github.com/shuayyy/humanoid-amp-ppo/blob/681874bab20273ba9211cb92d5ff108900ce3490/README.md)。
 
 <a href="https://github.com/shuayyy/humanoid-amp-ppo/blob/4889389118e0c88d3945dff54d2cd3f992ed815e/assets/supermimic_vs_ppo_lift.mp4"><img src="https://raw.githubusercontent.com/shuayyy/humanoid-amp-ppo/4889389118e0c88d3945dff54d2cd3f992ed815e/assets/supermimic_vs_ppo_lift.gif" width="480" alt="搬箱 · SuperMimic 12k / PPO-Sim 6k 次迭代"></a><br><sub>搬箱 · SuperMimic 12k / PPO-Sim 6k 次迭代</sub>
+
+<br>
+
+<a name="sharpa-supermimic"></a>
+
+<a name="-sharpa-supermimic"></a>
+
+### ⭐ Sharpa SuperMimic · UniLab [![GitHub stars](https://img.shields.io/github/stars/Mingrui-Yu/sharpa_rl_unilab.svg?style=social)](https://github.com/Mingrui-Yu/sharpa_rl_unilab/stargazers)
+
+[仓库](https://github.com/Mingrui-Yu/sharpa_rl_unilab/tree/feat/supermimic-training) · [安装与验证](https://github.com/Mingrui-Yu/sharpa_rl_unilab/blob/a74e50bfe903ac7167fbcef39e37fabc737fba95/README.md#installation-and-validation) · [训练](https://github.com/Mingrui-Yu/sharpa_rl_unilab/blob/a74e50bfe903ac7167fbcef39e37fabc737fba95/docs/en/training.md) · [验证记录](https://github.com/Mingrui-Yu/sharpa_rl_unilab/blob/a74e50bfe903ac7167fbcef39e37fabc737fba95/docs/validation/unilab-1.5.4-20261031.json)
+
+- **作者：Mingrui Yu。** 提供独立的 UniLab 任务包，让 22 自由度 Sharpa Wave 手旋转自由圆柱体。SuperMimic 是默认教师：先从真实回放转移拟合世界模型，再通过想象的 rollout 优化共享 HORA 策略。
+- **提供内容：** 教师到学生的蒸馏管线、MJWarp 与 MuJoCo 入口、触觉历史、critic 特权观测、八种物体尺度，以及 PPO / APPO / FlashSAC 对照基线。
+- **验证与边界：** 2026-10-31 的验证记录显示，在单张 RTX 4090 上 **223 项测试**通过，覆盖 slow/CUDA 测试和一次短程 SuperMimic 训练—评估—蒸馏 smoke；这证明训练管线已接通，不构成完整的策略性能对比。SuperMimic 工作目前位于 `feat/supermimic-training`，默认 `main` 尚未包含它。 [核查版本](https://github.com/Mingrui-Yu/sharpa_rl_unilab/blob/a74e50bfe903ac7167fbcef39e37fabc737fba95/README.md)。
 
 <br>
 
@@ -636,22 +636,6 @@ SuperMimic 从仿真状态转移中学习一个共享的可微世界模型，再
 
 面向机器人本体、仿真器或硬件平台的移植，以及动作重定向工具。
 
-<a name="supermimic-retargeted"></a>
-
-<a name="-supermimic-retargeted"></a>
-
-### ⭐ SuperMimic Retargeted [![GitHub stars](https://img.shields.io/github/stars/tianshuwu/supermimic-retargeted.svg?style=social)](https://github.com/tianshuwu/supermimic-retargeted/stargazers)
-
-[仓库](https://github.com/tianshuwu/supermimic-retargeted) · [快速开始](https://github.com/tianshuwu/supermimic-retargeted/blob/ff69a0e5305126eb5b80b323bcd815805bc3df4e/README.md#快速开始) · [数据说明](https://github.com/tianshuwu/supermimic-retargeted/blob/ff69a0e5305126eb5b80b323bcd815805bc3df4e/docs/DATA.md)
-
-- **作者：tianshuwu。** 基于 CuboiLeo 的 mjlab 复现适配 G1、A3 与 X2 Ultra，加入本体运动学、SOMA 重定向、坐标修正及脚底接触检查。
-- **提供内容：** 公开 LAFAN1/BONES-SEED 数据准备流程和历史评测记录；训练权重不随仓库发布，动作数据需另行准备。
-- **选择时注意：** 已报告策略增加了从仿真真值计算的锚点相对观测，真机需有对应的状态估计；尚未完成实机验证。 [核查版本](https://github.com/tianshuwu/supermimic-retargeted/blob/ff69a0e5305126eb5b80b323bcd815805bc3df4e/README.md)。
-
-<a href="https://github.com/tianshuwu/supermimic-retargeted/blob/ff69a0e5305126eb5b80b323bcd815805bc3df4e/media/demo.mp4"><img src="https://raw.githubusercontent.com/tianshuwu/supermimic-retargeted/ff69a0e5305126eb5b80b323bcd815805bc3df4e/media/demo-preview.gif" width="480" alt="仿真 · G1 / X2 Ultra / A3"></a><br><sub>仿真 · G1 / X2 Ultra / A3</sub>
-
-<br>
-
 <a name="supermimic-mujoco"></a>
 
 ### SuperMimic-MuJoCo [![GitHub stars](https://img.shields.io/github/stars/panhainan2020/SuperMimic-MuJoCo.svg?style=social)](https://github.com/panhainan2020/SuperMimic-MuJoCo/stargazers)
@@ -665,6 +649,22 @@ SuperMimic 从仿真状态转移中学习一个共享的可微世界模型，再
 <a href="https://github.com/panhainan2020/SuperMimic-MuJoCo/blob/db045afa9c52458f213e2c66037387e9c109a03a/README.md"><img src="assets/community/mujoco-evaluation.png" width="720" alt="报告截图 · LAFAN 训练动作与未见 100STYLE 动作"></a><br><sub>报告截图 · LAFAN 训练动作与未见 100STYLE 动作</sub>
 
 [完整视频展示](https://supermimic-mujoco-results.zippyaspen7.chatgpt.site)
+
+<br>
+
+<a name="supermimic-retargeted"></a>
+
+<a name="-supermimic-retargeted"></a>
+
+### ⭐ SuperMimic Retargeted [![GitHub stars](https://img.shields.io/github/stars/tianshuwu/supermimic-retargeted.svg?style=social)](https://github.com/tianshuwu/supermimic-retargeted/stargazers)
+
+[仓库](https://github.com/tianshuwu/supermimic-retargeted) · [快速开始](https://github.com/tianshuwu/supermimic-retargeted/blob/ff69a0e5305126eb5b80b323bcd815805bc3df4e/README.md#快速开始) · [数据说明](https://github.com/tianshuwu/supermimic-retargeted/blob/ff69a0e5305126eb5b80b323bcd815805bc3df4e/docs/DATA.md)
+
+- **作者：tianshuwu。** 基于 CuboiLeo 的 mjlab 复现适配 G1、A3 与 X2 Ultra，加入本体运动学、SOMA 重定向、坐标修正及脚底接触检查。
+- **提供内容：** 公开 LAFAN1/BONES-SEED 数据准备流程和历史评测记录；训练权重不随仓库发布，动作数据需另行准备。
+- **选择时注意：** 已报告策略增加了从仿真真值计算的锚点相对观测，真机需有对应的状态估计；尚未完成实机验证。 [核查版本](https://github.com/tianshuwu/supermimic-retargeted/blob/ff69a0e5305126eb5b80b323bcd815805bc3df4e/README.md)。
+
+<a href="https://github.com/tianshuwu/supermimic-retargeted/blob/ff69a0e5305126eb5b80b323bcd815805bc3df4e/media/demo.mp4"><img src="https://raw.githubusercontent.com/tianshuwu/supermimic-retargeted/ff69a0e5305126eb5b80b323bcd815805bc3df4e/media/demo-preview.gif" width="480" alt="仿真 · G1 / X2 Ultra / A3"></a><br><sub>仿真 · G1 / X2 Ultra / A3</sub>
 
 <br>
 
