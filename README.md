@@ -37,10 +37,10 @@ Start with the original work below, then choose an implementation by framework a
 ## Contents
 
 - [Original SuperMimic](#original-supermimic)
-- [Community projects (39)](#community-projects)
+- [Community projects (40)](#community-projects)
   - 🔬 [Reproductions, methods & frameworks (17)](#reproductions-methods-and-training-frameworks)
   - 👁️ [Perception & terrain (4)](#perception-terrain-and-quadrupeds)
-  - 🦾 [Manipulation & hands (4)](#manipulation-and-dexterous-hands)
+  - 🦾 [Manipulation & hands (5)](#manipulation-and-dexterous-hands)
   - 💪 [Muscles & interaction (3)](#muscle-interaction-and-diagnostics)
   - 🤖 [Robot ports (7)](#robot-porting-and-retargeting)
   - 🚀 [Real robots (2)](#real-robot-deployment-and-sim2real)
@@ -79,9 +79,9 @@ The authors report surpassing SONIC's released-checkpoint return after **3 hours
 
 ## Community projects
 
-**39 projects in 7 categories, grouped by purpose.** Each project appears once; overlapping capabilities are described in its entry. The guide retains complementary starting points; ⭐ marks documented experiments, tools or learning examples.
+**40 projects in 7 categories, grouped by purpose.** Each project appears once; overlapping capabilities are described in its entry. The guide retains complementary starting points; ⭐ marks documented experiments, tools or learning examples.
 
-Within each category, **⭐ highlighted projects come first**, followed by the remaining projects; **each group is sorted by GitHub Stars, highest first**. The overview selections follow the same Stars order (2026-10-30 snapshot; ties by repository name). Badges update dynamically; the order does not. Stars reflect repository popularity; results and demos are upstream reports.
+Within each category, **⭐ highlighted projects come first**, followed by the remaining projects; **each group is sorted by GitHub Stars, highest first**. The overview selections follow the same Stars order (2026-11-01 snapshot; ties by repository name). Badges update dynamically; the order does not. Stars reflect repository popularity; results and demos are upstream reports.
 
 <a name="featured-projects"></a>
 
@@ -133,7 +133,7 @@ Within each category, **⭐ highlighted projects come first**, followed by the r
 <td valign="top"><strong>SuperMimic goes quadruped: chase, dodge, navigate terrain.</strong> Three released Go2 actors span flat ground, obstacles and terrain, with evaluation/recording tools; simulation only.</td>
 </tr>
 <tr>
-<td rowspan="3" valign="top"><a href="#manipulation-and-dexterous-hands">🦾&nbsp;Manipulation&nbsp;&amp;&nbsp;hands&nbsp;(4)</a></td>
+<td rowspan="4" valign="top"><a href="#manipulation-and-dexterous-hands">🦾&nbsp;Manipulation&nbsp;&amp;&nbsp;hands&nbsp;(5)</a></td>
 <td valign="top" nowrap="nowrap"><strong><a href="#dex-supermimic">Dex SuperMimic</a></strong>&nbsp;<a href="https://github.com/CumulusAlpha/Dex-Supermimic/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/CumulusAlpha/Dex-Supermimic.svg?style=social"></a><br>By CumulusAlpha</td>
 <td valign="top"><strong>Cube reorientation and pen spinning with a dexterous hand!</strong> Wuji-hand manipulation ships three 8k-iteration checkpoints, assets and Viser playback, making contact-rich behavior easy to inspect.</td>
 </tr>
@@ -144,6 +144,10 @@ Within each category, **⭐ highlighted projects come first**, followed by the r
 <tr>
 <td valign="top" nowrap="nowrap"><strong><a href="#in-hand-rotation-mjlab">In-Hand Rotation mjlab</a></strong>&nbsp;<a href="https://github.com/Msornerrrr/in-hand-rotation-mjlab/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/Msornerrrr/in-hand-rotation-mjlab.svg?style=social"></a><br>By Msornerrrr</td>
 <td valign="top"><strong>25 minutes vs PPO's 6.5 hours on LEAP-hand rotation!</strong> World-model-based optimization reaches the same reported reward level on one RTX 4090; simulation-only, one run per configuration.</td>
+</tr>
+<tr>
+<td valign="top" nowrap="nowrap"><strong><a href="#sharpa-supermimic">Sharpa SuperMimic</a></strong>&nbsp;<a href="https://github.com/Mingrui-Yu/sharpa_rl_unilab/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/Mingrui-Yu/sharpa_rl_unilab.svg?style=social"></a><br>By Mingrui Yu</td>
+<td valign="top"><strong>A tactile dexterous-hand target for SuperMimic!</strong> The default teacher rotates a cylinder with a 22-DoF Sharpa Wave hand, adds HORA teacher-to-student distillation and runs on UniLab/MJWarp beside PPO, APPO and FlashSAC baselines; validation covers the pipeline, not full policy performance.</td>
 </tr>
 <tr>
 <td rowspan="1" valign="top"><a href="#muscle-interaction-and-diagnostics">💪&nbsp;Muscles&nbsp;&amp;&nbsp;interaction&nbsp;(3)</a></td>
@@ -552,6 +556,20 @@ Arm, hand and object-interaction tasks, with dexterous manipulation grouped here
 
 <br>
 
+<a name="sharpa-supermimic"></a>
+
+<a name="-sharpa-supermimic"></a>
+
+### ⭐ Sharpa SuperMimic · UniLab [![GitHub stars](https://img.shields.io/github/stars/Mingrui-Yu/sharpa_rl_unilab.svg?style=social)](https://github.com/Mingrui-Yu/sharpa_rl_unilab/stargazers)
+
+[Repository](https://github.com/Mingrui-Yu/sharpa_rl_unilab/tree/feat/supermimic-training) · [Installation](https://github.com/Mingrui-Yu/sharpa_rl_unilab/blob/a74e50bfe903ac7167fbcef39e37fabc737fba95/README.md#installation-and-validation) · [Training](https://github.com/Mingrui-Yu/sharpa_rl_unilab/blob/a74e50bfe903ac7167fbcef39e37fabc737fba95/docs/en/training.md) · [Validation](https://github.com/Mingrui-Yu/sharpa_rl_unilab/blob/a74e50bfe903ac7167fbcef39e37fabc737fba95/docs/validation/unilab-1.5.4-20261031.json)
+
+- **By Mingrui Yu.** Builds an independent UniLab task package for a 22-DoF Sharpa Wave hand rotating a free cylinder. SuperMimic is the default teacher: a learned world model is fitted on replay transitions, then the shared HORA policy is optimized through imagined rollouts.
+- **What it provides:** A teacher-to-student distillation pipeline, MJWarp and MuJoCo entrypoints, tactile history, privileged critic observations, eight object scales, and PPO / APPO / FlashSAC comparison baselines.
+- **Validation and limits:** The October 31 validation record reports **223 tests** passing on one RTX 4090, including slow/CUDA tests and a short SuperMimic train–evaluate–distill smoke run. This establishes pipeline integration, not a full policy-quality comparison. The SuperMimic work is currently on `feat/supermimic-training`; the default `main` branch does not yet contain it. [Source snapshot](https://github.com/Mingrui-Yu/sharpa_rl_unilab/blob/a74e50bfe903ac7167fbcef39e37fabc737fba95/README.md).
+
+<br>
+
 <a name="humanoid-mimic--supermimic"></a>
 
 ### Humanoid Mimic · SuperMimic [![GitHub stars](https://img.shields.io/github/stars/shuayyy/humanoid-amp-ppo.svg?style=social)](https://github.com/shuayyy/humanoid-amp-ppo/stargazers)
@@ -678,6 +696,20 @@ Robot-, simulator- and hardware-specific ports, together with motion-retargeting
 
 <br>
 
+<a name="supermimic-quadruped"></a>
+
+### SuperMimic-Quadruped [![GitHub stars](https://img.shields.io/github/stars/Houserz/supermimic-quadruped.svg?style=social)](https://github.com/Houserz/supermimic-quadruped/stargazers)
+
+[Repository](https://github.com/Houserz/supermimic-quadruped) · [Quick start](https://github.com/Houserz/supermimic-quadruped/blob/46a81c248f4eff8eb595e63ac2d3d84d1e30e444/README.md#quick-start) · [Results](https://github.com/Houserz/supermimic-quadruped/blob/46a81c248f4eff8eb595e63ac2d3d84d1e30e444/README.md#results) · [Joystick planner](https://github.com/Houserz/supermimic-quadruped/blob/46a81c248f4eff8eb595e63ac2d3d84d1e30e444/docs/PLANNER.md) · [Pretrained models](https://github.com/Houserz/supermimic-quadruped/releases/tag/v0.2.0)
+
+- **By Houserz.** Ports SuperMimic motion tracking to the Dobot Rover X1 quadruped (12 DoF) in mjlab / MuJoCo Warp, building on the CuboiLeo baseline, and adds SONIC-style joystick walking: a kinematic planner turns keyboard input into reference motion that the same tracker follows. Public dog motion capture is retargeted for any 12-DoF quadruped described by one YAML file.
+- **Upstream report:** One policy tracks all **665 library clips** with **0 failed clips** (mean normalized return **0.937 / 0.854 / 0.891** for train / `hard` / held-out; deterministic, no noise; 50k iterations, about 4.6 h on one H200). Planner + tracker under a random joystick, 125 robots × 60 s: **0 falls** with and without domain randomization; without it, robot velocity is **0.97 / 0.99 / 0.98** of the stick (vx / vy / yaw rate).
+- **Useful context:** Results are in simulation. Tracker and planner weights and 99 extra training clips are released for non-commercial research use; the other 566 clips are rebuilt from public sources at pinned revisions. [Source snapshot](https://github.com/Houserz/supermimic-quadruped/blob/46a81c248f4eff8eb595e63ac2d3d84d1e30e444/README.md).
+
+<a href="https://github.com/Houserz/supermimic-quadruped"><img src="https://raw.githubusercontent.com/Houserz/supermimic-quadruped/46a81c248f4eff8eb595e63ac2d3d84d1e30e444/assets/showcase/joystick.gif" width="360" alt="Simulation · Rover X1 driven from the keyboard, planner output in blue beside the robot"></a> <a href="https://github.com/Houserz/supermimic-quadruped"><img src="https://raw.githubusercontent.com/Houserz/supermimic-quadruped/46a81c248f4eff8eb595e63ac2d3d84d1e30e444/assets/showcase/zigzag.gif" width="360" alt="Simulation · Rover X1 zig-zag turns tracked from dog motion capture"></a><br><sub>Simulation · Rover X1: keyboard joystick → planner (blue, beside the robot) → tracker; zig-zag turns from dog motion capture (blue marks deviations from the reference)</sub>
+
+<br>
+
 <a name="supermimic-oli"></a>
 
 ### SuperMimic Oli [![GitHub stars](https://img.shields.io/github/stars/liuskywalkerjskd/supermimic_oli.svg?style=social)](https://github.com/liuskywalkerjskd/supermimic_oli/stargazers)
@@ -703,20 +735,6 @@ Robot-, simulator- and hardware-specific ports, together with motion-retargeting
 - **Useful context:** Return is normalized by executed steps without zero-padding after failure, and the actor uses nine extra anchor-observation dimensions. Read return together with completion; held-out generalization is untested. [Source snapshot](https://github.com/WXyuany/supermimic-m5/blob/42451591718e1a9a5ec601366997f47c0ad180a3/README.md).
 
 <a href="https://github.com/WXyuany/supermimic-m5/blob/42451591718e1a9a5ec601366997f47c0ad180a3/assets/videos/walk1_subject1.mp4"><img src="https://raw.githubusercontent.com/WXyuany/supermimic-m5/42451591718e1a9a5ec601366997f47c0ad180a3/assets/images/walk-preview.gif" width="480" alt="Simulation · G1 walking on Apple M5"></a><br><sub>Simulation · G1 walking on Apple M5</sub>
-
-<br>
-
-<a name="supermimic-quadruped"></a>
-
-### SuperMimic-Quadruped [![GitHub stars](https://img.shields.io/github/stars/Houserz/supermimic-quadruped.svg?style=social)](https://github.com/Houserz/supermimic-quadruped/stargazers)
-
-[Repository](https://github.com/Houserz/supermimic-quadruped) · [Quick start](https://github.com/Houserz/supermimic-quadruped/blob/46a81c248f4eff8eb595e63ac2d3d84d1e30e444/README.md#quick-start) · [Results](https://github.com/Houserz/supermimic-quadruped/blob/46a81c248f4eff8eb595e63ac2d3d84d1e30e444/README.md#results) · [Joystick planner](https://github.com/Houserz/supermimic-quadruped/blob/46a81c248f4eff8eb595e63ac2d3d84d1e30e444/docs/PLANNER.md) · [Pretrained models](https://github.com/Houserz/supermimic-quadruped/releases/tag/v0.2.0)
-
-- **By Houserz.** Ports SuperMimic motion tracking to the Dobot Rover X1 quadruped (12 DoF) in mjlab / MuJoCo Warp, building on the CuboiLeo baseline, and adds SONIC-style joystick walking: a kinematic planner turns keyboard input into reference motion that the same tracker follows. Public dog motion capture is retargeted for any 12-DoF quadruped described by one YAML file.
-- **Upstream report:** One policy tracks all **665 library clips** with **0 failed clips** (mean normalized return **0.937 / 0.854 / 0.891** for train / `hard` / held-out; deterministic, no noise; 50k iterations, about 4.6 h on one H200). Planner + tracker under a random joystick, 125 robots × 60 s: **0 falls** with and without domain randomization; without it, robot velocity is **0.97 / 0.99 / 0.98** of the stick (vx / vy / yaw rate).
-- **Useful context:** Results are in simulation. Tracker and planner weights and 99 extra training clips are released for non-commercial research use; the other 566 clips are rebuilt from public sources at pinned revisions. [Source snapshot](https://github.com/Houserz/supermimic-quadruped/blob/46a81c248f4eff8eb595e63ac2d3d84d1e30e444/README.md).
-
-<a href="https://github.com/Houserz/supermimic-quadruped"><img src="https://raw.githubusercontent.com/Houserz/supermimic-quadruped/46a81c248f4eff8eb595e63ac2d3d84d1e30e444/assets/showcase/joystick.gif" width="360" alt="Simulation · Rover X1 driven from the keyboard, planner output in blue beside the robot"></a> <a href="https://github.com/Houserz/supermimic-quadruped"><img src="https://raw.githubusercontent.com/Houserz/supermimic-quadruped/46a81c248f4eff8eb595e63ac2d3d84d1e30e444/assets/showcase/zigzag.gif" width="360" alt="Simulation · Rover X1 zig-zag turns tracked from dog motion capture"></a><br><sub>Simulation · Rover X1: keyboard joystick → planner (blue, beside the robot) → tracker; zig-zag turns from dog motion capture (blue marks deviations from the reference)</sub>
 
 <br>
 
