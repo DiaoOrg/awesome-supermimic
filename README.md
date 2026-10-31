@@ -101,7 +101,7 @@ Within each category, **⭐ highlighted projects come first**, followed by the r
 </tr>
 <tr>
 <td valign="top" nowrap="nowrap"><strong><a href="#unisupermimic">UniSuperMimic</a></strong>&nbsp;<a href="https://github.com/Motphys/Uni-SuperMimic/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/Motphys/Uni-SuperMimic.svg?style=social"></a><br>By Motphys</td>
-<td valign="top">**Training-loop design deserves attention:** UniLab EMA and optimization changes reach 0.9395 return with 193/129,487 BONES-SEED failures; the optimized run's duration is not separately reported.</td>
+<td valign="top"><strong>Strong G1 tracking in ~40 minutes (author-reported):</strong> UniLab / mjwarp with EMA, no-sync training and LR tuning. The optimized 8k run reports 0.9395 return and 193/129,487 BONES-SEED failures; its precise elapsed time is not separately stated.</td>
 </tr>
 <tr>
 <td valign="top" nowrap="nowrap"><strong><a href="#morphmimic">MorphMimic</a></strong>&nbsp;<a href="https://github.com/lzyang2000/morphmimic/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/lzyang2000/morphmimic.svg?style=social"></a><br>By Lizhi Yang et al.</td>
