@@ -93,11 +93,11 @@ SuperMimic 从仿真状态转移中学习一个共享的可微世界模型，再
 <tr>
 <td rowspan="8" valign="top"><a href="#复现方法与训练框架">🔬&nbsp;复现与训练（17）</a></td>
 <td valign="top" nowrap="nowrap"><strong><a href="#supermimic_vibed">supermimic_vibed</a></strong>&nbsp;<a href="https://github.com/zita-ch/supermimic_vibed/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/zita-ch/supermimic_vibed.svg?style=social"></a><br>作者：Chong Zhang</td>
-<td valign="top">**快速上手且便于核查的 Isaac Lab 基线：**提供免 Kit 环境、完整动作评测和渲染；单卡 1.47 小时达到 LAFAN1 0/40 失败，但关闭自碰撞并增加了朝向观测。</td>
+<td valign="top">**1.47 小时跑通 LAFAN1 全部 40 条动作！** 单张 RTX PRO 6000 Blackwell 的 Isaac Lab G1 复现，配套完整评测与渲染；需注意关闭自碰撞、增加朝向观测。</td>
 </tr>
 <tr>
 <td valign="top" nowrap="nowrap"><strong><a href="#supermimic-reproduced">SuperMimic-Reproduced</a></strong>&nbsp;<a href="https://github.com/CuboiLeo/SuperMimic-Reproduced/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/CuboiLeo/SuperMimic-Reproduced.svg?style=social"></a><br>作者：CuboiLeo</td>
-<td valign="top">**短动作成功不等于长时稳定：**公开权重与实验日志揭示观测设计对 100–300 秒 LAFAN1 漂移的影响；4×5090 训练 7.1 小时，BONES-SEED 失败 495/129,943。</td>
+<td valign="top">**13 万动作规模复现，还揭示长时漂移！** 4×5090 训练 7.1 小时、公开权重与日志；100–300 秒 LAFAN1 动作暴露观测设计问题，短片段高分不等于长期稳定。</td>
 </tr>
 <tr>
 <td valign="top" nowrap="nowrap"><strong><a href="#unisupermimic">UniSuperMimic</a></strong>&nbsp;<a href="https://github.com/Motphys/Uni-SuperMimic/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/Motphys/Uni-SuperMimic.svg?style=social"></a><br>团队：Motphys</td>
@@ -105,65 +105,65 @@ SuperMimic 从仿真状态转移中学习一个共享的可微世界模型，再
 </tr>
 <tr>
 <td valign="top" nowrap="nowrap"><strong><a href="#morphmimic">MorphMimic</a></strong>&nbsp;<a href="https://github.com/lzyang2000/morphmimic/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/lzyang2000/morphmimic.svg?style=social"></a><br>作者：Lizhi Yang 等</td>
-<td valign="top">**跨本体共享策略，也暴露真机落差：**统一 G1、X2 Ultra、T2 策略并直接接入 PICO；仅 G1 做过真机测试，后期 checkpoint 曾出现站立摇晃。</td>
+<td valign="top">**一套策略控制三种机器人！** G1 / X2 Ultra / T2 共享策略，PICO 人体动作可直接输入、无需先重定向；仅 G1 完成真机验证，后期权重出现站立摇晃。</td>
 </tr>
 <tr>
 <td valign="top" nowrap="nowrap"><strong><a href="#instanttrack">InstantTrack</a></strong>&nbsp;<a href="https://github.com/Huy-Quang-Dao/instantTrack/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/Huy-Quang-Dao/instantTrack.svg?style=social"></a><br>作者：Huy-Quang-Dao</td>
-<td valign="top">**不只是 15 分钟，而是一套加速配方：**EMA、小型世界模型、GPU 循环优化、失败样本重置和接触奖励协同作用；单张 5090、3 个种子均达到 0/40 失败，不含离线评测。</td>
+<td valign="top">**15 分钟、3 个种子全部 0/40 失败！** 单张 RTX 5090，结合 EMA、小型世界模型、失败样本重置与接触奖励；耗时不含离线评测，成绩针对训练动作。</td>
 </tr>
 <tr>
 <td valign="top" nowrap="nowrap"><strong><a href="#allmimic">allmimic</a></strong>&nbsp;<a href="https://github.com/Shimingyi/allmimic/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/Shimingyi/allmimic.svg?style=social"></a><br>作者：Shimingyi</td>
-<td valign="top">**动作参数化与采样策略的价值：**上肢残差动作、腿部绝对动作、加权模型损失及均衡采样组合，在 4090 上 0.83 小时达到 LAFAN1 0/40 失败；不含评测。</td>
+<td valign="top">**约 50 分钟，LAFAN1 零失败、回报 0.91！** 单张 RTX 4090，混合上肢残差与腿部绝对动作，配合均衡采样和加权世界模型损失；不含评测耗时。</td>
 </tr>
 <tr>
 <td valign="top" nowrap="nowrap"><strong><a href="#scalebfm_plus--supermimic">ScaleBFM_Plus</a></strong>&nbsp;<a href="https://github.com/Hxxxz0/ScaleBFM_Plus/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/Hxxxz0/ScaleBFM_Plus.svg?style=social"></a><br>作者：Hxxxz0</td>
-<td valign="top">**可微世界模型结合人形 Transformer：**ScaleTrack 引入 32 步 BPTT，在 2,575 条未见动作上达到 99.5%；16×5090 训练 8.3 小时，不能当作同算力加速对比。</td>
+<td valign="top">**2,575 条未见动作，成功率 99.5%！** 把 32 步世界模型 BPTT 接入人形 Transformer（ScaleTrack）；16×5090 训练 8.3 小时，不能直接视为同算力加速。</td>
 </tr>
 <tr>
 <td valign="top" nowrap="nowrap"><strong><a href="#supermimic-mjlab">SuperMimic Mjlab</a></strong>&nbsp;<a href="https://github.com/Breezewrf/supermimic_mjlab/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/Breezewrf/supermimic_mjlab.svg?style=social"></a><br>作者：Breezewrf</td>
-<td valign="top">**值得照着排查的系统消融：**Actor/Critic 归一化、躯干坐标朝向锚点、模型归一化与学习率调度让回报从 0.6016 提升至 0.8526，公开策略和模型权重。</td>
+<td valign="top">**回报从 0.60 提升到 0.85，且每一步都有消融！** 逐项验证 Actor/Critic 归一化、朝向锚点、模型归一化和学习率修正，公开策略与世界模型权重。</td>
 </tr>
 <tr>
 <td rowspan="2" valign="top"><a href="#感知地形与四足任务">👁️&nbsp;感知与地形（4）</a></td>
 <td valign="top" nowrap="nowrap"><strong><a href="#instinctmj--supermimic">InstinctMJ</a></strong>&nbsp;<a href="https://github.com/project-instinct/InstinctMJ/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/project-instinct/InstinctMJ.svg?style=social"></a><br>团队：Project Instinct</td>
-<td valign="top">**从动作跟踪走向视觉地形控制：**将深度感知引入 G1 地形跟踪，3090 上 10 条动作成功率 94.9%；目前只有一个训练种子。</td>
+<td valign="top">**让 G1 带着深度视觉走复杂地形！** 单张 RTX 3090 约 2.7 小时，10 条动作成功率 94.9%；仅一个训练种子，尚非大规模泛化验证。</td>
 </tr>
 <tr>
 <td valign="top" nowrap="nowrap"><strong><a href="#go2-supermimic">Go2-SuperMimic</a></strong>&nbsp;<a href="https://github.com/Zhengtianjin/go2-supermimic/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/Zhengtianjin/go2-supermimic.svg?style=social"></a><br>作者：Zhengtianjin</td>
-<td valign="top">**把方法扩展到四足感知决策：**Go2 追逐与闪避覆盖平地、障碍和复杂地形，提供三套 actor 及评测工具；尚无真机验证。</td>
+<td valign="top">**SuperMimic 也能训练四足追逐与闪避！** Go2 三套公开 actor 覆盖平地、障碍与地形，附评测和录制工具；目前仅仿真。</td>
 </tr>
 <tr>
 <td rowspan="3" valign="top"><a href="#操作与灵巧手">🦾&nbsp;操作与灵巧手（4）</a></td>
 <td valign="top" nowrap="nowrap"><strong><a href="#dex-supermimic">Dex SuperMimic</a></strong>&nbsp;<a href="https://github.com/CumulusAlpha/Dex-Supermimic/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/CumulusAlpha/Dex-Supermimic.svg?style=social"></a><br>作者：CumulusAlpha</td>
-<td valign="top">**观察接触丰富的灵巧手行为：**Wuji 手方块重定向与转笔，公开三套 8k checkpoint、资产及 Viser 回放，适合进一步分析接触控制。</td>
+<td valign="top">**灵巧手转方块、转笔，直接看训练结果！** Wuji 手操作公开三套 8k checkpoint、物体资产和 Viser 回放，适合观察接触丰富的操作行为。</td>
 </tr>
 <tr>
 <td valign="top" nowrap="nowrap"><strong><a href="#supermimic-for-robot-manipulation">supermimic_manipulation</a></strong>&nbsp;<a href="https://github.com/emoPointer/supermimic_manipulation/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/emoPointer/supermimic_manipulation.svg?style=social"></a><br>作者：Zhiqiang Zhou（emoPointer）</td>
-<td valign="top">**不仅有操作演示，还有留出初态评测：**三项 ARX5 任务各 256 回合，成功率 100%／94.9%／96.9%，公开权重；共用 A100 每轮 1.8–2.8 小时。</td>
+<td valign="top">**三项机械臂任务，留出初态成功率最高 100%！** ARX5 各 256 回合达到 100%／94.9%／96.9%，公开权重；单张 A100 每轮 1.8–2.8 小时。</td>
 </tr>
 <tr>
 <td valign="top" nowrap="nowrap"><strong><a href="#in-hand-rotation-mjlab">In-Hand Rotation mjlab</a></strong>&nbsp;<a href="https://github.com/Msornerrrr/in-hand-rotation-mjlab/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/Msornerrrr/in-hand-rotation-mjlab.svg?style=social"></a><br>作者：Msornerrrr</td>
-<td valign="top">**从全身跟踪迈向灵巧手操作：**LEAP 手方块旋转在 4090 上 25 分钟达到 PPO 6.5 小时的奖励水平；适合研究接触任务，但仅仿真且每配置一次实验。</td>
+<td valign="top">**灵巧手旋转：25 分钟达到 PPO 6.5 小时奖励水平！** 单张 RTX 4090 的 LEAP-hand 方块旋转世界模型训练；仅仿真，每种配置一次运行。</td>
 </tr>
 <tr>
 <td rowspan="1" valign="top"><a href="#肌肉驱动交互与诊断">💪&nbsp;肌肉与交互（3）</a></td>
 <td valign="top" nowrap="nowrap"><strong><a href="#muscle-supermimic">muscle-supermimic</a></strong>&nbsp;<a href="https://github.com/kaibohex/muscle-supermimic/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/kaibohex/muscle-supermimic.svg?style=social"></a><br>作者：Kaibo He（kaibohex）</td>
-<td valign="top">**从关节驱动走向肌肉驱动：**700 肌肉人体在单张 5090 训练 10.1 小时后完成 104/108 条留出 KIT 动作，并支持 354 肌肉模型。</td>
+<td valign="top">**从关节控制升级到 700 块肌肉驱动！** 单张 RTX 5090 训练 10.1 小时，完成 104/108 条留出 KIT 动作；另支持 354 肌肉模型。</td>
 </tr>
 <tr>
 <td rowspan="1" valign="top"><a href="#机器人移植与重定向">🤖&nbsp;本体移植（6）</a></td>
 <td valign="top" nowrap="nowrap"><strong><a href="#supermimic-retargeted">SuperMimic Retargeted</a></strong>&nbsp;<a href="https://github.com/tianshuwu/supermimic-retargeted/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/tianshuwu/supermimic-retargeted.svg?style=social"></a><br>作者：tianshuwu</td>
-<td valign="top">**容易被忽略的动作数据基础设施：**为 G1、A3、X2 Ultra 提供 SOMA 重定向、坐标修正与足部接触校验；未发布训练权重。</td>
+<td valign="top">**一套动作处理流程适配三种机器人！** 为 G1、A3、X2 Ultra 提供 SOMA 重定向、坐标修正和足部接触校验；这是数据工具，不含训练权重。</td>
 </tr>
 <tr>
 <td rowspan="1" valign="top"><a href="#真机部署与-sim2real">🚀&nbsp;真机部署（2）</a></td>
 <td valign="top" nowrap="nowrap"><strong><a href="#supermimic-repro-sim2real">SuperMimic-Repro-Sim2Real</a></strong>&nbsp;<a href="https://github.com/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/NJU-R-L-Group-Embodied-Lab/SuperMimic-Repro-Sim2Real.svg?style=social"></a><br>团队：NJU R&amp;L Group Embodied Lab</td>
-<td valign="top">**从针对性微调走到 G1 真机：**约 22 秒舞蹈包含快速转身与单脚落地，真机完成两次；使用松弛安全绳，不能等同无保护部署。</td>
+<td valign="top">**真的让 G1 跳起约 22 秒舞蹈！** 包含快速转身与单脚落地，真机完成两次；使用针对动作的微调和松弛安全绳。</td>
 </tr>
 <tr>
 <td rowspan="1" valign="top"><a href="#方法借鉴与探索">💡&nbsp;直观学习（2）</a></td>
 <td valign="top" nowrap="nowrap"><strong><a href="#flatworld--supermimic-2d">FlatWorld</a></strong>&nbsp;<a href="https://github.com/swaggyliu/FlatWorld/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/swaggyliu/FlatWorld.svg?style=social"></a><br>作者：swaggyliu</td>
-<td valign="top">**不用大型机器人栈也能读懂训练循环：**二维八关节人体、程序生成参考动作及逐技能渲染；33.3 秒多技能演示不是 G1 基准。</td>
+<td valign="top">**用二维小人看懂 SuperMimic，不必先搭机器人训练栈！** 八关节人体、程序生成动作和逐技能渲染，附 33.3 秒多技能演示；不是 G1 基准。</td>
 </tr>
 </tbody>
 </table>
