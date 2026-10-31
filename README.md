@@ -42,7 +42,7 @@ Start with the original work below, then choose an implementation by framework a
   - 👁️ [Perception & terrain (4)](#perception-terrain-and-quadrupeds)
   - 🦾 [Manipulation & hands (4)](#manipulation-and-dexterous-hands)
   - 💪 [Muscles & interaction (3)](#muscle-interaction-and-diagnostics)
-  - 🤖 [Robot ports (6)](#robot-porting-and-retargeting)
+  - 🤖 [Robot ports (7)](#robot-porting-and-retargeting)
   - 🚀 [Real robots (2)](#real-robot-deployment-and-sim2real)
   - 💡 [Learning examples (2)](#inspired-experiments)
 - [Related methods and baselines](#related-methods-and-baselines)
@@ -79,7 +79,7 @@ The authors report surpassing SONIC's released-checkpoint return after **3 hours
 
 ## Community projects
 
-**38 projects in 7 categories, grouped by purpose.** Each project appears once; overlapping capabilities are described in its entry. The guide retains complementary starting points; ⭐ marks documented experiments, tools or learning examples.
+**39 projects in 7 categories, grouped by purpose.** Each project appears once; overlapping capabilities are described in its entry. The guide retains complementary starting points; ⭐ marks documented experiments, tools or learning examples.
 
 Within each category, **⭐ highlighted projects come first**, followed by the remaining projects; **each group is sorted by GitHub Stars, highest first**. The overview selections follow the same Stars order (2026-10-30 snapshot; ties by repository name). Badges update dynamically; the order does not. Stars reflect repository popularity; results and demos are upstream reports.
 
@@ -151,7 +151,7 @@ Within each category, **⭐ highlighted projects come first**, followed by the r
 <td valign="top"><strong>Control a body with 700 muscles, not just joints!</strong> Tracks 104/108 held-out KIT motions after 10.1 h on one RTX 5090; also includes a 354-muscle MyoFullBody variant.</td>
 </tr>
 <tr>
-<td rowspan="1" valign="top"><a href="#robot-porting-and-retargeting">🤖&nbsp;Robot&nbsp;ports&nbsp;(6)</a></td>
+<td rowspan="1" valign="top"><a href="#robot-porting-and-retargeting">🤖&nbsp;Robot&nbsp;ports&nbsp;(7)</a></td>
 <td valign="top" nowrap="nowrap"><strong><a href="#supermimic-retargeted">SuperMimic Retargeted</a></strong>&nbsp;<a href="https://github.com/tianshuwu/supermimic-retargeted/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/tianshuwu/supermimic-retargeted.svg?style=social"></a><br>By tianshuwu</td>
 <td valign="top"><strong>Retarget once, prepare motions for three robot bodies.</strong> SOMA pipelines for G1, A3 and X2 Ultra handle coordinate corrections and foot-contact checks; this is data preparation, not released training weights.</td>
 </tr>
@@ -703,6 +703,20 @@ Robot-, simulator- and hardware-specific ports, together with motion-retargeting
 - **Useful context:** Return is normalized by executed steps without zero-padding after failure, and the actor uses nine extra anchor-observation dimensions. Read return together with completion; held-out generalization is untested. [Source snapshot](https://github.com/WXyuany/supermimic-m5/blob/42451591718e1a9a5ec601366997f47c0ad180a3/README.md).
 
 <a href="https://github.com/WXyuany/supermimic-m5/blob/42451591718e1a9a5ec601366997f47c0ad180a3/assets/videos/walk1_subject1.mp4"><img src="https://raw.githubusercontent.com/WXyuany/supermimic-m5/42451591718e1a9a5ec601366997f47c0ad180a3/assets/images/walk-preview.gif" width="480" alt="Simulation · G1 walking on Apple M5"></a><br><sub>Simulation · G1 walking on Apple M5</sub>
+
+<br>
+
+<a name="supermimic-quadruped"></a>
+
+### SuperMimic-Quadruped [![GitHub stars](https://img.shields.io/github/stars/Houserz/supermimic-quadruped.svg?style=social)](https://github.com/Houserz/supermimic-quadruped/stargazers)
+
+[Repository](https://github.com/Houserz/supermimic-quadruped) · [Quick start](https://github.com/Houserz/supermimic-quadruped/blob/46a81c248f4eff8eb595e63ac2d3d84d1e30e444/README.md#quick-start) · [Results](https://github.com/Houserz/supermimic-quadruped/blob/46a81c248f4eff8eb595e63ac2d3d84d1e30e444/README.md#results) · [Joystick planner](https://github.com/Houserz/supermimic-quadruped/blob/46a81c248f4eff8eb595e63ac2d3d84d1e30e444/docs/PLANNER.md) · [Pretrained models](https://github.com/Houserz/supermimic-quadruped/releases/tag/v0.2.0)
+
+- **By Houserz.** Ports SuperMimic motion tracking to the Dobot Rover X1 quadruped (12 DoF) in mjlab / MuJoCo Warp, building on the CuboiLeo baseline, and adds SONIC-style joystick walking: a kinematic planner turns keyboard input into reference motion that the same tracker follows. Public dog motion capture is retargeted for any 12-DoF quadruped described by one YAML file.
+- **Upstream report:** One policy tracks all **665 library clips** with **0 failed clips** (mean normalized return **0.937 / 0.854 / 0.891** for train / `hard` / held-out; deterministic, no noise; 50k iterations, about 4.6 h on one H200). Planner + tracker under a random joystick, 125 robots × 60 s: **0 falls** with and without domain randomization; without it, robot velocity is **0.97 / 0.99 / 0.98** of the stick (vx / vy / yaw rate).
+- **Useful context:** Results are in simulation. Tracker and planner weights and 99 extra training clips are released for non-commercial research use; the other 566 clips are rebuilt from public sources at pinned revisions. [Source snapshot](https://github.com/Houserz/supermimic-quadruped/blob/46a81c248f4eff8eb595e63ac2d3d84d1e30e444/README.md).
+
+<a href="https://github.com/Houserz/supermimic-quadruped"><img src="https://raw.githubusercontent.com/Houserz/supermimic-quadruped/46a81c248f4eff8eb595e63ac2d3d84d1e30e444/assets/showcase/joystick.gif" width="360" alt="Simulation · Rover X1 driven from the keyboard, planner output in blue beside the robot"></a> <a href="https://github.com/Houserz/supermimic-quadruped"><img src="https://raw.githubusercontent.com/Houserz/supermimic-quadruped/46a81c248f4eff8eb595e63ac2d3d84d1e30e444/assets/showcase/zigzag.gif" width="360" alt="Simulation · Rover X1 zig-zag turns tracked from dog motion capture"></a><br><sub>Simulation · Rover X1: keyboard joystick → planner (blue, beside the robot) → tracker; zig-zag turns from dog motion capture (blue marks deviations from the reference)</sub>
 
 <br>
 

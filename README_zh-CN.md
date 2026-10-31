@@ -42,7 +42,7 @@
   - 👁️ [感知与地形（4）](#感知地形与四足任务)
   - 🦾 [操作与灵巧手（4）](#操作与灵巧手)
   - 💪 [肌肉与交互（3）](#肌肉驱动交互与诊断)
-  - 🤖 [本体移植（6）](#机器人移植与重定向)
+  - 🤖 [本体移植（7）](#机器人移植与重定向)
   - 🚀 [真机部署（2）](#真机部署与-sim2real)
   - 💡 [直观学习（2）](#方法借鉴与探索)
 - [相关方法与基线](#相关方法与基线)
@@ -79,7 +79,7 @@ SuperMimic 从仿真状态转移中学习一个共享的可微世界模型，再
 
 ## 社区项目
 
-**38 个项目，按用途分为 7 类。** 每个项目只收录一次，跨方向的能力在介绍中说明。下表保留各方向的推荐入口，⭐ 表示有值得阅读的实验、工具或示例。
+**39 个项目，按用途分为 7 类。** 每个项目只收录一次，跨方向的能力在介绍中说明。下表保留各方向的推荐入口，⭐ 表示有值得阅读的实验、工具或示例。
 
 各分类内，**⭐ 亮点项目在前，其余项目在后，两组内部各按 GitHub Stars 降序**排列。汇总表的推荐项目也按 Stars 降序排列（2026-10-30 快照；同数按仓库名排序）。徽章动态更新，排列顺序不会自动变化。Stars 体现仓库关注度；结果与演示为上游报告。
 
@@ -151,7 +151,7 @@ SuperMimic 从仿真状态转移中学习一个共享的可微世界模型，再
 <td valign="top"><strong>从关节控制升级到 700 块肌肉驱动！</strong> 单张 RTX 5090 训练 10.1 小时，完成 104/108 条留出 KIT 动作；另支持 354 肌肉模型。</td>
 </tr>
 <tr>
-<td rowspan="1" valign="top"><a href="#机器人移植与重定向">🤖&nbsp;本体移植（6）</a></td>
+<td rowspan="1" valign="top"><a href="#机器人移植与重定向">🤖&nbsp;本体移植（7）</a></td>
 <td valign="top" nowrap="nowrap"><strong><a href="#supermimic-retargeted">SuperMimic Retargeted</a></strong>&nbsp;<a href="https://github.com/tianshuwu/supermimic-retargeted/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/tianshuwu/supermimic-retargeted.svg?style=social"></a><br>作者：tianshuwu</td>
 <td valign="top"><strong>一套动作处理流程适配三种机器人！</strong> 为 G1、A3、X2 Ultra 提供 SOMA 重定向、坐标修正和足部接触校验；这是数据工具，不含训练权重。</td>
 </tr>
@@ -703,6 +703,20 @@ SuperMimic 从仿真状态转移中学习一个共享的可微世界模型，再
 - **选择时注意：** 回报按已执行步数归一化，失败后的剩余帧不补零，actor 额外使用 9 维锚点观测；需结合完成率阅读，未测试未见动作泛化。 [核查版本](https://github.com/WXyuany/supermimic-m5/blob/42451591718e1a9a5ec601366997f47c0ad180a3/README.md)。
 
 <a href="https://github.com/WXyuany/supermimic-m5/blob/42451591718e1a9a5ec601366997f47c0ad180a3/assets/videos/walk1_subject1.mp4"><img src="https://raw.githubusercontent.com/WXyuany/supermimic-m5/42451591718e1a9a5ec601366997f47c0ad180a3/assets/images/walk-preview.gif" width="480" alt="仿真 · Apple M5 上的 G1 行走"></a><br><sub>仿真 · Apple M5 上的 G1 行走</sub>
+
+<br>
+
+<a name="supermimic-quadruped"></a>
+
+### SuperMimic-Quadruped [![GitHub stars](https://img.shields.io/github/stars/Houserz/supermimic-quadruped.svg?style=social)](https://github.com/Houserz/supermimic-quadruped/stargazers)
+
+[仓库](https://github.com/Houserz/supermimic-quadruped) · [快速开始](https://github.com/Houserz/supermimic-quadruped/blob/46a81c248f4eff8eb595e63ac2d3d84d1e30e444/README.zh-CN.md#快速开始) · [结果](https://github.com/Houserz/supermimic-quadruped/blob/46a81c248f4eff8eb595e63ac2d3d84d1e30e444/README.zh-CN.md#结果) · [摇杆规划器](https://github.com/Houserz/supermimic-quadruped/blob/46a81c248f4eff8eb595e63ac2d3d84d1e30e444/docs/PLANNER.zh-CN.md) · [预训练模型](https://github.com/Houserz/supermimic-quadruped/releases/tag/v0.2.0)
+
+- **作者：Houserz。** 基于 CuboiLeo 复现，在 mjlab / MuJoCo Warp 中把 SuperMimic 动作跟踪移植到 12 自由度的越疆 Rover X1 四足机器人，并加入 SONIC 风格的摇杆行走：运动学规划器把键盘输入实时生成参考动作，由同一个跟踪策略执行。公开狗动捕可重定向到任何用一个 YAML 描述的 12 自由度四足。
+- **上游报告：** 一个策略跟踪动作库全部 **665 段**，**0 段失败**（train / `hard` / 留出集平均归一化回报 **0.937 / 0.854 / 0.891**；确定性策略、无噪声；5 万次迭代，单张 H200 约 4.6 小时）。规划器 + 跟踪器在随机摇杆下 125 台 × 60 秒，有无域随机化均 **0 次摔倒**；无随机化时机器人速度达到摇杆的 **0.97 / 0.99 / 0.98**（vx / vy / 偏航角速度）。
+- **选择时注意：** 结果均在仿真中取得。跟踪器和规划器权重以及 99 段额外训练片段已发布，仅限非商业研究；其余 566 段由脚本按固定版本下载公开数据源重建。 [核查版本](https://github.com/Houserz/supermimic-quadruped/blob/46a81c248f4eff8eb595e63ac2d3d84d1e30e444/README.zh-CN.md)。
+
+<a href="https://github.com/Houserz/supermimic-quadruped"><img src="https://raw.githubusercontent.com/Houserz/supermimic-quadruped/46a81c248f4eff8eb595e63ac2d3d84d1e30e444/assets/showcase/joystick.gif" width="360" alt="仿真 · 键盘操控 Rover X1，蓝色为机器狗旁边的规划器输出"></a> <a href="https://github.com/Houserz/supermimic-quadruped"><img src="https://raw.githubusercontent.com/Houserz/supermimic-quadruped/46a81c248f4eff8eb595e63ac2d3d84d1e30e444/assets/showcase/zigzag.gif" width="360" alt="仿真 · Rover X1 跟踪狗动捕的之字形急转"></a><br><sub>仿真 · Rover X1：键盘摇杆 → 规划器（蓝色，画在机器狗旁边）→ 跟踪器；跟踪狗动捕的之字形急转（蓝色表示与参考动作的偏差）</sub>
 
 <br>
 
