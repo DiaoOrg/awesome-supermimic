@@ -37,7 +37,7 @@ Start with the original work below, then choose an implementation by framework a
 ## Contents
 
 - [Original SuperMimic](#original-supermimic)
-- [Community projects (38)](#community-projects)
+- [Community projects (39)](#community-projects)
   - 🔬 [Reproductions, methods & frameworks (17)](#reproductions-methods-and-training-frameworks)
   - 👁️ [Perception & terrain (4)](#perception-terrain-and-quadrupeds)
   - 🦾 [Manipulation & hands (4)](#manipulation-and-dexterous-hands)
