@@ -101,7 +101,7 @@ SuperMimic 从仿真状态转移中学习一个共享的可微世界模型，再
 </tr>
 <tr>
 <td valign="top" nowrap="nowrap"><strong><a href="#unisupermimic">UniSuperMimic</a></strong>&nbsp;<a href="https://github.com/Motphys/Uni-SuperMimic/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/Motphys/Uni-SuperMimic.svg?style=social"></a><br>团队：Motphys</td>
-<td valign="top">**值得拆解的训练循环优化：**UniLab 中的 EMA 与训练优化使 BONES-SEED 回报达到 0.9395、失败 193/129,487；优化版本耗时未单列。</td>
+<td valign="top"><strong>约 40 分钟获得强性能 checkpoint（作者报告）：</strong>基于 UniLab / mjwarp，结合 EMA、no-sync 与学习率优化。优化版 8k 实验在 129,487 条 BONES-SEED 动作上达到 0.9395 回报、仅 193 条失败；该实验的精确耗时未单列。</td>
 </tr>
 <tr>
 <td valign="top" nowrap="nowrap"><strong><a href="#morphmimic">MorphMimic</a></strong>&nbsp;<a href="https://github.com/lzyang2000/morphmimic/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/lzyang2000/morphmimic.svg?style=social"></a><br>作者：Lizhi Yang 等</td>
