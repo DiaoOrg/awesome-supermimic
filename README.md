@@ -42,7 +42,7 @@ Start with the original work below, then choose an implementation by framework a
   - 👁️ [Perception & terrain (4)](#perception-terrain-and-quadrupeds)
   - 🦾 [Manipulation & hands (4)](#manipulation-and-dexterous-hands)
   - 💪 [Muscles & interaction (3)](#muscle-interaction-and-diagnostics)
-  - 🤖 [Robot ports (6)](#robot-porting-and-retargeting)
+  - 🤖 [Robot ports (7)](#robot-porting-and-retargeting)
   - 🚀 [Real robots (2)](#real-robot-deployment-and-sim2real)
   - 💡 [Learning examples (2)](#inspired-experiments)
 - [Related methods and baselines](#related-methods-and-baselines)
@@ -79,7 +79,7 @@ The authors report surpassing SONIC's released-checkpoint return after **3 hours
 
 ## Community projects
 
-**38 projects in 7 categories, grouped by purpose.** Each project appears once; overlapping capabilities are described in its entry. The guide retains complementary starting points; ⭐ marks documented experiments, tools or learning examples.
+**39 projects in 7 categories, grouped by purpose.** Each project appears once; overlapping capabilities are described in its entry. The guide retains complementary starting points; ⭐ marks documented experiments, tools or learning examples.
 
 Within each category, **⭐ highlighted projects come first**, followed by the remaining projects; **each group is sorted by GitHub Stars, highest first**. The overview selections follow the same Stars order (2026-10-30 snapshot; ties by repository name). Badges update dynamically; the order does not. Stars reflect repository popularity; results and demos are upstream reports.
 
@@ -151,7 +151,7 @@ Within each category, **⭐ highlighted projects come first**, followed by the r
 <td valign="top"><strong>700-muscle whole-body control:</strong> MS-Human-700 tracks 104/108 held-out KIT clips after 10.1 h on one RTX 5090; also supports 354-muscle MyoFullBody.</td>
 </tr>
 <tr>
-<td rowspan="1" valign="top"><a href="#robot-porting-and-retargeting">🤖&nbsp;Robot&nbsp;ports&nbsp;(6)</a></td>
+<td rowspan="1" valign="top"><a href="#robot-porting-and-retargeting">🤖&nbsp;Robot&nbsp;ports&nbsp;(7)</a></td>
 <td valign="top" nowrap="nowrap"><strong><a href="#supermimic-retargeted">SuperMimic Retargeted</a></strong>&nbsp;<a href="https://github.com/tianshuwu/supermimic-retargeted/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/tianshuwu/supermimic-retargeted.svg?style=social"></a><br>By tianshuwu</td>
 <td valign="top"><strong>Motion preparation for three robot bodies:</strong> SOMA retargeting, coordinate correction and foot-contact checks for G1, A3 and X2 Ultra; training weights not released.</td>
 </tr>
@@ -703,6 +703,20 @@ Robot-, simulator- and hardware-specific ports, together with motion-retargeting
 - **Useful context:** Return is normalized by executed steps without zero-padding after failure, and the actor uses nine extra anchor-observation dimensions. Read return together with completion; held-out generalization is untested. [Source snapshot](https://github.com/WXyuany/supermimic-m5/blob/42451591718e1a9a5ec601366997f47c0ad180a3/README.md).
 
 <a href="https://github.com/WXyuany/supermimic-m5/blob/42451591718e1a9a5ec601366997f47c0ad180a3/assets/videos/walk1_subject1.mp4"><img src="https://raw.githubusercontent.com/WXyuany/supermimic-m5/42451591718e1a9a5ec601366997f47c0ad180a3/assets/images/walk-preview.gif" width="480" alt="Simulation · G1 walking on Apple M5"></a><br><sub>Simulation · G1 walking on Apple M5</sub>
+
+<br>
+
+<a name="supermimic-quadruped"></a>
+
+### SuperMimic-Quadruped [![GitHub stars](https://img.shields.io/github/stars/Houserz/supermimic-quadruped.svg?style=social)](https://github.com/Houserz/supermimic-quadruped/stargazers)
+
+[Repository](https://github.com/Houserz/supermimic-quadruped) · [Quick start](https://github.com/Houserz/supermimic-quadruped/blob/d4337a037272e441defb0b73ca0a5259302fc4f8/README.md#quick-start) · [Results](https://github.com/Houserz/supermimic-quadruped/blob/d4337a037272e441defb0b73ca0a5259302fc4f8/README.md#results) · [Porting guide](https://github.com/Houserz/supermimic-quadruped/blob/d4337a037272e441defb0b73ca0a5259302fc4f8/docs/PORTING.md)
+
+- **By Houserz.** Ports SuperMimic motion tracking to the Dobot Rover X1 quadruped (12 DoF) in mjlab / MuJoCo Warp, building on the CuboiLeo baseline. A retargeting pipeline turns public dog motion capture (AI4Animation, Tencent Labrador) and Xiaomi CyberDog2 motion lists into tracking clips for any 12-DoF quadruped described by one YAML file (Rover X1; Unitree Go1 as a second example).
+- **Upstream report:** One policy on all **566 library clips** (65 min including mirrors: 251 train, 237 `hard`, 78 held-out from whole recordings) has **0 failed clips**, with mean normalized return **0.937 / 0.838 / 0.876**. Training ran 50k iterations, about 4.6 h on one H200 with 20,480 environments; evaluation uses the deterministic policy without noise or randomization.
+- **Useful context:** Results are in simulation. No motion data or weights are distributed; scripts download the sources at pinned revisions and rebuild the library, and AI4Animation's CC BY-NC 4.0 terms carry over. The roadmap announces a SONIC-style joystick controller (kinematic motion planner + this tracker). [Source snapshot](https://github.com/Houserz/supermimic-quadruped/blob/d4337a037272e441defb0b73ca0a5259302fc4f8/README.md).
+
+<a href="https://github.com/Houserz/supermimic-quadruped"><img src="https://raw.githubusercontent.com/Houserz/supermimic-quadruped/d4337a037272e441defb0b73ca0a5259302fc4f8/assets/showcase/zigzag.gif" width="480" alt="Simulation · Rover X1 zig-zag turns; blue marks deviations from the reference"></a><br><sub>Simulation · Rover X1 zig-zag turns (Tencent Labrador clip); blue marks deviations from the reference</sub>
 
 <br>
 
